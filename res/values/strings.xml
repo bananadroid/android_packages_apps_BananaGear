@@ -314,9 +314,11 @@
     <string name="combined_status_bar_signal_icons_title">Combined signal icons</string>
     <string name="combined_status_bar_signal_icons_summary">Show single combined icon for WiFi and mobile signal</string>
 
-    <!-- Navbar Animation -->
+    <!-- Navbar Options -->
     <string name="pixel_navbar_anim_title">Pixel animation</string>
     <string name="pixel_navbar_anim_summary">Enable pixel style animation for 3-button navigation bar</string>
+    <string name="navigation_bar_arrow_keys_title">Arrow keys</string>
+    <string name="navigation_bar_arrow_keys_summary">Show left &amp; right arrows to control the cursor while typing</string>
 
     <!-- QS columns/tile customizations -->
     <string name="qs_columns_category">QS tile layout and column settings</string>
