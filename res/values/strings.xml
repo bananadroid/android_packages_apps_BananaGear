@@ -56,4 +56,8 @@
     <!-- Statusbar tuner -->
     <string name="statusbar_tuner_title">Statusbar icons</string>
     <string name="statusbar_tuner_title_summary">Enable or disable many statusbar icons</string>
+
+    <!-- Wakeup options -->
+    <string name="wakeup_when_plugged_unplugged_title">Wake up on charge</string>
+    <string name="wakeup_when_plugged_unplugged_summary">Wake up device if charger is plugged/unplugged</string>
 </resources>
