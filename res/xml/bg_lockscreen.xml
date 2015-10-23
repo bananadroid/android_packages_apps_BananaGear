@@ -13,4 +13,17 @@
         android:title="@string/lockscreen_battery_info_title"
         android:summary="@string/lockscreen_battery_info_summary"
         android:defaultValue="true" />
+
+    <PreferenceCategory
+        android:key="lockscreen_media_art_options"
+        android:title="@string/lockscreen_media_art_options_title">
+
+        <com.banana.support.preferences.SecureSettingSwitchPreference
+            android:key="lockscreen_media_metadata"
+            android:title="@string/lockscreen_media_art_title"
+            android:summary="@string/lockscreen_media_art_summary"
+            android:defaultValue="false" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>

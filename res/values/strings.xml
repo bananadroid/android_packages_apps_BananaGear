@@ -265,4 +265,9 @@
     <string name="quick_pulldown_none">Disabled</string>
     <string name="quick_pulldown_right">Pulldown statusbar from right side</string>
     <string name="quick_pulldown_left">Pulldown statusbar from left side</string>
+
+    <!-- Lock screen cover art -->
+    <string name="lockscreen_media_art_options_title">Lock screen media art</string>
+    <string name="lockscreen_media_art_title">Media cover art</string>
+    <string name="lockscreen_media_art_summary">Display media cover art when available</string>
 </resources>
