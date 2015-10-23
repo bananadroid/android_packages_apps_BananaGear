@@ -406,4 +406,9 @@
     <string name="weather_config_summary">System service settings</string>
     <string name="weather_icon_pack_title">Condition icon pack</string>
     <string name="custom_weather_explainer">You are not limited to the pre-installed weather icon packages. Search on Google PlayStore with the keyword "chronus icons" and you will find a lot of additional packages.</string>
+
+    <!-- Lock screen cover art -->
+    <string name="lockscreen_media_art_options_title">Lock screen media art</string>
+    <string name="lockscreen_media_art_title">Media cover art</string>
+    <string name="lockscreen_media_art_summary">Display media cover art when available</string>
 </resources>
