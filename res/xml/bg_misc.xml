@@ -18,4 +18,19 @@
     android:title="@string/misc_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <PreferenceCategory
+        android:key="system_category"
+        android:title="@string/system_category_title">
+
+        <PreferenceScreen
+            android:icon="@drawable/ic_hafr"
+            android:title="@string/hide_apps_from_recents_title"
+            android:summary="@string/hide_apps_from_recents_summary" >
+            <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.android.settings"
+                android:targetClass="com.banana.settings.fragments.hideappfromrecents.HAFRAppListActivity" />
+        </PreferenceScreen>
+
+    </PreferenceCategory>
+
 </PreferenceScreen>

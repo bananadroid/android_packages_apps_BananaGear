@@ -34,6 +34,7 @@
     <string name="buttons_title">Buttons</string>
     <string name="gesture_preference_title_summary">Enable or disable all gestures</string>
     <string name="navigation_title">Navigation bar</string>
+    <string name="system_category_title">System</string>
 
     <!-- Quick QS pulldown -->
     <string name="status_bar_quick_qs_pulldown">Quick QS pulldown</string>
@@ -148,4 +149,11 @@
     <string name="status_bar_battery_percentage_text_next">Next to the icon</string>
     <string name="qs_battery_percentage_title">QS battery percentage</string>
     <string name="qs_battery_percentage_summary">Show battery percentage in the QS header instead of battery estimate</string>
+
+    <!-- Hide Apps from Recents -->
+    <string name="hide_apps_from_recents_title">Hide apps from recents</string>
+    <string name="hide_apps_from_recents_summary">Prevent apps from appearing in recents</string>
+    <string name="hide_from_recents_add_app">Add app</string>
+    <string name="title_activity_carbon_recents_settings">Recents</string>
+
 </resources>

@@ -14,4 +14,7 @@
 
     <!-- Preference Category -->
     <color name="preference_background_color">@*android:color/accent_device_default</color>
+
+    <color name="white">#FFF</color>
+
 </resources>
