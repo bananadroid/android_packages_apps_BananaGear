@@ -630,4 +630,8 @@
     <string name="navbar_layout_rightleaning">Right-leaning</string>
     <string name="navbar_invert_layout_title">Invert layout</string>
     <string name="navbar_invert_layout_summary">Inverts the layout of the navigation bar and other items, such as the IME switcher</string>
+
+    <!-- Hide statusbar on lockscreen -->
+    <string name="lockscreen_hide_status_bar_title">Hide Statusbar</string>
+    <string name="lockscreen_hide_status_bar_summary">When enabled, statusbar will be hidden on lockscreen</string>
 </resources>
