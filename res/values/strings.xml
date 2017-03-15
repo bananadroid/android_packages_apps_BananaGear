@@ -223,4 +223,8 @@
     <!-- Old mobiletype icon style -->
     <string name="old_mobiletype_title">Old style signal icon</string>
     <string name="old_mobiletype_summary">Merge signal and signal type icons</string>
+
+    <!-- Roaming indicator icon -->
+    <string name="roaming_indicator_icon_title">Roaming indicator</string>
+    <string name="roaming_indicator_icon_summary">Display roaming indicator in signal icon when in roaming mode</string>
 </resources>
