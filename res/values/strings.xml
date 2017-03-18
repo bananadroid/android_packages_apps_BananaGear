@@ -240,4 +240,8 @@
     <!-- Notification count -->
     <string name="statusbar_notif_count_title">Show notification count</string>
     <string name="statusbar_notif_count_summary">Display the number of pending notifications</string>
+
+    <!-- Bluetooth status -->
+    <string name="bluetooth_battery_title">Bluetooth battery status</string>
+    <string name="bluetooth_battery_summary">Display battery status for the connected bluetooth device, if available</string>
 </resources>
