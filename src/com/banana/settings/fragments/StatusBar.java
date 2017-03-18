@@ -131,6 +131,8 @@ public class StatusBar extends DashboardFragment implements
                 Settings.System.STATUSBAR_COLORED_ICONS, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.STATUSBAR_NOTIF_COUNT, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.BLUETOOTH_SHOW_BATTERY, 1, UserHandle.USER_CURRENT);
     }
 
     @Override
