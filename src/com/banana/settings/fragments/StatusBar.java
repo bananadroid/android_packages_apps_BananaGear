@@ -50,6 +50,7 @@ public class StatusBar extends DashboardFragment implements
     private static final String KEY_STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
     private static final String KEY_STATUS_BAR_BATTERY_TEXT_CHARGING = "status_bar_battery_text_charging";
     private static final String KEY_SHOW_ROAMING = "roaming_indicator_icon";
+    private static final String KEY_SHOW_FOURG = "show_fourg_icon";
 
     private static final int BATTERY_STYLE_PORTRAIT = 0;
     private static final int BATTERY_STYLE_TEXT = 4;
@@ -57,6 +58,7 @@ public class StatusBar extends DashboardFragment implements
 
     private SwitchPreference mBatteryTextCharging;
     private SwitchPreference mShowRoaming;
+    private SwitchPreference mShowFourg;
     private SystemSettingListPreference mBatteryPercent;
     private SystemSettingListPreference mBatteryStyle;
 
@@ -99,9 +101,11 @@ public class StatusBar extends DashboardFragment implements
         mQuickPulldown.setOnPreferenceChangeListener(this);
 
         mShowRoaming = (SwitchPreference) findPreference(KEY_SHOW_ROAMING);
+        mShowFourg = (SwitchPreference) findPreference(KEY_SHOW_FOURG);
 
         if (!TelephonyUtils.isVoiceCapable(getActivity())) {
             prefScreen.removePreference(mShowRoaming);
+            prefScreen.removePreference(mShowFourg);
         }
     }
 
@@ -147,6 +151,8 @@ public class StatusBar extends DashboardFragment implements
                 Settings.System.BLUETOOTH_SHOW_BATTERY, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.ROAMING_INDICATOR_ICON, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.SHOW_FOURG_ICON, 0, UserHandle.USER_CURRENT);
 
         BatteryBar.reset(mContext);
     }
@@ -181,6 +187,7 @@ public class StatusBar extends DashboardFragment implements
 
                     if (!TelephonyUtils.isVoiceCapable(context)) {
                         keys.add(KEY_SHOW_ROAMING);
+                        keys.add(KEY_SHOW_FOURG);
                     }
 
                     return keys;
