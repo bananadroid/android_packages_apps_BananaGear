@@ -80,6 +80,18 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="system_category"
+        android:title="@string/system_category_title">
+
+        <Preference
+            android:key="wakelock_blocker"
+            android:title="@string/wakelock_blocker_title"
+            android:summary="@string/wakelock_blocker_summary"
+            android:fragment="com.banana.settings.fragments.WakeLockBlocker" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="aspect_ratio_category"
         android:title="@string/aspect_ratio_category_title">
 

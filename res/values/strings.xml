@@ -382,6 +382,15 @@
     <string name="ambient_notification_light_timeout_five_minutes">5 minutes</string>
     <string name="ambient_notification_light_timeout_ten_minutes">10 minutes</string>
 
+    <!-- Wakelock blocker -->
+    <string name="wakelock_blocker_title">Wakelock blocker</string>
+    <string name="wakelock_blocker_summary">Block system wakelocks</string>
+    <string name="wakelock_blocker_save">Save</string>
+    <string name="wakelock_list_header">Available wakelocks</string>
+    <string name="wakelock_blocker_reload">Reload</string>
+    <string name="wakelock_blocker_warning_title">Proceed with caution</string>
+    <string name="wakelock_blocker_warning">Blocking wakelocks have the potential to cause instability, crashes or data loss</string>
+
     <!-- StatusBar icon style -->
     <string name="statusbar_icons_style">Colored statusbar icons</string>
     <string name="statusbar_icons_style_summary">Use app icons instead of default notif one\nRequires a SystemUI restart</string>
