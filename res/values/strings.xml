@@ -70,4 +70,10 @@
     <string name="monet_engine_accurate_shades_title">Use accurate shades</string>
     <string name="monet_engine_chroma_factor_title">Chroma factor</string>
     <string name="monet_engine_linear_lightness_title">Use linear lightness</string>
+
+    <!-- Network Traffic -->
+    <string name="traffic_title">Traffic indicators</string>
+    <string name="traffic_summary">Customize the traffic indicators</string>
+    <string name="network_traffic_state_title">Show network traffic</string>
+    <string name="network_traffic_autohide_threshold_title">Auto-hide threshold</string>
 </resources>
