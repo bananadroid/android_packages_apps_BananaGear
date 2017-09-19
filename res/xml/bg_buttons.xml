@@ -18,6 +18,12 @@
     android:title="@string/buttons_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <Preference
+       android:key="power_menu"
+       android:title="@string/power_menu_title"
+       android:summary="@string/power_menu_title_summary"
+       android:fragment="com.banana.settings.fragments.PowerMenuSettings" />
+
     <PreferenceCategory
         android:title="@string/other_category_title" >
 
