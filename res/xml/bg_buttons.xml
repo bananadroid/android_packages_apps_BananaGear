@@ -44,6 +44,12 @@
             android:dependency="torch_long_press_power_gesture"
             android:persistent="false" />
 
+        <Preference
+           android:key="power_menu"
+           android:title="@string/power_menu_title"
+           android:summary="@string/power_menu_title_summary"
+           android:fragment="com.banana.settings.fragments.PowerMenuSettings" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
