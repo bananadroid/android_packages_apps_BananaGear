@@ -38,4 +38,10 @@
         android:defaultValue="5"
         android:title="@string/smart_pixels_shift" />
 
+    <com.android.settingslib.widget.FooterPreference
+        android:key="smart_pixels_footer"
+        android:title="@string/smart_pixels_warning_text"
+        android:selectable="false"
+        settings:searchable="false" />
+
 </PreferenceScreen>
