@@ -164,5 +164,14 @@
     <string name="smart_pixels_percent">Pixels disabled</string>
     <string name="smart_pixels_shift">Burn-in protection interval</string>
     <string name="smart_pixels_warning_text">Smart Pixels is a power saving feature. Depending on how many pixels you decide to turn off, you could see a significant improvement in battery life. For a good user experience, we recommend setting the amount of disabled pixels to 75 percent while shifting every 10 minutes.</string>
+    
+    <!-- Per App aspect Ratio -->
+    <string name="aspect_ratio_apps_enabled_title">Enable scaling</string>
+    <string name="aspect_ratio_apps_enabled_summary">Allow legacy apps to use full screen</string>
+    <string name="aspect_ratio_apps_list_summary"></string>
+    <string name="aspect_ratio_apps_list_title">Apps allowed to use scaling</string>
+    <string name="aspect_ratio_category_title">Legacy app scaling</string>
+    <string name="aspect_ratio_apps_info">Applications need to be restarted after changes</string>
+    <string name="action_save">Save</string>
 
 </resources>
