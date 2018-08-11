@@ -39,6 +39,7 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.banana.settings.fragments.ui.SmartPixels;
 import com.banana.support.preferences.CustomSeekBarPreference;
 
 import java.time.format.DateTimeFormatter;
@@ -57,6 +58,7 @@ public class Misc extends SettingsPreferenceFragment implements
     private static final String KEY_PHOTOS_SPOOF = "use_photos_spoof";
 
     private static final String KEY_FORCE_FULL_SCREEN = "display_cutout_force_fullscreen_settings";
+    private static final String SMART_PIXELS = "smart_pixels";
 
     private static final String SYS_GAMES_SPOOF = "persist.sys.pixelprops.games";
     private static final String SYS_PHOTOS_SPOOF = "persist.sys.pixelprops.gphotos";
@@ -64,6 +66,7 @@ public class Misc extends SettingsPreferenceFragment implements
     private SwitchPreference mGamesSpoof;
     private SwitchPreference mPhotosSpoof;
     private Preference mShowCutoutForce;
+    private Preference mSmartPixels;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -87,6 +90,12 @@ public class Misc extends SettingsPreferenceFragment implements
             mShowCutoutForce = (Preference) findPreference(KEY_FORCE_FULL_SCREEN);
             prefScreen.removePreference(mShowCutoutForce);
         }
+
+        mSmartPixels = (Preference) prefScreen.findPreference(SMART_PIXELS);
+        boolean mSmartPixelsSupported = getResources().getBoolean(
+                com.android.internal.R.bool.config_supportSmartPixels);
+        if (!mSmartPixelsSupported)
+            prefScreen.removePreference(mSmartPixels);
     }
 
     public static void reset(Context mContext) {
@@ -95,6 +104,7 @@ public class Misc extends SettingsPreferenceFragment implements
         SystemProperties.set(SYS_PHOTOS_SPOOF, "true");
         Settings.System.putIntForUser(resolver,
                 Settings.System.NOTIFICATION_GUTS_KILL_APP_BUTTON, 0, UserHandle.USER_CURRENT);
+        SmartPixels.reset(mContext);
     }
 
     @Override
@@ -151,6 +161,10 @@ public class Misc extends SettingsPreferenceFragment implements
                     if (TextUtils.isEmpty(displayCutout)) {
                         keys.add(KEY_FORCE_FULL_SCREEN);
                     }
+                    boolean mSmartPixelsSupported = context.getResources().getBoolean(
+                            com.android.internal.R.bool.config_supportSmartPixels);
+                    if (!mSmartPixelsSupported)
+                        keys.add(SMART_PIXELS);
                     return keys;
                 }
             };

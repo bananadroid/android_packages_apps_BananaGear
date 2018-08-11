@@ -28,6 +28,13 @@
              android:targetClass="com.banana.settings.fragments.ui.DisplayCutoutForceFullscreenActivity"/>
     </Preference>
 
+    <!-- Smart Pixels -->
+    <Preference
+        android:key="smart_pixels"
+        android:title="@string/smart_pixels_title" 
+        android:summary="@string/smart_pixels_summary" 
+        android:fragment="com.banana.settings.fragments.ui.SmartPixels" />
+
     <PreferenceCategory
         android:title="@string/notification_category_title" >
 
