@@ -29,6 +29,8 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.banana.settings.fragments.ui.SmartPixels;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,6 +40,10 @@ public class Misc extends DashboardFragment implements
 
     public static final String TAG = "Misc";
 
+    private static final String SMART_PIXELS = "smart_pixels";
+
+    private Preference mSmartPixels;
+
     @Override
     protected int getPreferenceScreenResId() {
         return R.xml.bg_misc;
@@ -46,6 +52,17 @@ public class Misc extends DashboardFragment implements
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
+        final PreferenceScreen prefScreen = getPreferenceScreen();
+
+        mSmartPixels = (Preference) prefScreen.findPreference(SMART_PIXELS);
+        boolean mSmartPixelsSupported = getResources().getBoolean(
+                com.android.internal.R.bool.config_supportSmartPixels);
+        if (!mSmartPixelsSupported)
+            prefScreen.removePreference(mSmartPixels);
+    }
+
+    public static void reset(Context mContext) {
+        SmartPixels.reset(mContext);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -80,6 +97,10 @@ public class Misc extends DashboardFragment implements
                 public List<String> getNonIndexableKeys(Context context) {
                     List<String> keys = super.getNonIndexableKeys(context);
 
+                    boolean mSmartPixelsSupported = context.getResources().getBoolean(
+                            com.android.internal.R.bool.config_supportSmartPixels);
+                    if (!mSmartPixelsSupported)
+                        keys.add(SMART_PIXELS);
                     return keys;
                 }
             };
