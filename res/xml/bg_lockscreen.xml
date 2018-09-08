@@ -126,4 +126,16 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:key="weather_category"
+        android:title="@string/weather_category_title">
+
+        <Preference
+            android:key="lockscreen_weather"
+            android:fragment="com.banana.settings.fragments.LockscreenWeather"
+            android:title="@string/lockscreen_weather_title2"
+            android:summary="@string/lockscreen_weather_summary2" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>
