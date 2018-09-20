@@ -537,4 +537,19 @@
         <item>@string/volume_panel_miui_val</item>
     </string-array>
 
+    <!-- Lock Clock Fonts -->
+    <string-array name="clock_fonts_style_entries">
+        <item>@string/lock_clock_font_stock</item>
+        <item>@string/lock_clock_font_bold</item>
+        <item>@string/lock_clock_font_italic</item>
+        <item>@string/lock_clock_font_bold_italic</item>
+    </string-array>
+
+    <string-array name="clock_fonts_style_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
 </resources>

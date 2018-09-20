@@ -500,4 +500,16 @@
     <string name="volume_panel_tiled_val">co.potatoproject.plugin.volume.tiled</string>
     <string name="volume_panel_miui_val" translatable="false">com.kangos.plugin.volume.miui</string>
 
+    <!-- Statusbar Clock Font Style, Size & Color -->
+    <string name="clock_style_title">Clock style</string>
+    <string name="status_bar_clock_font_style_title">Font style</string>
+    <string name="status_bar_clock_font_size_title">Font size</string>
+    <string name="status_bar_clock_color_title">Font color</string>
+
+    <!-- Fonts -->
+    <string name="lock_clock_font_stock">Normal (default)</string>
+    <string name="lock_clock_font_bold">Bold</string>
+    <string name="lock_clock_font_italic">Italic</string>
+    <string name="lock_clock_font_bold_italic">Bold Italic</string>
+
 </resources>
