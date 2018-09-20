@@ -553,6 +553,23 @@
         <item>@string/lock_clock_font_bold</item>
         <item>@string/lock_clock_font_italic</item>
         <item>@string/lock_clock_font_bold_italic</item>
+        <item>@string/lock_clock_font_dancingscript</item>
+        <item>@string/lock_clock_font_dancingscript_bold</item>
+        <item>@string/lock_clock_font_comingsoon</item>
+        <item>@string/lock_clock_font_notoserif</item>
+        <item>@string/lock_clock_font_notoserif_italic</item>
+        <item>@string/lock_clock_font_notoserif_bold</item>
+	<item>@string/lock_clock_font_notoserif_bold_italic</item>
+        <item>@string/lock_clock_font_gobold</item>
+        <item>@string/lock_clock_font_roadrage</item>
+        <item>@string/lock_clock_font_snowstorm</item>
+	<item>@string/lock_clock_font_neoneon</item>
+        <item>@string/lock_clock_font_themeable</item>
+	<item>@string/lock_clock_font_samsung</item>
+        <item>@string/lock_clock_font_mexcellent</item>
+        <item>@string/lock_clock_font_burnstown</item>
+        <item>@string/lock_clock_font_dumbledor</item>
+	<item>@string/lock_clock_font_phantombold</item>
     </string-array>
 
     <string-array name="clock_fonts_style_values" translatable="false">
@@ -560,6 +577,23 @@
         <item>1</item>
         <item>2</item>
         <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
     </string-array>
 
     <!-- Status bar logo position -->
