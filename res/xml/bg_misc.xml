@@ -113,6 +113,12 @@
             android:summary="@string/alarm_blocker_summary"
             android:fragment="com.banana.settings.fragments.AlarmBlocker" />
 
+        <com.bananadroid.support.preferences.GlobalSettingSwitchPreference
+            android:key="allow_signature_fake"
+            android:title="@string/allow_signature_fake"
+            android:summary="@string/allow_signature_fake_summary"
+            android:defaultValue="false" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
