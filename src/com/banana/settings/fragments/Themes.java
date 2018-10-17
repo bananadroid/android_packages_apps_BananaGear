@@ -48,6 +48,7 @@ import com.android.settingslib.search.SearchIndexable;
 
 import com.banana.settings.preferences.AccentColorPreferenceController;
 import com.banana.settings.preferences.SwitchStylePreferenceController;
+import com.banana.settings.preferences.QsTileStylePreferenceController;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -185,6 +186,7 @@ public class Themes extends DashboardFragment implements OnPreferenceChangeListe
                 "android.theme.customization.wifi_icon"));
         controllers.add(new SwitchStylePreferenceController(context));
         controllers.add(mFontPickerPreference = new FontPickerPreferenceController(context, lifecycle));
+        controllers.add(new QsTileStylePreferenceController(context));
         return controllers;
     }
 
