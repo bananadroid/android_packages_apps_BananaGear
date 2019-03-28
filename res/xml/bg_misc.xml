@@ -114,6 +114,12 @@
             android:fragment="com.banana.settings.fragments.AlarmBlocker" />
 
         <Preference
+            android:key="aggressive_battery"
+            android:title="@string/aggressive_battery_title"
+            android:summary="@string/aggressive_battery_summary"
+            android:fragment="com.banana.settings.fragments.AggressiveBattery" />
+
+        <Preference
             android:key="sleep_mode"
             android:title="@string/sleep_mode_title"
             android:fragment="com.banana.settings.fragments.SleepMode" />
