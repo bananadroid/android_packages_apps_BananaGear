@@ -47,6 +47,13 @@
         android:title="@string/statusbar_items_category"
         android:key="statusbar_items_category">
 
+        <com.bananadroid.support.preferences.SystemSettingMasterSwitchPreference
+            android:key="status_bar_logo"
+            android:fragment="com.banana.settings.fragments.StatusbarLogo"
+            android:title="@string/status_bar_logo_title"
+            android:summary="@string/status_bar_logo_summary"
+            android:defaultValue="false" />
+
         <Preference
             android:title="@string/statusbar_items_title"
             android:summary="@string/statusbar_items_summary" >
