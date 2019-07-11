@@ -57,12 +57,14 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private static final String KEY_VOLTE_ICON_STYLE = "volte_icon_style";
     private static final String KEY_SHOW_ROAMING = "roaming_indicator_icon";
     private static final String KEY_SHOW_FOURG = "show_fourg_icon";
+    private static final String KEY_SHOW_DATA_DISABLED = "data_disabled_icon";
 
     private static final int BATTERY_STYLE_PORTRAIT = 0;
     private static final int BATTERY_STYLE_TEXT = 4;
     private static final int BATTERY_STYLE_HIDDEN = 5;
 
     private SwitchPreference mBatteryTextCharging;
+    private SwitchPreference mDataDisabled;
     private SwitchPreference mShowFourg;
     private SwitchPreference mShowRoaming;
     private SystemSettingListPreference mBatteryPercent;
@@ -98,11 +100,13 @@ public class StatusBar extends SettingsPreferenceFragment implements
         mVolteIconStyle = (SystemSettingSeekBarPreference) findPreference(KEY_VOLTE_ICON_STYLE);
         mShowRoaming = (SwitchPreference) findPreference(KEY_SHOW_ROAMING);
         mShowFourg = (SwitchPreference) findPreference(KEY_SHOW_FOURG);
+        mDataDisabled = (SwitchPreference) findPreference(KEY_SHOW_DATA_DISABLED);
 
         if (!TelephonyUtils.isVoiceCapable(getActivity())) {
             prefScreen.removePreference(mVolteIconStyle);
             prefScreen.removePreference(mShowRoaming);
             prefScreen.removePreference(mShowFourg);
+            prefScreen.removePreference(mDataDisabled);
         }
     }
 
@@ -135,6 +139,8 @@ public class StatusBar extends SettingsPreferenceFragment implements
                 Settings.System.ROAMING_INDICATOR_ICON, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.SHOW_FOURG_ICON, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.DATA_DISABLED_ICON, 1, UserHandle.USER_CURRENT);
     }
 
     @Override
@@ -164,6 +170,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
                         keys.add(KEY_VOLTE_ICON_STYLE);
                         keys.add(KEY_SHOW_ROAMING);
                         keys.add(KEY_SHOW_FOURG);
+                        keys.add(KEY_SHOW_DATA_DISABLED);
                     }
 
                     return keys;
