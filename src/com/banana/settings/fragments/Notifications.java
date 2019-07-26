@@ -52,6 +52,14 @@ public class Notifications extends DashboardFragment implements
         return false;
     }
 
+    public static void reset(Context mContext) {
+        ContentResolver resolver = mContext.getContentResolver();
+        Settings.Global.putInt(resolver,
+                Settings.Global.HEADS_UP_NOTIFICATIONS_ENABLED, 1);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.LESS_BORING_HEADS_UP, 0, UserHandle.USER_CURRENT);
+    }
+
     @Override
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.BANANADROID;
