@@ -105,6 +105,10 @@ public class Misc extends SettingsPreferenceFragment implements
         Settings.System.putIntForUser(resolver,
                 Settings.System.NOTIFICATION_GUTS_KILL_APP_BUTTON, 0, UserHandle.USER_CURRENT);
         SmartPixels.reset(mContext);
+        Settings.Global.putInt(resolver,
+                Settings.Global.HEADS_UP_NOTIFICATIONS_ENABLED, 1);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.LESS_BORING_HEADS_UP, 0, UserHandle.USER_CURRENT);
     }
 
     @Override
