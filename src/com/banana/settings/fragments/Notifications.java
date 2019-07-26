@@ -16,8 +16,10 @@
 
 package com.banana.settings.fragments;
 
+import android.content.ContentResolver;
 import android.content.Context;
 import android.os.Bundle;
+import android.os.UserHandle;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import androidx.preference.*;
@@ -50,6 +52,14 @@ public class Notifications extends DashboardFragment implements
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         return false;
+    }
+
+    public static void reset(Context mContext) {
+        ContentResolver resolver = mContext.getContentResolver();
+        Settings.Global.putInt(resolver,
+                Settings.Global.HEADS_UP_NOTIFICATIONS_ENABLED, 1);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.LESS_BORING_HEADS_UP, 0, UserHandle.USER_CURRENT);
     }
 
     @Override

@@ -38,6 +38,7 @@
     <string name="network_icons_category_title">Network related icons</string>
     <string name="gestures_title">Gestures</string>
     <string name="other_category_title">Others</string>
+    <string name="notification_category_title">Notifications</string>
 
     <!-- Units -->
     <string name="unit_seconds">seconds</string>
@@ -192,4 +193,12 @@
     <!-- Partial screenshot -->
     <string name="click_partial_screenshot_title">Click to partial screenshot</string>
     <string name="click_partial_screenshot_summary">Short click Volume Down and Power to take partial screenshot</string>
+
+    <!-- Heads up -->
+    <string name="notification_heads_up_title">Heads up</string>
+    <string name="notification_heads_up_summary">Allow pop up notifications</string>
+
+    <!-- Less boring heads up -->
+    <string name="less_boring_heads_up_title">Less boring</string>
+    <string name="less_boring_heads_up_summary">Display popup notifications only for alarm, dialer and messaging app</string>
 </resources>
