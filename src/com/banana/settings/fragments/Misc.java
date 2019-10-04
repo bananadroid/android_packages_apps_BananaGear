@@ -37,6 +37,7 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.bananadroid.support.preferences.GlobalSettingMasterSwitchPreference;
 import com.bananadroid.support.preferences.SecureSettingMasterSwitchPreference;
 import com.bananadroid.support.preferences.SystemSettingMasterSwitchPreference;
 import com.banana.settings.preferences.AppMultiSelectListPreference;
@@ -59,7 +60,9 @@ public class Misc extends SettingsPreferenceFragment implements
     private static final String KEY_ASPECT_RATIO_APPS_LIST_SCROLLER = "aspect_ratio_apps_list_scroller";
     private static final String PULSE_ENABLED = "pulse_enabled";
     private static final String GAMING_MODE_ENABLED = "gaming_mode_enabled";
+    private static final String HEADS_UP_NOTIFICATIONS_ENABLED = "heads_up_notifications_enabled";
 
+    private GlobalSettingMasterSwitchPreference mHeadsUpEnabled;
     private SystemSettingMasterSwitchPreference mGamingMode;
     private SecureSettingMasterSwitchPreference mPulse;
     private SystemSettingMasterSwitchPreference mSmartPixelsEnabled;
@@ -122,7 +125,13 @@ public class Misc extends SettingsPreferenceFragment implements
                 Settings.System.GAMING_MODE_ENABLED, 0) == 1;
         updateGameModeEnabledUpdatePrefs(gameEnabled);
         mGamingMode.setOnPreferenceChangeListener(this);
-        }
+
+        mHeadsUpEnabled = (GlobalSettingMasterSwitchPreference) findPreference(HEADS_UP_NOTIFICATIONS_ENABLED);
+        mHeadsUpEnabled.setOnPreferenceChangeListener(this);
+        int headsUpEnabled = Settings.Global.getInt(getContentResolver(),
+                HEADS_UP_NOTIFICATIONS_ENABLED, 1);
+        mHeadsUpEnabled.setChecked(headsUpEnabled != 0);
+    }
 
     private void updateGameModeEnabledUpdatePrefs(boolean gameEnabled) {
         mGamingMode.setChecked(gameEnabled);
@@ -159,6 +168,11 @@ public class Misc extends SettingsPreferenceFragment implements
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.GAMING_MODE_ENABLED, gameEnabled ? 1 : 0);
             updateGameModeEnabledUpdatePrefs(gameEnabled);
+            return true;
+        } else if (preference == mHeadsUpEnabled) {
+            boolean value = (Boolean) newValue;
+            Settings.Global.putInt(getContentResolver(),
+		            HEADS_UP_NOTIFICATIONS_ENABLED, value ? 1 : 0);
             return true;
         }
         return false;
