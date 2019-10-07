@@ -22,6 +22,13 @@
         android:key="system_category"
         android:title="@string/system_category_title">
 
+        <com.bananadroid.support.preferences.SystemSettingMasterSwitchPreference
+            android:key="smart_pixels_enable"
+            android:fragment="com.banana.settings.fragments.SmartPixels"
+            android:title="@string/smart_pixels_title"
+            android:summary="@string/smart_pixels_summary"
+            android:defaultValue="false" />
+
         <PreferenceScreen
             android:icon="@drawable/ic_hafr"
             android:title="@string/hide_apps_from_recents_title"
