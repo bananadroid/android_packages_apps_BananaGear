@@ -72,6 +72,13 @@
     <PreferenceCategory
         android:title="@string/interface_title">
 
+        <!-- QS Header image -->
+        <Preference
+            android:key="qs_header_image"
+            android:title="@string/qs_header_image_title"
+            android:summary="@string/qs_header_image_summary"
+            android:fragment="com.banana.settings.fragments.QsHeaderImageSettings" />
+
         <Preference
             android:key="qs_tile_customization"
             android:title="@string/qs_tiles_customization"
