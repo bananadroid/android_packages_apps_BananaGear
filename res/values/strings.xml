@@ -28,6 +28,8 @@
     <string name="quicksettings_title_summary">Quicksettings customization</string>
     <string name="statusbar_title">Status Bar</string>
     <string name="statusbar_title_summary">Customize status bar look and style</string>
+    <string name="ambient_display_custom_title">Ambient Display</string>
+    <string name="ambient_display_custom_summary">Always on, music ticker, gestures</string>
 
     <!-- General -->
     <string name="style_category_title">Style</string>
