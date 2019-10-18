@@ -577,4 +577,8 @@
     <string name="battery_blend_end">Full</string>
     <string name="battery_blend_between">Between</string>
 
+    <!-- Wake on charge -->
+    <string name="wakeup_when_plugged_unplugged_title">Wake up on charge</string>
+    <string name="wakeup_when_plugged_unplugged_summary">Wake up the device if charger is plugged/unplugged</string>
+
 </resources>
