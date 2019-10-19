@@ -188,4 +188,7 @@
     <string name="navbar_invert_layout_title">Invert layout</string>
     <string name="navbar_visibility">Enable navigation bar</string>
 
+    <!-- Fingerprint unlock -->
+    <string name="fp_unlock_keystore_title">Force FP authentication</string>
+    <string name="fp_unlock_keystore_summary">Unlock device with fingerprint after reboot or lockdown</string>
 </resources>
