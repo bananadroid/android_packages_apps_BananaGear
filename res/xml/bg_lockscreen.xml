@@ -38,4 +38,16 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:key="lockscreen_style_category"
+        android:title="@string/style_category_title">
+
+        <com.bananadroid.support.preferences.SecureSettingSwitchPreference
+            android:key="lockscreen_media_metadata"
+            android:title="@string/lockscreen_media_art_title"
+            android:summary="@string/lockscreen_media_art_summary"
+            android:defaultValue="true" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>
