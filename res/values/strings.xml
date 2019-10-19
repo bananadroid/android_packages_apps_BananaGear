@@ -745,4 +745,8 @@
     <string name="universal_disco_title">Universal Disco</string>
     <string name="universal_disco_summary">System wide random color tint</string>
 
+    <!-- Data disabled icon -->
+    <string name="data_disabled_icon_title">Data disabled icon</string>
+    <string name="data_disabled_icon_summary">Display a cross sign next to signal bar when data is disabled</string>
+
 </resources>
