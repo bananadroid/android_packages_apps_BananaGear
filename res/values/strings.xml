@@ -217,4 +217,8 @@
     <string name="theme_customization_wifi_icon_summary">Set custom wifi icon style</string>
     <string name="theme_customization_navbar_title">Navbar style</string>
     <string name="theme_customization_navbar_summary">Set custom navigation bar style</string>
+
+    <!-- Pocket judge -->
+    <string name="pocket_judge_title">Prevent accidental wake-up</string>
+    <string name="pocket_judge_summary">Check the proximity sensor prior to waking up screen</string>
 </resources>

@@ -50,13 +50,30 @@ import java.util.List;
 public class Misc extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
+    private static final String POCKET_JUDGE = "pocket_judge";
+
+    private Preference mPocketJudge;
+
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         ContentResolver resolver = getActivity().getContentResolver();
         addPreferencesFromResource(R.xml.bg_misc);
 
+        final PreferenceScreen prefScreen = getPreferenceScreen();
         final Resources res = getResources();
+
+        mPocketJudge = (Preference) prefScreen.findPreference(POCKET_JUDGE);
+        boolean mPocketJudgeSupported = res.getBoolean(
+                com.android.internal.R.bool.config_pocketModeSupported);
+        if (!mPocketJudgeSupported)
+            prefScreen.removePreference(mPocketJudge);
+    }
+
+    public static void reset(Context mContext) {
+        ContentResolver resolver = mContext.getContentResolver();
+        Settings.System.putIntForUser(resolver,
+                Settings.System.POCKET_JUDGE, 0, UserHandle.USER_CURRENT);
     }
 
     @Override
@@ -97,6 +114,12 @@ public class Misc extends SettingsPreferenceFragment implements
                 @Override
                 public List<String> getNonIndexableKeys(Context context) {
                     List<String> keys = super.getNonIndexableKeys(context);
+                    final Resources res = context.getResources();
+
+                    boolean mPocketJudgeSupported = res.getBoolean(
+                            com.android.internal.R.bool.config_pocketModeSupported);
+                    if (!mPocketJudgeSupported)
+                        keys.add(POCKET_JUDGE);
                     return keys;
                 }
             };
