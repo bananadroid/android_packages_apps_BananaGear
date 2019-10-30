@@ -61,6 +61,7 @@ public class Misc extends SettingsPreferenceFragment implements
     private static final String KEY_NETFLIX_SPOOF = "use_netflix_spoof";
 
     private static final String KEY_FORCE_FULL_SCREEN = "display_cutout_force_fullscreen_settings";
+    private static final String POCKET_JUDGE = "pocket_judge";
     private static final String SMART_PIXELS = "smart_pixels";
     private static final String HEADS_UP_TIMEOUT_PREF = "heads_up_timeout";
 
@@ -71,6 +72,7 @@ public class Misc extends SettingsPreferenceFragment implements
     private SwitchPreference mGamesSpoof;
     private SwitchPreference mPhotosSpoof;
     private SwitchPreference mNetFlixSpoof;
+    private Preference mPocketJudge;
     private Preference mShowCutoutForce;
     private Preference mSmartPixels;
     private CustomSeekBarPreference mHeadsUpTimeOut;
@@ -83,6 +85,7 @@ public class Misc extends SettingsPreferenceFragment implements
 
         final PreferenceScreen prefScreen = getPreferenceScreen();
         final Context mContext = getActivity().getApplicationContext();
+        final Resources res = getResources();
 
         mGamesSpoof = (SwitchPreference) prefScreen.findPreference(KEY_GAMES_SPOOF);
         mGamesSpoof.setChecked(SystemProperties.getBoolean(SYS_GAMES_SPOOF, false));
@@ -114,6 +117,11 @@ public class Misc extends SettingsPreferenceFragment implements
                             prefScreen.findPreference(HEADS_UP_TIMEOUT_PREF);
         mHeadsUpTimeOut.setDefaultValue(getDefaultDecay(mContext));
 
+        mPocketJudge = (Preference) prefScreen.findPreference(POCKET_JUDGE);
+        boolean mPocketJudgeSupported = res.getBoolean(
+                com.android.internal.R.bool.config_pocketModeSupported);
+        if (!mPocketJudgeSupported)
+            prefScreen.removePreference(mPocketJudge);
     }
 
     private static int getDefaultDecay(Context context) {
@@ -152,6 +160,8 @@ public class Misc extends SettingsPreferenceFragment implements
                 Settings.System.NOTIFICATION_MATERIAL_DISMISS, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.CHARGING_ANIMATION, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.POCKET_JUDGE, 0, UserHandle.USER_CURRENT);
         PulseSettings.reset(mContext);
     }
 
@@ -220,6 +230,12 @@ public class Misc extends SettingsPreferenceFragment implements
                             com.android.internal.R.bool.config_supportSmartPixels);
                     if (!mSmartPixelsSupported)
                         keys.add(SMART_PIXELS);
+
+                    boolean mPocketJudgeSupported = res.getBoolean(
+                            com.android.internal.R.bool.config_pocketModeSupported);
+                    if (!mPocketJudgeSupported)
+                        keys.add(POCKET_JUDGE);
+
                     return keys;
                 }
             };
