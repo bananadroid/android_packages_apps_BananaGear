@@ -344,4 +344,8 @@
     <string name="volume_panel_on_left_title">Switch volume panel location</string>
     <string name="volume_panel_on_left_summary">Move volume panel to the left</string>
 
+    <!-- VolumeKeys Swap -->
+    <string name="swap_volume_keys_on_rotation_title">Swap volume buttons</string>
+    <string name="swap_volume_keys_on_rotation_summary">Change volume buttons behaviour when rotating the device</string>
+
 </resources>
