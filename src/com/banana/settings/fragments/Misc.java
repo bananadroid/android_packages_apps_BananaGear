@@ -58,7 +58,9 @@ public class Misc extends SettingsPreferenceFragment implements
     private static final String KEY_ASPECT_RATIO_CATEGORY = "aspect_ratio_category";
     private static final String KEY_ASPECT_RATIO_APPS_LIST_SCROLLER = "aspect_ratio_apps_list_scroller";
     private static final String PULSE_ENABLED = "pulse_enabled";
+    private static final String GAMING_MODE_ENABLED = "gaming_mode_enabled";
 
+    private SystemSettingMasterSwitchPreference mGamingMode;
     private SecureSettingMasterSwitchPreference mPulse;
     private SystemSettingMasterSwitchPreference mSmartPixelsEnabled;
     private AppMultiSelectListPreference mAspectRatioAppsSelect;
@@ -113,6 +115,17 @@ public class Misc extends SettingsPreferenceFragment implements
         mPulse.setChecked((Settings.Secure.getInt(getActivity().getContentResolver(),
                 Settings.Secure.PULSE_ENABLED, 0) == 1));
         mPulse.setOnPreferenceChangeListener(this);
+
+        mGamingMode = (SystemSettingMasterSwitchPreference) findPreference(GAMING_MODE_ENABLED);
+        boolean gameEnabled = Settings.System.getInt(
+        getActivity().getApplicationContext().getContentResolver(),
+                Settings.System.GAMING_MODE_ENABLED, 0) == 1;
+        updateGameModeEnabledUpdatePrefs(gameEnabled);
+        mGamingMode.setOnPreferenceChangeListener(this);
+        }
+
+    private void updateGameModeEnabledUpdatePrefs(boolean gameEnabled) {
+        mGamingMode.setChecked(gameEnabled);
     }
 
     @Override
@@ -140,6 +153,12 @@ public class Misc extends SettingsPreferenceFragment implements
             boolean value = (Boolean) newValue;
             Settings.Secure.putInt(getActivity().getContentResolver(),
                     Settings.Secure.PULSE_ENABLED, value ? 1 : 0);
+            return true;
+        } else if (preference == mGamingMode) {
+            boolean gameEnabled = (Boolean) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.GAMING_MODE_ENABLED, gameEnabled ? 1 : 0);
+            updateGameModeEnabledUpdatePrefs(gameEnabled);
             return true;
         }
         return false;

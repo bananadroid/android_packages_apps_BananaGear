@@ -82,11 +82,23 @@
 
     </PreferenceCategory>
 
-        <com.bananadroid.support.preferences.SecureSettingMasterSwitchPreference
-        android:key="pulse_enabled"
-        android:fragment="com.banana.settings.fragments.PulseSettings"
-        android:title="@string/pulse_settings"
-        android:summary="@string/pulse_settings_summary"
-        android:defaultValue="false" />
+    <PreferenceCategory
+          android:key="other_category"
+          android:title="@string/other_category_title">
+
+          <com.bananadroid.support.preferences.SystemSettingMasterSwitchPreference
+            android:key="gaming_mode_enabled"
+            android:title="@string/gaming_mode_title"
+            android:summary="@string/gaming_mode_summary"
+            android:fragment="com.banana.settings.fragments.GamingMode"
+            android:defaultValue="false" />
+          <com.bananadroid.support.preferences.SecureSettingMasterSwitchPreference
+            android:key="pulse_enabled"
+            android:fragment="com.banana.settings.fragments.PulseSettings"
+            android:title="@string/pulse_settings"
+            android:summary="@string/pulse_settings_summary"
+            android:defaultValue="false" />
+
+    </PreferenceCategory>
 
 </PreferenceScreen>
