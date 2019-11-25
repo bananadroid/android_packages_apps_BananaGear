@@ -857,4 +857,7 @@
     <string name="artwork_media_fade_level_title">Artwork fade level</string>
     <string name="artwork_media_fade_level_summary">Fading the media artwork image</string>
 
+    <!-- QS Background opacity -->
+    <string name="qs_panel_alpha_title">Background opacity</string>
+
 </resources>
