@@ -18,13 +18,28 @@
     android:title="@string/statusbar_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <Preference
-        android:key="systemui_tuner_statusbar"
-        android:title="@string/statusbar_tuner_title">
-        <intent android:action="android.intent.action.MAIN"
-                android:targetPackage="com.android.systemui"
-                android:targetClass="com.android.systemui.tuner.StatusbarItemsActivity" />
-    </Preference>
+    <PreferenceCategory
+        android:title="@string/icons_category_title">
+
+        <Preference
+            android:key="systemui_tuner_statusbar"
+            android:title="@string/statusbar_tuner_title">
+            <intent android:action="android.intent.action.MAIN"
+                    android:targetPackage="com.android.systemui"
+                    android:targetClass="com.android.systemui.tuner.StatusbarItemsActivity" />
+        </Preference>
+
+        <com.banana.support.preferences.SystemSettingSeekBarPreference
+            android:key="volte_icon_style"
+            android:title="@string/volte_icon_title"
+            android:summary="@string/volte_icon_summary"
+            android:defaultValue="0"
+            settings:defaultValueText="@string/disabled"
+            android:max="9"
+            settings:min="0"
+            settings:units="" />
+
+    </PreferenceCategory>
 
     <Preference
         android:key="traffic"

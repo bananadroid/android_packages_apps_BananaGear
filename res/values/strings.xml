@@ -42,6 +42,7 @@
     <string name="other_category_title">Others</string>
     <string name="general_ui_category_title">General UI</string>
     <string name="default_string">Default</string>
+    <string name="icons_category_title">Icons</string>
 
     <!-- Units -->
     <string name="unit_seconds">seconds</string>
@@ -168,4 +169,8 @@
     <!-- Battery estimate -->
     <string name="battery_estimate_title">Battery estimate</string>
     <string name="battery_estimate_summary">Display estimated remaining battery life when available</string>
+
+    <!-- VoLTE icon -->
+    <string name="volte_icon_title">VoLTE icon</string>
+    <string name="volte_icon_summary">Display VoLTE icon when available</string>
 </resources>

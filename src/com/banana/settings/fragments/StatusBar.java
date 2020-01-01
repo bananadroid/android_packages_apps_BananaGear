@@ -40,7 +40,9 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.banana.settings.utils.TelephonyUtils;
 import com.banana.support.preferences.SystemSettingListPreference;
+import com.banana.support.preferences.SystemSettingSeekBarPreference;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,6 +54,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private static final String KEY_STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
     private static final String KEY_STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
     private static final String KEY_STATUS_BAR_BATTERY_TEXT_CHARGING = "status_bar_battery_text_charging";
+    private static final String KEY_VOLTE_ICON_STYLE = "volte_icon_style";
 
     private static final int BATTERY_STYLE_PORTRAIT = 0;
     private static final int BATTERY_STYLE_TEXT = 4;
@@ -60,6 +63,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private SwitchPreference mBatteryTextCharging;
     private SystemSettingListPreference mBatteryPercent;
     private SystemSettingListPreference mBatteryStyle;
+    private SystemSettingSeekBarPreference mVolteIconStyle;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -67,6 +71,8 @@ public class StatusBar extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.bg_statusbar);
         PreferenceScreen prefSet = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
+
+        final PreferenceScreen prefScreen = getPreferenceScreen();
 
         int batterystyle = Settings.System.getIntForUser(getContentResolver(),
                 Settings.System.STATUS_BAR_BATTERY_STYLE, BATTERY_STYLE_PORTRAIT, UserHandle.USER_CURRENT);
@@ -84,6 +90,12 @@ public class StatusBar extends SettingsPreferenceFragment implements
         mBatteryTextCharging = (SwitchPreference) findPreference(KEY_STATUS_BAR_BATTERY_TEXT_CHARGING);
         mBatteryTextCharging.setEnabled(batterystyle == BATTERY_STYLE_HIDDEN ||
                 (batterystyle != BATTERY_STYLE_TEXT && batterypercent != 2));
+
+        mVolteIconStyle = (SystemSettingSeekBarPreference) findPreference(KEY_VOLTE_ICON_STYLE);
+
+        if (!TelephonyUtils.isVoiceCapable(getActivity())) {
+            prefScreen.removePreference(mVolteIconStyle);
+        }
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -105,6 +117,12 @@ public class StatusBar extends SettingsPreferenceFragment implements
             return true;
         }
         return false;
+    }
+
+    public static void reset(Context mContext) {
+        ContentResolver resolver = mContext.getContentResolver();
+        Settings.System.putIntForUser(resolver,
+                Settings.System.VOLTE_ICON_STYLE, 0, UserHandle.USER_CURRENT);
     }
 
     @Override
@@ -129,6 +147,11 @@ public class StatusBar extends SettingsPreferenceFragment implements
                 @Override
                 public List<String> getNonIndexableKeys(Context context) {
                     List<String> keys = super.getNonIndexableKeys(context);
+
+                    if (!TelephonyUtils.isVoiceCapable(context)) {
+                        keys.add(KEY_VOLTE_ICON_STYLE);
+                    }
+
                     return keys;
                 }
             };
