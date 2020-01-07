@@ -716,4 +716,7 @@
     <string name="quick_settings_vibrate_title">Vibrate on touch</string>
     <string name="quick_settings_vibrate_summary">Vibrate when touching tiles</string>
 
+    <!-- RGB Accent picker -->
+    <string name="accent_title">Accent picker</string>
+
 </resources>

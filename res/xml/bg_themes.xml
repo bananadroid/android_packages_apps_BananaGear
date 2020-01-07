@@ -29,6 +29,12 @@
             android:fragment="com.android.settings.display.darkmode.DarkModeSettingsFragment"
             settings:controller="com.android.settings.display.DarkUIPreferenceController" />
 
+        <com.bananadroid.support.colorpicker.ColorPickerPreference
+            android:key="accent_color"
+            android:title="@string/accent_title"
+            android:defaultValue="0xfff3d324"
+            android:persistent="false" />
+
         <com.bananadroid.support.preferences.SystemSettingListPreference
             android:key="settings_dashboard_icons"
             android:title="@string/settings_dashboard_icons_title"
