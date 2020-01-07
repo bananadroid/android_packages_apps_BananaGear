@@ -43,6 +43,7 @@ import com.banana.settings.preferences.SwitchStylePreferenceController;
 import com.banana.settings.preferences.QsTileStylePreferenceController;
 import com.banana.settings.preferences.UiBlurPreferenceController;
 import com.banana.settings.preferences.RGBAccentPickerPreferenceController;
+import com.banana.settings.preferences.RGBGradientPickerPreferenceController;
 import com.banana.settings.preferences.Utils;
 
 import com.bananadroid.support.preferences.SystemSettingSeekBarPreference;
@@ -122,6 +123,7 @@ public class Themes extends DashboardFragment implements OnPreferenceChangeListe
         controllers.add(new QsTileStylePreferenceController(context));
         controllers.add(new UiBlurPreferenceController(context));
         controllers.add(new RGBAccentPickerPreferenceController(context));
+        controllers.add(new RGBGradientPickerPreferenceController(context));
         return controllers;
     }
 

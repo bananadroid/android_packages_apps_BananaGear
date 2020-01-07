@@ -718,5 +718,6 @@
 
     <!-- RGB Accent picker -->
     <string name="accent_title">Accent picker</string>
+    <string name="gradient_title">Gradient picker</string>
 
 </resources>
