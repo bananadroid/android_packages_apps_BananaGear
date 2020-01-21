@@ -444,4 +444,7 @@
     <!-- Custom Wi-Fi bar icons -->
     <string name="custom_wifi_bar_title">Wi-Fi</string>
 
+    <!-- Accent color picker -->
+    <string name="accent_color_title">Accent color picker</string>
+
 </resources>
