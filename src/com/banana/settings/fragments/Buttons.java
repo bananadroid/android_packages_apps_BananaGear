@@ -81,6 +81,7 @@ public class Buttons extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
     private static final String TAG = "Buttons";
 
+    private static final String ALERT_SLIDER_CAT = "alert_slider_cat";
     private static final String KEY_BUTTON_BACKLIGHT = "button_backlight";
     private static final String KEY_BACK_WAKE_SCREEN = "back_wake_screen";
     private static final String KEY_CAMERA_LAUNCH = "camera_launch";
@@ -562,6 +563,13 @@ public class Buttons extends SettingsPreferenceFragment
             mEdgeLongSwipeAction.setEntries(actionEntriesGo);
             mEdgeLongSwipeAction.setEntryValues(actionValuesGo);
         }
+
+        final PreferenceCategory alertSliderCat =
+        (PreferenceCategory) findPreference(ALERT_SLIDER_CAT);
+        boolean mAlertSliderAvailable = res.getBoolean(
+            com.android.internal.R.bool.config_hasAlertSlider);
+        if (!mAlertSliderAvailable && alertSliderCat != null)
+            prefScreen.removePreference(alertSliderCat);
     }
 
     @Override
