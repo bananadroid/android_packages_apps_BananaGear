@@ -18,12 +18,14 @@ package com.banana.settings.fragments;
 
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import androidx.preference.*;
 
+import com.android.internal.custom.app.LineageContextConstants;
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.fuelgauge.PowerUsageSummary;
 import com.android.settings.R;
@@ -43,15 +45,19 @@ public class Lockscreen extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
     private static final String KEY_SCREEN_OFF_FOD = "screen_off_fod";
+    private static final String KEY_SCREEN_OFF_FOD_ICON = "screen_off_fod_icon";
 
     private SystemSettingListPreference mBatteryTempUnit;
     private SystemSettingSwitchPreference mScreenOffFOD;
+    private SystemSettingSwitchPreference mScreenOffFODIcon;
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.bg_lockscreen);
         ContentResolver resolver = getActivity().getContentResolver();
+
+        PackageManager packageManager = getPackageManager();
 
         int unitMode = Settings.System.getIntForUser(resolver,
                 Settings.System.LOCKSCREEN_BATTERY_INFO_TEMP_UNIT, 0, UserHandle.USER_CURRENT);
@@ -67,6 +73,13 @@ public class Lockscreen extends SettingsPreferenceFragment implements
         mScreenOffFOD = (SystemSettingSwitchPreference) findPreference(KEY_SCREEN_OFF_FOD);
         mScreenOffFOD.setChecked(mScreenOffFODValue);
         mScreenOffFOD.setOnPreferenceChangeListener(this);
+
+        mScreenOffFODIcon = (SystemSettingSwitchPreference) findPreference(KEY_SCREEN_OFF_FOD_ICON);
+
+        if (!packageManager.hasSystemFeature(LineageContextConstants.Features.FOD)) {
+            mScreenOffFOD.setVisible(false);
+            mScreenOffFODIcon.setVisible(false);
+        }
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
