@@ -33,6 +33,7 @@ import com.android.settingslib.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
 
 import com.bananadroid.support.preferences.SystemSettingListPreference;
+import com.bananadroid.support.preferences.SystemSettingSwitchPreference;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,7 +42,10 @@ import java.util.List;
 public class Lockscreen extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
+    private static final String KEY_SCREEN_OFF_FOD = "screen_off_fod";
+
     private SystemSettingListPreference mBatteryTempUnit;
+    private SystemSettingSwitchPreference mScreenOffFOD;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -56,6 +60,13 @@ public class Lockscreen extends SettingsPreferenceFragment implements
         mBatteryTempUnit.setValue(String.valueOf(unitMode));
         mBatteryTempUnit.setSummary(mBatteryTempUnit.getEntry());
         mBatteryTempUnit.setOnPreferenceChangeListener(this);
+
+        boolean mScreenOffFODValue = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.SCREEN_OFF_FOD, 0) != 0;
+
+        mScreenOffFOD = (SystemSettingSwitchPreference) findPreference(KEY_SCREEN_OFF_FOD);
+        mScreenOffFOD.setChecked(mScreenOffFODValue);
+        mScreenOffFOD.setOnPreferenceChangeListener(this);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -68,6 +79,11 @@ public class Lockscreen extends SettingsPreferenceFragment implements
             int index = mBatteryTempUnit.findIndexOfValue((String) newValue);
             mBatteryTempUnit.setSummary(
             mBatteryTempUnit.getEntries()[index]);
+            return true;
+        } else if (preference == mScreenOffFOD) {
+            int mScreenOffFODValue = (Boolean) newValue ? 1 : 0;
+            Settings.System.putInt(resolver, Settings.System.SCREEN_OFF_FOD, mScreenOffFODValue);
+            Settings.Secure.putInt(resolver, Settings.Secure.DOZE_ALWAYS_ON, mScreenOffFODValue);
             return true;
         }
         return false;
