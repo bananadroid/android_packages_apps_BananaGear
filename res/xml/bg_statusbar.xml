@@ -35,6 +35,12 @@
             android:summary="@string/network_traffic_state_summary"
             android:defaultValue="false" />
 
+        <Preference
+            android:key="statusbar_battery"
+            android:title="@string/battery_percent_title"
+            android:summary="@string/battery_percent_summary"
+            android:fragment="com.banana.settings.fragments.StatusBarBatterySettings"/>
+
     </PreferenceCategory>
 
     <PreferenceCategory
