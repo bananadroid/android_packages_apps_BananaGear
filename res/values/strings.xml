@@ -585,4 +585,8 @@
     <string name="dont_touch_headsup_title">Disable app launch</string>
     <string name="dont_touch_headsup_summary">Avoid launching the app when tapping the heads-up notification</string>
 
+    <!-- Smart replies -->
+    <string name="hide_smart_replies_title">Hide smart replies</string>
+    <string name="hide_smart_replies_summary">Hide smart replies to save screen space with peeking notifications</string>
+
 </resources>
