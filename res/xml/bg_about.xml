@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2021-2022 BananaDroid
+     SPDX-License-Identifier: Apache-2.0
+-->
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/banana_about_title">
+
+    <PreferenceCategory
+        android:key="banana_about_summary"
+        android:title="@string/banana_about_summary" />
+
+        <Preference
+            android:selectable="false"
+            settings:searchable="false"
+            android:summary="@string/banana_about_info_summary" />
+
+        <Preference
+            android:title="@string/banana_website_title"
+            android:summary="@string/banana_website_summary">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://bananadroid.com" />
+        </Preference>
+
+        <Preference
+            android:title="@string/banana_telegram_title"
+            android:summary="@string/banana_telegram_summary">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://t.me/bananadroid" />
+        </Preference>
+
+        <Preference
+            android:title="@string/banana_github_title"
+            android:summary="@string/banana_github_summary">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://github.com/bananadroid" />
+        </Preference>
+
+    <PreferenceCategory
+        android:key="about_team"
+        android:title="@string/banana_about_team" />
+
+        <Preference
+            android:title="@string/banana_about_travarilo"
+            android:summary="@string/banana_about_travarilo_summary">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://t.me/travarilo" />
+        </Preference>
+
+</PreferenceScreen>
