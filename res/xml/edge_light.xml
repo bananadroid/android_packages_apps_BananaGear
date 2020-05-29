@@ -50,6 +50,11 @@
         android:title="@string/pulse_ambient_light_color_title"
         android:defaultValue="0xFFFFFFFF" />
 
+    <com.bananadroid.support.colorpicker.ColorPickerPreference
+        android:key="ambient_light_blend_color"
+        android:title="@string/pulse_ambient_light_blend_color_title"
+        android:defaultValue="0xFFF3D324" />
+
     <com.bananadroid.support.preferences.SystemSettingListPreference
         android:key="ambient_light_layout"
         android:title="@string/pulse_ambient_light_layout_title"

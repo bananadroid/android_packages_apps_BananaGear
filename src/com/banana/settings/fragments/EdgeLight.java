@@ -53,12 +53,14 @@ public class EdgeLight extends SettingsPreferenceFragment implements
     private static final String AMBIENT_LIGHT_REPEAT_DIRECTION = "ambient_light_repeat_direction";
     private static final String AMBIENT_LIGHT_ALWAYS = "ambient_light_pulse_for_all";
     private static final String AMBIENT_LIGHT_TIMEOUT = "ambient_notification_light_timeout";
+    private static final String NOTIFICATION_PULSE_BLEND_COLOR = "ambient_light_blend_color";
 
     private SystemSettingSwitchPreference mEdgeLightEnabled;
     private SystemSettingSwitchPreference mEdgeLightHideAod;
     private SystemSettingSwitchPreference mEdgeLightAlways;
     private SystemSettingListPreference mEdgeLightColorMode;
     private ColorPickerPreference mEdgeLightColor;
+    private ColorPickerPreference mEdgeLightColorBlend;
     private CustomSeekBarPreference mEdgeLightDuration;
     private CustomSeekBarPreference mEdgeLightRepeatCount;
     private SystemSettingListPreference mEdgeLightRepeatDirection;
@@ -98,6 +100,19 @@ public class EdgeLight extends SettingsPreferenceFragment implements
             mEdgeLightColor.setSummary(edgeLightColorHex);
         }
         mEdgeLightColor.setOnPreferenceChangeListener(this);
+
+        mEdgeLightColorBlend = (ColorPickerPreference) findPreference(NOTIFICATION_PULSE_BLEND_COLOR);
+        int edgeblendColor = Settings.System.getInt(getContentResolver(),
+                Settings.System.AMBIENT_LIGHT_BLEND_COLOR, 0xFFF3D324);
+        mEdgeLightColorBlend.setNewPreviewColor(edgeblendColor);
+        mEdgeLightColorBlend.setAlphaSliderEnabled(false);
+        String edgeBlendColorHex = String.format("#%08x", (0xFFF3D324 & edgeblendColor));
+        if (edgeLightColorHex.equals("#0xFFF3D324")) {
+            mEdgeLightColorBlend.setSummary(R.string.color_default);
+        } else {
+            mEdgeLightColorBlend.setSummary(edgeBlendColorHex);
+        }
+        mEdgeLightColorBlend.setOnPreferenceChangeListener(this);
 
         mEdgeLightDuration = (CustomSeekBarPreference) findPreference(AMBIENT_LIGHT_DURATION);
         int lightDuration = Settings.System.getIntForUser(getContentResolver(),
@@ -148,6 +163,7 @@ public class EdgeLight extends SettingsPreferenceFragment implements
         mEdgeLightAlways.setEnabled(enabled);
         mEdgeLightColorMode.setEnabled(enabled);
         mEdgeLightColor.setEnabled(enabled);
+        mEdgeLightColorBlend.setEnabled(enabled);
         mEdgeLightDuration.setEnabled(enabled);
         mEdgeLightRepeatCount.setEnabled(enabled);
         mEdgeLightRepeatDirection.setEnabled(enabled);
@@ -167,6 +183,7 @@ public class EdgeLight extends SettingsPreferenceFragment implements
         mEdgeLightAlways.setEnabled(isChecked);
         mEdgeLightColorMode.setEnabled(isChecked);
         mEdgeLightColor.setEnabled(isChecked);
+        mEdgeLightColorBlend.setEnabled(isChecked);
         mEdgeLightDuration.setEnabled(isChecked);
         mEdgeLightRepeatCount.setEnabled(isChecked);
         mEdgeLightRepeatDirection.setEnabled(isChecked);
@@ -211,19 +228,34 @@ public class EdgeLight extends SettingsPreferenceFragment implements
             Settings.System.putIntForUser(getContentResolver(),
                     Settings.System.NOTIFICATION_PULSE_REPEATS, value, UserHandle.USER_CURRENT);
             return true;
+        } else if (preference == mEdgeLightColorBlend) {
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            if (hex.equals("#FF3980FF")) {
+                preference.setSummary(R.string.color_default);
+            } else {
+                preference.setSummary(hex);
+            }
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.AMBIENT_LIGHT_BLEND_COLOR, intHex);
+            return true;
         }
         return false;
     }
 
     private void updateColorPrefs(int edgeLightColorMode) {
-        if (mEdgeLightColor != null) {
-            if (edgeLightColorMode == 3) {
-                getPreferenceScreen().addPreference(mEdgeLightColor);
-            } else {
-                getPreferenceScreen().removePreference(mEdgeLightColor);
-            }
-        }
-    }
+        if (edgeLightColorMode == 3) {
+            getPreferenceScreen().addPreference(mEdgeLightColor);
+            getPreferenceScreen().removePreference(mEdgeLightColorBlend);
+         } else if (edgeLightColorMode == 4) {
+            getPreferenceScreen().addPreference(mEdgeLightColor);
+            getPreferenceScreen().addPreference(mEdgeLightColorBlend);
+         } else {
+            getPreferenceScreen().removePreference(mEdgeLightColor);
+            getPreferenceScreen().removePreference(mEdgeLightColorBlend);
+         }
+     }
 
     @Override
     public int getMetricsCategory() {
