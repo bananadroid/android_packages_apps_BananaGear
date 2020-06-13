@@ -64,6 +64,8 @@ public class Notifications extends SettingsPreferenceFragment implements
     private static final int DIALOG_BLACKLIST_APPS = 1;
     private static final String FLASHLIGHT_CATEGORY = "flashlight_category";
     private static final String FLASHLIGHT_CALL_PREF = "flashlight_on_call";
+    private static final String FLASHLIGHT_DND_PREF = "flashlight_on_call_ignore_dnd";
+    private static final String FLASHLIGHT_RATE_PREF = "flashlight_on_call_rate";
 
     private CustomSeekBarPreference mHeadsUpTimeOut;
     private PackageListAdapter mPackageAdapter;
@@ -72,6 +74,9 @@ public class Notifications extends SettingsPreferenceFragment implements
     private PreferenceGroup mBlacklistPrefList;
     private Preference mAddStoplistPref;
     private Preference mAddBlacklistPref;
+    private ListPreference mFlashOnCall;
+    private SwitchPreference mFlashOnCallIgnoreDND;
+    private CustomSeekBarPreference mFlashOnCallRate;
 
     private String mStoplistPackageList;
     private String mBlacklistPackageList;
@@ -121,6 +126,21 @@ public class Notifications extends SettingsPreferenceFragment implements
             final PreferenceCategory flashlightCategory =
                     (PreferenceCategory) prefScreen.findPreference(FLASHLIGHT_CATEGORY);
             prefScreen.removePreference(flashlightCategory);
+        } else {
+            mFlashOnCall = (ListPreference)
+                    prefScreen.findPreference(FLASHLIGHT_CALL_PREF);
+            mFlashOnCall.setOnPreferenceChangeListener(this);
+
+            mFlashOnCallIgnoreDND = (SwitchPreference)
+                    prefScreen.findPreference(FLASHLIGHT_DND_PREF);
+            int value = Settings.System.getInt(resolver,
+                    Settings.System.FLASHLIGHT_ON_CALL, 0);
+
+            mFlashOnCallRate = (CustomSeekBarPreference)
+                    prefScreen.findPreference(FLASHLIGHT_RATE_PREF);
+
+            mFlashOnCallIgnoreDND.setEnabled(value > 1);
+            mFlashOnCallRate.setEnabled(value > 0);
         }
     }
 
@@ -156,10 +176,20 @@ public class Notifications extends SettingsPreferenceFragment implements
                 Settings.System.NOTIFICATION_MATERIAL_DISMISS, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.FLASHLIGHT_ON_CALL, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.FLASHLIGHT_ON_CALL_IGNORE_DND, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.FLASHLIGHT_ON_CALL_RATE, 1, UserHandle.USER_CURRENT);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        if (preference == mFlashOnCall) {
+            int value = Integer.parseInt((String) newValue);
+            mFlashOnCallIgnoreDND.setEnabled(value > 1);
+            mFlashOnCallRate.setEnabled(value > 0);
+            return true;
+        }
         return false;
     }
 
@@ -434,6 +464,8 @@ public class Notifications extends SettingsPreferenceFragment implements
 
                     if (!BananaUtils.deviceHasFlashlight(context)) {
                         keys.add(FLASHLIGHT_CALL_PREF);
+                        keys.add(FLASHLIGHT_DND_PREF);
+                        keys.add(FLASHLIGHT_RATE_PREF);
                     }
 
                     return keys;
