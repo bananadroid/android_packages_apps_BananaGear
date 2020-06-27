@@ -47,8 +47,8 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:key="volume_buttons_category"
-        android:title="@string/volume_buttons_title" >
+        android:key="volume_panels_category"
+        android:title="@string/volume_panels_title" >
 
 	<com.bananadroid.support.preferences.SystemSettingSwitchPreference
             android:key="volume_panel_on_left"
@@ -62,6 +62,13 @@
             android:title="@string/swap_volume_keys_on_rotation_title"
             android:summary="@string/swap_volume_keys_on_rotation_summary"
             android:defaultValue="false" />
+
+        <com.bananadroid.support.preferences.SystemSettingListPreference
+            android:key="systemui_plugin_volume"
+            android:title="@string/volume_panel"
+            android:entries="@array/volume_panel_entries"
+            android:entryValues="@array/volume_panel_values"
+            android:defaultValue="@string/volume_panel_aosp_val" />
 
     </PreferenceCategory>
 
@@ -100,7 +107,6 @@
             android:title="@string/pixel_navbar_anim_title"
             android:summary="@string/pixel_navbar_anim_summary"
             android:defaultValue="true"
-            settings:allowDividerAbove="true"
             android:dependency="navbar_visibility" />
 
     </PreferenceCategory>

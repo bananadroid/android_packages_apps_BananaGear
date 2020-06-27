@@ -43,6 +43,7 @@
     <string name="default_string">Default</string>
     <string name="power_buttons_title">Power Buttons</string>
     <string name="volume_buttons_title">Volume Buttons</string>
+    <string name="volume_panels_title">Volume Panels</string>
     <string name="general_ui_category_title">General UI</string>
     <string name="shapes_category_title">Shapes</string>
     <string name="fingerprint_category_title">Fingerprint</string>
@@ -482,4 +483,16 @@
     <string name="fprint_error_vib_title">Fingerprint error vibration</string>
     <string name="fprint_error_vib_summary">Vibrate on error fingerprint authentication</string>
 
+    <!--  Volume Panel Plugin   -->
+    <string name="volume_panel">Volume Panel Style</string>
+    <string name="volume_panel_aosp">AOSP</string>
+    <string name="volume_panel_compact">Compact</string>
+    <string name="volume_panel_oreo">Oreo</string>
+    <string name="volume_panel_tiled">Tiled</string>
+
+    <!--  Volume Panel Plugin Values   -->
+    <string name="volume_panel_aosp_val">co.potatoproject.plugin.volume.aosp</string>
+    <string name="volume_panel_compact_val">co.potatoproject.plugin.volume.compact</string>
+    <string name="volume_panel_oreo_val">co.potatoproject.plugin.volume.oreo</string>
+    <string name="volume_panel_tiled_val">co.potatoproject.plugin.volume.tiled</string>
 </resources>
