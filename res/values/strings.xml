@@ -734,4 +734,8 @@
     <string name="qs_label_tint_accent">Accent color tint</string>
     <string name="qs_label_tint_gradient">Gradient color tint</string>
 
+    <!-- Qs Tile Icon Bright-Dark -->
+    <string name="qs_icon_primary_title">QS tile icon white | black</string>
+    <string name="qs_icon_primary_summary">Switch QS icon color to white or black if gradient tint enabled</string>
+
 </resources>
