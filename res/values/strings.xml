@@ -718,4 +718,12 @@
     <string name="display_cutout_force_fullscreen_restart_app">Please restart the application to apply the changes</string>
     <string name="cutout_force_fullscreen_no_apps">No apps</string>
 
+    <!-- Display cutout -->
+    <string name="display_cutout_mode_title">Cutout mode</string>
+    <string name="display_cutout_mode_normal">Normal</string>
+    <string name="display_cutout_mode_immerse">Immerse</string>
+    <string name="display_cutout_mode_hide">Hide</string>
+    <string name="stock_statusbar_in_hide">Stock status bar height</string>
+    <string name="stock_statusbar_in_hide_summary">Use default status bar height in Hide mode</string>
+
 </resources>
