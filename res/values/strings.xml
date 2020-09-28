@@ -45,6 +45,7 @@
     <string name="volume_buttons_title">Volume Buttons</string>
     <string name="general_ui_category_title">General UI</string>
     <string name="shapes_category_title">Shapes</string>
+    <string name="fingerprint_category_title">Fingerprint</string>
 
     <!-- Quick QS pulldown -->
     <string name="status_bar_quick_qs_pulldown">Quick QS pulldown</string>
@@ -202,8 +203,8 @@
     <string name="navbar_visibility">Enable navigation bar</string>
 
     <!-- Fingerprint unlock -->
-    <string name="fp_unlock_keystore_title">Force FP authentication</string>
-    <string name="fp_unlock_keystore_summary">Unlock device with fingerprint after reboot or lockdown</string>
+    <string name="fp_unlock_keystore_title">Force fingerprint authentication</string>
+    <string name="fp_unlock_keystore_summary">Unlock device with fingerprint directly after reboot or lockdown</string>
 
     <!-- Navbar Animation -->
     <string name="pixel_navbar_anim_title">Pixel animation</string>
@@ -474,5 +475,11 @@
     <!-- Show old style mobile data icon -->
     <string name="use_old_mobiletype_title">Use old style mobile data icons</string>
     <string name="use_old_mobiletype_summary">Use pre-Pie mobile icons for signal</string>
+
+    <!-- Fingerprint authentication vibration -->
+    <string name="fprint_sucess_vib_title">Fingerprint authentication vibration</string>
+    <string name="fprint_sucess_vib_summary">Vibrate on successful fingerprint authentication</string>
+    <string name="fprint_error_vib_title">Fingerprint error vibration</string>
+    <string name="fprint_error_vib_summary">Vibrate on error fingerprint authentication</string>
 
 </resources>
