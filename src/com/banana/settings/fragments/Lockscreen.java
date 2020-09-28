@@ -43,8 +43,12 @@ public class Lockscreen extends DashboardFragment implements
 
     private static final String LOCKSCREEN_GESTURES_CATEGORY = "lockscreen_gestures_category";
     private static final String KEY_RIPPLE_EFFECT = "enable_ripple_effect";
+    private static final String KEY_FP_SUCCESS_VIBRATE = "fp_success_vibrate";
+    private static final String KEY_FP_ERROR_VIBRATE = "fp_error_vibrate";
 
     private Preference mRippleEffect;
+    private Preference mFingerprintVib;
+    private Preference mFingerprintVibErr;
 
     @Override
     protected int getPreferenceScreenResId() {
@@ -60,9 +64,13 @@ public class Lockscreen extends DashboardFragment implements
         FingerprintManager mFingerprintManager = (FingerprintManager)
                 getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
         mRippleEffect = (Preference) findPreference(KEY_RIPPLE_EFFECT);
+        mFingerprintVib = (Preference) findPreference(KEY_FP_SUCCESS_VIBRATE);
+        mFingerprintVibErr = (Preference) findPreference(KEY_FP_ERROR_VIBRATE);
 
         if (mFingerprintManager == null || !mFingerprintManager.isHardwareDetected()) {
             gestCategory.removePreference(mRippleEffect);
+            gestCategory.removePreference(mFingerprintVib);
+            gestCategory.removePreference(mFingerprintVibErr);
         }
     }
 
@@ -74,6 +82,10 @@ public class Lockscreen extends DashboardFragment implements
         ContentResolver resolver = mContext.getContentResolver();
         Settings.System.putIntForUser(resolver,
                 Settings.System.ENABLE_RIPPLE_EFFECT, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.FP_ERROR_VIBRATE, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.FP_SUCCESS_VIBRATE, 1, UserHandle.USER_CURRENT);
     }
 
     @Override
@@ -108,6 +120,8 @@ public class Lockscreen extends DashboardFragment implements
                             context.getSystemService(Context.FINGERPRINT_SERVICE);
                     if (mFingerprintManager == null || !mFingerprintManager.isHardwareDetected()) {
                         keys.add(KEY_RIPPLE_EFFECT);
+                        keys.add(KEY_FP_SUCCESS_VIBRATE);
+                        keys.add(KEY_FP_ERROR_VIBRATE);
                     }
                     return keys;
                 }
