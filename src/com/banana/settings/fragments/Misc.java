@@ -31,6 +31,7 @@ import android.text.TextUtils;
 import androidx.preference.*;
 
 import com.android.internal.logging.nano.MetricsProto;
+import com.android.internal.util.banana.bananaUtils;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
@@ -62,6 +63,7 @@ public class Misc extends SettingsPreferenceFragment implements
     private static final String GAMING_MODE_ENABLED = "gaming_mode_enabled";
     private static final String HEADS_UP_NOTIFICATIONS_ENABLED = "heads_up_notifications_enabled";
     private static final String AMBIENT_NOTIFICATION_LIGHT = "pulse_ambient_light";
+    private static final String KEY_CUTOUT_CATEGORY = "cutout_category";
 
     private GlobalSettingMasterSwitchPreference mHeadsUpEnabled;
     private SystemSettingMasterSwitchPreference mGamingMode;
@@ -100,6 +102,12 @@ public class Misc extends SettingsPreferenceFragment implements
         }
         mAspectRatioAppsSelect.setValues(valuesList);
         mAspectRatioAppsSelect.setOnPreferenceChangeListener(this);
+        }
+
+        final PreferenceCategory cutoutCategory =
+            (PreferenceCategory) getPreferenceScreen().findPreference(KEY_CUTOUT_CATEGORY);
+        if (!bananaUtils.hasNotch(getContext())) {
+            getPreferenceScreen().removePreference(cutoutCategory);
         }
 
         updateMasterPrefs();
