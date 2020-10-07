@@ -28,6 +28,17 @@
     </Preference>
 
     <PreferenceCategory
+        android:title="@string/network_icons_category_title">
+
+        <Preference
+            android:key="network_traffic_settings"
+            android:title="@string/network_traffic_settings_title"
+            android:summary="@string/network_traffic_settings_summary"
+            android:fragment="com.banana.settings.fragments.NetworkTrafficSettings" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:title="@string/status_bar_clock_title">
 
         <com.banana.support.preferences.SystemSettingListPreference

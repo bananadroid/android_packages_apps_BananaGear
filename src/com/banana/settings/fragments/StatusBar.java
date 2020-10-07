@@ -40,6 +40,7 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.banana.settings.fragments.NetworkTrafficSettings;
 import com.banana.support.preferences.SystemSettingListPreference;
 
 import java.util.ArrayList;
@@ -112,6 +113,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
 
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
+        NetworkTrafficSettings.reset(mContext);
     }
 
     @Override
