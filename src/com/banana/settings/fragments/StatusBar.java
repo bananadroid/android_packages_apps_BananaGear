@@ -28,6 +28,7 @@ import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
+import com.banana.settings.fragments.NetworkTrafficSettings;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,6 +51,10 @@ public class StatusBar extends DashboardFragment implements
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         return false;
+    }
+
+    public static void reset(Context mContext) {
+        NetworkTrafficSettings.reset(mContext);
     }
 
     @Override
