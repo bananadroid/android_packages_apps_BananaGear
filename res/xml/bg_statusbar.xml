@@ -8,13 +8,28 @@
     android:title="@string/statusbar_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <Preference
-        android:key="systemui_tuner_statusbar"
-        android:title="@string/statusbar_tuner_title"
-        android:summary="@string/statusbar_tuner_title_summary">
-        <intent android:action="android.intent.action.MAIN"
-                android:targetPackage="com.android.systemui"
-                android:targetClass="com.android.systemui.tuner.StatusbarItemsActivity" />
-    </Preference>
+    <PreferenceCategory
+        android:title="@string/icons_category_title">
 
+        <Preference
+            android:key="systemui_tuner_statusbar"
+            android:title="@string/statusbar_tuner_title"
+            android:summary="@string/statusbar_tuner_title_summary">
+            <intent android:action="android.intent.action.MAIN"
+                    android:targetPackage="com.android.systemui"
+                    android:targetClass="com.android.systemui.tuner.StatusbarItemsActivity" />
+        </Preference>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/network_icons_category_title">
+
+        <Preference
+            android:key="network_traffic_settings"
+            android:title="@string/network_traffic_settings_title"
+            android:summary="@string/network_traffic_settings_summary"
+            android:fragment="com.banana.settings.fragments.NetworkTrafficSettings" />
+
+    </PreferenceCategory>
 </PreferenceScreen>
