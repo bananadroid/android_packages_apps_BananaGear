@@ -31,13 +31,14 @@
 
     <!-- General -->
     <string name="style_category_title">Style</string>
-    <string name="buttons_title">Buttons</string>
     <string name="gesture_preference_title_summary">Enable or disable all gestures</string>
     <string name="navigation_title">Navigation bar</string>
     <string name="system_category_title">System</string>
     <string name="notification_category_title">Notifications</string>
     <string name="other_category_title">Others</string>
     <string name="default_string">Default</string>
+    <string name="power_buttons_title">Power Buttons</string>
+    <string name="volume_buttons_title">Volume Buttons</string>
 
     <!-- Quick QS pulldown -->
     <string name="status_bar_quick_qs_pulldown">Quick QS pulldown</string>
@@ -338,5 +339,9 @@
 
     <!-- Power menu background opacity -->
     <string name="power_menu_alpha_title">Power menu opacity</string>
+
+    <!-- Volume panel switch -->
+    <string name="volume_panel_on_left_title">Switch volume panel location</string>
+    <string name="volume_panel_on_left_summary">Move volume panel to the left</string>
 
 </resources>

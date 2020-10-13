@@ -19,8 +19,8 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <PreferenceCategory
-        android:key="buttons_category"
-        android:title="@string/buttons_title" >
+        android:key="power_buttons_category"
+        android:title="@string/power_buttons_title" >
 
         <com.bananadroid.support.preferences.SystemSettingSwitchPreference
             android:key="advanced_reboot"
@@ -43,6 +43,19 @@
             settings:units=""
             settings:interval="1"
             android:defaultValue="255" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="volume_buttons_category"
+        android:title="@string/volume_buttons_title" >
+
+	<com.bananadroid.support.preferences.SystemSettingSwitchPreference
+            android:key="volume_panel_on_left"
+            android:title="@string/volume_panel_on_left_title"
+            android:summary="@string/volume_panel_on_left_summary"
+            android:defaultValue="false"
+            settings:controller="com.banana.settings.fragments.VolumePanelOnLeftPreferenceController" />
 
     </PreferenceCategory>
 
