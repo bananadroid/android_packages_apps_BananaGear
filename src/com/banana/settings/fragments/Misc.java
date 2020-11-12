@@ -134,6 +134,10 @@ public class Misc extends SettingsPreferenceFragment implements
                 Settings.System.NOTIFICATION_SOUND_VIB_SCREEN_ON, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.HEADS_UP_TIMEOUT, getDefaultDecay(mContext), UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.RETICKER_STATUS, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.RETICKER_COLORED, 0, UserHandle.USER_CURRENT);
     }
 
     @Override
