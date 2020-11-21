@@ -85,6 +85,12 @@
             android:entryValues="@array/hardware_keys_action_values"
             android:persistent="false" />
 
+        <Preference
+            android:key="gesture_nav_custom_options"
+            android:title="@string/navbar_gesture_tweaks_pref_title"
+            android:summary="@string/navbar_gesture_tweaks_pref_summary"
+            android:fragment="com.banana.settings.fragments.GestureTweaksSettings" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
