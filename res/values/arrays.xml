@@ -842,4 +842,36 @@
         <item>2</item>
     </string-array>
 
+    <!-- Brightness sliders styles -->
+    <string-array name="brightness_slider_style_selector_entries" translatable="false">
+        <item>@string/brightness_slider_default</item>
+        <item>@string/brightness_slider_type_a</item>
+        <item>@string/brightness_slider_type_b</item>
+        <item>@string/brightness_slider_type_c</item>
+        <item>@string/brightness_slider_type_d</item>
+    </string-array>
+
+    <string-array name="brightness_slider_style_selector_values" translatable="false">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+    <!-- Panel Background Style-->
+    <string-array name="panel_bg_titles" translatable="false">
+        <item>@string/panel_default</item>
+        <item>@string/panel_batik</item>
+        <item>@string/panel_kece</item>
+        <item>@string/panel_outline</item>
+    </string-array>
+
+    <string-array name="panel_bg_values" translatable="false">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+    
 </resources>

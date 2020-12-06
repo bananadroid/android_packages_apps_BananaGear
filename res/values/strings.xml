@@ -831,4 +831,20 @@
     <string name="aggressive_battery_saver_title">Auto-enable on battery saver</string>
     <string name="aggressive_battery_saver_summary">Enable Aggressive Battery automatically when using battery saver</string>
 
+    <!-- Brightness Slider style -->
+    <string name="brightness_slider_style_title">Brightness slider style</string>
+    <string name="brightness_slider_default">Default</string>
+    <string name="brightness_slider_type_a">Type A</string>
+    <string name="brightness_slider_type_b">Type B</string>
+    <string name="brightness_slider_type_c">Type C</string>
+    <string name="brightness_slider_type_d">Type D</string>
+
+    <!-- Panel Background style -->
+    <string name="panel_bg_title">Panel background style</string>
+    <string name="panel_bg_dialog_title">Select panel background model</string>
+    <string name="panel_default">Default</string>
+    <string name="panel_batik">Batik</string>
+    <string name="panel_kece">Kece</string>
+    <string name="panel_outline">Outline</string>
+    
 </resources>
