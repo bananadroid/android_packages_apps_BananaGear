@@ -67,6 +67,13 @@
             android:defaultValue="default"
             android:dependency="navbar_visibility" />
 
+        <com.bananadroid.support.preferences.SystemSettingSwitchPreference
+            android:key="pixel_nav_animation"
+            android:title="@string/pixel_navbar_anim_title"
+            android:summary="@string/pixel_navbar_anim_summary"
+            android:defaultValue="true"
+            settings:allowDividerAbove="true"
+            android:dependency="navbar_visibility" />
 
     </PreferenceCategory>
 </PreferenceScreen>

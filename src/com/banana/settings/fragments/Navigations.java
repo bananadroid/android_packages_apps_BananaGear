@@ -43,10 +43,12 @@ public class Navigations extends SettingsPreferenceFragment implements
     private static final String NAVBAR_VISIBILITY = "navbar_visibility";
     private static final String LAYOUT_SETTINGS = "navbar_layout_views";
     private static final String NAVIGATION_BAR_INVERSE = "navbar_inverse_layout";
+    private static final String PIXEL_NAV_ANIMATION = "pixel_nav_animation";
 
     private Preference mLayoutSettings;
     private SwitchPreference mSwapNavButtons;
     private SwitchPreference mNavbarVisibility;
+    private SwitchPreference mPixelNavAnimation;
 
     private boolean mIsNavSwitchingMode = false;
     private Handler mHandler;
@@ -63,6 +65,8 @@ public class Navigations extends SettingsPreferenceFragment implements
 
         if (!bananaUtils.isThemeEnabled("com.android.internal.systemui.navbar.threebutton")) {
             prefScreen.removePreference(mLayoutSettings);
+
+        mPixelNavAnimation = (SwitchPreference) findPreference(PIXEL_NAV_ANIMATION);
         }
 
         boolean defaultToNavigationBar = bananaUtils.deviceSupportNavigationBar(getActivity());
