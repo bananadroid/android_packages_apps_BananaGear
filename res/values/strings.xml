@@ -313,4 +313,10 @@
     <string name="less_boring_heads_up_title">Essential only mode</string>
     <string name="less_boring_heads_up_summary">Only show heads-up for incoming calls, texts and alarms</string>
 
+    <!-- Screen Off animation -->
+    <string name="screen_off_animation_title">Screen off animation</string>
+    <string name="screen_off_animation_default">Default</string>
+    <string name="screen_off_animation_crt">CRT</string>
+    <string name="screen_off_animation_scale">Scale</string>
+
 </resources>
