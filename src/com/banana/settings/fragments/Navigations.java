@@ -22,6 +22,7 @@ import android.provider.SearchIndexableResource;
 import androidx.preference.*;
 
 import com.android.internal.logging.nano.MetricsProto;
+import com.android.internal.util.banana.bananaUtils;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
@@ -35,10 +36,21 @@ import java.util.List;
 public class Navigations extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
+    private static final String LAYOUT_SETTINGS = "navbar_layout_views";
+
+    private Preference mLayoutSettings;
+
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.bg_navigation);
+        final PreferenceScreen prefScreen = getPreferenceScreen();
+
+        mLayoutSettings = (Preference) findPreference(LAYOUT_SETTINGS);
+
+        if (!bananaUtils.isThemeEnabled("com.android.internal.systemui.navbar.threebutton")) {
+            prefScreen.removePreference(mLayoutSettings);
+        }
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
