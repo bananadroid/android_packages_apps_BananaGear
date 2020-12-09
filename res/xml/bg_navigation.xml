@@ -48,6 +48,12 @@
             android:fragment="com.android.settings.gestures.SystemNavigationGestureSettings"
         settings:controller="com.android.settings.gestures.SystemNavigationPreferenceController" />
 
+        <com.bananadroid.support.preferences.SecureSettingSwitchPreference
+            android:key="navbar_inverse_layout"
+            android:title="@string/navbar_invert_layout_title"
+            android:defaultValue="false"
+            android:dependency="navbar_visibility" />
+
         <com.bananadroid.support.preferences.SecureSettingListPreference
             android:key="navbar_layout_views"
             android:title="@string/navbar_layout_title"
