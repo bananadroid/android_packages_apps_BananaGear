@@ -29,6 +29,7 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.banana.settings.fragments.ui.PulseSettings;
 import com.banana.settings.fragments.ui.SmartPixels;
 
 import java.util.ArrayList;
@@ -63,6 +64,7 @@ public class Misc extends DashboardFragment implements
 
     public static void reset(Context mContext) {
         SmartPixels.reset(mContext);
+        PulseSettings.reset(mContext);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
