@@ -39,6 +39,7 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.banana.settings.fragments.ui.PulseSettings;
 import com.banana.settings.fragments.ui.SmartPixels;
 import com.banana.support.preferences.CustomSeekBarPreference;
 
@@ -140,6 +141,7 @@ public class Misc extends SettingsPreferenceFragment implements
                 Settings.System.RETICKER_COLORED, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.NOTIFICATION_MATERIAL_DISMISS, 0, UserHandle.USER_CURRENT);
+        PulseSettings.reset(mContext);
     }
 
     @Override

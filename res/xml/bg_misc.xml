@@ -119,4 +119,11 @@
 
     </PreferenceCategory>
 
+    <!-- Pulse music visualizer -->
+    <Preference
+        android:key="pulse_settings"
+        android:title="@string/pulse_settings"
+        android:summary="@string/pulse_settings_summary"
+        android:fragment="com.banana.settings.fragments.ui.PulseSettings" />
+
 </PreferenceScreen>
