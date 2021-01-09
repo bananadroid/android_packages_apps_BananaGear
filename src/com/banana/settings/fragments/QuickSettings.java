@@ -19,6 +19,8 @@ package com.banana.settings.fragments;
 import android.content.Context;
 import android.os.Bundle;
 import android.provider.SearchIndexableResource;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.preference.*;
 
 import com.android.internal.logging.nano.MetricsProto;
@@ -27,6 +29,8 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
+
+import com.banana.settings.helpers.QsTileConfigDialog;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,6 +43,23 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.bg_quicksettings);
+
+        Preference qsTileConfig = findPreference("custom_qs_tile_config_dialog");
+        qsTileConfig.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            @Override
+            public boolean onPreferenceClick(Preference preference) {
+
+                FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+
+                QsTileConfigDialog newFragment = QsTileConfigDialog .newInstance();
+                newFragment.show(ft, "QsTileConfigDialog");
+                return true;
+            }
+        });
+    }
+
+    @Override
+    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {

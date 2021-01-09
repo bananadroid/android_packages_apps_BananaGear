@@ -55,6 +55,14 @@
 
     <!-- QS Tiles -->
     <string name="qs_tiles_category_title">Tiles</string>
+    <string name="qs_columns_rows_config_title">QS columns &amp; rows</string>
+    <string name="qs_columns_rows_config_summary">Configure the way quick settings tiles are arranged</string>
+    <string name="dialog_title">QS Columns &amp; Rows</string>
+    <string name="portrait_title">PORTRAIT</string>
+    <string name="landscape_title">LANDSCAPE</string>
+    <string name="seekbar_columns">Columns</string>
+    <string name="seekbar_rows">Rows</string>
+    <string name="submit_button">Submit</string>
     <string name="qs_tile_title_visibility_title">Show tiles title</string>
 
 </resources>
