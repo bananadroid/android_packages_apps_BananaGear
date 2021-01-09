@@ -53,4 +53,8 @@
     <!-- Navbar Tuning -->
     <string name="system_navigation_title_summary">Stock navigation bar options</string>
 
+    <!-- QS Tiles -->
+    <string name="qs_tiles_category_title">Tiles</string>
+    <string name="qs_tile_title_visibility_title">Show tiles title</string>
+
 </resources>

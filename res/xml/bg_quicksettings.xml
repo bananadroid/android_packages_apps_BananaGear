@@ -19,6 +19,17 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <PreferenceCategory
+        android:key="qs_tiles_category"
+        android:title="@string/qs_tiles_category_title" >
+
+        <com.bananadroid.support.preferences.SystemSettingSwitchPreference
+            android:key="qs_tile_title_visibility"
+            android:title="@string/qs_tile_title_visibility_title"
+            android:defaultValue="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="qs_style_category"
         android:title="@string/style_category_title" >
 
