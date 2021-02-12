@@ -41,4 +41,11 @@
             android:key="android.theme.customization.icon_pack.android"
             android:title="@string/theme_customization_icon_pack_title"/>
 
+        <ListPreference
+            android:key="switch_style"
+            android:title="@string/switch_style_title"
+            android:persistent="false"
+            android:entries="@array/switch_style_entries"
+            android:entryValues="@array/switch_style_values" />
+
 </PreferenceScreen>

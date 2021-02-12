@@ -38,6 +38,8 @@ import com.android.settingslib.core.AbstractPreferenceController;
 import com.android.settingslib.core.lifecycle.Lifecycle;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.banana.settings.preferences.SwitchStylePreferenceController;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -87,6 +89,7 @@ public class Themes extends DashboardFragment implements OnPreferenceChangeListe
                 "android.theme.customization.adaptive_icon_shape"));
         controllers.add(new OverlayCategoryPreferenceController(context,
                 "android.theme.customization.icon_pack.android"));
+        controllers.add(new SwitchStylePreferenceController(context));
         return controllers;
     }
 
