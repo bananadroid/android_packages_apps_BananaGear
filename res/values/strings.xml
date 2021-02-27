@@ -749,4 +749,10 @@
     <string name="data_disabled_icon_title">Data disabled icon</string>
     <string name="data_disabled_icon_summary">Display a cross sign next to signal bar when data is disabled</string>
 
+    <!-- Statusbar logo color -->
+    <string name="status_bar_logo_color_title">Logo color</string>
+    <string name="status_bar_logo_color_default">Default</string>
+    <string name="status_bar_logo_color_accent">Accent</string>
+    <string name="status_bar_logo_color_custom">Custom color</string>
+
 </resources>
