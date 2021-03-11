@@ -490,6 +490,7 @@
     <string name="volume_panel_compact">Compact</string>
     <string name="volume_panel_oreo">Oreo</string>
     <string name="volume_panel_tiled">Tiled</string>
+    <string name="volume_panel_miui">MIUI Compact</string>
 
     <!--  Volume Panel Plugin Values   -->
     <string name="volume_panel_stock_val" translatable="false">com.android.systemui.volume</string>
@@ -497,4 +498,6 @@
     <string name="volume_panel_compact_val">co.potatoproject.plugin.volume.compact</string>
     <string name="volume_panel_oreo_val">co.potatoproject.plugin.volume.oreo</string>
     <string name="volume_panel_tiled_val">co.potatoproject.plugin.volume.tiled</string>
+    <string name="volume_panel_miui_val" translatable="false">com.kangos.plugin.volume.miui</string>
+
 </resources>
