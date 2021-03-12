@@ -95,6 +95,12 @@
         android:key="system_category"
         android:title="@string/system_category_title">
 
+        <com.bananadroid.support.preferences.SystemSettingSwitchPreference
+            android:key="sensor_block"
+            android:title="@string/sensor_block_title"
+            android:summary="@string/sensor_block_summary"
+            android:defaultValue="false" />
+
         <Preference
             android:key="wakelock_blocker"
             android:title="@string/wakelock_blocker_title"
