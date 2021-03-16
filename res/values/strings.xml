@@ -42,5 +42,10 @@
     <!-- Global Actions -->
     <string name="powermenu_advanced_reboot_title">Advanced reboot</string>
     <string name="powermenu_advanced_reboot_summary">Enables access to recovery and bootloader</string>
+    <string name="global_actions_users_choice_title">Power button additional action</string>
+    <string name="global_actions_flashlight_title">Flashlight</string>
+    <string name="global_actions_screenshot_title">Screenshot</string>
+    <string name="global_actions_screenrecord_title">Screenrecord</string>
+    <string name="global_actions_none_title">None</string>
 
 </resources>
