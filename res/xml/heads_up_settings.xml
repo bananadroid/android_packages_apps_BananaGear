@@ -39,7 +39,7 @@
     <PreferenceCategory
             android:title="@string/heads_up_stoplist_title"
             android:key="stoplist_applications" >
-        <Preference
+        <com.bananadroid.support.preferences.AppListPreference
             android:key="add_stoplist_packages"
             android:icon="@drawable/ic_menu_add_activated_tint"
             android:title="@string/add_heads_up_package"
@@ -49,7 +49,7 @@
     <PreferenceCategory
             android:title="@string/heads_up_blacklist_title"
             android:key="blacklist_applications" >
-        <Preference
+        <com.bananadroid.support.preferences.AppListPreference
             android:key="add_blacklist_packages"
             android:icon="@drawable/ic_menu_add_activated_tint"
             android:title="@string/add_heads_up_package"

@@ -47,6 +47,7 @@ import com.android.settingslib.search.SearchIndexable;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
+import com.bananadroid.support.preferences.AppListPreference;
 import com.bananadroid.support.preferences.PackageListAdapter;
 import com.bananadroid.support.preferences.PackageListAdapter.PackageItem;
 import android.provider.Settings;
@@ -338,7 +339,7 @@ public class HeadsUp extends SettingsPreferenceFragment
         PackageInfo info = mPackageManager.getPackageInfo(pkg.name,
                 PackageManager.GET_META_DATA);
         Preference pref =
-                new Preference(getActivity());
+                new AppListPreference(getActivity());
 
         pref.setKey(pkg.name);
         pref.setTitle(info.applicationInfo.loadLabel(mPackageManager));
