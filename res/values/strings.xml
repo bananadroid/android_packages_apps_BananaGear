@@ -772,4 +772,8 @@
     <string name="status_bar_logo_color_accent">Accent</string>
     <string name="status_bar_logo_color_custom">Custom color</string>
 
+    <!-- OOS Clear All button -->
+    <string name="enable_clear_all_button">OOS Clear-all button</string>
+    <string name="enable_clear_all_button_summary">Use icon button instead of text</string>
+
 </resources>
