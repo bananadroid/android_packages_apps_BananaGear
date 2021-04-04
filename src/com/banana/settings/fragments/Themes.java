@@ -46,6 +46,7 @@ import com.banana.settings.preferences.RGBAccentPickerPreferenceController;
 import com.banana.settings.preferences.RGBGradientPickerPreferenceController;
 import com.banana.settings.preferences.Utils;
 
+import com.bananadroid.support.preferences.SecureSettingSwitchPreference;
 import com.bananadroid.support.preferences.SystemSettingSeekBarPreference;
 
 import java.util.ArrayList;
@@ -57,7 +58,9 @@ public class Themes extends DashboardFragment implements OnPreferenceChangeListe
     public static final String TAG = "Themes";
 
     private static final String KEY_LOCKSCREEN_BLUR = "lockscreen_blur";
+    private static final String PREF_UNIVERSAL_DISCO = "universal_disco";
 
+    private SecureSettingSwitchPreference mUniversalDisco;
     private SystemSettingSeekBarPreference mLockscreenBlur;
 
     private IntentFilter mIntentFilter;
@@ -83,9 +86,21 @@ public class Themes extends DashboardFragment implements OnPreferenceChangeListe
         if (!Utils.isBlurSupported()) {
             mLockscreenBlur.setVisible(false);
         }
+
+        mUniversalDisco = (SecureSettingSwitchPreference) findPreference(PREF_UNIVERSAL_DISCO);
+        mUniversalDisco.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.Secure.UNIVERSAL_DISCO, 0) == 1));
+        mUniversalDisco.setOnPreferenceChangeListener(this);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        if (preference == mUniversalDisco) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.Secure.UNIVERSAL_DISCO, value ? 1 : 0);
+            bananaUtils.showSystemUiRestartDialog(getContext());
+            return true;
+        }
         return false;
     }
 

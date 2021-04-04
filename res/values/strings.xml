@@ -738,4 +738,8 @@
     <string name="qs_icon_primary_title">QS tile icon white | black</string>
     <string name="qs_icon_primary_summary">Switch QS icon color to white or black if gradient tint enabled</string>
 
+    <!-- Universal disco -->
+    <string name="universal_disco_title">Universal Disco</string>
+    <string name="universal_disco_summary">System wide random color tint</string>
+
 </resources>
