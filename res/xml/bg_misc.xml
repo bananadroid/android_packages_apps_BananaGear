@@ -85,6 +85,11 @@
                 android:targetClass="com.banana.settings.fragments.hideappfromrecents.HAFRAppListActivity" />
         </PreferenceScreen>
 
+    <Preference
+        android:key="gaming_category"
+        android:title="@string/gaming_title"
+        android:summary="@string/gaming_title_summary"
+        android:fragment="com.banana.settings.fragments.GamingModeSettings" />
           <com.bananadroid.support.preferences.SecureSettingMasterSwitchPreference
             android:key="pulse_enabled"
             android:fragment="com.banana.settings.fragments.PulseSettings"
