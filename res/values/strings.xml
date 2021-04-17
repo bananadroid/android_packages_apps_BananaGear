@@ -56,4 +56,7 @@
     <!-- Notification headers -->
     <string name="notification_headers_title">Notification headers</string>
     <string name="notification_headers_summary">Show headers in the notification shade</string>
+
+    <!-- Statusbar tuner -->
+    <string name="statusbar_tuner_title">Statusbar icons</string>
 </resources>
