@@ -38,4 +38,8 @@
     <string name="unit_milliseconds">milliseconds</string>
     <string name="unit_pixels">dp</string>
     <string name="unit_hz">hz</string>
+
+    <!-- Statusbar tuner -->
+    <string name="statusbar_tuner_title">Statusbar icons</string>
+    <string name="statusbar_tuner_title_summary">Enable or disable many statusbar icons</string>
 </resources>
