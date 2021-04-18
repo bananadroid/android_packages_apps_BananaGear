@@ -36,6 +36,12 @@
         android:summary="@string/less_boring_heads_up_summary"
         android:defaultValue="false" />
 
+	<com.bananadroid.support.preferences.SystemSettingSwitchPreference
+        android:key="dont_touch_headsup"
+        android:title="@string/dont_touch_headsup_title"
+        android:summary="@string/dont_touch_headsup_summary"
+        android:defaultValue="false" />
+
     <PreferenceCategory
             android:title="@string/heads_up_stoplist_title"
             android:key="stoplist_applications" >
