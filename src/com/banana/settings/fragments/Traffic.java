@@ -55,10 +55,10 @@ import java.util.regex.Pattern;
 public class Traffic extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
     private static final String NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD = "network_traffic_autohide_threshold";
-    private static final String NETWORK_TRAFFIC_STATE = "network_traffic_state";
+    private static final String NETWORK_TRAFFIC_LOCATION = "network_traffic_location";
 
     private CustomSeekBarPreference mThreshold;
-    private SystemSettingSwitchPreference mNetMonitor;
+    private ListPreference mNetTrafficLocation;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -69,18 +69,28 @@ public class Traffic extends SettingsPreferenceFragment implements OnPreferenceC
         final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefSet = getPreferenceScreen();
 
-        boolean isNetMonitorEnabled = Settings.System.getIntForUser(resolver,
-                Settings.System.NETWORK_TRAFFIC_STATE, 1, UserHandle.USER_CURRENT) == 1;
-        mNetMonitor = (SystemSettingSwitchPreference) findPreference("network_traffic_state");
-        mNetMonitor.setChecked(isNetMonitorEnabled);
-        mNetMonitor.setOnPreferenceChangeListener(this);
+        // Network traffic location
+        mNetTrafficLocation = (ListPreference) findPreference(NETWORK_TRAFFIC_LOCATION);
+        int location = Settings.System.getIntForUser(resolver,
+                Settings.System.NETWORK_TRAFFIC_LOCATION, 0, UserHandle.USER_CURRENT);
+        mNetTrafficLocation.setOnPreferenceChangeListener(this);
 
         int trafvalue = Settings.System.getIntForUser(resolver,
                 Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, 1, UserHandle.USER_CURRENT);
         mThreshold = (CustomSeekBarPreference) findPreference("network_traffic_autohide_threshold");
         mThreshold.setValue(trafvalue);
         mThreshold.setOnPreferenceChangeListener(this);
-        mThreshold.setEnabled(isNetMonitorEnabled);
+
+        int netMonitorEnabled = Settings.System.getIntForUser(resolver,
+                Settings.System.NETWORK_TRAFFIC_STATE, 0, UserHandle.USER_CURRENT);
+        if (netMonitorEnabled == 1) {
+            mNetTrafficLocation.setValue(String.valueOf(location+1));
+            updateTrafficLocation(location+1);
+        } else {
+            mNetTrafficLocation.setValue("0");
+            updateTrafficLocation(0);
+        }
+        mNetTrafficLocation.setSummary(mNetTrafficLocation.getEntry());
     }
 
     @Override
@@ -96,13 +106,22 @@ public class Traffic extends SettingsPreferenceFragment implements OnPreferenceC
     @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
         final ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mNetMonitor) {
-            boolean value = (Boolean) objValue;
-            Settings.System.putIntForUser(resolver,
-                    Settings.System.NETWORK_TRAFFIC_STATE, value ? 1 : 0,
-                    UserHandle.USER_CURRENT);
-            mNetMonitor.setChecked(value);
-            mThreshold.setEnabled(value);
+        if (preference == mNetTrafficLocation) {
+            int location = Integer.valueOf((String) objValue);
+            int index = mNetTrafficLocation.findIndexOfValue((String) objValue);
+            mNetTrafficLocation.setSummary(mNetTrafficLocation.getEntries()[index]);
+            if (location > 0) {
+                // Convert the selected location mode from our list {0,1,2} and store it to "view location" setting: 0=sb; 1=expanded sb
+                Settings.System.putIntForUser(resolver,
+                        Settings.System.NETWORK_TRAFFIC_LOCATION, location-1, UserHandle.USER_CURRENT);
+                // And also enable the net monitor
+                Settings.System.putIntForUser(resolver,
+                        Settings.System.NETWORK_TRAFFIC_STATE, 1, UserHandle.USER_CURRENT);
+            } else { // Disable net monitor completely
+                Settings.System.putIntForUser(resolver,
+                        Settings.System.NETWORK_TRAFFIC_STATE, 0, UserHandle.USER_CURRENT);
+            }
+            updateTrafficLocation(location);
             return true;
         } else if (preference == mThreshold) {
             int val = (Integer) objValue;
@@ -112,5 +131,19 @@ public class Traffic extends SettingsPreferenceFragment implements OnPreferenceC
             return true;
         }
         return false;
+    }
+
+    public void updateTrafficLocation(int location) {
+        switch(location){
+            case 0:
+                mThreshold.setEnabled(false);
+                break;
+            case 1:
+            case 2:
+                mThreshold.setEnabled(true);
+                break;
+            default:
+                break;
+        }
     }
 }
