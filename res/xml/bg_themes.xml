@@ -42,6 +42,14 @@
             android:title="@string/theme_customization_icon_pack_title"/>
 
         <ListPreference
+            android:key="android.theme.customization.signal_icon"
+            android:title="@string/custom_signal_bar_title" />
+
+        <ListPreference
+            android:key="android.theme.customization.wifi_icon"
+            android:title="@string/custom_wifi_bar_title" />
+
+        <ListPreference
             android:key="switch_style"
             android:title="@string/switch_style_title"
             android:persistent="false"
