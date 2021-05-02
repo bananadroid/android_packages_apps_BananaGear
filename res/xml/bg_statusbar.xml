@@ -78,6 +78,12 @@
             android:summary="@string/statusbar_icons_style_summary"
             android:defaultValue="false" />
 
+        <Preference
+            android:key="ticker_settings"
+            android:title="@string/ticker_screen_title"
+            android:summary="@string/ticker_screen_summary"
+            android:fragment="com.banana.settings.fragments.Ticker"/>
+
     </PreferenceCategory>
 
 </PreferenceScreen>
