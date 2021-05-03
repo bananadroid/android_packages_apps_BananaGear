@@ -62,7 +62,7 @@
     <string name="landscape_title">LANDSCAPE</string>
     <string name="seekbar_columns">Columns</string>
     <string name="seekbar_rows">Rows</string>
-    <string name="submit_button">Submit</string>
+    <string name="submit_button">OK</string>
     <string name="qs_tile_title_visibility_title">Show tiles title</string>
 
 </resources>

@@ -64,9 +64,11 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/seekbar_columns"
+            android:progressTint="@*android:color/accent_device_default"
+            android:thumbTint="@*android:color/accent_device_default"
             android:min="1"
             android:max="6"
-            settings:defaultQsValue="3" />
+            settings:defaultQsValue="4" />
 
         <!-- Display portrait columns value -->
         <TextView
@@ -97,6 +99,8 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/portrait_rows"
+            android:progressTint="@*android:color/accent_device_default"
+            android:thumbTint="@*android:color/accent_device_default"
             android:min="1"
             android:max="6"
             settings:defaultQsValue="3" />
@@ -141,6 +145,8 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/landscape_columns"
+            android:progressTint="@*android:color/accent_device_default"
+            android:thumbTint="@*android:color/accent_device_default"
             android:min="1"
             android:max="6"
             settings:defaultQsValue="4" />
@@ -174,9 +180,11 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/landscape_rows"
+            android:progressTint="@*android:color/accent_device_default"
+            android:thumbTint="@*android:color/accent_device_default"
             android:min="1"
             android:max="6"
-            settings:defaultQsValue="2" />
+            settings:defaultQsValue="1" />
 
         <!-- Display landscape rows value -->
         <TextView
