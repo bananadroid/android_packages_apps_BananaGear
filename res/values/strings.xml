@@ -196,4 +196,8 @@
     <string name="pixel_navbar_anim_title">Pixel animation</string>
     <string name="pixel_navbar_anim_summary">Toggle home button animation</string>
 
+    <!-- Quick Settings on lockscreen-->
+    <string name="ls_qs_disabled_title">Disable QS on lockscreen</string>
+    <string name="ls_qs_disabled_summary">Disable expanding quick settings on secure lockscreen</string>
+
 </resources>
