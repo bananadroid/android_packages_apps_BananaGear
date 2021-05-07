@@ -33,6 +33,15 @@
             android:fragment="com.banana.settings.fragments.QuickSettings"
             android:icon="@drawable/ic_settings_quicksettings"/>
 
+        <!-- Gestures -->
+        <Preference
+            android:key="gesture_settings"
+            android:title="@string/gesture_preference_title"
+            android:summary="@string/gesture_preference_title_summary"
+            android:icon="@drawable/ic_settings_gestures"
+            android:fragment="com.android.settings.gestures.GestureSettings"
+            settings:controller="com.android.settings.gestures.GesturesSettingPreferenceController"/>
+
         <!-- Navigation Bar -->
         <PreferenceScreen
             android:key="navigationbar_category"
