@@ -32,7 +32,9 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.banana.settings.preferences.Utils;
 import com.bananadroid.support.preferences.SystemSettingListPreference;
+import com.bananadroid.support.preferences.SystemSettingSeekBarPreference;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,7 +43,10 @@ import java.util.List;
 public class Lockscreen extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
+    private static final String KEY_LOCKSCREEN_BLUR = "lockscreen_blur";
+
     private SystemSettingListPreference mBatteryTempUnit;
+    private SystemSettingSeekBarPreference mLockscreenBlur;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -56,6 +61,11 @@ public class Lockscreen extends SettingsPreferenceFragment implements
         mBatteryTempUnit.setValue(String.valueOf(unitMode));
         mBatteryTempUnit.setSummary(mBatteryTempUnit.getEntry());
         mBatteryTempUnit.setOnPreferenceChangeListener(this);
+
+        mLockscreenBlur = (SystemSettingSeekBarPreference) findPreference(KEY_LOCKSCREEN_BLUR);
+        if (!Utils.isBlurSupported()) {
+            mLockscreenBlur.setVisible(false);
+        }
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
