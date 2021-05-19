@@ -40,8 +40,10 @@ public class StatusBar extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
     private static final String NETWORK_TRAFFIC = "network_traffic_state";
+    private static final String STATUSBAR_CLOCK = "statusbar_clock";
 
     private SystemSettingMasterSwitchPreference mNetworkTraffic;
+    private SystemSettingMasterSwitchPreference mStatusBarClockShow;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -58,6 +60,11 @@ public class StatusBar extends SettingsPreferenceFragment implements
         mNetworkTraffic.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.NETWORK_TRAFFIC_STATE, 0) == 1));
         mNetworkTraffic.setOnPreferenceChangeListener(this);
+
+        mStatusBarClockShow = (SystemSettingMasterSwitchPreference) findPreference(STATUSBAR_CLOCK);
+        mStatusBarClockShow.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.STATUSBAR_CLOCK, 1) == 1));
+        mStatusBarClockShow.setOnPreferenceChangeListener(this);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -65,6 +72,11 @@ public class StatusBar extends SettingsPreferenceFragment implements
             boolean value = (Boolean) newValue;
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.NETWORK_TRAFFIC_STATE, value ? 1 : 0);
+            return true;
+        } else if (preference == mStatusBarClockShow) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUSBAR_CLOCK, value ? 1 : 0);
             return true;
         }
         return false;
