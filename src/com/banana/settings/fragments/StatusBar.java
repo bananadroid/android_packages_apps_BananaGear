@@ -16,9 +16,11 @@
 
 package com.banana.settings.fragments;
 
+import android.content.ContentResolver;
 import android.content.Context;
 import android.os.Bundle;
 import android.provider.SearchIndexableResource;
+import android.provider.Settings;
 import androidx.preference.*;
 
 import com.android.internal.logging.nano.MetricsProto;
@@ -28,6 +30,8 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.bananadroid.support.preferences.SystemSettingMasterSwitchPreference;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,14 +39,47 @@ import java.util.List;
 public class StatusBar extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
+    private static final String NETWORK_TRAFFIC = "network_traffic_state";
+
+    private SystemSettingMasterSwitchPreference mNetworkTraffic;
+
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.bg_statusbar);
+        PreferenceScreen prefSet = getPreferenceScreen();
+        ContentResolver resolver = getActivity().getContentResolver();
+
+        updateMasterPrefs();
+    }
+
+    private void updateMasterPrefs() {
+        mNetworkTraffic = (SystemSettingMasterSwitchPreference) findPreference(NETWORK_TRAFFIC);
+        mNetworkTraffic.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.NETWORK_TRAFFIC_STATE, 0) == 1));
+        mNetworkTraffic.setOnPreferenceChangeListener(this);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        if (preference == mNetworkTraffic) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.NETWORK_TRAFFIC_STATE, value ? 1 : 0);
+            return true;
+        }
         return false;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        updateMasterPrefs();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        updateMasterPrefs();
     }
 
     @Override

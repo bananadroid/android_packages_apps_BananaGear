@@ -76,8 +76,17 @@
     <string name="lockscreen_charge_temp_unit_celsius">Celsius</string>
 
     <!-- Statusbar Tuner -->
+    <string name="statusbar_indicator_title">Indicator</string>
     <string name="statusbar_items_category">Items</string>
     <string name="statusbar_items_title">Statusbar icons</string>
     <string name="statusbar_items_summary">Toggle the visibility of icons in statusbar</string>
+
+    <!-- Statusbar net monitor -->
+    <string name="network_traffic_state_title">Network traffic</string>
+    <string name="network_traffic_state_summary">Show network speed in the status bar</string>
+    <string name="network_traffic_location_title">Location</string>
+    <string name="network_traffic_statusbar">Status bar</string>
+    <string name="network_traffic_qs_header">QS header</string>
+    <string name="network_traffic_autohide_threshold_title">Auto-hide threshold</string>
 
 </resources>

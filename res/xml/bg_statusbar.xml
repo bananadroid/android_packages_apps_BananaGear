@@ -19,6 +19,19 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <PreferenceCategory
+        android:key="statusbar_indicator_category"
+        android:title="@string/statusbar_indicator_title">
+
+        <com.bananadroid.support.preferences.SystemSettingMasterSwitchPreference
+            android:key="network_traffic_state"
+            android:fragment="com.banana.settings.fragments.NetworkTraffic"
+            android:title="@string/network_traffic_state_title"
+            android:summary="@string/network_traffic_state_summary"
+            android:defaultValue="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:title="@string/statusbar_items_category"
         android:key="statusbar_items_category">
 
