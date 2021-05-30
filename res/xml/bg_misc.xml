@@ -82,4 +82,11 @@
 
     </PreferenceCategory>
 
+        <com.bananadroid.support.preferences.SecureSettingMasterSwitchPreference
+        android:key="pulse_enabled"
+        android:fragment="com.banana.settings.fragments.PulseSettings"
+        android:title="@string/pulse_settings"
+        android:summary="@string/pulse_settings_summary"
+        android:defaultValue="false" />
+
 </PreferenceScreen>

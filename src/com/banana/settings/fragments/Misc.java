@@ -37,6 +37,7 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.bananadroid.support.preferences.SecureSettingMasterSwitchPreference;
 import com.bananadroid.support.preferences.SystemSettingMasterSwitchPreference;
 import com.banana.settings.preferences.AppMultiSelectListPreference;
 import com.banana.settings.preferences.ScrollAppsViewPreference;
@@ -56,7 +57,9 @@ public class Misc extends SettingsPreferenceFragment implements
     private static final String KEY_ASPECT_RATIO_APPS_LIST = "aspect_ratio_apps_list";
     private static final String KEY_ASPECT_RATIO_CATEGORY = "aspect_ratio_category";
     private static final String KEY_ASPECT_RATIO_APPS_LIST_SCROLLER = "aspect_ratio_apps_list_scroller";
+    private static final String PULSE_ENABLED = "pulse_enabled";
 
+    private SecureSettingMasterSwitchPreference mPulse;
     private SystemSettingMasterSwitchPreference mSmartPixelsEnabled;
     private AppMultiSelectListPreference mAspectRatioAppsSelect;
     private ScrollAppsViewPreference mAspectRatioApps;
@@ -105,6 +108,11 @@ public class Misc extends SettingsPreferenceFragment implements
         if (!getResources().getBoolean(com.android.internal.R.bool.config_enableSmartPixels)) {
             mSmartPixelsEnabled.setVisible(false);
         }
+
+        mPulse = (SecureSettingMasterSwitchPreference) findPreference(PULSE_ENABLED);
+        mPulse.setChecked((Settings.Secure.getInt(getActivity().getContentResolver(),
+                Settings.Secure.PULSE_ENABLED, 0) == 1));
+        mPulse.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -127,6 +135,11 @@ public class Misc extends SettingsPreferenceFragment implements
                 Settings.System.putString(getContentResolver(),
                 Settings.System.ASPECT_RATIO_APPS_LIST, "");
             }
+            return true;
+        } else if (preference == mPulse) {
+            boolean value = (Boolean) newValue;
+            Settings.Secure.putInt(getActivity().getContentResolver(),
+                    Settings.Secure.PULSE_ENABLED, value ? 1 : 0);
             return true;
         }
         return false;
