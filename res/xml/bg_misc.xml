@@ -113,6 +113,11 @@
             android:summary="@string/alarm_blocker_summary"
             android:fragment="com.banana.settings.fragments.AlarmBlocker" />
 
+        <Preference
+            android:key="sleep_mode"
+            android:title="@string/sleep_mode_title"
+            android:fragment="com.banana.settings.fragments.SleepMode" />
+
         <com.bananadroid.support.preferences.GlobalSettingSwitchPreference
             android:key="allow_signature_fake"
             android:title="@string/allow_signature_fake"
