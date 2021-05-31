@@ -866,4 +866,8 @@
     <string name="voiconpack_default">Default</string>
     <string name="voiconpack_vivo">Vivo</string>
     <string name="voiconpack_oos">OOS</string>
+
+    <!-- Qs Clock -->
+    <string name="oos_qsclock">OOS QS clock</string>
+    <string name="oos_qsclock_summary">Display an OOS like clock on QS</string>
 </resources>

@@ -59,6 +59,12 @@
         android:key="other_category"
         android:title="@string/other_category_title">
 
+        <com.bananadroid.support.preferences.SystemSettingSwitchPreference
+            android:key="oos_qsclock"
+            android:title="@string/oos_qsclock"
+            android:summary="@string/oos_qsclock_summary"
+            android:defaultValue="true" />
+
         <ListPreference
             android:key="panel_bg"
             android:title="@string/panel_bg_title"
