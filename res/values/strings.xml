@@ -67,7 +67,8 @@
     <string name="seekbar_columns">Columns</string>
     <string name="seekbar_rows">Rows</string>
     <string name="submit_button">OK</string>
-    <string name="qs_tile_title_visibility_title">Show tiles title</string>
+    <string name="qs_tile_title_visibility_title">Tile title</string>
+    <string name="qs_tile_title_visibility_summary">Display title below each tile</string>
 
     <!-- Lockscreen battery info indicator  -->
     <string name="lockscreen_element">Elements</string>
@@ -321,5 +322,14 @@
 
     <!-- Lockscreen blur -->
     <string name="lockscreen_blur_title">Background blur</string>
+
+    <!-- QS footer icons -->
+    <string name="qs_footer_title">Footer</string>
+    <string name="qs_footer_settings_title">Settings icon</string>
+    <string name="qs_footer_settings_summary">Display Settings icon in quick settings footer</string>
+    <string name="qs_footer_services_title">Running Services icon</string>
+    <string name="qs_footer_services_summary">Display Running Services icon in quick settings footer</string>
+    <string name="qs_footer_edit_title">Edit icon</string>
+    <string name="qs_footer_edit_summary">Display the tile edit icon in quick settings footer</string>
 
 </resources>
