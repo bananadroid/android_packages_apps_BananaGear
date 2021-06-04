@@ -153,6 +153,8 @@
     <string name="status_bar_battery_percentage_text_next">Next to the icon</string>
     <string name="qs_battery_percentage_title">QS battery percentage</string>
     <string name="qs_battery_percentage_summary">Show battery percentage in the QS header instead of battery estimate</string>
+    <string name="battery_show_location_title">QS battery on header</string>
+    <string name="battery_show_location_summary">Show battery indicator in the QS header instead of QS panel</string>
 
     <!-- Hide Apps from Recents -->
     <string name="hide_apps_from_recents_title">Hide apps from recents</string>

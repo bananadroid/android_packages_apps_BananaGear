@@ -39,4 +39,11 @@
         android:key="qs_battery_percentage"
         android:title="@string/qs_battery_percentage_title"
         android:summary="@string/qs_battery_percentage_summary" />
+
+    <com.bananadroid.support.preferences.SystemSettingSwitchPreference
+        android:key="qs_battery_location_bar"
+        android:title="@string/battery_show_location_title"
+        android:summary="@string/battery_show_location_summary"
+        android:defaultValue="true"/>
+
 </PreferenceScreen>
