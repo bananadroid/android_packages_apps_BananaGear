@@ -76,6 +76,8 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                 Settings.System.QS_FOOTER_WARNINGS, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.SHOW_QS_DATE, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.QS_FOOTER_DATA_USAGE, 0, UserHandle.USER_CURRENT);
     }
 
     @Override
