@@ -98,6 +98,8 @@ public class QuickSettings extends DashboardFragment implements
                 Settings.Secure.QS_BRIGHTNESS_SLIDER_POSITION, 0, UserHandle.USER_CURRENT);
         Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.QS_SHOW_AUTO_BRIGHTNESS, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.QS_FOOTER_DATA_USAGE, 0, UserHandle.USER_CURRENT);
     }
 
     @Override
