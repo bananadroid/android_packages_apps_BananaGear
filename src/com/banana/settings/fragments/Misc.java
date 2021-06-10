@@ -61,11 +61,13 @@ public class Misc extends SettingsPreferenceFragment implements
     private static final String PULSE_ENABLED = "pulse_enabled";
     private static final String GAMING_MODE_ENABLED = "gaming_mode_enabled";
     private static final String HEADS_UP_NOTIFICATIONS_ENABLED = "heads_up_notifications_enabled";
+    private static final String AMBIENT_NOTIFICATION_LIGHT = "pulse_ambient_light";
 
     private GlobalSettingMasterSwitchPreference mHeadsUpEnabled;
     private SystemSettingMasterSwitchPreference mGamingMode;
     private SecureSettingMasterSwitchPreference mPulse;
     private SystemSettingMasterSwitchPreference mSmartPixelsEnabled;
+    private SystemSettingMasterSwitchPreference mEdgeLightEnabled;
     private AppMultiSelectListPreference mAspectRatioAppsSelect;
     private ScrollAppsViewPreference mAspectRatioApps;
 
@@ -131,6 +133,12 @@ public class Misc extends SettingsPreferenceFragment implements
         int headsUpEnabled = Settings.Global.getInt(getContentResolver(),
                 HEADS_UP_NOTIFICATIONS_ENABLED, 1);
         mHeadsUpEnabled.setChecked(headsUpEnabled != 0);
+
+        mEdgeLightEnabled = (SystemSettingMasterSwitchPreference) findPreference(AMBIENT_NOTIFICATION_LIGHT);
+        mEdgeLightEnabled.setOnPreferenceChangeListener(this);
+        int edgeLightEnabled = Settings.System.getInt(getContentResolver(),
+                AMBIENT_NOTIFICATION_LIGHT, 0);
+        mEdgeLightEnabled.setChecked(edgeLightEnabled != 0);
     }
 
     private void updateGameModeEnabledUpdatePrefs(boolean gameEnabled) {
@@ -173,6 +181,11 @@ public class Misc extends SettingsPreferenceFragment implements
             boolean value = (Boolean) newValue;
             Settings.Global.putInt(getContentResolver(),
 		            HEADS_UP_NOTIFICATIONS_ENABLED, value ? 1 : 0);
+            return true;
+        } else if (preference == mEdgeLightEnabled) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getContentResolver(),
+                    AMBIENT_NOTIFICATION_LIGHT, value ? 1 : 0);
             return true;
         }
         return false;
