@@ -382,4 +382,8 @@
     <string name="ambient_notification_light_timeout_five_minutes">5 minutes</string>
     <string name="ambient_notification_light_timeout_ten_minutes">10 minutes</string>
 
+    <!-- StatusBar icon style -->
+    <string name="statusbar_icons_style">Colored statusbar icons</string>
+    <string name="statusbar_icons_style_summary">Use app icons instead of default notif one\nRequires a SystemUI restart</string>
+
 </resources>
