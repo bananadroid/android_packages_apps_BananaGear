@@ -407,4 +407,11 @@
     <string name="theme_customization_icon_shape_title">Icon shape</string>
     <string name="theme_customization_icon_pack_title">Icon pack</string>
 
+    <!-- Custom settings dashboard icons -->
+    <string name="settings_dashboard_icons_title">Settings dashboard icons</string>
+    <string name="settings_dashboard_icons_default">Default</string>
+    <string name="settings_dashboard_icons_oos">OOS Android 11</string>
+    <string name="settings_dashboard_icons_oos2">OOS Android 10</string>
+    <string name="settings_dashboard_icons_stylish">Pastel</string>
+
 </resources>
