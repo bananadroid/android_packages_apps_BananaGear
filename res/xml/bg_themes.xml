@@ -41,7 +41,28 @@
             android:key="accent_color"
             android:title="@string/accent_color_title"
             android:defaultValue="0xFFF3D324"
+            android:dependency="use_wall_accent"
             android:persistent="false" />
+
+         <com.bananadroid.support.preferences.SystemSettingSwitchPreference
+            android:key="use_wall_accent"
+            android:disableDependentsState="true"
+            android:title="@string/use_wall_accent_string"
+            android:summary="@string/use_wall_accent_summary"
+            android:defaultValue="false" />
+
+         <com.banana.settings.preferences.WallAc
+            android:key="wall"
+            android:layout="@layout/wallacpreview"
+            android:selectable="false"/>
+
+        <com.bananadroid.support.preferences.SystemSettingListPreference
+            android:key="auto_accent_type"
+            android:title="@string/auto_accent_picker_title"
+            android:entries="@array/auto_accent_picker_entries"
+            android:summary="%s"
+            android:defaultValue="0"
+            android:entryValues="@array/auto_accent_picker_values" />
 
         <SwitchPreference
             android:key="ui_blur"
