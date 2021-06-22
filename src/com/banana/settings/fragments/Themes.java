@@ -21,6 +21,8 @@ import static android.os.UserHandle.USER_SYSTEM;
 import android.content.BroadcastReceiver;
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.om.IOverlayManager;
 import android.os.Bundle;
 import android.os.RemoteException;
@@ -38,6 +40,7 @@ import com.android.internal.util.banana.ThemesUtils;
 import com.android.settings.R;
 import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.development.OverlayCategoryPreferenceController;
+import com.android.settings.display.FontPickerPreferenceController;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.core.AbstractPreferenceController;
 import com.android.settingslib.core.lifecycle.Lifecycle;
@@ -61,6 +64,19 @@ public class Themes extends DashboardFragment implements OnPreferenceChangeListe
 
     private ListPreference mNavbarPicker;
 
+    private IntentFilter mIntentFilter;
+    private static FontPickerPreferenceController mFontPickerPreference;
+
+    private BroadcastReceiver mIntentReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String action = intent.getAction();
+            if (action.equals("com.android.server.ACTION_FONT_CHANGED")) {
+                mFontPickerPreference.stopProgress();
+            }
+        }
+    };
+
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -80,6 +96,9 @@ public class Themes extends DashboardFragment implements OnPreferenceChangeListe
         }
         mNavbarPicker.setSummary(mNavbarPicker.getEntry());
         mNavbarPicker.setOnPreferenceChangeListener(this);
+
+        mIntentFilter = new IntentFilter();
+        mIntentFilter.addAction("com.android.server.ACTION_FONT_CHANGED");
     }
 
     private int getOverlayPosition(String[] overlays) {
@@ -163,7 +182,23 @@ public class Themes extends DashboardFragment implements OnPreferenceChangeListe
         controllers.add(new OverlayCategoryPreferenceController(context,
                 "android.theme.customization.wifi_icon"));
         controllers.add(new SwitchStylePreferenceController(context));
+        controllers.add(mFontPickerPreference = new FontPickerPreferenceController(context, lifecycle));
         return controllers;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        final Context context = getActivity();
+        context.registerReceiver(mIntentReceiver, mIntentFilter);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        final Context context = getActivity();
+        context.unregisterReceiver(mIntentReceiver);
+        mFontPickerPreference.stopProgress();
     }
 
     /**

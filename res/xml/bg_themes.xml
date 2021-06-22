@@ -63,4 +63,9 @@
             android:entries="@array/navbar_name_entries"
             android:entryValues="@array/navbar_picker_values"/>
 
+        <com.android.settings.display.FontDialogPreference
+            android:key="custom_font"
+            android:title="@string/font_picker_title"
+            android:persistent="false" />
+
 </PreferenceScreen>
