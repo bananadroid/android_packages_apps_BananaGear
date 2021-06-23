@@ -71,6 +71,14 @@
             android:targetClass="com.custom.ambient.display.DozeSettings" />
         </Preference>
 
+        <!-- Themes -->
+        <PreferenceScreen
+            android:key="themes_category"
+            android:title="@string/themes_title"
+            android:summary="@string/themes_summary"
+            android:fragment="com.banana.settings.fragments.Themes" 
+            android:icon="@drawable/ic_settings_themes" />
+
         <!-- Misc -->
         <PreferenceScreen
             android:key="misc_category"

@@ -30,6 +30,8 @@
     <string name="statusbar_title_summary">Customize status bar look and style</string>
     <string name="ambient_display_custom_title">Ambient Display</string>
     <string name="ambient_display_custom_summary">Always on, music ticker, gestures</string>
+    <string name="themes_title">Themes</string>
+    <string name="themes_summary">Life is colorful, don\'t be bored</string>
 
     <!-- General -->
     <string name="style_category_title">Style</string>
@@ -399,5 +401,10 @@
     <!-- StatusBar icon style -->
     <string name="statusbar_icons_style">Colored statusbar icons</string>
     <string name="statusbar_icons_style_summary">Use app icons instead of default notif one\nRequires a SystemUI restart</string>
+
+    <!-- Themes -->
+    <string name="dark_ui_mode_summary">Browse the dark theme options</string>
+    <string name="theme_customization_icon_shape_title">Icon shape</string>
+    <string name="theme_customization_icon_pack_title">Icon pack</string>
 
 </resources>
