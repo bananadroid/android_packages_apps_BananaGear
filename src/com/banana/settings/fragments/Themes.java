@@ -179,8 +179,6 @@ public class Themes extends DashboardFragment implements OnPreferenceChangeListe
         controllers.add(new OverlayCategoryPreferenceController(context,
                 "android.theme.customization.adaptive_icon_shape"));
         controllers.add(new OverlayCategoryPreferenceController(context,
-                "android.theme.customization.icon_pack.android"));
-        controllers.add(new OverlayCategoryPreferenceController(context,
                 "android.theme.customization.signal_icon"));
         controllers.add(new OverlayCategoryPreferenceController(context,
                 "android.theme.customization.wifi_icon"));
