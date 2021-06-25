@@ -40,6 +40,7 @@ import com.android.internal.util.banana.ThemesUtils;
 import com.android.settings.R;
 import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.development.OverlayCategoryPreferenceController;
+import com.android.settings.display.EnableBlursPreferenceController;
 import com.android.settings.display.FontPickerPreferenceController;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.core.AbstractPreferenceController;
@@ -185,6 +186,7 @@ public class Themes extends DashboardFragment implements OnPreferenceChangeListe
         controllers.add(new SwitchStylePreferenceController(context));
         controllers.add(mFontPickerPreference = new FontPickerPreferenceController(context, lifecycle));
         controllers.add(new QsTileStylePreferenceController(context));
+        controllers.add(new EnableBlursPreferenceController(context));
         return controllers;
     }
 
