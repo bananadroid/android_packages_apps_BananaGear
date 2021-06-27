@@ -424,6 +424,7 @@
     <string name="switch_retro">Retro</string>
     <string name="switch_stockish">Stockish</string>
     <string name="switch_narrow">Narrow</string>
+    <string name="switch_fluid">Fluid</string>
 
     <!-- Navbar Picker -->
     <string name="theme_navbar_picker_title">Navbar style (for 3-button nav)</string>
