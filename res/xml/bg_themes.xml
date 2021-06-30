@@ -44,9 +44,9 @@
             android:persistent="false" />
 
         <SwitchPreference
-            android:key="enable_blurs_on_windows"
-            android:title="@string/enable_blurs_on_windows_title"
-            android:summary="@string/enable_blurs_on_windows_summary" />
+            android:key="ui_blur"
+            android:title="@string/ui_background_blur_title"
+            android:summary="@string/ui_background_blur_summary" />
 
     </PreferenceCategory>
 
