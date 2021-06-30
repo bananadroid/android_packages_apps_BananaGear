@@ -482,7 +482,6 @@
         <item>@string/qstile_dual_tone_circle</item>
         <item>@string/qstile_squircle_trim</item>
         <item>@string/qstile_wavey</item>
-        <item>@string/qstile_pokesign</item>
         <item>@string/qstile_ninja</item>
         <item>@string/qstile_dottedcircle</item>
         <item>@string/qstile_attemptmountain</item>
@@ -493,7 +492,6 @@
         <item>@string/qstile_cosmos</item>
         <item>@string/qstile_divided</item>
         <item>@string/qstile_neonlike</item>
-        <item>@string/qstile_oos</item>
         <item>@string/qstile_triangles</item>
     </string-array>
 
@@ -514,8 +512,6 @@
         <item>13</item>
         <item>14</item>
         <item>15</item>
-        <item>16</item>
-        <item>17</item>
     </string-array>
 
     <!--  Volume Panel  -->
