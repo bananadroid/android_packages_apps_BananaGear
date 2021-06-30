@@ -470,6 +470,9 @@
     <string name="qstile_divided">Divided Circle</string>
     <string name="qstile_neonlike">Neon Light</string>
     <string name="qstile_triangles">Triangle</string>
+    <string name="qstile_justicons">Icons without circle</string>
+    <string name="qstile_mono_gradient">Monochrome Gradient</string>
+    <string name="qstile_pureaccent">Pure Accent</string>
 
     <!-- Show old style mobile data icon -->
     <string name="use_old_mobiletype_title">Use old style mobile data icons</string>
