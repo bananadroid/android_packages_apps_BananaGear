@@ -430,7 +430,7 @@
     <string name="switch_android_s">Android S</string>
 
     <!-- Navbar Picker -->
-    <string name="theme_navbar_picker_title">Navbar style (for 3-button nav)</string>
+    <string name="theme_navbar_picker_title">Navbar style</string>
     <string name="theme_navbar_picker_summary">Select navbar style</string>
     <string name="theme_navbar_picker_default">Default</string>
     <string name="theme_navbar_picker_oneplus">OnePlus</string>

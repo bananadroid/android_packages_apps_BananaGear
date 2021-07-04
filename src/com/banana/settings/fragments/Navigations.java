@@ -16,17 +16,23 @@
 
 package com.banana.settings.fragments;
 
-import android.content.Context;
-import android.os.Bundle;
-import android.provider.SearchIndexableResource;
+import static android.os.UserHandle.USER_SYSTEM;
+
 import android.content.ContentResolver;
+import android.content.Context;
+import android.content.om.IOverlayManager;
+import android.os.Bundle;
 import android.os.Handler;
+import android.os.RemoteException;
+import android.os.ServiceManager;
 import android.os.UserHandle;
+import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import androidx.preference.*;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.util.banana.bananaUtils;
+import com.android.internal.util.banana.ThemesUtils;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
@@ -44,7 +50,13 @@ public class Navigations extends SettingsPreferenceFragment implements
     private static final String LAYOUT_SETTINGS = "navbar_layout_views";
     private static final String NAVIGATION_BAR_INVERSE = "navbar_inverse_layout";
     private static final String PIXEL_NAV_ANIMATION = "pixel_nav_animation";
+    private static final String PREF_NAVBAR_STYLE = "theme_navbar_style";
 
+    private Context mContext;
+    private IOverlayManager mOverlayManager;
+    private IOverlayManager mOverlayService;
+
+    private ListPreference mNavbarPicker;
     private Preference mLayoutSettings;
     private SwitchPreference mSwapNavButtons;
     private SwitchPreference mNavbarVisibility;
@@ -58,6 +70,21 @@ public class Navigations extends SettingsPreferenceFragment implements
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.bg_navigation);
         final PreferenceScreen prefScreen = getPreferenceScreen();
+        ContentResolver resolver = getActivity().getContentResolver();
+        mContext = getActivity();
+
+        mOverlayService = IOverlayManager.Stub
+                .asInterface(ServiceManager.getService(Context.OVERLAY_SERVICE));
+
+        mNavbarPicker = (ListPreference) findPreference(PREF_NAVBAR_STYLE);
+        int navbarStyleValues = getOverlayPosition(ThemesUtils.NAVBAR_STYLES);
+        if (navbarStyleValues != -1) {
+            mNavbarPicker.setValue(String.valueOf(navbarStyleValues + 2));
+        } else {
+            mNavbarPicker.setValue("1");
+        }
+        mNavbarPicker.setSummary(mNavbarPicker.getEntry());
+        mNavbarPicker.setOnPreferenceChangeListener(this);
 
         mLayoutSettings = (Preference) findPreference(LAYOUT_SETTINGS);
         mSwapNavButtons = (SwitchPreference) findPreference(NAVIGATION_BAR_INVERSE);
@@ -80,6 +107,36 @@ public class Navigations extends SettingsPreferenceFragment implements
         mHandler = new Handler();
     }
 
+    private int getOverlayPosition(String[] overlays) {
+        int position = -1;
+        for (int i = 0; i < overlays.length; i++) {
+            String overlay = overlays[i];
+            if (bananaUtils.isThemeEnabled(overlay)) {
+                position = i;
+            }
+        }
+        return position;
+    }
+
+    private String getOverlayName(String[] overlays) {
+        String overlayName = null;
+        for (int i = 0; i < overlays.length; i++) {
+            String overlay = overlays[i];
+            if (bananaUtils.isThemeEnabled(overlay)) {
+                overlayName = overlay;
+            }
+        }
+        return overlayName;
+    }
+
+    public void handleOverlays(String packagename, Boolean state, IOverlayManager mOverlayManager) {
+        try {
+            mOverlayService.setEnabled(packagename, state, USER_SYSTEM);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference.equals(mNavbarVisibility)) {
             if (mIsNavSwitchingMode) {
@@ -96,6 +153,20 @@ public class Navigations extends SettingsPreferenceFragment implements
                     mIsNavSwitchingMode = false;
                 }
             }, 1500);
+            return true;
+        } else if (preference == mNavbarPicker) {
+            String navbarStyle = (String) newValue;
+            int navbarStyleValue = Integer.parseInt(navbarStyle);
+            mNavbarPicker.setValue(String.valueOf(navbarStyleValue));
+            String overlayName = getOverlayName(ThemesUtils.NAVBAR_STYLES);
+                if (overlayName != null) {
+                    handleOverlays(overlayName, false, mOverlayManager);
+                }
+                if (navbarStyleValue > 1) {
+                    handleOverlays(ThemesUtils.NAVBAR_STYLES[navbarStyleValue - 2],
+                            true, mOverlayManager);
+            }
+            mNavbarPicker.setSummary(mNavbarPicker.getEntry());
             return true;
         }
         return false;

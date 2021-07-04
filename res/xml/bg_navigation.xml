@@ -102,6 +102,13 @@
             android:defaultValue="default"
             android:dependency="navbar_visibility" />
 
+        <ListPreference
+            android:key="theme_navbar_style"
+            android:title="@string/theme_navbar_picker_title"
+            android:dialogTitle="@string/theme_navbar_picker_summary"
+            android:entries="@array/navbar_name_entries"
+            android:entryValues="@array/navbar_picker_values"/>
+
         <com.bananadroid.support.preferences.SystemSettingSwitchPreference
             android:key="pixel_nav_animation"
             android:title="@string/pixel_navbar_anim_title"

@@ -86,13 +86,6 @@
             android:entries="@array/switch_style_entries"
             android:entryValues="@array/switch_style_values" />
 
-        <ListPreference
-            android:key="theme_navbar_style"
-            android:title="@string/theme_navbar_picker_title"
-            android:dialogTitle="@string/theme_navbar_picker_summary"
-            android:entries="@array/navbar_name_entries"
-            android:entryValues="@array/navbar_picker_values"/>
-
         <com.android.settings.display.FontDialogPreference
             android:key="custom_font"
             android:title="@string/font_picker_title"
