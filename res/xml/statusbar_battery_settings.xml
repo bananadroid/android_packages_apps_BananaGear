@@ -35,6 +35,13 @@
         android:entryValues="@array/battery_percent_values"
         android:defaultValue="0" />
 
+    <com.bananadroid.support.preferences.SystemSettingMasterSwitchPreference
+        android:key="statusbar_battery_bar"
+        android:fragment="com.banana.settings.fragments.BatteryBar"
+        android:title="@string/battery_bar_title"
+        android:summary="@string/battery_bar_summary"
+        android:defaultValue="false" />
+
     <SwitchPreference
         android:key="qs_battery_percentage"
         android:title="@string/qs_battery_percentage_title"
