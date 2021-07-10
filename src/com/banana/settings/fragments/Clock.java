@@ -52,6 +52,8 @@ public class Clock extends SettingsPreferenceFragment implements
 
     private static final String CLOCK_CATEGORY = "clock_category";
     private static final String DATE_CATEGORY = "date_category";
+    private static final String SB_CLOCK_STYLE_CATEGORY = "sb_clock_style";
+    private static final String QS_CLOCK_STYLE_CATEGORY = "qs_clock_style";
     private static final String STATUS_BAR_CLOCK_SECONDS = "status_bar_clock_seconds";
     private static final String STATUS_BAR_CLOCK_STYLE = "statusbar_clock_style";
     private static final String STATUS_BAR_AM_PM = "status_bar_am_pm";
@@ -73,6 +75,8 @@ public class Clock extends SettingsPreferenceFragment implements
 
     private PreferenceCategory mClockCategory;
     private PreferenceCategory mDateCategory;
+    private PreferenceCategory mSBClockStyleCategory;
+    private PreferenceCategory mQSClockStyleCategory;
     private SystemSettingSwitchPreference mStatusBarSecondsShow;
     private ListPreference mStatusBarClock;
     private ListPreference mStatusBarAmPm;
@@ -99,6 +103,8 @@ public class Clock extends SettingsPreferenceFragment implements
 
         mClockCategory = (PreferenceCategory) findPreference(CLOCK_CATEGORY);
         mDateCategory = (PreferenceCategory) findPreference(DATE_CATEGORY);
+        mSBClockStyleCategory = (PreferenceCategory) findPreference(SB_CLOCK_STYLE_CATEGORY);
+        mQSClockStyleCategory = (PreferenceCategory) findPreference(QS_CLOCK_STYLE_CATEGORY);
         mStatusBarSecondsShow = (SystemSettingSwitchPreference) findPreference(STATUS_BAR_CLOCK_SECONDS);
         mStatusBarClock = (ListPreference) findPreference(STATUS_BAR_CLOCK_STYLE);
         mStatusBarAmPm = (ListPreference) findPreference(STATUS_BAR_AM_PM);
@@ -246,6 +252,8 @@ public class Clock extends SettingsPreferenceFragment implements
 
         mClockCategory.setEnabled(enabled);
         mDateCategory.setEnabled(enabled);
+        mSBClockStyleCategory.setEnabled(enabled);
+        mQSClockStyleCategory.setEnabled(enabled);
     }
 
     @Override
@@ -257,6 +265,8 @@ public class Clock extends SettingsPreferenceFragment implements
 
         mClockCategory.setEnabled(isChecked);
         mDateCategory.setEnabled(isChecked);
+        mSBClockStyleCategory.setEnabled(isChecked);
+        mQSClockStyleCategory.setEnabled(isChecked);
     }
 
     @Override
