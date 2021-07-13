@@ -560,8 +560,8 @@
     <string name="battery_bar_location_navbar_top">Navigation bar (Top)</string>
     <string name="battery_bar_location_navbar_bottom">Navigation bar (Bottom)</string>
     <string name="battery_bar_color_title">Color</string>
-    <string name="light_statusbar_title">Light Status bar</string>
-    <string name="dark_statusbar_title">Dark Status bar</string>
+    <string name="light_statusbar_title">Dark Status bar</string>
+    <string name="dark_statusbar_title">Light Status bar</string>
     <string name="battery_bar_color_summary">Color range to be used for the bar</string>
     <string name="battery_bar_charging_color_title">Charging color</string>
     <string name="battery_bar_thickness_title">Thickness</string>
