@@ -455,9 +455,6 @@
     <!-- Custom Wi-Fi bar icons -->
     <string name="custom_wifi_bar_title">Wi-Fi icon</string>
 
-    <!-- Accent color picker -->
-    <string name="accent_color_title">Accent color picker</string>
-
     <!-- QS tile styles -->
     <string name="qs_tile_style_title">QS tile style</string>
     <string name="qstile_default">Default</string>

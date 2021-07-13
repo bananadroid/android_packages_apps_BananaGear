@@ -17,6 +17,4 @@
 
     <color name="white">#FFF</color>
 
-    <color name="custom_icon_tint_color">@*android:color/accent_device_default_light</color>
-
 </resources>
