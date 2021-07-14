@@ -60,15 +60,9 @@ public class WallAc extends LayoutPreference {
     private static ImageButton DominantBright;
     private static ImageButton Average;
 
-    private static TextView VibrantT;
     private static TextView VibrantT1;
-    private static TextView VibrantLightT;
     private static TextView VibrantLightT1;
-    private static TextView DominantT;
-    private static TextView DominantBrightT;
-    private static TextView AverageT;
 
-    private WallpaperManager mWallManager;
     private int fallbackColor = 0xFFF3D324;
 
     private static final String TAG = "WallAc";
@@ -117,11 +111,6 @@ public class WallAc extends LayoutPreference {
         DominantBright = findViewById(R.id.domlight);
         Average = findViewById(R.id.avg);
 
-        VibrantT = findViewById(R.id.vibt);
-        VibrantLightT = findViewById(R.id.viblt);
-        DominantT = findViewById(R.id.domt);
-        DominantBrightT = findViewById(R.id.dombt);
-        AverageT = findViewById(R.id.avgt);
         VibrantT1 = findViewById(R.id.vibt1);
         VibrantLightT1 = findViewById(R.id.viblt1);
 
@@ -139,42 +128,35 @@ public class WallAc extends LayoutPreference {
             Vibrant.setColorFilter(p.getDominantColor(defaultColor));
             int vibc = p.getDominantColor(defaultColor);
             String colorHexV = String.format("%08x", (0xFFFFFFFF & vibc));
-            VibrantT.setText(colorHexV);
-            VibrantT1.setText("Vibrant (Using Dominant as fallback)");
+            VibrantT1.setText("Vibrant");
         } else{
             Vibrant.setColorFilter(p.getVibrantColor(defaultColor));
             int vibc = p.getVibrantColor(defaultColor);
             String colorHexV = String.format("%08x", (0xFFFFFFFF & vibc));
-            VibrantT.setText(colorHexV);
         }
         if (p.getLightVibrantColor(defaultColor) == 0 || p.getLightVibrantColor(defaultColor) == defaultColor || p.getLightVibrantColor(defaultColor) == defaultColor2 || p.getLightVibrantColor(defaultColor) == white || p.getLightVibrantColor(defaultColor) == white2){
             VibrantLight.setColorFilter(p.getDominantColor(defaultColor));
             int viblc = p.getDominantColor(defaultColor);
             String colorHexVL = String.format("%08x", (0xFFFFFFFF & viblc));
-            VibrantLightT.setText(colorHexVL);
-            VibrantLightT1.setText("Vibrant Light (Using Dominant as fallback)");
+            VibrantLightT1.setText("Vibrant Light");
         } else{
             VibrantLight.setColorFilter(p.getLightVibrantColor(defaultColor));
             int viblc = p.getLightVibrantColor(defaultColor);
             String colorHexVL = String.format("%08x", (0xFFFFFFFF & viblc));
-            VibrantLightT.setText(colorHexVL);
         }
 
         Dominant.setColorFilter(p.getDominantColor(defaultColor));
         int dc = p.getDominantColor(defaultColor);
         String colorHexD = String.format("%08x", (0xFFFFFFFF & dc));
-        DominantT.setText(colorHexD);
 
         keks = p.getDominantColor(defaultColor);
         keks = ColorUtils.blendARGB(keks, Color.WHITE, 0.5f);
         DominantBright.setColorFilter(keks);
 
         String colorHexDB = String.format("%08x", (0xFFFFFFFF & keks));
-        DominantBrightT.setText(colorHexDB);
 
         Average.setColorFilter(getAvgColor(bitmap));
         String colorHexA = String.format("%08x", (0xFFFFFFFF & getAvgColor(bitmap)));
-        AverageT.setText(colorHexA);
 
     }
 
