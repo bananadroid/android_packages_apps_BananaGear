@@ -47,6 +47,7 @@
     <string name="general_ui_category_title">General UI</string>
     <string name="shapes_category_title">Shapes</string>
     <string name="fingerprint_category_title">Fingerprint</string>
+    <string name="accent_color_category_title">Accent Color</string>
 
     <!-- Quick QS pulldown -->
     <string name="status_bar_quick_qs_pulldown">Quick QS pulldown</string>
