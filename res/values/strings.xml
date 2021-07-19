@@ -153,6 +153,8 @@
     <string name="status_bar_battery_style_title">Battery style</string>
     <string name="status_bar_battery_style_icon_portrait">Icon portrait</string>
     <string name="status_bar_battery_style_circle">Circle</string>
+    <string name="status_bar_battery_style_icon_rlandscape">Icon landscape R</string>
+    <string name="status_bar_battery_style_icon_landscape">Icon landscape L</string>
     <string name="status_bar_battery_style_dotted_circle">Dotted circle</string>
     <string name="status_bar_battery_style_filled_circle">Filled circle</string>
     <string name="status_bar_battery_style_text">Text</string>
@@ -165,6 +167,8 @@
     <string name="qs_battery_percentage_summary">Show battery percentage in the QS header instead of battery estimate</string>
     <string name="battery_show_location_title">QS battery on header</string>
     <string name="battery_show_location_summary">Show battery indicator in the QS header instead of QS panel</string>
+    <string name="left_battery_text_title">Left battery text</string>
+    <string name="left_battery_text_summary">Put the battery text on left of battery icon</string>
 
     <!-- Hide Apps from Recents -->
     <string name="hide_apps_from_recents_title">Hide apps from recents</string>
