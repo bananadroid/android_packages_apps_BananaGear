@@ -55,7 +55,7 @@
         android:title="@string/pulse_ambient_light_layout_title"
         android:entries="@array/pulse_ambient_light_layout_entries"
         android:entryValues="@array/pulse_ambient_light_layout_values"
-        android:defaultValue="1" />
+        android:defaultValue="0" />
 
     <com.bananadroid.support.preferences.CustomSeekBarPreference
         android:key="ambient_notification_light_duration"
