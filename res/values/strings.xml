@@ -724,6 +724,8 @@
     <string name="display_cutout_mode_hide">Hide</string>
     <string name="stock_statusbar_in_hide">Stock status bar height</string>
     <string name="stock_statusbar_in_hide_summary">Use default status bar height in Hide mode</string>
+    <string name="display_hide_notch_title">Hide display cutout</string>
+    <string name="display_hide_notch_summary">Disable black fill-in for display cutout</string>
 
     <!-- Rounded corners -->
     <string name="corners_title">Rounded corners</string>

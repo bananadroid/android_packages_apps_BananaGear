@@ -136,6 +136,12 @@
         android:key="cutout_category"
         android:title="@string/cutout_category_title">
 
+        <com.bananadroid.support.preferences.SystemSettingSwitchPreference
+            android:key="display_hide_notch"
+            android:title="@string/display_hide_notch_title"
+            android:summary="@string/display_hide_notch_summary"
+            android:defaultValue="false" />
+
         <com.bananadroid.support.preferences.SystemSettingListPreference
             android:key="display_cutout_mode"
             android:title="@string/display_cutout_mode_title"

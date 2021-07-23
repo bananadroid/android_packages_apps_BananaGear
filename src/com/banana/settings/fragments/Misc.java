@@ -42,6 +42,7 @@ import com.android.settingslib.search.SearchIndexable;
 import com.bananadroid.support.preferences.GlobalSettingMasterSwitchPreference;
 import com.bananadroid.support.preferences.SecureSettingMasterSwitchPreference;
 import com.bananadroid.support.preferences.SystemSettingMasterSwitchPreference;
+import com.bananadroid.support.preferences.SystemSettingSwitchPreference;
 import com.banana.settings.preferences.AppMultiSelectListPreference;
 import com.banana.settings.preferences.ScrollAppsViewPreference;
 
@@ -67,6 +68,7 @@ public class Misc extends SettingsPreferenceFragment implements
     private static final String HEADS_UP_NOTIFICATIONS_ENABLED = "heads_up_notifications_enabled";
     private static final String AMBIENT_NOTIFICATION_LIGHT = "pulse_ambient_light";
     private static final String KEY_CUTOUT_CATEGORY = "cutout_category";
+    private static final String HIDE_NOTCH = "display_hide_notch";
 
     private Preference mSleepMode;
     private GlobalSettingMasterSwitchPreference mHeadsUpEnabled;
@@ -74,6 +76,7 @@ public class Misc extends SettingsPreferenceFragment implements
     private SecureSettingMasterSwitchPreference mPulse;
     private SystemSettingMasterSwitchPreference mSmartPixelsEnabled;
     private SystemSettingMasterSwitchPreference mEdgeLightEnabled;
+    private SystemSettingSwitchPreference mHideNotch;
     private AppMultiSelectListPreference mAspectRatioAppsSelect;
     private ScrollAppsViewPreference mAspectRatioApps;
 
@@ -82,6 +85,8 @@ public class Misc extends SettingsPreferenceFragment implements
         super.onCreate(icicle);
         ContentResolver resolver = getActivity().getContentResolver();
         addPreferencesFromResource(R.xml.bg_misc);
+
+        final Resources res = getResources();
 
         final PreferenceCategory aspectRatioCategory =
                 (PreferenceCategory) getPreferenceScreen().findPreference(KEY_ASPECT_RATIO_CATEGORY);
@@ -106,6 +111,13 @@ public class Misc extends SettingsPreferenceFragment implements
         }
         mAspectRatioAppsSelect.setValues(valuesList);
         mAspectRatioAppsSelect.setOnPreferenceChangeListener(this);
+        }
+
+        mHideNotch = (SystemSettingSwitchPreference) getPreferenceScreen().findPreference(HIDE_NOTCH);
+        boolean mHideNotchSupported = res.getBoolean(
+                com.android.internal.R.bool.config_showHideNotchSettings);
+        if (!mHideNotchSupported) {
+            getPreferenceScreen().removePreference(mHideNotch);
         }
 
         final PreferenceCategory cutoutCategory =
