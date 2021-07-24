@@ -333,7 +333,7 @@
     <string name="screen_off_animation_scale">Scale</string>
 
     <!-- Lockscreen blur -->
-    <string name="lockscreen_blur_title">Background blur</string>
+    <string name="lockscreen_blur_title">Lockscreen background blur</string>
 
     <!-- QS footer icons -->
     <string name="qs_footer_title">Footer</string>

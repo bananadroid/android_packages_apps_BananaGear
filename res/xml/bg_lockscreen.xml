@@ -75,15 +75,6 @@
             android:entryValues="@array/lockscreen_charging_animation_values"
             android:defaultValue="1" />
 
-        <com.bananadroid.support.preferences.SystemSettingSeekBarPreference
-            android:key="lockscreen_blur"
-            android:title="@string/lockscreen_blur_title"
-            android:max="100"
-            settings:min="0"
-            settings:units="%"
-            settings:interval="5"
-            android:defaultValue="0" />
-
         <com.bananadroid.support.preferences.SecureSettingSwitchPreference
             android:key="lockscreen_media_metadata"
             android:title="@string/lockscreen_media_art_title"

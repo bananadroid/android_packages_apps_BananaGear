@@ -75,6 +75,16 @@
             android:title="@string/ui_background_blur_title"
             android:summary="@string/ui_background_blur_summary" />
 
+        <com.bananadroid.support.preferences.SystemSettingSeekBarPreference
+            android:key="lockscreen_blur"
+            android:title="@string/lockscreen_blur_title"
+            android:dependency="ui_blur"
+            android:max="100"
+            settings:min="0"
+            settings:units="%"
+            settings:interval="5"
+            android:defaultValue="0" />
+
     </PreferenceCategory>
 
     <PreferenceCategory

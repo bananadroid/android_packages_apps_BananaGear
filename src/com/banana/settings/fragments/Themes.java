@@ -51,6 +51,9 @@ import com.banana.settings.preferences.AccentColorPreferenceController;
 import com.banana.settings.preferences.SwitchStylePreferenceController;
 import com.banana.settings.preferences.QsTileStylePreferenceController;
 import com.banana.settings.preferences.UiBlurPreferenceController;
+import com.banana.settings.preferences.Utils;
+
+import com.bananadroid.support.preferences.SystemSettingSeekBarPreference;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -63,10 +66,13 @@ public class Themes extends DashboardFragment implements OnPreferenceChangeListe
     private static final String PREF_ROUNDED_CORNER = "rounded_ui";
     private static final String PREF_SB_HEIGHT = "statusbar_height";
 
+    private static final String KEY_LOCKSCREEN_BLUR = "lockscreen_blur";
+
     private IOverlayManager mOverlayManager;
     private IOverlayManager mOverlayService;
     private ListPreference mRoundedUi;
     private ListPreference mSbHeight;
+    private SystemSettingSeekBarPreference mLockscreenBlur;
 
     private IntentFilter mIntentFilter;
     private static FontPickerPreferenceController mFontPickerPreference;
@@ -112,6 +118,11 @@ public class Themes extends DashboardFragment implements OnPreferenceChangeListe
 
         mIntentFilter = new IntentFilter();
         mIntentFilter.addAction("com.android.server.ACTION_FONT_CHANGED");
+
+        mLockscreenBlur = (SystemSettingSeekBarPreference) findPreference(KEY_LOCKSCREEN_BLUR);
+        if (!Utils.isBlurSupported()) {
+            mLockscreenBlur.setVisible(false);
+        }
     }
 
     public void handleOverlays(String packagename, Boolean state, IOverlayManager mOverlayManager) {
