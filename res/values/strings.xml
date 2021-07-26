@@ -765,6 +765,8 @@
     <string name="qs_tint_off">Gradient effect</string>
     <string name="qs_tint_random">Random color</string>
     <string name="qs_tint_accent">Accent color</string>
+    <string name="qs_tint_oos">Oxygen OS Style</string>
+    <string name="qs_tint_a12">Android S Style</string>
 
     <!-- QS Label Tint -->
     <string name="qs_label_use_new_tint">QS label tint</string>
