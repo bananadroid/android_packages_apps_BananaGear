@@ -108,6 +108,12 @@
             android:entries="@array/qs_selector_entries"
             android:entryValues="@array/qs_selector_values" />
 
+        <com.bananadroid.support.preferences.SystemSettingSwitchPreference
+            android:key="qs_panel_bg_use_new_tint"
+            android:title="@string/qs_bg_use_new_tint"
+            android:summary="@string/qs_bg_use_new_tint_summary"
+            android:defaultValue="false" />
+
         <ListPreference
             android:key="android.theme.customization.signal_icon"
             android:title="@string/custom_signal_bar_title" />

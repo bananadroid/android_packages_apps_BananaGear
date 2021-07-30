@@ -728,4 +728,8 @@
     <string name="rounded_high">High</string>
     <string name="rounded_extreme">Extreme</string>
 
+    <!-- QS themes -->
+    <string name="qs_bg_use_new_tint">Tint QS tiles</string>
+    <string name="qs_bg_use_new_tint_summary">Enable the accent color tint on QS tiles</string>
+
 </resources>
