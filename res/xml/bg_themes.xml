@@ -70,6 +70,12 @@
             android:summary="%s"
             android:defaultValue="0" />
 
+        <PreferenceScreen
+            android:key="rounded_corners"
+            android:title="@string/corners_title"
+            android:summary="@string/corners_summary"
+            android:fragment="com.banana.settings.fragments.RoundedCorners" />
+
         <SwitchPreference
             android:key="ui_blur"
             android:title="@string/ui_background_blur_title"
