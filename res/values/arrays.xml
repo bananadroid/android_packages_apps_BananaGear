@@ -501,7 +501,6 @@
         <item>@string/qstile_triangles</item>
         <item>@string/qstile_justicons</item>
         <item>@string/qstile_mono_gradient</item>
-        <item>@string/qstile_pureaccent</item>
     </string-array>
 
     <string-array name="qs_selector_values" translatable="false">
@@ -523,7 +522,6 @@
         <item>15</item>
         <item>16</item>
         <item>17</item>
-        <item>18</item>
     </string-array>
 
     <!--  Volume Panel  -->
