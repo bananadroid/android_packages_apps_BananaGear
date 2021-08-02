@@ -721,6 +721,9 @@
     <string name="gradient_title">Gradient picker</string>
 
     <!-- QS BG Tint -->
+    <string name="qs_tint_style">QS tint style</string>
+    <string name="qs_tint_style_summary">Advanced options</string>
+    <string name="qs_tint_style_footer">Sometimes the change doesn\'t work instantly\nPlease restart SystemUI once if it happens</string>
     <string name="qs_bg_use_new_tint">Tint QS tiles</string>
     <string name="qs_bg_use_new_tint_summary">Use accent color for qs tile icons and background</string>
     <string name="qs_tint_off">Gradient effect</string>
