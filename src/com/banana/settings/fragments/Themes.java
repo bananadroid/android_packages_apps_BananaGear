@@ -46,7 +46,6 @@ import com.banana.settings.preferences.UiBlurPreferenceController;
 import com.banana.settings.preferences.Utils;
 
 import com.bananadroid.support.preferences.SystemSettingSeekBarPreference;
-import com.bananadroid.support.preferences.SystemSettingSwitchPreference;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,10 +56,8 @@ public class Themes extends DashboardFragment implements OnPreferenceChangeListe
     public static final String TAG = "Themes";
 
     private static final String KEY_LOCKSCREEN_BLUR = "lockscreen_blur";
-    private static final String PREF_QSBG_NEW_TINT = "qs_panel_bg_use_new_tint";
 
     private SystemSettingSeekBarPreference mLockscreenBlur;
-    private SystemSettingSwitchPreference mQsBgNewTint;
 
     private IntentFilter mIntentFilter;
     private static FontPickerPreferenceController mFontPickerPreference;
@@ -85,21 +82,9 @@ public class Themes extends DashboardFragment implements OnPreferenceChangeListe
         if (!Utils.isBlurSupported()) {
             mLockscreenBlur.setVisible(false);
         }
-
-        mQsBgNewTint = (SystemSettingSwitchPreference) findPreference(PREF_QSBG_NEW_TINT);
-        mQsBgNewTint.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.QS_PANEL_BG_USE_NEW_TINT, 0) == 1));
-        mQsBgNewTint.setOnPreferenceChangeListener(this);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mQsBgNewTint) {
-            boolean value = (Boolean) newValue;
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.QS_PANEL_BG_USE_NEW_TINT, value ? 1 : 0);
-            bananaUtils.showSystemUiRestartDialog(getContext());
-            return true;
-        }
         return false;
     }
 
