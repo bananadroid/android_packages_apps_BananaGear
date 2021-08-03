@@ -21,6 +21,12 @@ import android.content.ContentResolver;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.provider.Settings;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.CompoundButton;
+import android.widget.Switch;
+import android.widget.TextView;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
@@ -34,27 +40,31 @@ import com.bananadroid.support.preferences.SystemSettingListPreference;
 import com.bananadroid.support.colorpicker.ColorPickerPreference;
 
 public class StatusbarLogo extends SettingsPreferenceFragment implements
-        OnPreferenceChangeListener {
+        Preference.OnPreferenceChangeListener, CompoundButton.OnCheckedChangeListener {
 
-    private static final String LOGO_COLOR = "status_bar_logo_color";
-    private static final String LOGO_COLOR_PICKER = "status_bar_logo_color_picker";
-
+    private SystemSettingListPreference mLogoPosition;
+    private SystemSettingListPreference mLogoStyle;
     private SystemSettingListPreference mLogoColor;
     private ColorPickerPreference mLogoColorPicker;
+
+    private TextView mTextView;
+    private View mSwitchBar;
 
     @Override
     public void onCreate(Bundle savedInstance) {
         super.onCreate(savedInstance);
         addPreferencesFromResource(R.xml.statusbar_logo);
 
-        mLogoColor = (SystemSettingListPreference) findPreference(LOGO_COLOR);
+        mLogoPosition = (SystemSettingListPreference) findPreference("status_bar_logo_position");
+        mLogoStyle = (SystemSettingListPreference) findPreference("status_bar_logo_style");
+        mLogoColor = (SystemSettingListPreference) findPreference("status_bar_logo_color");
         int logoColor = Settings.System.getIntForUser(getContentResolver(),
                 Settings.System.STATUS_BAR_LOGO_COLOR, 0, UserHandle.USER_CURRENT);
         mLogoColor.setValue(String.valueOf(logoColor));
         mLogoColor.setSummary(mLogoColor.getEntry());
         mLogoColor.setOnPreferenceChangeListener(this);
 
-        mLogoColorPicker = (ColorPickerPreference) findPreference(LOGO_COLOR_PICKER);
+        mLogoColorPicker = (ColorPickerPreference) findPreference("status_bar_logo_color_picker");
         int logoColorPicker = Settings.System.getInt(getContentResolver(),
                 Settings.System.STATUS_BAR_LOGO_COLOR_PICKER, 0xFFFFFFFF);
         mLogoColorPicker.setNewPreviewColor(logoColorPicker);
@@ -67,6 +77,54 @@ public class StatusbarLogo extends SettingsPreferenceFragment implements
         mLogoColorPicker.setOnPreferenceChangeListener(this);
 
         updateColorPrefs(logoColor);
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        final View view = LayoutInflater.from(getContext()).inflate(R.layout.master_setting_switch, container, false);
+        ((ViewGroup) view).addView(super.onCreateView(inflater, container, savedInstanceState));
+        return view;
+    }
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        boolean enabled = Settings.System.getInt(getContentResolver(),
+                Settings.System.STATUS_BAR_LOGO, 0) == 1;
+
+        mTextView = view.findViewById(R.id.switch_text);
+        mTextView.setText(getString(enabled ?
+                R.string.switch_on_text : R.string.switch_off_text));
+
+        mSwitchBar = view.findViewById(R.id.switch_bar);
+        Switch switchWidget = mSwitchBar.findViewById(android.R.id.switch_widget);
+        switchWidget.setChecked(enabled);
+        switchWidget.setOnCheckedChangeListener(this);
+        mSwitchBar.setActivated(enabled);
+        mSwitchBar.setOnClickListener(v -> {
+            switchWidget.setChecked(!switchWidget.isChecked());
+            mSwitchBar.setActivated(switchWidget.isChecked());
+        });
+
+        mLogoPosition.setEnabled(enabled);
+        mLogoStyle.setEnabled(enabled);
+        mLogoColor.setEnabled(enabled);
+        mLogoColorPicker.setEnabled(enabled);
+    }
+
+    @Override
+    public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+        Settings.System.putInt(getContentResolver(),
+                Settings.System.STATUS_BAR_LOGO, isChecked ? 1 : 0);
+        mTextView.setText(getString(isChecked ? R.string.switch_on_text : R.string.switch_off_text));
+        mSwitchBar.setActivated(isChecked);
+
+        mLogoPosition.setEnabled(isChecked);
+        mLogoStyle.setEnabled(isChecked);
+        mLogoColor.setEnabled(isChecked);
+        mLogoColorPicker.setEnabled(isChecked);
     }
 
     @Override
