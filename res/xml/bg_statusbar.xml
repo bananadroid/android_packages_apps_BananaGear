@@ -73,6 +73,13 @@
             android:summary="@string/show_fourg_icon_summary"
             android:defaultValue="false"/>
 
+        <com.bananadroid.support.preferences.SystemSettingListPreference
+            android:key="vo_icon_picker"
+            android:title="@string/voicon_picker"
+            android:entries="@array/voiconpack_entries"
+            android:entryValues="@array/voiconpack_values"
+            android:defaultValue="0" />
+
         <com.bananadroid.support.preferences.SystemSettingSwitchPreference 
             android:key="data_disabled_icon" 
             android:title="@string/data_disabled_icon_title" 

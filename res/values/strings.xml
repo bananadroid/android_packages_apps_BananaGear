@@ -860,4 +860,10 @@
     <!-- QS Background opacity -->
     <string name="qs_panel_alpha_title">Background opacity</string>
     <string name="notification_alpha_title">Notification background opacity</string>
+
+    <!-- VoLTE and VoWifi Icon -->
+    <string name="voicon_picker">VoLTE And VoWiFi Icon Picker</string>
+    <string name="voiconpack_default">Default</string>
+    <string name="voiconpack_vivo">Vivo</string>
+    <string name="voiconpack_oos">OOS</string>
 </resources>
