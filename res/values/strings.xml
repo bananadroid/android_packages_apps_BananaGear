@@ -614,6 +614,18 @@
     <string name="qs_clock_font_style_title">Font style</string>
     <string name="qs_clock_color_title">Font color</string>
 
+    <!-- Wallpaper based accent -->
+    <string name="use_wall_accent_string">Wallpaper based accent</string>
+    <string name="use_wall_accent_summary">(BETA) Auto sets an accent color based on your wallpaper</string>
+
+    <!-- Auto Accent Picker -->
+    <string name="auto_accent_picker_title">Accent generation algorithm</string>
+    <string name="auto_accent_picker_vibrant">Vibrant</string>
+    <string name="auto_accent_picker_vibrant_light">Vibrant Light</string>
+    <string name="auto_accent_picker_dominant">Dominant</string>
+    <string name="auto_accent_picker_dominant_bright">Dominant Bright</string>
+    <string name="auto_accent_picker_avg">Average</string>
+
     <!-- Units -->
     <string name="unit_seconds">seconds</string>
     <string name="unit_milliseconds">milliseconds</string>
