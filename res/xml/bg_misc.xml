@@ -33,6 +33,17 @@
             android:title="@string/artwork_media_background_title"
             android:summary="@string/artwork_media_background_summary"
             android:defaultValue="true" />
+
+        <com.bananadroid.support.preferences.SystemSettingSeekBarPreference
+            android:key="artwork_media_fade_level"
+            android:title="@string/artwork_media_fade_level_title"
+            android:summary="@string/artwork_media_fade_level_summary"
+            android:dependency="artwork_media_background"
+            android:max="100"
+            settings:min="0"
+            settings:units="%"
+            settings:interval="5"
+            android:defaultValue="30" />
           <com.bananadroid.support.preferences.SystemSettingSwitchPreference
             android:key="hide_smart_replies"
             android:title="@string/hide_smart_replies_title"
