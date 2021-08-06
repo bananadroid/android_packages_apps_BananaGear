@@ -619,7 +619,8 @@
     <string name="use_wall_accent_summary">(BETA) Auto sets an accent color based on your wallpaper</string>
 
     <!-- Auto Accent Picker -->
-    <string name="auto_accent_picker_title">Accent generation algorithm</string>
+    <string name="auto_accent_picker_title">Wall based accent preset</string>
+    <string name="auto_gradient_picker_title">Wall based gradient preset</string>
     <string name="auto_accent_picker_vibrant">Vibrant</string>
     <string name="auto_accent_picker_vibrant_light">Vibrant Light</string>
     <string name="auto_accent_picker_dominant">Dominant</string>
