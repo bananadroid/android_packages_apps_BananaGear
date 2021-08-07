@@ -47,7 +47,6 @@
     <string name="general_ui_category_title">General UI</string>
     <string name="shapes_category_title">Shapes</string>
     <string name="fingerprint_category_title">Fingerprint</string>
-    <string name="accent_color_category_title">Accent Color</string>
     <string name="cutout_category_title">Display Cutout</string>
 
     <!-- Quick QS pulldown -->
@@ -615,12 +614,13 @@
     <string name="qs_clock_color_title">Font color</string>
 
     <!-- Wallpaper based accent -->
-    <string name="use_wall_accent_string">Wallpaper based accent</string>
-    <string name="use_wall_accent_summary">(BETA) Auto sets an accent color based on your wallpaper</string>
+    <string name="wall_based_accent_category_title">Wallpaper based accent</string>
+    <string name="use_wall_accent_string">Enable wallpaper based accent</string>
+    <string name="use_wall_accent_summary">Generates colors based on your wallpaper</string>
 
     <!-- Auto Accent Picker -->
-    <string name="auto_accent_picker_title">Wall based accent preset</string>
-    <string name="auto_gradient_picker_title">Wall based gradient preset</string>
+    <string name="auto_accent_picker_title">Accent color preset</string>
+    <string name="auto_gradient_picker_title">Gradient color preset</string>
     <string name="auto_accent_picker_vibrant">Vibrant</string>
     <string name="auto_accent_picker_vibrant_light">Vibrant Light</string>
     <string name="auto_accent_picker_dominant">Dominant</string>
@@ -747,8 +747,10 @@
     <string name="quick_settings_vibrate_summary">Vibrate when touching tiles</string>
 
     <!-- RGB Accent picker -->
-    <string name="accent_title">Accent picker</string>
-    <string name="gradient_title">Gradient picker</string>
+    <string name="accentpicker_title">Accent &amp; gradient</string>
+    <string name="accentpicker_summary">Let\'s have fun with colors</string>
+    <string name="accent_title">Accent color</string>
+    <string name="gradient_title">Gradient color</string>
 
     <!-- QS BG Tint -->
     <string name="qs_tint_style">QS tint style</string>
