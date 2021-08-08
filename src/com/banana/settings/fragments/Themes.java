@@ -16,16 +16,12 @@
 
 package com.banana.settings.fragments;
 
-import static android.os.UserHandle.USER_SYSTEM;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.om.IOverlayManager;
 import android.os.Bundle;
-import android.os.RemoteException;
-import android.os.ServiceManager;
 import android.provider.Settings;
 
 import androidx.fragment.app.Fragment;
@@ -33,7 +29,6 @@ import androidx.preference.*;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
-import com.android.internal.util.banana.ThemesUtils;
 import com.android.internal.util.banana.bananaUtils;
 
 import com.android.settings.R;
@@ -46,7 +41,6 @@ import com.android.settingslib.core.lifecycle.Lifecycle;
 import com.android.settingslib.search.SearchIndexable;
 
 import com.banana.settings.preferences.SwitchStylePreferenceController;
-import com.banana.settings.preferences.QsTileStylePreferenceController;
 import com.banana.settings.preferences.UiBlurPreferenceController;
 import com.banana.settings.preferences.Utils;
 
@@ -63,14 +57,7 @@ public class Themes extends DashboardFragment implements OnPreferenceChangeListe
 
     private static final String KEY_LOCKSCREEN_BLUR = "lockscreen_blur";
     private static final String PREF_UNIVERSAL_DISCO = "universal_disco";
-    private static final String BRIGHTNESS_SLIDER_STYLE = "brightness_slider_style";
-    private static final String PREF_PANEL_BG = "panel_bg";
 
-    private IOverlayManager mOverlayManager;
-    private IOverlayManager mOverlayService;
-
-    private ListPreference mBrightnessSliderStyle;
-    private ListPreference mPanelBg;
     private SecureSettingSwitchPreference mUniversalDisco;
     private SystemSettingSeekBarPreference mLockscreenBlur;
 
@@ -93,9 +80,6 @@ public class Themes extends DashboardFragment implements OnPreferenceChangeListe
         mIntentFilter = new IntentFilter();
         mIntentFilter.addAction("com.android.server.ACTION_FONT_CHANGED");
 
-        mOverlayService = IOverlayManager.Stub.asInterface(
-                ServiceManager.getService(Context.OVERLAY_SERVICE));
-
         mLockscreenBlur = (SystemSettingSeekBarPreference) findPreference(KEY_LOCKSCREEN_BLUR);
         if (!Utils.isBlurSupported()) {
             mLockscreenBlur.setVisible(false);
@@ -105,27 +89,6 @@ public class Themes extends DashboardFragment implements OnPreferenceChangeListe
         mUniversalDisco.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.Secure.UNIVERSAL_DISCO, 0) == 1));
         mUniversalDisco.setOnPreferenceChangeListener(this);
-
-        mBrightnessSliderStyle = (ListPreference) findPreference(BRIGHTNESS_SLIDER_STYLE);
-        int brightnessSliderValue = getOverlayPosition(ThemesUtils.BRIGHTNESS_SLIDER_THEMES);
-        if (brightnessSliderValue != -1) {
-            mBrightnessSliderStyle.setValue(String.valueOf(brightnessSliderValue + 2));
-        } else {
-            mBrightnessSliderStyle.setValue("1");
-        }
-        mBrightnessSliderStyle.setSummary(mBrightnessSliderStyle.getEntry());
-        mBrightnessSliderStyle.setOnPreferenceChangeListener(this);
-
-
-        mPanelBg = (ListPreference) findPreference(PREF_PANEL_BG);
-        int mPanelValue = getOverlayPosition(ThemesUtils.PANEL_BG_STYLE);
-        if (mPanelValue != -1) {
-            mPanelBg.setValue(String.valueOf(mPanelValue + 2));
-        } else {
-            mPanelBg.setValue("1");
-        }
-        mPanelBg.setSummary(mPanelBg.getEntry());
-        mPanelBg.setOnPreferenceChangeListener(this);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -135,67 +98,8 @@ public class Themes extends DashboardFragment implements OnPreferenceChangeListe
                     Settings.Secure.UNIVERSAL_DISCO, value ? 1 : 0);
             bananaUtils.showSystemUiRestartDialog(getContext());
             return true;
-        } else if (preference == mBrightnessSliderStyle) {
-            String sliderStyle = (String) newValue;
-            int sliderValue = Integer.parseInt(sliderStyle);
-            mBrightnessSliderStyle.setValue(String.valueOf(sliderValue));
-            String overlayName = getOverlayName(ThemesUtils.BRIGHTNESS_SLIDER_THEMES);
-                if (overlayName != null) {
-                    handleOverlays(overlayName, false, mOverlayManager);
-                }
-                if (sliderValue > 1) {
-                    handleOverlays(ThemesUtils.BRIGHTNESS_SLIDER_THEMES[sliderValue - 2],
-                            true, mOverlayManager);
-            }
-            mBrightnessSliderStyle.setSummary(mBrightnessSliderStyle.getEntry());
-            return true;
-        } else if (preference == mPanelBg) {
-            String panelbg = (String) newValue;
-            int panelBgValue = Integer.parseInt(panelbg);
-            mPanelBg.setValue(String.valueOf(panelBgValue));
-            String overlayName = getOverlayName(ThemesUtils.PANEL_BG_STYLE);
-                if (overlayName != null) {
-                    handleOverlays(overlayName, false, mOverlayManager);
-                }
-                if (panelBgValue > 1) {
-                    bananaUtils.showSystemUiRestartDialog(getContext());
-                    handleOverlays(ThemesUtils.PANEL_BG_STYLE[panelBgValue -2],
-                            true, mOverlayManager);
-            }
-            mPanelBg.setSummary(mPanelBg.getEntry());
-            return true;
         }
         return false;
-    }
-
-    private int getOverlayPosition(String[] overlays) {
-        int position = -1;
-        for (int i = 0; i < overlays.length; i++) {
-            String overlay = overlays[i];
-            if (bananaUtils.isThemeEnabled(overlay)) {
-                position = i;
-            }
-        }
-        return position;
-    }
-
-    private String getOverlayName(String[] overlays) {
-        String overlayName = null;
-        for (int i = 0; i < overlays.length; i++) {
-            String overlay = overlays[i];
-            if (bananaUtils.isThemeEnabled(overlay)) {
-                overlayName = overlay;
-            }
-        }
-        return overlayName;
-    }
-
-    public void handleOverlays(String packagename, Boolean state, IOverlayManager mOverlayManager) {
-        try {
-            mOverlayService.setEnabled(packagename, state, USER_SYSTEM);
-        } catch (RemoteException e) {
-            e.printStackTrace();
-        }
     }
 
     @Override
@@ -229,7 +133,6 @@ public class Themes extends DashboardFragment implements OnPreferenceChangeListe
                 "android.theme.customization.wifi_icon"));
         controllers.add(new SwitchStylePreferenceController(context));
         controllers.add(mFontPickerPreference = new FontPickerPreferenceController(context, lifecycle));
-        controllers.add(new QsTileStylePreferenceController(context));
         controllers.add(new UiBlurPreferenceController(context));
         return controllers;
     }
