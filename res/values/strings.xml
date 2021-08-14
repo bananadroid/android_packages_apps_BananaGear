@@ -873,4 +873,9 @@
     <!-- Qs Clock -->
     <string name="oos_qsclock">OOS QS clock</string>
     <string name="oos_qsclock_summary">Display an OOS like clock on QS</string>
+
+    <!-- Anti-falsing -->
+    <string name="keyguard_anti_falsing_title">Prevent accidental swipe</string>
+    <string name="keyguard_anti_falsing_summary">Avoid unintentional swipe up for PIN/Pattern/Password</string>
+
 </resources>

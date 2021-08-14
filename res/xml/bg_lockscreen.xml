@@ -75,6 +75,12 @@
             android:entryValues="@array/lockscreen_charging_animation_values"
             android:defaultValue="1" />
 
+        <com.bananadroid.support.preferences.SystemSettingSwitchPreference
+            android:key="keyguard_anti_falsing_enabled"
+            android:title="@string/keyguard_anti_falsing_title"
+            android:summary="@string/keyguard_anti_falsing_summary"
+            android:defaultValue="false" />
+
         <com.bananadroid.support.preferences.SecureSettingSwitchPreference
             android:key="lockscreen_media_metadata"
             android:title="@string/lockscreen_media_art_title"
