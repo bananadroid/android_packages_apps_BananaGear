@@ -789,6 +789,7 @@
     <!-- QS Tile Tint -->
     <string-array name="qs_tint_entries" translatable="false">
         <item>@string/qs_tint_off</item>
+        <item>@string/qs_tint_gradient</item>
         <item>@string/qs_tint_oos</item>
         <item>@string/qs_tint_accent</item>
         <item>@string/qs_tint_a12</item>
@@ -797,10 +798,11 @@
 
     <string-array name="qs_tint_values" translatable="false">
         <item>0</item>
-        <item>3</item>
-        <item>2</item>
-        <item>4</item>
         <item>1</item>
+        <item>4</item>
+        <item>3</item>
+        <item>5</item>
+        <item>2</item>
     </string-array>
 
     <!-- QS Label Tint -->
