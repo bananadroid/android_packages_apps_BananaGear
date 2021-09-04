@@ -64,7 +64,6 @@ public class Misc extends SettingsPreferenceFragment implements
     private static final String KEY_ASPECT_RATIO_CATEGORY = "aspect_ratio_category";
     private static final String KEY_ASPECT_RATIO_APPS_LIST_SCROLLER = "aspect_ratio_apps_list_scroller";
     private static final String PULSE_ENABLED = "pulse_enabled";
-    private static final String GAMING_MODE_ENABLED = "gaming_mode_enabled";
     private static final String HEADS_UP_NOTIFICATIONS_ENABLED = "heads_up_notifications_enabled";
     private static final String AMBIENT_NOTIFICATION_LIGHT = "pulse_ambient_light";
     private static final String KEY_CUTOUT_CATEGORY = "cutout_category";
@@ -72,7 +71,6 @@ public class Misc extends SettingsPreferenceFragment implements
 
     private Preference mSleepMode;
     private GlobalSettingMasterSwitchPreference mHeadsUpEnabled;
-    private SystemSettingMasterSwitchPreference mGamingMode;
     private SecureSettingMasterSwitchPreference mPulse;
     private SystemSettingMasterSwitchPreference mSmartPixelsEnabled;
     private SystemSettingMasterSwitchPreference mEdgeLightEnabled;
@@ -203,13 +201,6 @@ public class Misc extends SettingsPreferenceFragment implements
                 Settings.Secure.PULSE_ENABLED, 0) == 1));
         mPulse.setOnPreferenceChangeListener(this);
 
-        mGamingMode = (SystemSettingMasterSwitchPreference) findPreference(GAMING_MODE_ENABLED);
-        boolean gameEnabled = Settings.System.getInt(
-        getActivity().getApplicationContext().getContentResolver(),
-                Settings.System.GAMING_MODE_ENABLED, 0) == 1;
-        updateGameModeEnabledUpdatePrefs(gameEnabled);
-        mGamingMode.setOnPreferenceChangeListener(this);
-
         mHeadsUpEnabled = (GlobalSettingMasterSwitchPreference) findPreference(HEADS_UP_NOTIFICATIONS_ENABLED);
         mHeadsUpEnabled.setOnPreferenceChangeListener(this);
         int headsUpEnabled = Settings.Global.getInt(getContentResolver(),
@@ -221,10 +212,6 @@ public class Misc extends SettingsPreferenceFragment implements
         int edgeLightEnabled = Settings.System.getInt(getContentResolver(),
                 AMBIENT_NOTIFICATION_LIGHT, 0);
         mEdgeLightEnabled.setChecked(edgeLightEnabled != 0);
-    }
-
-    private void updateGameModeEnabledUpdatePrefs(boolean gameEnabled) {
-        mGamingMode.setChecked(gameEnabled);
     }
 
     @Override
@@ -252,12 +239,6 @@ public class Misc extends SettingsPreferenceFragment implements
             boolean value = (Boolean) newValue;
             Settings.Secure.putInt(getActivity().getContentResolver(),
                     Settings.Secure.PULSE_ENABLED, value ? 1 : 0);
-            return true;
-        } else if (preference == mGamingMode) {
-            boolean gameEnabled = (Boolean) newValue;
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.GAMING_MODE_ENABLED, gameEnabled ? 1 : 0);
-            updateGameModeEnabledUpdatePrefs(gameEnabled);
             return true;
         } else if (preference == mHeadsUpEnabled) {
             boolean value = (Boolean) newValue;
