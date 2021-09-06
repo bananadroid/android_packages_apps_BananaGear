@@ -635,4 +635,8 @@
     <!-- Fonts -->
     <string name="theme_customization_lock_clock_title">Huruf jam layar kunci</string>
     <string name="theme_customization_lock_clock_summary">Atur tampilan huruf jam di layar kunci</string>
+    <!-- Statusbar left_right padding -->
+    <string name="padding_category">Statusbar padding</string>
+    <string name="statusbar_left_padding">Padding kiri</string>
+    <string name="statusbar_right_padding">Padding kanan</string>
 </resources>

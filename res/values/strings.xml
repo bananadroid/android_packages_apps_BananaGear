@@ -705,4 +705,9 @@
     <!-- Fonts -->
     <string name="theme_customization_lock_clock_title">LS clock font style</string>
     <string name="theme_customization_lock_clock_summary">Set lockscreen clock font style</string>
+
+    <!-- Statusbar left_right padding -->
+    <string name="padding_category">Statusbar padding</string>
+    <string name="statusbar_left_padding">Left padding</string>
+    <string name="statusbar_right_padding">Right padding</string>
 </resources>
