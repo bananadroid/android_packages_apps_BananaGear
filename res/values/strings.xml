@@ -804,6 +804,10 @@
     <string name="screen_off_fod_icon_title">Show icon</string>
     <string name="screen_off_fod_icon_summary">Show fingerprint icon when the screen is off</string>
 
+    <!-- FOD animation -->
+    <string name="fod_recognizing_animation_title">Recognizing animation</string>
+    <string name="fod_recognizing_animation_summary">Show an animation while reading your fingerprint</string>
+
     <!-- Sleep Mode -->
     <string name="sleep_mode_title">Sleep Mode</string>
     <string name="sleep_mode_schedule_sunset">Sunset</string>

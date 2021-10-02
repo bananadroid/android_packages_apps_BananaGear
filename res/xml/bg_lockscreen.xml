@@ -117,6 +117,12 @@
             android:dependency="screen_off_fod" />
 
         <com.bananadroid.support.preferences.SystemSettingSwitchPreference
+            android:key="fod_recognizing_animation"
+            android:title="@string/fod_recognizing_animation_title"
+            android:summary="@string/fod_recognizing_animation_summary"
+            android:defaultValue="true" />
+
+        <com.bananadroid.support.preferences.SystemSettingSwitchPreference
             android:key="fp_unlock_keystore"
             android:title="@string/fp_unlock_keystore_title"
             android:summary="@string/fp_unlock_keystore_summary"
