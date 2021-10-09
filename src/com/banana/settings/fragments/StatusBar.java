@@ -22,6 +22,7 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.om.IOverlayManager;
 import android.content.om.OverlayInfo;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Resources;
 import android.database.ContentObserver;
 import android.net.Uri;
@@ -46,7 +47,10 @@ import com.android.settingslib.search.SearchIndexable;
 import com.banana.settings.fragments.BatteryBar;
 import com.banana.settings.fragments.NetworkTrafficSettings;
 import com.banana.settings.utils.TelephonyUtils;
+import com.banana.support.preferences.CustomSeekBarPreference;
+import com.banana.support.preferences.SecureSettingSwitchPreference;
 import com.banana.support.preferences.SystemSettingListPreference;
+import com.banana.support.preferences.SystemSettingSeekBarPreference;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -64,6 +68,8 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private static final String KEY_SHOW_DATA_DISABLED = "data_disabled_icon";
     private static final String KEY_COMBINED_SIGNAL_ICONS = "enable_combined_signal_icons";
     private static final String SYS_COMBINED_SIGNAL_ICONS = "persist.sys.enable.combined_signal_icons";
+    private static final String STATUSBAR_LEFT_PADDING = "statusbar_left_padding";
+    private static final String STATUSBAR_RIGHT_PADDING = "statusbar_right_padding";
 
     private static final int BATTERY_STYLE_PORTRAIT = 0;
     private static final int BATTERY_STYLE_TEXT = 4;
@@ -77,6 +83,8 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private SwitchPreference mCombinedSignalIcons;
     private SystemSettingListPreference mBatteryPercent;
     private SystemSettingListPreference mBatteryStyle;
+    private SystemSettingSeekBarPreference mSbLeftPadding;
+    private SystemSettingSeekBarPreference mSbRightPadding;
 
     private ListPreference mQuickPulldown;
 
@@ -87,6 +95,8 @@ public class StatusBar extends SettingsPreferenceFragment implements
         PreferenceScreen prefSet = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
         Context mContext = getActivity().getApplicationContext();
+        Resources res = null;
+        Context ctx = getContext();
 
         final PreferenceScreen prefScreen = getPreferenceScreen();
 
@@ -135,10 +145,31 @@ public class StatusBar extends SettingsPreferenceFragment implements
                     mConfigUseOldMobileType ? 1 : 0, UserHandle.USER_CURRENT) != 0;
             mOldMobileType.setChecked(showing);
         }
+
+        float density = Resources.getSystem().getDisplayMetrics().density;
+
+        try {
+            res = ctx.getPackageManager().getResourcesForApplication("com.android.systemui");
+        } catch (NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        mSbLeftPadding = (SystemSettingSeekBarPreference) findPreference(STATUSBAR_LEFT_PADDING);
+        int sbLeftPadding = Settings.System.getIntForUser(ctx.getContentResolver(),
+                Settings.System.LEFT_PADDING, ((int) (res.getIdentifier("com.android.systemui:dimen/status_bar_padding_start", null, null) / density)), UserHandle.USER_CURRENT);
+        mSbLeftPadding.setValue(sbLeftPadding);
+        mSbLeftPadding.setOnPreferenceChangeListener(this);
+
+        mSbRightPadding = (SystemSettingSeekBarPreference) findPreference(STATUSBAR_RIGHT_PADDING);
+        int sbRightPadding = Settings.System.getIntForUser(ctx.getContentResolver(),
+                Settings.System.RIGHT_PADDING, ((int) (res.getIdentifier("com.android.systemui:dimen/status_bar_padding_end", null, null) / density)), UserHandle.USER_CURRENT);
+        mSbRightPadding.setValue(sbRightPadding);
+        mSbRightPadding.setOnPreferenceChangeListener(this);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
+        Resources res = null;
+        Context ctx = getContext();
         if (preference == mBatteryStyle) {
             int value = Integer.parseInt((String) newValue);
             int batterypercent = Settings.System.getIntForUser(getContentResolver(),
@@ -170,6 +201,27 @@ public class StatusBar extends SettingsPreferenceFragment implements
                 Settings.Secure.ENABLE_COMBINED_SIGNAL_ICONS, value ? 1 : 0, UserHandle.USER_CURRENT);
             SystemProperties.set(SYS_COMBINED_SIGNAL_ICONS, value ? "true" : "false");
             SystemPropPoker.getInstance().poke();
+            return true;
+        }
+        float density = Resources.getSystem().getDisplayMetrics().density;
+
+        try {
+            res = ctx.getPackageManager().getResourcesForApplication("com.android.systemui");
+        } catch (NameNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        if (preference == mSbLeftPadding) {
+            int leftValue = (Integer) newValue;
+            int sbLeft = ((int) (leftValue / density));
+            Settings.System.putIntForUser(getContext().getContentResolver(),
+                    Settings.System.LEFT_PADDING, sbLeft, UserHandle.USER_CURRENT);
+            return true;
+        } else if (preference == mSbRightPadding) {
+            int rightValue = (Integer) newValue;
+            int sbRight = ((int) (rightValue / density));
+            Settings.System.putIntForUser(getContext().getContentResolver(),
+                    Settings.System.RIGHT_PADDING, sbRight, UserHandle.USER_CURRENT);
             return true;
         }
         return false;
