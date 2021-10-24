@@ -122,6 +122,7 @@
     <!-- Other categories -->
     <string name="icons_category_title">Icons</string>
     <string name="network_icons_category_title">Network related icons</string>
+    <string name="gestures_title">Gestures</string>
 
     <!-- Units -->
     <string name="unit_seconds">seconds</string>
@@ -258,4 +259,10 @@
     <string name="status_bar_battery_percent_text_next_left">Next to the icon (left)</string>
     <string name="status_bar_battery_text_charging_title">Battery percentage when charging</string>
     <string name="status_bar_battery_text_charging_summary">Always display battery percentage when charging</string>
+
+    <!-- Quick QS pulldown -->
+    <string name="qs_quick_pulldown">Quick QS pulldown</string>
+    <string name="quick_pulldown_none">Disabled</string>
+    <string name="quick_pulldown_right">Pulldown statusbar from right side</string>
+    <string name="quick_pulldown_left">Pulldown statusbar from left side</string>
 </resources>
