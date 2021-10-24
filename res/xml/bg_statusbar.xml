@@ -78,4 +78,17 @@
             android:defaultValue="true" />
 
     </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/gestures_title">
+
+        <ListPreference
+            android:key="qs_quick_pulldown"
+            android:title="@string/qs_quick_pulldown"
+            android:entries="@array/quick_pulldown_entries"
+            android:entryValues="@array/quick_pulldown_values"
+            android:defaultValue="0" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>
