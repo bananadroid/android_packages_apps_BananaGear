@@ -45,6 +45,8 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private Preference mQSTileVerticalLayout;
     private Preference mQSTileLabelHide;
 
+    private ListPreference mQuickPulldown;
+
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
@@ -56,6 +58,13 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         mQSTileVerticalLayout.setOnPreferenceChangeListener(this);
         mQSTileLabelHide = (Preference) findPreference("qs_tile_label_hide");
         mQSTileLabelHide.setOnPreferenceChangeListener(this);
+
+        int qpmode = Settings.System.getIntForUser(getContentResolver(),
+                Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 0, UserHandle.USER_CURRENT);
+        mQuickPulldown = (ListPreference) findPreference("status_bar_quick_qs_pulldown");
+        mQuickPulldown.setValue(String.valueOf(qpmode));
+        mQuickPulldown.setSummary(mQuickPulldown.getEntry());
+        mQuickPulldown.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -64,9 +73,19 @@ public class QuickSettings extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
         if (preference == mQSLayoutColumns
                 || preference == mQSTileVerticalLayout || preference == mQSTileLabelHide) {
             BananaUtils.showSystemUiRestartDialog(getContext());
+            return true;
+        } else if (preference == mQuickPulldown) {
+            int value = Integer.parseInt((String) newValue);
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN, value,
+                    UserHandle.USER_CURRENT);
+            int index = mQuickPulldown.findIndexOfValue((String) newValue);
+            mQuickPulldown.setSummary(
+                    mQuickPulldown.getEntries()[index]);
             return true;
         }
         return false;
