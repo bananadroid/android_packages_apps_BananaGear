@@ -113,6 +113,7 @@
     <string name="general_ui_category_title">General UI</string>
     <string name="default_string">Default</string>
     <string name="icons_category_title">Icons</string>
+    <string name="privacy_category_title">Privacy</string>
     <string name="gestures_title">Gestures</string>
     <string name="caution">Caution</string>
     <string name="enable">Enable</string>
@@ -908,4 +909,8 @@
     <!-- WiFi Standard icon -->
     <string name="wifi_standard_icon_title">WiFi standard</string>
     <string name="wifi_standard_icon_summary">Display WiFi standard next to WiFi signal</string>
+
+    <!-- Tiles on secure keyguard -->
+    <string name="use_tiles_on_secure_keyguard_title">Require unlocking to use sensitive tiles</string>
+    <string name="use_tiles_on_secure_keyguard_summary">Ask to unlock lockscreen when using sensitive tiles</string>
 </resources>

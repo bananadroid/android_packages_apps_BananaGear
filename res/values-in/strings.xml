@@ -708,4 +708,7 @@
     <!-- WiFi Standard icon -->
     <string name="wifi_standard_icon_title">Standar WiFi</string>
     <string name="wifi_standard_icon_summary">Tampilkan standar WiFi di samping sinyal WiFi</string>
+    <!-- Tiles on secure keyguard -->
+    <string name="use_tiles_on_secure_keyguard_title">Perlu membuka kunci untuk menggunakan sensitif tile</string>
+    <string name="use_tiles_on_secure_keyguard_summary">Meminta untuk membuka kunci layar ketika menggunakan sensitif tile</string>
 </resources>
