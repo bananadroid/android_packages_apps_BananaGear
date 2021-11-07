@@ -18,6 +18,10 @@
     android:title="@string/quicksettings_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <PreferenceCategory
+        android:key="qs_battery"
+        android:title="@string/qs_battery_category_title">
+
         <!-- Battery styles -->
         <com.banana.support.preferences.SystemSettingListPreference
             android:key="qs_battery_style"
@@ -41,10 +45,43 @@
             android:summary="@string/battery_estimate_summary"
             android:defaultValue="false" />
 
-       <com.banana.support.preferences.SystemSettingSwitchPreference
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="quick_settings_brightness_category"
+        android:title="@string/qs_brightness_slider_category">
+
+        <com.banana.support.preferences.SecureSettingSwitchPreference
+            android:key="qs_show_brightness"
+            android:title="@string/qs_brightness_slider_title"
+            android:summary="@string/qs_brightness_slider_summary"
+            android:defaultValue="true"/>
+
+        <com.banana.support.preferences.SecureSettingSwitchPreference
+            android:key="qs_show_auto_brightness_button"
+            android:title="@string/brightness_icon_title"
+            android:summary="@string/brightness_icon_summary"
+            android:defaultValue="true"
+            android:dependency="qs_show_brightness"/>
+
+        <com.banana.support.preferences.SecureSettingSwitchPreference
+            android:key="qs_brightness_position_bottom"
+            android:title="@string/qs_brightness_position_bottom_title"
+            android:summary="@string/qs_brightness_position_bottom_summary"
+            android:defaultValue="false"
+            android:dependency="qs_show_brightness" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/icons_category_title">
+
+        <com.banana.support.preferences.SystemSettingSwitchPreference
             android:key="qs_footer_data_usage"
             android:title="@string/qs_footer_datausage_title"
             android:summary="@string/qs_footer_datausage_summary"
             android:defaultValue="true" />
+
+    </PreferenceCategory>
 
 </PreferenceScreen>
