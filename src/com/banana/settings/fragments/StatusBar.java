@@ -60,6 +60,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private static final String KEY_SHOW_ROAMING = "roaming_indicator_icon";
     private static final String KEY_SHOW_FOURG = "show_fourg_icon";
     private static final String KEY_SHOW_DATA_DISABLED = "data_disabled_icon";
+    private static final String KEY_COMBINED_ICONS = "combined_status_bar_signal_icons";
     private static final String KEY_USE_OLD_MOBILETYPE = "use_old_mobiletype";
 
     private static final int BATTERY_STYLE_PORTRAIT = 0;
@@ -67,6 +68,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private static final int BATTERY_STYLE_HIDDEN = 5;
 
     private SwitchPreference mBatteryTextCharging;
+    private SwitchPreference mCombinedIcons;
     private SwitchPreference mDataDisabled;
     private SwitchPreference mOldMobileType;
     private SwitchPreference mOverride;
@@ -110,6 +112,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
         mShowRoaming = (SwitchPreference) findPreference(KEY_SHOW_ROAMING);
         mShowFourg = (SwitchPreference) findPreference(KEY_SHOW_FOURG);
         mDataDisabled = (SwitchPreference) findPreference(KEY_SHOW_DATA_DISABLED);
+        mCombinedIcons = (SwitchPreference) findPreference(KEY_COMBINED_ICONS);
         mOldMobileType = (SwitchPreference) findPreference(KEY_USE_OLD_MOBILETYPE);
 
         if (!TelephonyUtils.isVoiceCapable(getActivity())) {
@@ -119,6 +122,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
             prefScreen.removePreference(mShowRoaming);
             prefScreen.removePreference(mShowFourg);
             prefScreen.removePreference(mDataDisabled);
+            prefScreen.removePreference(mCombinedIcons);
             prefScreen.removePreference(mOldMobileType);
         } else {
             boolean mConfigUseOldMobileType = mContext.getResources().getBoolean(
@@ -173,6 +177,8 @@ public class StatusBar extends SettingsPreferenceFragment implements
                 Settings.System.STATUSBAR_NOTIF_COUNT, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.USE_OLD_MOBILETYPE, mConfigUseOldMobileType ? 1 : 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.COMBINED_STATUS_BAR_SIGNAL_ICONS, 0, UserHandle.USER_CURRENT);
     }
 
     @Override
@@ -205,6 +211,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
                         keys.add(KEY_SHOW_ROAMING);
                         keys.add(KEY_SHOW_FOURG);
                         keys.add(KEY_SHOW_DATA_DISABLED);
+                        keys.add(KEY_COMBINED_ICONS);
                         keys.add(KEY_USE_OLD_MOBILETYPE);
                     }
 
