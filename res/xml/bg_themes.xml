@@ -12,6 +12,12 @@
         android:key="enable_blurs_on_windows"
         android:title="@string/window_blurs"/>
 
+    <Preference
+        android:key="monet_engine"
+        android:title="@string/monet_engine_title"
+        android:summary="@string/monet_engine_summary"
+        android:fragment="com.banana.settings.fragments.MonetEngine"/>
+
     <!-- Font style -->
     <Preference
         android:key="android.theme.customization.fonts"
