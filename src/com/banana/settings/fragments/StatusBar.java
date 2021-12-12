@@ -41,6 +41,7 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.banana.settings.fragments.BatteryBar;
 import com.banana.settings.fragments.NetworkTrafficSettings;
 import com.banana.settings.utils.TelephonyUtils;
 import com.banana.support.preferences.SystemSettingListPreference;
@@ -178,6 +179,8 @@ public class StatusBar extends SettingsPreferenceFragment implements
                 Settings.System.DATA_DISABLED_ICON, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.BLUETOOTH_SHOW_BATTERY, 1, UserHandle.USER_CURRENT);
+
+        BatteryBar.reset(mContext);
     }
 
     @Override
