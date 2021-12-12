@@ -35,6 +35,7 @@
 
     <!-- General -->
     <string name="network_icons_category_title">Network related icons</string>
+    <string name="battery_category_title">Battery</string>
     <string name="style_category_title">Style</string>
     <string name="gesture_preference_title_summary">Enable or disable all gestures</string>
     <string name="navigation_title">Navigation bar</string>
@@ -143,6 +144,10 @@
     <!-- QS clock -->
     <string name="qs_clock_title">Clock</string>
     <string name="qs_clock_summary">Display clock in quick status bar header</string>
+
+    <!-- QS date -->
+    <string name="qs_date_title">Date</string>
+    <string name="qs_date_summary">Display date in quick status bar header</string>
 
     <!-- Statusbar Clock background chip -->
     <string name="statusbar_clock_chip_title">Background chip</string>
