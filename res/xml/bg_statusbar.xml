@@ -57,6 +57,16 @@
             settings:min="0"
             settings:units="" />
 
+        <com.banana.support.preferences.SystemSettingSeekBarPreference
+            android:key="vowifi_icon_style"
+            android:title="@string/vowifi_icon_title"
+            android:summary="@string/vowifi_icon_summary"
+            android:defaultValue="0"
+            settings:defaultValueText="@string/disabled"
+            android:max="8"
+            settings:min="0"
+            settings:units="" />
+
     </PreferenceCategory>
 
     <Preference
