@@ -44,6 +44,8 @@
     <string name="default_string">Default</string>
     <string name="icons_category_title">Icons</string>
     <string name="caution">Caution</string>
+    <string name="enable">Enable</string>
+    <string name="disable">Disable</string>
 
     <!-- Units -->
     <string name="unit_seconds">seconds</string>
@@ -345,4 +347,12 @@
     <string name="screen_off_animation_default">Default</string>
     <string name="screen_off_animation_crt">CRT</string>
     <string name="screen_off_animation_scale">Scale</string>
+
+    <!-- UDFPS settings -->
+    <string name="udfps_settings_title">UDFPS customization</string>
+    <string name="udfps_settings_summary">Customize under-display fingerprint scanner</string>
+    <string name="udfps_icon_picker_title">UDFPS icon picker</string>
+    <string name="udfps_icon_picker_summary">Choose your favorite fingerprint icon</string>
+    <string name="udfps_recog_animation_effect_title">UDFPS animation effect</string>
+    <string name="udfps_recog_animation_effect_summary">Choose animation effect</string>
 </resources>

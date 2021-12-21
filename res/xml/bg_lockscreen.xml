@@ -39,4 +39,10 @@
         android:entryValues="@array/screen_off_animation_values"
         android:defaultValue="0" />
 
+    <Preference
+        android:key="udfps_settings"
+        android:title="@string/udfps_settings_title"
+        android:summary="@string/udfps_settings_summary"
+        android:fragment="com.banana.settings.fragments.lockscreen.UdfpsSettings" />
+
 </PreferenceScreen>
