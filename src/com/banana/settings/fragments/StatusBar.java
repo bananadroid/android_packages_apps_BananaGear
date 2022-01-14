@@ -125,7 +125,10 @@ public class StatusBar extends DashboardFragment implements
     }
 
     public static void reset(Context mContext) {
+        ContentResolver resolver = mContext.getContentResolver();
         NetworkTrafficSettings.reset(mContext);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.STATUSBAR_COLORED_ICONS, 0, UserHandle.USER_CURRENT);
     }
 
     @Override
