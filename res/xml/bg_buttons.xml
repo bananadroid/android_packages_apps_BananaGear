@@ -8,6 +8,13 @@
     android:title="@string/buttons_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <!-- Pixel Nav Animation -->
+    <com.banana.support.preferences.SystemSettingSwitchPreference
+        android:key="pixel_nav_animation"
+        android:title="@string/pixel_navbar_anim_title"
+        android:summary="@string/pixel_navbar_anim_summary"
+        android:defaultValue="true" />
+
     <PreferenceCategory
         android:key="power_key"
         android:title="@string/hardware_keys_power_key_title" >
@@ -25,4 +32,5 @@
             android:defaultValue="true" />
 
     </PreferenceCategory>
+
 </PreferenceScreen>

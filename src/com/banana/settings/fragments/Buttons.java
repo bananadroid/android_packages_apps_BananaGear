@@ -16,8 +16,10 @@
 
 package com.banana.settings.fragments;
 
+import android.content.ContentResolver;
 import android.content.Context;
 import android.os.Bundle;
+import android.os.UserHandle;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import androidx.preference.*;
@@ -50,6 +52,12 @@ public class Buttons extends DashboardFragment implements
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         return false;
+    }
+
+    public static void reset(Context mContext) {
+        ContentResolver resolver = mContext.getContentResolver();
+        Settings.System.putIntForUser(resolver,
+                Settings.System.PIXEL_NAV_ANIMATION, 1, UserHandle.USER_CURRENT);
     }
 
     @Override
