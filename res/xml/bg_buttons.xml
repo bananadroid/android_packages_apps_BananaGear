@@ -46,6 +46,13 @@
             android:summary="@string/navigation_bar_invert_layout_summary"
             android:defaultValue="false" />
 
+        <!-- Pixel Nav Animation -->
+        <com.banana.support.preferences.SystemSettingSwitchPreference
+            android:key="pixel_nav_animation"
+            android:title="@string/pixel_navbar_anim_title"
+            android:summary="@string/pixel_navbar_anim_summary"
+            android:defaultValue="true" />
+
         <ListPreference
             android:key="navigation_back_long_press"
             android:dialogTitle="@string/navigation_bar_back_long_press_title"
