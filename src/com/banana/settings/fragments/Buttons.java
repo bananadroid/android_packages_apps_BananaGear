@@ -955,6 +955,12 @@ public class Buttons extends SettingsPreferenceFragment
         return super.onPreferenceTreeClick(preference);
     }
 
+    public static void reset(Context mContext) {
+        ContentResolver resolver = mContext.getContentResolver();
+        Settings.System.putIntForUser(resolver,
+                Settings.System.PIXEL_NAV_ANIMATION, 1, UserHandle.USER_CURRENT);
+    }
+
     @Override
     public int getMetricsCategory() {
         return MetricsEvent.BANANADROID;
