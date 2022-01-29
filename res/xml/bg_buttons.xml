@@ -47,4 +47,15 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:title="@string/navigation_title">
+
+        <!-- Pixel Nav Animation -->
+        <com.banana.support.preferences.SystemSettingSwitchPreference
+            android:key="pixel_nav_animation"
+            android:title="@string/pixel_navbar_anim_title"
+            android:summary="@string/pixel_navbar_anim_summary"
+            android:defaultValue="true" />
+
+    </PreferenceCategory>
 </PreferenceScreen>
