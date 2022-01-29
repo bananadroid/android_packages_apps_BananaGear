@@ -80,6 +80,13 @@
     <PreferenceCategory
         android:title="@string/other_category_title" >
 
+        <!-- Pixel Nav Animation -->
+        <com.banana.support.preferences.SystemSettingSwitchPreference
+            android:key="pixel_nav_animation"
+            android:title="@string/pixel_navbar_anim_title"
+            android:summary="@string/pixel_navbar_anim_summary"
+            android:defaultValue="true" />
+
         <!-- Pocket Judge -->
         <com.banana.support.preferences.SystemSettingSwitchPreference
             android:key="pocket_judge"
