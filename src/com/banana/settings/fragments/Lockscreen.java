@@ -40,11 +40,26 @@ import java.util.List;
 public class Lockscreen extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
+    private static final String LOCKSCREEN_GESTURES_CATEGORY = "lockscreen_gestures_category";
+    private static final String KEY_RIPPLE_EFFECT = "enable_ripple_effect";
+
+    private Preference mRippleEffect;
+
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.bg_lockscreen);
         ContentResolver resolver = getActivity().getContentResolver();
+
+        PreferenceCategory gestCategory = (PreferenceCategory) findPreference(LOCKSCREEN_GESTURES_CATEGORY);
+
+        FingerprintManager mFingerprintManager = (FingerprintManager)
+                getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
+        mRippleEffect = (Preference) findPreference(KEY_RIPPLE_EFFECT);
+
+        if (mFingerprintManager == null || !mFingerprintManager.isHardwareDetected()) {
+            gestCategory.removePreference(mRippleEffect);
+        }
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -54,6 +69,8 @@ public class Lockscreen extends SettingsPreferenceFragment implements
 
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
+        Settings.System.putIntForUser(resolver,
+                Settings.System.ENABLE_RIPPLE_EFFECT, 1, UserHandle.USER_CURRENT);
     }
 
     @Override
@@ -78,6 +95,12 @@ public class Lockscreen extends SettingsPreferenceFragment implements
                 @Override
                 public List<String> getNonIndexableKeys(Context context) {
                     List<String> keys = super.getNonIndexableKeys(context);
+
+                    FingerprintManager mFingerprintManager = (FingerprintManager)
+                            context.getSystemService(Context.FINGERPRINT_SERVICE);
+                    if (mFingerprintManager == null || !mFingerprintManager.isHardwareDetected()) {
+                        keys.add(KEY_RIPPLE_EFFECT);
+                    }
                     return keys;
                 }
             };
