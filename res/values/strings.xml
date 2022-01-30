@@ -262,4 +262,8 @@
     <!-- Quick Settings brightness icon -->
     <string name="brightness_icon_title">Adaptive brightness button</string>
     <string name="brightness_icon_summary">Show adaptive brightness button</string>
+
+    <!-- Fingerprint Ripple Effect -->
+    <string name="enable_fingerprint_ripple_effect_title">Ripple effect</string>
+    <string name="enable_fingerprint_ripple_effect_summary">Show ripple effect on unlock with fingerprint</string>
 </resources>
