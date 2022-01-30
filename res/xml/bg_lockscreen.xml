@@ -25,6 +25,18 @@
         android:defaultValue="true" />
 
     <PreferenceCategory
+        android:key="lockscreen_gestures_category"
+        android:title="@string/gestures_title">
+
+        <com.banana.support.preferences.SystemSettingSwitchPreference
+            android:key="enable_ripple_effect"
+            android:title="@string/enable_fingerprint_ripple_effect_title"
+            android:summary="@string/enable_fingerprint_ripple_effect_summary"
+            android:defaultValue="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="lockscreen_media_art_options"
         android:title="@string/lockscreen_media_art_options_title">
 
