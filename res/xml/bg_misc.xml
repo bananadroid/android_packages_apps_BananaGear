@@ -16,6 +16,18 @@
         android:fragment="com.banana.settings.fragments.ui.SmartPixels" />
 
     <PreferenceCategory
+        android:title="@string/spoof_category_title" >
+
+        <!-- Unlimited Photos storage -->
+        <com.banana.support.preferences.SystemPropertySwitchPreference
+            android:key="persist.sys.pixelprops.gphotos"
+            android:title="@string/photos_spoof_title"
+            android:summary="@string/photos_spoof_summary"
+            android:defaultValue="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:title="@string/other_category_title" >
 
         <!-- Pocket Judge -->
