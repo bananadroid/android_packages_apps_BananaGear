@@ -37,6 +37,11 @@
             android:fragment="com.banana.settings.fragments.NetworkTrafficSettings" />
 
         <com.banana.support.preferences.SystemSettingSwitchPreference
+            android:key="use_old_mobiletype"
+            android:title="@string/old_mobiletype_title"
+            android:summary="@string/old_mobiletype_summary" />
+
+        <com.banana.support.preferences.SystemSettingSwitchPreference
             android:key="statusbar_colored_icons"
             android:title="@string/statusbar_colored_icons_title"
             android:summary="@string/statusbar_colored_icons_summary"
