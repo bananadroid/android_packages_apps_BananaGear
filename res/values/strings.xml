@@ -624,4 +624,10 @@
     <string name="notification_color">Notification color</string>
     <string name="wallpaper_color">Wallpaper color</string>
     <string name="custom_color">Custom color</string>
+
+    <!-- Screen Off animation -->
+    <string name="screen_off_animation_title">Screen off animation</string>
+    <string name="screen_off_animation_default">Default</string>
+    <string name="screen_off_animation_crt">CRT</string>
+    <string name="screen_off_animation_scale">Scale</string>
 </resources>
