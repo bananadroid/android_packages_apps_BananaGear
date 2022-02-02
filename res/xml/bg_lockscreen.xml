@@ -18,22 +18,25 @@
     android:title="@string/lockscreen_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <PreferenceCategory
-        android:key="lockscreen_element"
-        android:title="@string/lockscreen_element">
+    <com.banana.support.preferences.SystemSettingSwitchPreference
+        android:key="lockscreen_battery_info"
+        android:title="@string/lockscreen_battery_info_title"
+        android:summary="@string/lockscreen_battery_info_summary"
+        android:defaultValue="true" />
 
-        <com.banana.support.preferences.SystemSettingSwitchPreference
-            android:key="lockscreen_battery_info"
-            android:title="@string/lockscreen_battery_info_title"
-            android:summary="@string/lockscreen_battery_info_summary"
-            android:defaultValue="true" />
+    <com.banana.support.preferences.SystemSettingSwitchPreference
+        android:key="enable_ripple_effect"
+        android:title="@string/enable_fingerprint_ripple_effect_title"
+        android:summary="@string/enable_fingerprint_ripple_effect_summary"
+        android:defaultValue="true" />
 
-        <com.banana.support.preferences.SystemSettingSwitchPreference
-            android:key="enable_ripple_effect"
-            android:title="@string/enable_fingerprint_ripple_effect_title"
-            android:summary="@string/enable_fingerprint_ripple_effect_summary"
-            android:defaultValue="true" />
-
-    </PreferenceCategory>
+    <!-- Screen Off animation -->
+    <com.banana.support.preferences.SystemSettingListPreference
+        android:key="screen_off_animation"
+        android:title="@string/screen_off_animation_title"
+        android:dialogTitle="@string/screen_off_animation_title"
+        android:entries="@array/screen_off_animation_entries"
+        android:entryValues="@array/screen_off_animation_values"
+        android:defaultValue="0" />
 
 </PreferenceScreen>

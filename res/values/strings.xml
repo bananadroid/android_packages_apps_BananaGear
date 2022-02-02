@@ -339,4 +339,10 @@
     <!-- IME button space -->
     <string name="navigation_bar_ime_space_title">IME button space</string>
     <string name="navigation_bar_ime_space_summary">Show IME button space below keyboard</string>
+
+    <!-- Screen Off animation -->
+    <string name="screen_off_animation_title">Screen off animation</string>
+    <string name="screen_off_animation_default">Default</string>
+    <string name="screen_off_animation_crt">CRT</string>
+    <string name="screen_off_animation_scale">Scale</string>
 </resources>
