@@ -355,4 +355,10 @@
     <string name="udfps_icon_picker_summary">Choose your favorite fingerprint icon</string>
     <string name="udfps_recog_animation_effect_title">UDFPS animation effect</string>
     <string name="udfps_recog_animation_effect_summary">Choose animation effect</string>
+
+    <!-- Fingerprint authentication vibration -->
+    <string name="fp_success_vibrate_title">Fingerprint authentication vibration</string>
+    <string name="fp_success_vibrate_summary">Vibrate when fingerprint authentication is successful</string>
+    <string name="fp_error_vibrate_title">Fingerprint error vibration</string>
+    <string name="fp_error_vibrate_summary">Vibrate when fingerprint authentication fails</string>
 </resources>
