@@ -150,6 +150,8 @@ public class Misc extends SettingsPreferenceFragment implements
                 Settings.System.RETICKER_COLORED, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.NOTIFICATION_MATERIAL_DISMISS, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.CHARGING_ANIMATION, 1, UserHandle.USER_CURRENT);
         PulseSettings.reset(mContext);
     }
 
