@@ -74,7 +74,7 @@ public class UdfpsAnimation extends SettingsPreferenceFragment implements
     private Switch mSwitch;
 
     private RecyclerView mRecyclerView;
-    private String mPkg = "com.banana.udfps.resources";
+    private String mPkg = "com.banana.udfps.animations";
     private AnimationDrawable animation;
 
     private Resources udfpsRes;
