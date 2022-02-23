@@ -43,6 +43,7 @@
     <string name="general_ui_category_title">General UI</string>
     <string name="default_string">Default</string>
     <string name="icons_category_title">Icons</string>
+    <string name="gestures_title">Gestures</string>
     <string name="caution">Caution</string>
     <string name="enable">Enable</string>
     <string name="disable">Disable</string>

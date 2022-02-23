@@ -27,11 +27,14 @@ import android.provider.Settings;
 import androidx.preference.*;
 
 import com.android.internal.logging.nano.MetricsProto;
+import com.android.internal.util.banana.BananaUtils;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
+
+import com.banana.settings.fragments.lockscreen.UdfpsSettings;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,14 +43,16 @@ import java.util.List;
 public class Lockscreen extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
-    private static final String LOCKSCREEN_ELEMENT_CATEGORY = "lockscreen_element";
+    private static final String LOCKSCREEN_GESTURES_CATEGORY = "lockscreen_gestures_category";
     private static final String KEY_RIPPLE_EFFECT = "enable_ripple_effect";
     private static final String KEY_FP_SUCCESS_VIBRATE = "fp_success_vibrate";
     private static final String KEY_FP_ERROR_VIBRATE = "fp_error_vibrate";
+    private static final String KEY_UDFPS_SETTINGS = "udfps_settings";
 
     private Preference mRippleEffect;
     private Preference mFingerprintVib;
     private Preference mFingerprintVibErr;
+    private Preference mUdfpsSettings;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -55,18 +60,27 @@ public class Lockscreen extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.bg_lockscreen);
         ContentResolver resolver = getActivity().getContentResolver();
 
-        PreferenceCategory gestCategory = (PreferenceCategory) findPreference(LOCKSCREEN_ELEMENT_CATEGORY);
+        PreferenceCategory gestCategory = (PreferenceCategory) findPreference(LOCKSCREEN_GESTURES_CATEGORY);
 
         FingerprintManager mFingerprintManager = (FingerprintManager)
                 getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
         mRippleEffect = (Preference) findPreference(KEY_RIPPLE_EFFECT);
         mFingerprintVib = (Preference) findPreference(KEY_FP_SUCCESS_VIBRATE);
         mFingerprintVibErr = (Preference) findPreference(KEY_FP_ERROR_VIBRATE);
+        mUdfpsSettings = (Preference) findPreference(KEY_UDFPS_SETTINGS);
 
         if (mFingerprintManager == null || !mFingerprintManager.isHardwareDetected()) {
             gestCategory.removePreference(mRippleEffect);
             gestCategory.removePreference(mFingerprintVib);
             gestCategory.removePreference(mFingerprintVibErr);
+            gestCategory.removePreference(mUdfpsSettings);
+        } else {
+            if (!BananaUtils.isPackageInstalled(getContext(), "com.banana.udfps.icons")) {
+                gestCategory.removePreference(mUdfpsSettings);
+            } else {
+                gestCategory.removePreference(mFingerprintVib);
+                gestCategory.removePreference(mFingerprintVibErr);
+            }
         }
     }
 
@@ -83,6 +97,7 @@ public class Lockscreen extends SettingsPreferenceFragment implements
                 Settings.System.FP_ERROR_VIBRATE, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.FP_SUCCESS_VIBRATE, 1, UserHandle.USER_CURRENT);
+        UdfpsSettings.reset(mContext);
     }
 
     @Override
@@ -114,6 +129,14 @@ public class Lockscreen extends SettingsPreferenceFragment implements
                         keys.add(KEY_RIPPLE_EFFECT);
                         keys.add(KEY_FP_SUCCESS_VIBRATE);
                         keys.add(KEY_FP_ERROR_VIBRATE);
+                        keys.add(KEY_UDFPS_SETTINGS);
+                    } else {
+                        if (!BananaUtils.isPackageInstalled(context, "com.banana.udfps.icons")) {
+                            keys.add(KEY_UDFPS_SETTINGS);
+                        } else {
+                            keys.add(KEY_FP_SUCCESS_VIBRATE);
+                            keys.add(KEY_FP_ERROR_VIBRATE);
+                        }
                     }
                     return keys;
                 }
