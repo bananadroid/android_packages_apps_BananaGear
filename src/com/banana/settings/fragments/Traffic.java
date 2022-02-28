@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021-2022 BananaDroid
+ * Copyright (C) 2021-2022 The PixelDust Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,98 +16,71 @@
 
 package com.banana.settings.fragments;
 
-import android.app.ActivityManagerNative;
-import android.content.Context;
 import android.content.ContentResolver;
-import android.content.pm.PackageManager.NameNotFoundException;
-import android.content.res.Resources;
+import android.content.Context;
 import android.os.Bundle;
-import android.os.RemoteException;
-import android.os.ServiceManager;
 import android.os.UserHandle;
+import android.provider.SearchIndexableResource;
 import android.provider.Settings;
-import android.text.TextUtils;
 import android.util.Log;
-import android.view.IWindowManager;
-import android.view.View;
-import android.view.WindowManagerGlobal;
 
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
-import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
-import com.android.internal.util.banana.BananaUtils;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-import com.android.settings.Utils;
+import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settingslib.search.Indexable;
+import com.android.settingslib.search.SearchIndexable;
 
 import com.banana.support.preferences.CustomSeekBarPreference;
-import com.banana.support.preferences.SystemSettingSeekBarPreference;
-import com.banana.support.preferences.SystemSettingSwitchPreference;
 
-import java.util.Locale;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.ArrayList;
+import java.util.List;
 
+@SearchIndexable
 public class Traffic extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
-    private static final String NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD = "network_traffic_autohide_threshold";
-    private static final String NETWORK_TRAFFIC_LOCATION = "network_traffic_location";
-    private static final String NETWORK_TRAFFIC_REFRESH_INTERVAL = "network_traffic_refresh_interval";
-    private static final String NETWORK_TRAFFIC_FONT_SIZE  = "network_traffic_font_size";
-
-    private CustomSeekBarPreference mThreshold;
-    private ListPreference mNetTrafficLocation;
-    private SystemSettingSeekBarPreference mInterval;
     private CustomSeekBarPreference mNetTrafficSize;
+    private CustomSeekBarPreference mNetTrafficAutohideThreshold;
+    private CustomSeekBarPreference mNetTrafficRefreshInterval;
+    private ListPreference mNetTrafficLocation;
+    private ListPreference mNetTrafficMode;
+    private ListPreference mNetTrafficUnits;
+    private SwitchPreference mNetTrafficAutohide;
+    private SwitchPreference mNetTrafficHideArrow;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         addPreferencesFromResource(R.xml.traffic);
-
         final ContentResolver resolver = getActivity().getContentResolver();
-        final PreferenceScreen prefSet = getPreferenceScreen();
 
-        // Network traffic location
-        mNetTrafficLocation = (ListPreference) findPreference(NETWORK_TRAFFIC_LOCATION);
+        mNetTrafficSize = (CustomSeekBarPreference)
+                findPreference(Settings.System.NETWORK_TRAFFIC_FONT_SIZE);
+        mNetTrafficAutohideThreshold = (CustomSeekBarPreference)
+                findPreference(Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD);
+        mNetTrafficRefreshInterval = (CustomSeekBarPreference)
+                findPreference(Settings.System.NETWORK_TRAFFIC_REFRESH_INTERVAL);
+        mNetTrafficLocation = (ListPreference)
+                findPreference(Settings.System.NETWORK_TRAFFIC_LOCATION);
+        mNetTrafficLocation.setOnPreferenceChangeListener(this);
+        mNetTrafficMode = (ListPreference)
+                findPreference(Settings.System.NETWORK_TRAFFIC_MODE);
+        mNetTrafficAutohide = (SwitchPreference)
+                findPreference(Settings.System.NETWORK_TRAFFIC_AUTOHIDE);
+        mNetTrafficUnits = (ListPreference)
+                findPreference(Settings.System.NETWORK_TRAFFIC_UNITS);
+        mNetTrafficHideArrow = (SwitchPreference)
+                findPreference(Settings.System.NETWORK_TRAFFIC_HIDEARROW);
+
         int location = Settings.System.getIntForUser(resolver,
                 Settings.System.NETWORK_TRAFFIC_LOCATION, 0, UserHandle.USER_CURRENT);
-        mNetTrafficLocation.setOnPreferenceChangeListener(this);
-
-        int trafvalue = Settings.System.getIntForUser(resolver,
-                Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, 1, UserHandle.USER_CURRENT);
-        mThreshold = (CustomSeekBarPreference) findPreference("network_traffic_autohide_threshold");
-        mThreshold.setValue(trafvalue);
-        mThreshold.setOnPreferenceChangeListener(this);
-
-        int val = Settings.System.getIntForUser(resolver,
-                Settings.System.NETWORK_TRAFFIC_REFRESH_INTERVAL, 1, UserHandle.USER_CURRENT);
-        mInterval = (SystemSettingSeekBarPreference) findPreference(NETWORK_TRAFFIC_REFRESH_INTERVAL);
-        mInterval.setValue(val);
-        mInterval.setOnPreferenceChangeListener(this);
-
-        int fontSize = Settings.System.getInt(resolver,
-                Settings.System.NETWORK_TRAFFIC_FONT_SIZE, 18);
-        mNetTrafficSize = (CustomSeekBarPreference) findPreference(NETWORK_TRAFFIC_FONT_SIZE);
-        mNetTrafficSize.setValue(fontSize / 1);
-        mNetTrafficSize.setOnPreferenceChangeListener(this);
-
-        int netMonitorEnabled = Settings.System.getIntForUser(resolver,
-                Settings.System.NETWORK_TRAFFIC_STATE, 0, UserHandle.USER_CURRENT);
-        if (netMonitorEnabled == 1) {
-            mNetTrafficLocation.setValue(String.valueOf(location+1));
-            updateTrafficLocation(location+1);
-        } else {
-            mNetTrafficLocation.setValue("0");
-            updateTrafficLocation(0);
-        }
-        mNetTrafficLocation.setSummary(mNetTrafficLocation.getEntry());
+        updateEnabledStates(location);
     }
 
     @Override
@@ -116,70 +89,42 @@ public class Traffic extends SettingsPreferenceFragment implements OnPreferenceC
     }
 
     @Override
-    public void onResume() {
-        super.onResume();
-    }
-
-    @Override
-    public boolean onPreferenceChange(Preference preference, Object objValue) {
-        final ContentResolver resolver = getActivity().getContentResolver();
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mNetTrafficLocation) {
-            int location = Integer.valueOf((String) objValue);
-            int index = mNetTrafficLocation.findIndexOfValue((String) objValue);
-            mNetTrafficLocation.setSummary(mNetTrafficLocation.getEntries()[index]);
-            if (location > 0) {
-                // Convert the selected location mode from our list {0,1,2} and store it to "view location" setting: 0=sb; 1=expanded sb
-                Settings.System.putIntForUser(resolver,
-                        Settings.System.NETWORK_TRAFFIC_LOCATION, location-1, UserHandle.USER_CURRENT);
-                // And also enable the net monitor
-                Settings.System.putIntForUser(resolver,
-                        Settings.System.NETWORK_TRAFFIC_STATE, 1, UserHandle.USER_CURRENT);
-            } else { // Disable net monitor completely
-                Settings.System.putIntForUser(resolver,
-                        Settings.System.NETWORK_TRAFFIC_STATE, 0, UserHandle.USER_CURRENT);
-            }
-            updateTrafficLocation(location);
-            return true;
-        } else if (preference == mThreshold) {
-            int val = (Integer) objValue;
-            Settings.System.putIntForUser(resolver,
-                    Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, val,
-                    UserHandle.USER_CURRENT);
-            return true;
-        } else if (preference == mInterval) {
-            int val = (Integer) objValue;
-            Settings.System.putIntForUser(resolver,
-                    Settings.System.NETWORK_TRAFFIC_REFRESH_INTERVAL, val,
-                    UserHandle.USER_CURRENT);
-            return true;
-        }  else if (preference == mNetTrafficSize) {
-            int fontSize = ((Integer)objValue).intValue();
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.NETWORK_TRAFFIC_FONT_SIZE, fontSize);
+            int location = Integer.valueOf((String) newValue);
+            updateEnabledStates(location);
             return true;
         }
         return false;
     }
 
-    public void updateTrafficLocation(int location) {
-        switch(location){
-            case 0:
-                mThreshold.setEnabled(false);
-                mInterval.setEnabled(false);
-                mNetTrafficSize.setEnabled(false);
-                break;
-            case 1:
-                mThreshold.setEnabled(true);
-                mInterval.setEnabled(true);
-                mNetTrafficSize.setEnabled(true);
-                break;
-            case 2:
-                mThreshold.setEnabled(true);
-                mInterval.setEnabled(true);
-                mNetTrafficSize.setEnabled(false);
-                break;
-            default:
-                break;
-        }
+    private void updateEnabledStates(int location) {
+        final boolean enabled = location != 0;
+        mNetTrafficSize.setEnabled(enabled);
+        mNetTrafficMode.setEnabled(enabled);
+        mNetTrafficAutohide.setEnabled(enabled);
+        mNetTrafficAutohideThreshold.setEnabled(enabled);
+        mNetTrafficHideArrow.setEnabled(enabled);
+        mNetTrafficRefreshInterval.setEnabled(enabled);
+        mNetTrafficUnits.setEnabled(enabled);
     }
+
+    public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+        new BaseSearchIndexProvider() {
+            @Override
+            public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
+                    boolean enabled) {
+                final ArrayList<SearchIndexableResource> result = new ArrayList<>();
+                final SearchIndexableResource sir = new SearchIndexableResource(context);
+                sir.xmlResId = R.xml.traffic;
+                result.add(sir);
+                return result;
+            }
+
+            @Override
+            public List<String> getNonIndexableKeys(Context context) {
+                final List<String> keys = super.getNonIndexableKeys(context);
+                return keys;
+            }
+    };
 }
