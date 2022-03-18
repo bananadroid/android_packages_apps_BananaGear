@@ -639,4 +639,7 @@
     <string name="padding_category">Statusbar padding</string>
     <string name="statusbar_left_padding">Padding kiri</string>
     <string name="statusbar_right_padding">Padding kanan</string>
+    <!-- Ignore window secure -->
+    <string name="ignore_window_secure_title">Abaikan window secure flags</string>
+    <string name="ignore_window_secure_summary">Menghilangkan batas tangkapan layar dan rekaman layar pada semua aplikasi. Secara normal, beberapa aplikasi akan menjadi layar hitam pada rekaman. Ini dapat menimbulkan kenyamanan pada beberapa kasus, tapi dapat menyebabkan kebocoran privasi. Setelah mengganti opsi ini, mulai ulang aplikasi agar efek berfungsi.</string>
 </resources>
