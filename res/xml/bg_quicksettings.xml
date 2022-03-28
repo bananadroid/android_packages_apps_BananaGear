@@ -70,7 +70,13 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="@string/qs_tile_animation_title">
+        android:title="@string/qs_tile_styles">
+
+        <Preference
+            android:key="qs_tile_layout"
+            android:title="@string/qs_tile_layout_title"
+            android:summary="@string/qs_tile_layout_summary"
+            android:fragment="com.banana.settings.fragments.QsTileLayoutSettings" />
 
         <!-- QS Header image -->
         <Preference
