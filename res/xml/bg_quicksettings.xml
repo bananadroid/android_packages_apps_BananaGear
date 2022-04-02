@@ -25,6 +25,15 @@
         android:summary="@string/qs_clock_summary"
         android:defaultValue="true" />
 
+    <com.banana.support.preferences.SystemSettingSeekBarPreference
+        android:key="qs_header_clock_size"
+        android:title="@string/clock_font_size_title"
+        android:max="27"
+        settings:min="10"
+        settings:interval="1"
+        android:defaultValue="14"
+        settings:units="@string/unit_pixels" />
+
     <PreferenceCategory
         android:key="quick_settings_brighness_category"
         android:title="@string/qs_show_brightness_slider_title">
