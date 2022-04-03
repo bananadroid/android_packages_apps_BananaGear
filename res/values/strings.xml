@@ -411,4 +411,11 @@
     <string name="lockscreen_media_art_options_title">Lock screen media art</string>
     <string name="lockscreen_media_art_title">Media cover art</string>
     <string name="lockscreen_media_art_summary">Display media cover art when available</string>
+
+    <!-- Lock screen album art filter -->
+    <string name="lockscreen_albumart_filter_title">Media cover art filter</string>
+    <string name="none_string">None</string>
+    <string name="lockscreen_albumart_filter_grayscale">Grayscale</string>
+    <string name="lockscreen_albumart_filter_tint">Accent tinted</string>
+    <string name="lockscreen_media_blur_title">Media art blur level</string>
 </resources>
