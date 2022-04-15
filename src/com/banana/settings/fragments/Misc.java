@@ -59,6 +59,7 @@ public class Misc extends SettingsPreferenceFragment implements
 
     private static final String KEY_FORCE_FULL_SCREEN = "display_cutout_force_fullscreen_settings";
     private static final String SMART_PIXELS = "smart_pixels";
+    private static final String HEADS_UP_TIMEOUT_PREF = "heads_up_timeout";
 
     private static final String SYS_GAMES_SPOOF = "persist.sys.pixelprops.games";
     private static final String SYS_PHOTOS_SPOOF = "persist.sys.pixelprops.gphotos";
@@ -67,13 +68,16 @@ public class Misc extends SettingsPreferenceFragment implements
     private SwitchPreference mPhotosSpoof;
     private Preference mShowCutoutForce;
     private Preference mSmartPixels;
+    private CustomSeekBarPreference mHeadsUpTimeOut;
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         ContentResolver resolver = getActivity().getContentResolver();
         addPreferencesFromResource(R.xml.bg_misc);
+
         final PreferenceScreen prefScreen = getPreferenceScreen();
+        final Context mContext = getActivity().getApplicationContext();
 
         mGamesSpoof = (SwitchPreference) prefScreen.findPreference(KEY_GAMES_SPOOF);
         mGamesSpoof.setChecked(SystemProperties.getBoolean(SYS_GAMES_SPOOF, false));
@@ -96,6 +100,23 @@ public class Misc extends SettingsPreferenceFragment implements
                 com.android.internal.R.bool.config_supportSmartPixels);
         if (!mSmartPixelsSupported)
             prefScreen.removePreference(mSmartPixels);
+
+        mHeadsUpTimeOut = (CustomSeekBarPreference)
+                            prefScreen.findPreference(HEADS_UP_TIMEOUT_PREF);
+        mHeadsUpTimeOut.setDefaultValue(getDefaultDecay(mContext));
+
+    }
+
+    private static int getDefaultDecay(Context context) {
+        int defaultHeadsUpTimeOut = 5;
+        Resources systemUiResources;
+        try {
+            systemUiResources = context.getPackageManager().getResourcesForApplication("com.android.systemui");
+            defaultHeadsUpTimeOut = systemUiResources.getInteger(systemUiResources.getIdentifier(
+                    "com.android.systemui:integer/heads_up_notification_decay", null, null)) / 1000;
+        } catch (Exception e) {
+        }
+        return defaultHeadsUpTimeOut;
     }
 
     public static void reset(Context mContext) {
@@ -111,6 +132,8 @@ public class Misc extends SettingsPreferenceFragment implements
                 Settings.System.LESS_BORING_HEADS_UP, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.NOTIFICATION_SOUND_VIB_SCREEN_ON, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.HEADS_UP_TIMEOUT, getDefaultDecay(mContext), UserHandle.USER_CURRENT);
     }
 
     @Override
