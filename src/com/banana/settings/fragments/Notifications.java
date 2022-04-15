@@ -17,6 +17,7 @@
 package com.banana.settings.fragments;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
@@ -29,6 +30,8 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.banana.support.preferences.CustomSeekBarPreference;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,6 +41,10 @@ public class Notifications extends DashboardFragment implements
 
     public static final String TAG = "Notifications";
 
+    private static final String HEADS_UP_TIMEOUT_PREF = "heads_up_timeout";
+
+    private CustomSeekBarPreference mHeadsUpTimeOut;
+
     @Override
     protected int getPreferenceScreenResId() {
         return R.xml.bg_notifications;
@@ -46,6 +53,26 @@ public class Notifications extends DashboardFragment implements
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
+
+        final PreferenceScreen prefScreen = getPreferenceScreen();
+        final Context mContext = getActivity().getApplicationContext();
+
+        mHeadsUpTimeOut = (CustomSeekBarPreference)
+                            prefScreen.findPreference(HEADS_UP_TIMEOUT_PREF);
+        mHeadsUpTimeOut.setDefaultValue(getDefaultDecay(mContext));
+
+    }
+
+    private static int getDefaultDecay(Context context) {
+        int defaultHeadsUpTimeOut = 5;
+        Resources systemUiResources;
+        try {
+            systemUiResources = context.getPackageManager().getResourcesForApplication("com.android.systemui");
+            defaultHeadsUpTimeOut = systemUiResources.getInteger(systemUiResources.getIdentifier(
+                    "com.android.systemui:integer/heads_up_notification_decay", null, null)) / 1000;
+        } catch (Exception e) {
+        }
+        return defaultHeadsUpTimeOut;
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -60,6 +87,8 @@ public class Notifications extends DashboardFragment implements
                 Settings.System.LESS_BORING_HEADS_UP, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.NOTIFICATION_SOUND_VIB_SCREEN_ON, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.HEADS_UP_TIMEOUT, getDefaultDecay(mContext), UserHandle.USER_CURRENT);
     }
 
     @Override
