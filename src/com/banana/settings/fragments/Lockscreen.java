@@ -78,9 +78,6 @@ public class Lockscreen extends SettingsPreferenceFragment implements
         } else {
             if (!BananaUtils.isPackageInstalled(getContext(), "com.banana.udfps.icons")) {
                 gestCategory.removePreference(mUdfpsSettings);
-            } else {
-                gestCategory.removePreference(mFingerprintVib);
-                gestCategory.removePreference(mFingerprintVibErr);
             }
         }
 
