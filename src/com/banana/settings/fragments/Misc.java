@@ -138,6 +138,8 @@ public class Misc extends SettingsPreferenceFragment implements
                 Settings.System.RETICKER_STATUS, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.RETICKER_COLORED, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.NOTIFICATION_MATERIAL_DISMISS, 0, UserHandle.USER_CURRENT);
     }
 
     @Override
