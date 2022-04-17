@@ -86,6 +86,12 @@
             android:max="10"
             android:dependency="heads_up_notifications_enabled" />
 
+        <com.banana.support.preferences.SystemSettingSwitchPreference
+            android:key="notification_material_dismiss"
+            android:title="@string/notification_material_dismiss_title"
+            android:summary="@string/notification_material_dismiss_summary"
+            android:defaultValue="false" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
