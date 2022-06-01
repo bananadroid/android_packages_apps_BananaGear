@@ -93,6 +93,12 @@
             android:summary="@string/navigation_bar_arrow_keys_summary"
             android:defaultValue="false" />
 
+        <com.banana.support.preferences.SystemSettingSwitchPreference
+            android:key="navigation_bar_ime_space"
+            android:title="@string/navigation_bar_ime_space_title"
+            android:summary="@string/navigation_bar_ime_space_summary"
+            android:defaultValue="true"/>
+
         <!-- Pocket Judge -->
         <com.banana.support.preferences.SystemSettingSwitchPreference
             android:key="pocket_judge"
