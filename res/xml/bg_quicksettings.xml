@@ -19,6 +19,42 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <PreferenceCategory
+        android:key="qs_columns_category"
+        android:title="@string/qs_columns_category">
+
+        <com.banana.support.preferences.SystemSettingSeekBarPreference
+            android:key="qs_layout_columns"
+            android:title="@string/qs_columns_portrait_title"
+            android:max="6"
+            settings:min="2"
+            settings:interval="1"
+            android:defaultValue="2"
+            settings:units="" />
+
+        <com.banana.support.preferences.SystemSettingSeekBarPreference
+            android:key="qs_layout_columns_landscape"
+            android:title="@string/qs_columns_landscape_title"
+            android:max="6"
+            settings:min="5"
+            settings:interval="1"
+            android:defaultValue="5"
+            settings:units="" />
+
+        <com.banana.support.preferences.SystemSettingSwitchPreference
+            android:key="qs_tile_vertical_layout"
+            android:title="@string/qs_tile_vertical_layout_title"
+            android:summary="@string/qs_tile_vertical_layout_summary"
+            android:defaultValue="false" />
+
+        <com.banana.support.preferences.SystemSettingSwitchPreference
+            android:key="qs_tile_label_hide"
+            android:title="@string/qs_tile_title_visibility_title"
+            android:summary="@string/qs_tile_title_visibility_summary"
+            android:defaultValue="false"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="qs_battery"
         android:title="@string/qs_battery_category_title">
 

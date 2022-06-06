@@ -317,4 +317,13 @@
     <!-- Navbar Animation -->
     <string name="pixel_navbar_anim_title">Pixel animation</string>
     <string name="pixel_navbar_anim_summary">Enable pixel style animation for 3-button navigation bar</string>
+
+    <!-- QS columns/tile customizations -->
+    <string name="qs_columns_category">QS tile layout and column settings</string>
+    <string name="qs_columns_portrait_title">QS columns in portrait</string>
+    <string name="qs_columns_landscape_title">QS columns in landscape</string>
+    <string name="qs_tile_vertical_layout_title">QS vertical layout</string>
+    <string name="qs_tile_vertical_layout_summary">Enable tile vertical layout</string>
+    <string name="qs_tile_title_visibility_title">Hide titles</string>
+    <string name="qs_tile_title_visibility_summary">Enable to hide QS tile titles</string>
 </resources>
