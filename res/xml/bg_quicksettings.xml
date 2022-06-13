@@ -74,7 +74,17 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="@string/icons_category_title">
+        android:title="@string/other_category_title">
+
+        <com.banana.support.preferences.SystemSettingSeekBarPreference
+            android:key="qs_transparency"
+            android:title="@string/qs_transparency_title"
+            android:summary="@string/qs_transparency_summary"
+            android:defaultValue="100"
+            settings:interval="1"
+            settings:units="%"
+            android:max="100"
+            android:min="1" />
 
         <com.banana.support.preferences.SystemSettingSwitchPreference
             android:key="qs_footer_data_usage"

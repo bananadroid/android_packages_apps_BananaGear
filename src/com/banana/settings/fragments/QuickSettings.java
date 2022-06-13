@@ -16,8 +16,10 @@
 
 package com.banana.settings.fragments;
 
+import android.content.ContentResolver;
 import android.content.Context;
 import android.os.Bundle;
+import android.os.UserHandle;
 import android.provider.Settings;
 import android.provider.SearchIndexableResource;
 import androidx.fragment.app.FragmentManager;
@@ -51,6 +53,12 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         return false;
+    }
+
+    public static void reset(Context mContext) {
+        ContentResolver resolver = mContext.getContentResolver();
+        Settings.System.putIntForUser(resolver,
+                Settings.System.QS_TRANSPARENCY, 100, UserHandle.USER_CURRENT);
     }
 
     @Override
