@@ -425,4 +425,8 @@
     <string name="qs_footer_show_power_menu_title">Power menu shortcut</string>
     <string name="qs_footer_services_icon_title">Running services shortcut</string>
     <string name="qs_footer_settings_icon_title">Settings shortcut</string>
+
+    <!-- QS Transparency -->
+    <string name="qs_transparency_title">Background transparency</string>
+    <string name="qs_transparency_summary">Set transparency level for QS background</string>
 </resources>
