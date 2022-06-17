@@ -50,6 +50,13 @@
             android:summary="@string/app_downgrade_summary"
             android:defaultValue="false"/>
 
+        <!-- Ignore secure window -->
+        <com.banana.support.preferences.SecureSettingSwitchPreference
+            android:key="window_ignore_secure"
+            android:title="@string/ignore_window_secure_title"
+            android:summary="@string/ignore_window_secure_summary"
+            android:defaultValue="false"/>
+
         <!-- Pocket Judge -->
         <com.banana.support.preferences.SystemSettingSwitchPreference
             android:key="pocket_judge"
