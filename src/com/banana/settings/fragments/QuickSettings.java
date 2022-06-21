@@ -34,6 +34,8 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.banana.support.preferences.CustomSeekBarPreference;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,13 +44,20 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
     private static final String KEY_PREF_BATTERY_ESTIMATE = "qs_show_battery_estimate";
+    private static final String KEY_PREF_TILE_ANIM_STYLE = "qs_tile_animation_style";
+    private static final String KEY_PREF_TILE_ANIM_DURATION = "qs_tile_animation_duration";
+    private static final String KEY_PREF_TILE_ANIM_INTERPOLATOR = "qs_tile_animation_interpolator";
 
     private SwitchPreference mBatteryEstimate;
+    private ListPreference mTileAnimationStyle;
+    private CustomSeekBarPreference mTileAnimationDuration;
+    private ListPreference mTileAnimationInterpolator;
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.bg_quicksettings);
+        ContentResolver resolver = getActivity().getContentResolver();
 
         final PreferenceScreen prefScreen = getPreferenceScreen();
         boolean turboInstalled = BananaUtils.isPackageInstalled(getContext(),
@@ -56,6 +65,16 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         mBatteryEstimate = findPreference(KEY_PREF_BATTERY_ESTIMATE);
         if (!turboInstalled)
             prefScreen.removePreference(mBatteryEstimate);
+
+        mTileAnimationStyle = (ListPreference) findPreference(KEY_PREF_TILE_ANIM_STYLE);
+        mTileAnimationDuration = (CustomSeekBarPreference) findPreference(KEY_PREF_TILE_ANIM_DURATION);
+        mTileAnimationInterpolator = (ListPreference) findPreference(KEY_PREF_TILE_ANIM_INTERPOLATOR);
+
+        mTileAnimationStyle.setOnPreferenceChangeListener(this);
+
+        int tileAnimationStyle = Settings.System.getIntForUser(resolver,
+                Settings.System.QS_TILE_ANIMATION_STYLE, 0, UserHandle.USER_CURRENT);
+        updateAnimTileStyle(tileAnimationStyle);
     }
 
     @Override
@@ -65,6 +84,11 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mTileAnimationStyle) {
+            int value = Integer.parseInt((String) newValue);
+            updateAnimTileStyle(value);
+            return true;
+        }
         return false;
     }
 
@@ -90,6 +114,17 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                 Settings.System.QS_FOOTER_SHOW_POWER_MENU, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.QS_TRANSPARENCY, 100, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.QS_TILE_ANIMATION_STYLE, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.QS_TILE_ANIMATION_DURATION, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.QS_TILE_ANIMATION_INTERPOLATOR, 0, UserHandle.USER_CURRENT);
+    }
+
+    private void updateAnimTileStyle(int tileAnimationStyle) {
+        mTileAnimationDuration.setEnabled(tileAnimationStyle != 0);
+        mTileAnimationInterpolator.setEnabled(tileAnimationStyle != 0);
     }
 
     @Override
