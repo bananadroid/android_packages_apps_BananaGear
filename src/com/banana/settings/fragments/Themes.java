@@ -29,23 +29,13 @@ import androidx.preference.*;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
-import com.android.internal.util.banana.bananaUtils;
 
 import com.android.settings.R;
 import com.android.settings.dashboard.DashboardFragment;
-import com.android.settings.development.OverlayCategoryPreferenceController;
-import com.android.settings.display.FontPickerPreferenceController;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.core.AbstractPreferenceController;
 import com.android.settingslib.core.lifecycle.Lifecycle;
 import com.android.settingslib.search.SearchIndexable;
-
-import com.banana.settings.preferences.SwitchStylePreferenceController;
-import com.banana.settings.preferences.UiBlurPreferenceController;
-import com.banana.settings.preferences.Utils;
-
-import com.bananadroid.support.preferences.SecureSettingSwitchPreference;
-import com.bananadroid.support.preferences.SystemSettingSeekBarPreference;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,50 +45,11 @@ public class Themes extends DashboardFragment implements OnPreferenceChangeListe
 
     public static final String TAG = "Themes";
 
-    private static final String KEY_LOCKSCREEN_BLUR = "lockscreen_blur";
-    private static final String PREF_UNIVERSAL_DISCO = "universal_disco";
-
-    private SecureSettingSwitchPreference mUniversalDisco;
-    private SystemSettingSeekBarPreference mLockscreenBlur;
-
-    private IntentFilter mIntentFilter;
-    private static FontPickerPreferenceController mFontPickerPreference;
-
-    private BroadcastReceiver mIntentReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            String action = intent.getAction();
-            if (action.equals("com.android.server.ACTION_FONT_CHANGED")) {
-                mFontPickerPreference.stopProgress();
-            }
-        }
-    };
-
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        mIntentFilter = new IntentFilter();
-        mIntentFilter.addAction("com.android.server.ACTION_FONT_CHANGED");
-
-        mLockscreenBlur = (SystemSettingSeekBarPreference) findPreference(KEY_LOCKSCREEN_BLUR);
-        if (!Utils.isBlurSupported()) {
-            mLockscreenBlur.setVisible(false);
-        }
-
-        mUniversalDisco = (SecureSettingSwitchPreference) findPreference(PREF_UNIVERSAL_DISCO);
-        mUniversalDisco.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.Secure.UNIVERSAL_DISCO, 0) == 1));
-        mUniversalDisco.setOnPreferenceChangeListener(this);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mUniversalDisco) {
-            boolean value = (Boolean) newValue;
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.Secure.UNIVERSAL_DISCO, value ? 1 : 0);
-            bananaUtils.showSystemUiRestartDialog(getContext());
-            return true;
-        }
         return false;
     }
 
@@ -115,41 +66,6 @@ public class Themes extends DashboardFragment implements OnPreferenceChangeListe
     @Override
     protected int getPreferenceScreenResId() {
         return R.xml.bg_themes;
-    }
-
-    @Override
-    protected List<AbstractPreferenceController> createPreferenceControllers(Context context) {
-        return buildPreferenceControllers(context, getSettingsLifecycle(), this);
-    }
-
-    private static List<AbstractPreferenceController> buildPreferenceControllers(
-            Context context, Lifecycle lifecycle, Fragment fragment) {
-        final List<AbstractPreferenceController> controllers = new ArrayList<>();
-        controllers.add(new OverlayCategoryPreferenceController(context,
-                "android.theme.customization.adaptive_icon_shape"));
-        controllers.add(new OverlayCategoryPreferenceController(context,
-                "android.theme.customization.signal_icon"));
-        controllers.add(new OverlayCategoryPreferenceController(context,
-                "android.theme.customization.wifi_icon"));
-        controllers.add(new SwitchStylePreferenceController(context));
-        controllers.add(mFontPickerPreference = new FontPickerPreferenceController(context, lifecycle));
-        controllers.add(new UiBlurPreferenceController(context));
-        return controllers;
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        final Context context = getActivity();
-        context.registerReceiver(mIntentReceiver, mIntentFilter);
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        final Context context = getActivity();
-        context.unregisterReceiver(mIntentReceiver);
-        mFontPickerPreference.stopProgress();
     }
 
     /**

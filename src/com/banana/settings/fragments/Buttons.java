@@ -16,12 +16,18 @@
 
 package com.banana.settings.fragments;
 
+import static android.os.UserHandle.USER_SYSTEM;
+
+import android.content.ContentResolver;
 import android.content.Context;
+import android.content.om.IOverlayManager;
 import android.os.Bundle;
-import android.provider.Settings;
+import android.os.Handler;
+import android.os.RemoteException;
+import android.os.ServiceManager;
+import android.os.UserHandle;
 import android.provider.SearchIndexableResource;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
+import android.provider.Settings;
 import androidx.preference.*;
 
 import com.android.internal.logging.nano.MetricsProto;
@@ -35,20 +41,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 @SearchIndexable
-public class QuickSettings extends SettingsPreferenceFragment implements
+public class Buttons extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.bg_quicksettings);
+        addPreferencesFromResource(R.xml.bg_buttons);
+        final PreferenceScreen prefScreen = getPreferenceScreen();
+        ContentResolver resolver = getActivity().getContentResolver();
     }
 
-    @Override
-    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-    }
-
-    @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         return false;
     }
@@ -67,7 +70,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                             new ArrayList<SearchIndexableResource>();
 
                     SearchIndexableResource sir = new SearchIndexableResource(context);
-                    sir.xmlResId = R.xml.bg_quicksettings;
+                    sir.xmlResId = R.xml.bg_buttons;
                     result.add(sir);
                     return result;
                 }
