@@ -42,7 +42,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
     private Preference mQSLayoutColumns;
-    private Preference mQSLayoutColumnsLandscape;
     private Preference mQSTileVerticalLayout;
     private Preference mQSTileLabelHide;
 
@@ -53,8 +52,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements
 
         mQSLayoutColumns = (Preference) findPreference("qs_layout_columns");
         mQSLayoutColumns.setOnPreferenceChangeListener(this);
-        mQSLayoutColumnsLandscape = (Preference) findPreference("qs_layout_columns_landscape");
-        mQSLayoutColumnsLandscape.setOnPreferenceChangeListener(this);
         mQSTileVerticalLayout = (Preference) findPreference("qs_tile_vertical_layout");
         mQSTileVerticalLayout.setOnPreferenceChangeListener(this);
         mQSTileLabelHide = (Preference) findPreference("qs_tile_label_hide");
@@ -67,7 +64,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mQSLayoutColumns || preference == mQSLayoutColumnsLandscape
+        if (preference == mQSLayoutColumns
                 || preference == mQSTileVerticalLayout || preference == mQSTileLabelHide) {
             BananaUtils.showSystemUiRestartDialog(getContext());
             return true;

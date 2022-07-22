@@ -31,15 +31,6 @@
             android:defaultValue="2"
             settings:units="" />
 
-        <com.banana.support.preferences.SystemSettingSeekBarPreference
-            android:key="qs_layout_columns_landscape"
-            android:title="@string/qs_columns_landscape_title"
-            android:max="6"
-            settings:min="5"
-            settings:interval="1"
-            android:defaultValue="5"
-            settings:units="" />
-
         <com.banana.support.preferences.SystemSettingSwitchPreference
             android:key="qs_tile_vertical_layout"
             android:title="@string/qs_tile_vertical_layout_title"
