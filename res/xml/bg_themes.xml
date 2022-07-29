@@ -8,6 +8,10 @@
     android:title="@string/themes_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <SwitchPreference
+        android:key="enable_blurs_on_windows"
+        android:title="@string/window_blurs"/>
+
     <!-- Font style -->
     <Preference
         android:key="android.theme.customization.fonts"
