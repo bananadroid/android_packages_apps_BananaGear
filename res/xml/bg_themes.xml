@@ -79,4 +79,8 @@
         android:summary="@string/theme_customization_icon_shape_summary"
         android:fragment="com.banana.settings.fragments.ui.IconShapes"/>
 
+    <SwitchPreference
+        android:key="enable_blurs_on_windows"
+        android:title="@string/window_blurs"/>
+
 </PreferenceScreen>
