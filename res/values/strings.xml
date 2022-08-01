@@ -66,6 +66,7 @@
 
     <!-- Statusbar tuner -->
     <string name="statusbar_tuner_title">Statusbar icons</string>
+    <string name="statusbar_tuner_title_summary">Enable or disable many statusbar icons</string>
 
     <!-- Monet Engine -->
     <string name="monet_engine_title">Monet engine</string>
@@ -79,6 +80,7 @@
     <string name="monet_engine_linear_lightness_title">Use linear lightness</string>
 
     <!-- Network Traffic -->
+    <string name="network_icons_category_title">Network related icons</string>
     <string name="traffic_title">Traffic indicators</string>
     <string name="traffic_summary">Customize the traffic indicators</string>
     <string name="network_traffic_autohide_threshold_title">Auto-hide threshold</string>
@@ -208,6 +210,7 @@
     <string name="statusbar_colored_icons_summary">Use proper app icons for notification icons in statusbar</string>
 
     <!-- Notification count -->
+    <string name="notification_icons_category_title">Notification icons</string>
     <string name="statusbar_notif_count_title">Show notification count</string>
     <string name="statusbar_notif_count_summary">Display the number of pending notifications</string>
 

@@ -18,16 +18,23 @@
     android:title="@string/statusbar_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <Preference
+        android:key="systemui_tuner_statusbar"
+        android:title="@string/statusbar_tuner_title"
+        android:summary="@string/statusbar_tuner_title_summary">
+        <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.android.systemui"
+                android:targetClass="com.android.systemui.tuner.StatusbarItemsActivity" />
+    </Preference>
+     
     <PreferenceCategory
-        android:title="@string/icons_category_title">
+        android:title="@string/network_icons_category_title">
 
         <Preference
-            android:key="systemui_tuner_statusbar"
-            android:title="@string/statusbar_tuner_title">
-            <intent android:action="android.intent.action.MAIN"
-                    android:targetPackage="com.android.systemui"
-                    android:targetClass="com.android.systemui.tuner.StatusbarItemsActivity" />
-        </Preference>
+            android:key="traffic"
+            android:title="@string/traffic_title"
+            android:summary="@string/traffic_summary"
+            android:fragment="com.banana.settings.fragments.Traffic"/>
 
         <com.banana.support.preferences.SystemSettingSwitchPreference
             android:key="use_old_mobiletype"
@@ -83,25 +90,7 @@
             android:summary="@string/volte_vowifi_override_summary"
             android:defaultValue="true"/>
 
-        <com.banana.support.preferences.SystemSettingSwitchPreference
-            android:key="statusbar_colored_icons"
-            android:title="@string/statusbar_colored_icons_title"
-            android:summary="@string/statusbar_colored_icons_summary"
-            android:defaultValue="false" />
-
-        <com.banana.support.preferences.SystemSettingSwitchPreference
-            android:key="statusbar_notif_count"
-            android:title="@string/statusbar_notif_count_title"
-            android:summary="@string/statusbar_notif_count_summary"
-            android:defaultValue="false" />
-
     </PreferenceCategory>
-
-    <Preference
-        android:key="traffic"
-        android:title="@string/traffic_title"
-        android:summary="@string/traffic_summary"
-        android:fragment="com.banana.settings.fragments.Traffic"/>
 
     <PreferenceCategory
         android:title="@string/status_bar_clock_title">
@@ -149,4 +138,20 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:title="@string/notification_icons_category_title">
+
+        <com.banana.support.preferences.SystemSettingSwitchPreference
+            android:key="statusbar_colored_icons"
+            android:title="@string/statusbar_colored_icons_title"
+            android:summary="@string/statusbar_colored_icons_summary"
+            android:defaultValue="false" />
+
+        <com.banana.support.preferences.SystemSettingSwitchPreference
+            android:key="statusbar_notif_count"
+            android:title="@string/statusbar_notif_count_title"
+            android:summary="@string/statusbar_notif_count_summary"
+            android:defaultValue="false" />
+
+    </PreferenceCategory>
 </PreferenceScreen>
