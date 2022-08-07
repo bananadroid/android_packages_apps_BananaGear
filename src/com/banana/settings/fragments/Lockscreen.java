@@ -53,6 +53,7 @@ public class Lockscreen extends SettingsPreferenceFragment implements
     private Preference mFingerprintVib;
     private Preference mFingerprintVibErr;
     private Preference mUdfpsSettings;
+    private Preference mSecondaryColorClock;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -82,10 +83,17 @@ public class Lockscreen extends SettingsPreferenceFragment implements
                 gestCategory.removePreference(mFingerprintVibErr);
             }
         }
+
+        mSecondaryColorClock = (Preference) findPreference("use_secondary_color_clock");
+        mSecondaryColorClock.setOnPreferenceChangeListener(this);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mSecondaryColorClock) {
+            BananaUtils.showSystemUiRestartDialog(getContext());
+            return true;
+        }
         return false;
     }
 
