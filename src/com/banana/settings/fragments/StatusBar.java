@@ -43,6 +43,7 @@ import com.android.settingslib.search.SearchIndexable;
 import com.banana.settings.utils.TelephonyUtils;
 import com.banana.support.preferences.SystemSettingListPreference;
 import com.banana.support.preferences.SystemSettingSeekBarPreference;
+import com.banana.support.preferences.SystemSettingSwitchPreference;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -67,13 +68,13 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private static final int BATTERY_STYLE_TEXT = 4;
     private static final int BATTERY_STYLE_HIDDEN = 5;
 
-    private SwitchPreference mBatteryTextCharging;
-    private SwitchPreference mCombinedIcons;
-    private SwitchPreference mDataDisabled;
-    private SwitchPreference mOldMobileType;
-    private SwitchPreference mOverride;
-    private SwitchPreference mShowFourg;
-    private SwitchPreference mShowRoaming;
+    private SystemSettingSwitchPreference mBatteryTextCharging;
+    private SystemSettingSwitchPreference mCombinedIcons;
+    private SystemSettingSwitchPreference mDataDisabled;
+    private SystemSettingSwitchPreference mOldMobileType;
+    private SystemSettingSwitchPreference mOverride;
+    private SystemSettingSwitchPreference mShowFourg;
+    private SystemSettingSwitchPreference mShowRoaming;
     private SystemSettingListPreference mBatteryPercent;
     private SystemSettingListPreference mBatteryStyle;
     private SystemSettingSeekBarPreference mVolteIconStyle;
@@ -102,18 +103,18 @@ public class StatusBar extends SettingsPreferenceFragment implements
                 batterystyle != BATTERY_STYLE_TEXT && batterystyle != BATTERY_STYLE_HIDDEN);
         mBatteryPercent.setOnPreferenceChangeListener(this);
 
-        mBatteryTextCharging = (SwitchPreference) findPreference(KEY_STATUS_BAR_BATTERY_TEXT_CHARGING);
+        mBatteryTextCharging = (SystemSettingSwitchPreference) findPreference(KEY_STATUS_BAR_BATTERY_TEXT_CHARGING);
         mBatteryTextCharging.setEnabled(batterystyle == BATTERY_STYLE_HIDDEN ||
                 (batterystyle != BATTERY_STYLE_TEXT && batterypercent != 2));
 
         mVolteIconStyle = (SystemSettingSeekBarPreference) findPreference(KEY_VOLTE_ICON_STYLE);
         mVowifiIconStyle = (SystemSettingSeekBarPreference) findPreference(KEY_VOWIFI_ICON_STYLE);
-        mOverride = (SwitchPreference) findPreference(KEY_VOLTE_VOWIFI_OVERRIDE);
-        mShowRoaming = (SwitchPreference) findPreference(KEY_SHOW_ROAMING);
-        mShowFourg = (SwitchPreference) findPreference(KEY_SHOW_FOURG);
-        mDataDisabled = (SwitchPreference) findPreference(KEY_SHOW_DATA_DISABLED);
-        mCombinedIcons = (SwitchPreference) findPreference(KEY_COMBINED_ICONS);
-        mOldMobileType = (SwitchPreference) findPreference(KEY_USE_OLD_MOBILETYPE);
+        mOverride = (SystemSettingSwitchPreference) findPreference(KEY_VOLTE_VOWIFI_OVERRIDE);
+        mShowRoaming = (SystemSettingSwitchPreference) findPreference(KEY_SHOW_ROAMING);
+        mShowFourg = (SystemSettingSwitchPreference) findPreference(KEY_SHOW_FOURG);
+        mDataDisabled = (SystemSettingSwitchPreference) findPreference(KEY_SHOW_DATA_DISABLED);
+        mCombinedIcons = (SystemSettingSwitchPreference) findPreference(KEY_COMBINED_ICONS);
+        mOldMobileType = (SystemSettingSwitchPreference) findPreference(KEY_USE_OLD_MOBILETYPE);
 
         if (!TelephonyUtils.isVoiceCapable(getActivity())) {
             prefScreen.removePreference(mVolteIconStyle);
