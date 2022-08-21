@@ -295,16 +295,16 @@
     </string-array>
 
    <!-- QS Weather options -->
-    <string-array name="status_bar_weather_entries" translatable="false">
-        <item>@string/status_bar_weather_hidden</item>
-        <item>@string/status_bar_temperature_image_show_scale</item>
-        <item>@string/status_bar_temperature_image_hide_scale</item>
-        <item>@string/status_bar_temperature_show_scale_hide_image</item>
-        <item>@string/status_bar_temperature_hide_scale_hide_image</item>
-        <item>@string/status_bar_show_image</item>
+    <string-array name="qs_weather_entries" translatable="false">
+        <item>@string/qs_weather_hidden</item>
+        <item>@string/qs_temperature_image_show_scale</item>
+        <item>@string/qs_temperature_image_hide_scale</item>
+        <item>@string/qs_temperature_show_scale_hide_image</item>
+        <item>@string/qs_temperature_hide_scale_hide_image</item>
+        <item>@string/qs_show_image</item>
     </string-array>
 
-    <string-array name="status_bar_weather_values" translatable="false">
+    <string-array name="qs_weather_values" translatable="false">
         <item>0</item>
         <item>1</item>
         <item>2</item>

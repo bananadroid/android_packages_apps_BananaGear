@@ -101,6 +101,26 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:title="@string/qs_weather">
+
+        <com.banana.support.preferences.SystemSettingListPreference
+            android:key="qs_show_weather_temp"
+            android:title="@string/qs_weather_title"
+            android:summary="%s"
+            android:dialogTitle="@string/qs_weather_dialog_title"
+            android:entries="@array/qs_weather_entries"
+            android:entryValues="@array/qs_weather_values"
+            android:defaultValue="0" />
+
+        <Preference
+            android:key="omnijaws_settings"
+            android:title="@string/qs_weather_settings_title"
+            android:summary="@string/qs_weather_settings_summary"
+            android:fragment="com.banana.settings.fragments.OmniJawsSettings" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:title="@string/other_category_title">
 
         <com.banana.support.preferences.SystemSettingSeekBarPreference
@@ -118,13 +138,6 @@
             android:title="@string/qs_footer_datausage_title"
             android:summary="@string/qs_footer_datausage_summary"
             android:defaultValue="true" />
-
-        <com.banana.support.preferences.SystemSettingListPreference
-            android:key="status_bar_show_weather_temp"
-            android:title="@string/statusbar_weather_title"
-            android:dialogTitle="@string/statusbar_weather_dialog_title"
-            android:entries="@array/status_bar_weather_entries"
-            android:entryValues="@array/status_bar_weather_values" />
 
     </PreferenceCategory>
 
