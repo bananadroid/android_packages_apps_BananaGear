@@ -1,42 +1,5 @@
 <resources>
 
-    <!-- Network Traffic -->
-    <string-array name="network_traffic_location_entries" translatable="false">
-        <item>@string/network_traffic_disabled</item>
-        <item>@string/network_traffic_statusbar</item>
-        <item>@string/network_traffic_qs_header</item>
-    </string-array>
-
-    <string-array name="network_traffic_location_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-    </string-array>
-
-    <string-array name="network_traffic_mode_entries" translatable="false">
-        <item>@string/network_traffic_dynamic</item>
-        <item>@string/network_traffic_upload</item>
-        <item>@string/network_traffic_download</item>
-    </string-array>
-
-    <string-array name="network_traffic_mode_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-    </string-array>
-
-    <string-array name="network_traffic_units_entries" translatable="false">
-        <item>@string/network_traffic_units_bits</item>
-        <item>@string/network_traffic_units_bytes</item>
-    </string-array>
-
-    <string-array name="network_traffic_units_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-    </string-array>
-
     <!-- Status bar - Clock -->
     <string-array name="status_bar_clock_position_entries" translatable="false">
         <item>@string/status_bar_clock_position_right</item>

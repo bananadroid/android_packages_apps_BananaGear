@@ -37,12 +37,6 @@
     <PreferenceCategory
         android:title="@string/network_icons_category_title">
 
-        <Preference
-            android:key="traffic"
-            android:title="@string/traffic_title"
-            android:summary="@string/traffic_summary"
-            android:fragment="com.banana.settings.fragments.Traffic"/>
-
         <com.banana.support.preferences.SystemSettingSwitchPreference
             android:key="use_old_mobiletype"
             android:title="@string/old_mobiletype_title"
