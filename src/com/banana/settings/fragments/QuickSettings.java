@@ -45,6 +45,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private Preference mQSLayoutColumnsLandscape;
     private Preference mQSTileVerticalLayout;
     private Preference mQSTileLabelHide;
+    private Preference mQSTileStyle;
 
     private ListPreference mQuickPulldown;
 
@@ -68,6 +69,9 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         mQuickPulldown.setValue(String.valueOf(qpmode));
         mQuickPulldown.setSummary(mQuickPulldown.getEntry());
         mQuickPulldown.setOnPreferenceChangeListener(this);
+
+        mQSTileStyle = (Preference) findPreference("qs_tile_style");
+        mQSTileStyle.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -78,7 +82,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
         if (preference == mQSLayoutColumns || preference == mQSLayoutColumnsLandscape
-                || preference == mQSTileVerticalLayout || preference == mQSTileLabelHide) {
+                || preference == mQSTileVerticalLayout || preference == mQSTileLabelHide || preference == mQSTileStyle) {
             BananaUtils.showSystemUiRestartDialog(getContext());
             return true;
         } else if (preference == mQuickPulldown) {
