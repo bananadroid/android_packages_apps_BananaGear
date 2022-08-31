@@ -427,7 +427,7 @@
 
     <!-- QS Tile style -->
     <string name="qs_tile_style_title">QS tile style</string>
-    <string name="qs_tile_style_summary">Use alternative QS tile style</string>
+    <string name="qs_tile_style_summary">Use alternative QS tile color style</string>
 
     <!-- Hidden apps -->
     <string name="hidden_apps_title">Hidden apps</string>
