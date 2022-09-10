@@ -302,4 +302,29 @@
     <string name="lockscreen_battery_info_title">Lockscreen charging info</string>
     <string name="lockscreen_battery_info_summary">Show charging current, voltage, wattage and battery temperature on lockscreen while charging</string>
 
+    <!-- QS Weather Options -->
+    <string name="qs_weather_title">System weather style</string>
+    <string name="qs_weather_summary">Configure system weather</string>
+    <string name="qs_weather_dialog_title">Weather style</string>
+    <string name="qsweather_dialog_title">Weather location</string>
+    <string name="qs_weather_hidden">Hide weather</string>
+    <string name="qs_temperature_image_show_scale">Show temp with scale and image</string>
+    <string name="qs_temperature_image_hide_scale">Show temp with image without scale</string>
+    <string name="qs_temperature_show_scale_hide_image">Show temp with scale</string>
+    <string name="qs_temperature_hide_scale_hide_image">Show temp without scale</string>
+    <string name="qs_show_image">Show image</string>
+    <string name="qsweather_position_qqs">Quick QS</string>
+    <string name="qsweather_position_qsb">Expanded QS</string>
+    <string name="qsweather_position_both">Both</string>
+    
+    <!-- Omni weather -->
+    <string name="qs_weather_settings_title">Weather Settings</string>
+    <string name="qs_weather_settings_summary">Setup icon pack and weather service</string>
+    <string name="weather_title">Weather Settings</string>
+    <string name="weather_config_title">Weather service</string>
+    <string name="weather_config_summary">System service settings</string>
+    <string name="weather_icon_pack_title">Condition icon pack</string>
+    <string name="weather_icon_pack_info_title">You are not limited to the pre-installed weather icon packages. Search the Google PlayStore with the keyword "chronus icons" and you will find a lot of additional packages.</string>
+    <string name="qsweather_settings_title">QuickSettings Weather</string>
+    <string name="qsweather_settings_summary">Setup quicksettings weather views</string>
 </resources>
