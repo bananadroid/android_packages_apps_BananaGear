@@ -27,6 +27,7 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.preference.*;
 
 import com.android.internal.logging.nano.MetricsProto;
+import com.android.internal.util.banana.BananaUtils;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
@@ -40,10 +41,21 @@ import java.util.List;
 public class QuickSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
+    private static final String KEY_PREF_BATTERY_ESTIMATE = "qs_show_battery_estimate";
+
+    private SwitchPreference mBatteryEstimate;
+
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.bg_quicksettings);
+
+        final PreferenceScreen prefScreen = getPreferenceScreen();
+        boolean turboInstalled = BananaUtils.isPackageInstalled(getContext(),
+                "com.google.android.apps.turbo");
+        mBatteryEstimate = findPreference(KEY_PREF_BATTERY_ESTIMATE);
+        if (!turboInstalled)
+            prefScreen.removePreference(mBatteryEstimate);
     }
 
     @Override
@@ -88,6 +100,13 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                 @Override
                 public List<String> getNonIndexableKeys(Context context) {
                     List<String> keys = super.getNonIndexableKeys(context);
+
+                    boolean turboInstalled = BananaUtils.isPackageInstalled(context,
+                            "com.google.android.apps.turbo");
+
+                    if (!turboInstalled)
+                        keys.add(KEY_PREF_BATTERY_ESTIMATE);
+
                     return keys;
                 }
             };
