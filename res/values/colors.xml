@@ -16,6 +16,4 @@
     <color name="preference_background_color">@*android:color/accent_device_default</color>
 
     <color name="white">#FFF</color>
-
-    <color name="option_border_default">#5f6368</color>
 </resources>

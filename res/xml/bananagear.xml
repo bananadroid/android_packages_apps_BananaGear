@@ -58,21 +58,21 @@
             android:fragment="com.banana.settings.fragments.Lockscreen"
             android:icon="@drawable/ic_settings_lockscreens"/>
 
-        <!-- Ambient Display -->
+        <!-- Ambient Display
         <Preference
             android:key="doze_fragment"
             android:title="@string/doze_display_title"
             android:summary="@string/doze_display_summary" 
             android:fragment="com.banana.settings.fragments.DozeSettings"
-            android:icon="@drawable/ic_settings_ambient"/>
+            android:icon="@drawable/ic_settings_ambient"/>-->
 
-        <!-- Themes -->
+        <!-- Themes
         <Preference
             android:key="themes_category"
             android:title="@string/themes_title"
             android:summary="@string/themes_summary"
             android:fragment="com.banana.settings.fragments.Themes" 
-            android:icon="@drawable/ic_settings_themes" />
+            android:icon="@drawable/ic_settings_themes" />-->
 
         <!-- Misc -->
         <Preference

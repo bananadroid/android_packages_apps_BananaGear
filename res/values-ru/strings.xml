@@ -42,9 +42,4 @@
     <string name="other_category_title">Другое</string>
     <string name="default_string">По умолчанию</string>
 
-    <!-- Lockscreen battery info indicator  -->
-    <string name="lockscreen_element">Элементы</string>
-    <string name="lockscreen_battery_info_title">Информация о зарядке</string>
-    <string name="lockscreen_battery_info_summary">Отображать тока, напряжения, мощности и температуры батареи на экране блокировки во время зарядки</string>
-
 </resources>
