@@ -42,13 +42,13 @@
             android:fragment="com.android.settings.gestures.GestureSettings"
             settings:controller="com.android.settings.gestures.GesturesSettingPreferenceController"/>
 
-        <!-- Buttons
+        <!-- Buttons -->
         <Preference
             android:key="buttons_category"
             android:title="@string/buttons_title"
             android:summary="@string/buttons_title_summary" 
             android:fragment="com.banana.settings.fragments.Buttons"
-            android:icon="@drawable/ic_settings_buttons"/> -->
+            android:icon="@drawable/ic_settings_buttons"/>
 
         <!-- Lock Screen -->
         <Preference

@@ -23,7 +23,7 @@
     <string name="misc_title">Miscellaneous</string>
     <string name="misc_title_summary">Other options</string>
     <string name="buttons_title">Buttons</string>
-    <string name="buttons_title_summary">System navigation and hardware buttons</string>
+    <string name="buttons_title_summary">Hardware buttons options</string>
     <string name="quicksettings_title">Quick Settings</string>
     <string name="quicksettings_title_summary">Quicksettings customization</string>
     <string name="statusbar_title">Status Bar</string>
