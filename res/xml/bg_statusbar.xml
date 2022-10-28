@@ -18,14 +18,37 @@
     android:title="@string/statusbar_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <Preference
-        android:key="systemui_tuner_statusbar"
-        android:title="@string/statusbar_tuner_title"
-        android:summary="@string/statusbar_tuner_title_summary">
-        <intent android:action="android.intent.action.MAIN"
-                android:targetPackage="com.android.systemui"
-                android:targetClass="com.android.systemui.tuner.StatusbarItemsActivity" />
-    </Preference>
+    <PreferenceCategory
+        android:title="@string/icons_category_title">
+
+        <Preference
+            android:key="systemui_tuner_statusbar"
+            android:title="@string/statusbar_tuner_title"
+            android:summary="@string/statusbar_tuner_title_summary">
+            <intent android:action="android.intent.action.MAIN"
+                    android:targetPackage="com.android.systemui"
+                    android:targetClass="com.android.systemui.tuner.StatusbarItemsActivity" />
+        </Preference>
+
+        <com.banana.support.preferences.SecureSettingSwitchPreference
+            android:key="enable_camera_privacy_indicator"
+            android:title="@string/mic_camera_privacy_indicator_title"
+            android:summary="@string/mic_camera_privacy_indicator_summary"
+            android:defaultValue="true" />
+
+        <com.banana.support.preferences.SecureSettingSwitchPreference
+            android:key="enable_location_privacy_indicator"
+            android:title="@string/location_privacy_indicator_title"
+            android:summary="@string/location_privacy_indicator_summary"
+            android:defaultValue="true" />
+
+        <com.banana.support.preferences.SecureSettingSwitchPreference
+            android:key="enable_projection_privacy_indicator"
+            android:title="@string/projection_privacy_indicator_title"
+            android:summary="@string/projection_privacy_indicator_summary"
+            android:defaultValue="true" />
+
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:title="@string/network_icons_category_title">
