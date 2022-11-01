@@ -620,4 +620,14 @@
     <!-- Pocket judge -->
     <string name="pocket_judge_title">Pocket detection</string>
     <string name="pocket_judge_summary">Block screen and button inputs when device is in pocket</string>
+
+    <!-- Navbar Layout -->
+    <string name="navbar_layout_category_title">Layout</string>
+    <string name="navbar_layout_title">Layout</string>
+    <string name="navbar_layout_normal">Normal</string>
+    <string name="navbar_layout_compact">Compact</string>
+    <string name="navbar_layout_leftleaning">Left-leaning</string>
+    <string name="navbar_layout_rightleaning">Right-leaning</string>
+    <string name="navbar_invert_layout_title">Invert layout</string>
+    <string name="navbar_invert_layout_summary">Inverts the layout of the navigation bar and other items, such as the IME switcher</string>
 </resources>
