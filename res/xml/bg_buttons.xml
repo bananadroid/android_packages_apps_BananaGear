@@ -56,6 +56,20 @@
     <PreferenceCategory
         android:title="@string/navigation_title">
 
+        <com.banana.support.preferences.SecureSettingListPreference
+            android:key="navbar_layout_views"
+            android:title="@string/navbar_layout_title"
+            android:summary="%s"
+            android:entries="@array/navbar_layout_entries"
+            android:entryValues="@array/navbar_layout_values"
+            android:defaultValue="default" />
+
+        <com.banana.support.preferences.SecureSettingSwitchPreference
+            android:key="navbar_inverse_layout"
+            android:title="@string/navbar_invert_layout_title"
+            android:summary="@string/navbar_invert_layout_summary"
+            android:defaultValue="false" />
+
         <!-- Pixel Nav Animation -->
         <com.banana.support.preferences.SystemSettingSwitchPreference
             android:key="pixel_nav_animation"
