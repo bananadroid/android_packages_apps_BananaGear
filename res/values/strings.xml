@@ -459,4 +459,9 @@
     <string name="pulse_ambient_light_layout_title">Edge light view</string>
     <string name="pulse_ambient_light_layout_solid">Solid</string>
     <string name="pulse_ambient_light_layout_faded">Faded</string>
+
+    <!-- Notch: Full screen apps -->
+    <string name="display_cutout_force_fullscreen_title">Full screen apps</string>
+    <string name="display_cutout_force_fullscreen_summary">Force apps to ignore notch space</string>
+    <string name="display_cutout_force_fullscreen_no_apps">No apps</string>
 </resources>
