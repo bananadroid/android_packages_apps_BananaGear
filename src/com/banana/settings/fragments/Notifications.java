@@ -16,9 +16,11 @@
 
 package com.banana.settings.fragments;
 
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.os.UserHandle;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import androidx.preference.*;
@@ -89,6 +91,8 @@ public class Notifications extends DashboardFragment implements
                 Settings.System.NOTIFICATION_SOUND_VIB_SCREEN_ON, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.HEADS_UP_TIMEOUT, getDefaultDecay(mContext), UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.NOTIFICATION_GUTS_KILL_APP_BUTTON, 0, UserHandle.USER_CURRENT);
     }
 
     @Override
