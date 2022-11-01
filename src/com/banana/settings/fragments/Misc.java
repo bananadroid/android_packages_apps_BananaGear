@@ -93,6 +93,8 @@ public class Misc extends SettingsPreferenceFragment implements
         ContentResolver resolver = mContext.getContentResolver();
         SystemProperties.set(SYS_GAMES_SPOOF, "false");
         SystemProperties.set(SYS_PHOTOS_SPOOF, "true");
+        Settings.System.putIntForUser(resolver,
+                Settings.System.NOTIFICATION_GUTS_KILL_APP_BUTTON, 0, UserHandle.USER_CURRENT);
     }
 
     @Override
