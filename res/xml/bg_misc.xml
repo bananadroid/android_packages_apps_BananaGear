@@ -29,6 +29,17 @@
     </Preference>
 
     <PreferenceCategory
+        android:title="@string/notification_category_title" >
+
+        <!-- Notification guts kill app button -->
+        <com.banana.support.preferences.SystemSettingSwitchPreference
+            android:key="notification_guts_kill_app_button"
+            android:title="@string/notification_guts_kill_app_button_title"
+            android:summary="@string/notification_guts_kill_app_button_summary" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:title="@string/other_category_title" >
 
         <com.banana.support.preferences.GlobalSettingSwitchPreference
