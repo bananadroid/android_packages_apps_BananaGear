@@ -18,12 +18,12 @@
     <string name="bananagear_title">Banana Gear</string>
 
     <!-- Categories -->
-    <string name="lockscreen_title">Lock screen</string>
+    <string name="lockscreen_title">Lockscreen</string>
     <string name="lockscreen_title_summary">Lockscreen style customization</string>
     <string name="misc_title">Miscellaneous</string>
     <string name="misc_title_summary">Other options</string>
-    <string name="buttons_title">Buttons</string>
-    <string name="buttons_title_summary">Hardware buttons options</string>
+    <string name="buttons_title">Buttons &amp; Navigations</string>
+    <string name="buttons_title_summary">Buttons &amp; Navigations options</string>
     <string name="quicksettings_title">Quick Settings</string>
     <string name="quicksettings_title_summary">Quicksettings customization</string>
     <string name="statusbar_title">Status Bar</string>
@@ -38,6 +38,7 @@
     <string name="battery_category_title">Battery</string>
     <string name="style_category_title">Style</string>
     <string name="gesture_preference_title_summary">Enable or disable all gestures</string>
+    <string name="buttons_category">Hardware buttons</string>
     <string name="navigation_title">Navigation bar</string>
     <string name="system_category_title">System</string>
     <string name="notification_category_title">Notifications</string>
