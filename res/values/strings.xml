@@ -273,4 +273,8 @@
     <string name="qs_tile_animation_interpolator_overshootInterpolator">Overshoot</string>
     <string name="qs_tile_animation_interpolator_anticipateInterpolator">Anticipate</string>
     <string name="qs_tile_animation_interpolator_anticipateOvershootInterpolator">Anticipate overshoot</string>
+
+    <!-- Charging animation -->
+    <string name="charging_animation_title">Charging animation</string>
+    <string name="charging_animation_summary">Display an animation when the device is plugged in</string>
 </resources>
