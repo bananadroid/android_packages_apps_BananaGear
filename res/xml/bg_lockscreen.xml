@@ -9,6 +9,12 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <com.banana.support.preferences.SystemSettingSwitchPreference
+        android:key="charging_animation"
+        android:title="@string/charging_animation_title"
+        android:summary="@string/charging_animation_summary"
+        android:defaultValue="true" />
+
+    <com.banana.support.preferences.SystemSettingSwitchPreference
         android:key="lockscreen_battery_info"
         android:title="@string/lockscreen_battery_info_title"
         android:summary="@string/lockscreen_battery_info_summary"
