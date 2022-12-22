@@ -176,12 +176,6 @@
     <PreferenceCategory
         android:title="@string/other_category_title">
 
-        <Preference
-            android:key="omnijaws_settings"
-            android:title="@string/qs_weather_settings_title"
-            android:summary="@string/qs_weather_settings_summary"
-            android:fragment="com.banana.settings.fragments.OmniJawsSettings" />
-
         <com.banana.support.preferences.SystemSettingSeekBarPreference
             android:key="qs_transparency"
             android:title="@string/qs_transparency_title"
