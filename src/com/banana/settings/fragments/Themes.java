@@ -33,6 +33,7 @@ import com.android.settingslib.core.lifecycle.Lifecycle;
 import com.android.settingslib.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.banana.settings.preferences.AboutHeaderPreferenceController;
 import com.banana.settings.preferences.CustomUIPreferenceController;
 
 import java.util.ArrayList;
@@ -78,6 +79,7 @@ public class Themes extends DashboardFragment implements
         final List<AbstractPreferenceController> controllers = new ArrayList<>();
         controllers.add(new EnableBlursPreferenceController(context));
         controllers.add(new CustomUIPreferenceController(context));
+        controllers.add(new AboutHeaderPreferenceController(context));
         return controllers;
     }
 
