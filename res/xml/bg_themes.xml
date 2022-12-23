@@ -18,15 +18,21 @@
     android:title="@string/themes_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <SwitchPreference
+        android:key="enable_blurs_on_windows"
+        android:title="@string/window_blurs"/>
+
+    <SwitchPreference
+        android:key="custom_ui_toggle"
+        android:title="@string/custom_ui_toggle_title"
+        android:summary="@string/custom_ui_toggle_summary"
+        android:defaultValue="false" />
+
     <Preference
         android:key="monet_engine"
         android:title="@string/monet_engine_title"
         android:summary="@string/monet_engine_summary"
         android:fragment="com.banana.settings.fragments.MonetEngine"/>
-
-    <SwitchPreference
-        android:key="enable_blurs_on_windows"
-        android:title="@string/window_blurs"/>
 
     <!-- Font style -->
     <Preference

@@ -38,6 +38,8 @@ import com.android.settingslib.core.AbstractPreferenceController;
 import com.android.settingslib.core.lifecycle.Lifecycle;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.banana.settings.preferences.CustomUIPreferenceController;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -78,6 +80,7 @@ public class Themes extends DashboardFragment implements OnPreferenceChangeListe
             Context context, Lifecycle lifecycle, Fragment fragment) {
         final List<AbstractPreferenceController> controllers = new ArrayList<>();
         controllers.add(new EnableBlursPreferenceController(context));
+        controllers.add(new CustomUIPreferenceController(context));
         return controllers;
     }
 
