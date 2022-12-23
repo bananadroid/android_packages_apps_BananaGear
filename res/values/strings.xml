@@ -830,4 +830,8 @@
     <!-- CustomUI -->
     <string name="custom_ui_toggle_title">Settings dashboard style</string>
     <string name="custom_ui_toggle_summary">Enable card-style dashboard UI</string>
+
+    <!-- About phone header -->
+    <string name="about_phone_header_title">About phone header</string>
+    <string name="about_phone_header_summary">Enable about phone header on Settings dashboard</string>
 </resources>

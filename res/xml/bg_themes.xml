@@ -18,6 +18,12 @@
         android:summary="@string/custom_ui_toggle_summary"
         android:defaultValue="false" />
 
+    <SwitchPreference
+        android:key="about_phone_header"
+        android:title="@string/about_phone_header_title"
+        android:summary="@string/about_phone_header_summary"
+        android:defaultValue="false" />
+
     <Preference
         android:key="monet_engine"
         android:title="@string/monet_engine_title"
