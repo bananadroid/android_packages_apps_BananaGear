@@ -707,4 +707,8 @@
     <!-- Combined signal icons in status bar -->
     <string name="combined_status_bar_signal_icons_title">Combined signal icons</string>
     <string name="combined_status_bar_signal_icons_summary">Enable combined signal icons (SystemUI will automatically restart upon toggling)</string>
+
+    <!-- CustomUI -->
+    <string name="custom_ui_toggle_title">Settings dashboard style</string>
+    <string name="custom_ui_toggle_summary">Enable card-style dashboard UI</string>
 </resources>
