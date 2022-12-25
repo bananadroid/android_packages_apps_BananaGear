@@ -39,6 +39,14 @@
             android:summary="@string/notification_material_dismiss_summary"
             android:defaultValue="false" />
 
+        <com.banana.support.preferences.SystemSettingListPreference
+            android:key="notification_material_dismiss_style"
+            android:title="@string/notification_material_dismiss_style_title"
+            android:entries="@array/notification_material_dismiss_style_entries"
+            android:entryValues="@array/notification_material_dismiss_style_values"
+            android:defaultValue="0"
+            android:dependency="notification_material_dismiss" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
