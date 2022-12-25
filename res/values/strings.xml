@@ -529,6 +529,17 @@
     <!-- Material dismiss all button for notifications -->
     <string name="notification_material_dismiss_title">Clear all notification button</string>
     <string name="notification_material_dismiss_summary">Replace clear all notification text with material style floating button</string>
+    <string name="notification_material_dismiss_style_title">Clear all button style</string>
+    <string name="notification_material_dismiss_style_1">Default</string>
+    <string name="notification_material_dismiss_style_2">Trash bin</string>
+    <string name="notification_material_dismiss_style_3">Broom</string>
+    <string name="notification_material_dismiss_style_4">Pacman</string>
+    <string name="notification_material_dismiss_style_5">Forbidden</string>
+    <string name="notification_material_dismiss_style_6">Cross</string>
+    <string name="notification_material_dismiss_style_7">Recycle</string>
+    <string name="notification_material_dismiss_style_8">Eraser</string>
+    <string name="notification_material_dismiss_style_9">Checklist</string>
+    <string name="notification_material_dismiss_style_10">Magnet</string>
 
     <!-- Pulse music visualizer -->
     <string name="pulse_help_policy_notice_title">About Pulse</string>
