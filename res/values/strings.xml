@@ -22,6 +22,8 @@
     <string name="lockscreen_title_summary">Lockscreen style customization</string>
     <string name="misc_title">Miscellaneous</string>
     <string name="misc_title_summary">Other options</string>
+    <string name="notif_title">Notifications</string>
+    <string name="notif_title_summary">Advanced notification options</string>
     <string name="buttons_title">Buttons &amp; Navigations</string>
     <string name="buttons_title_summary">Buttons &amp; Navigations options</string>
     <string name="quicksettings_title">Quick Settings</string>
@@ -43,6 +45,7 @@
     <string name="system_category_title">System</string>
     <string name="notification_category_title">Notifications</string>
     <string name="other_category_title">Others</string>
+    <string name="general_category_title">General</string>
     <string name="general_ui_category_title">General UI</string>
     <string name="default_string">Default</string>
     <string name="icons_category_title">Icons</string>

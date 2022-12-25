@@ -63,7 +63,6 @@ public class Misc extends SettingsPreferenceFragment implements
     private static final String KEY_FORCE_FULL_SCREEN = "display_cutout_force_fullscreen_settings";
     private static final String POCKET_JUDGE = "pocket_judge";
     private static final String SMART_PIXELS = "smart_pixels";
-    private static final String HEADS_UP_TIMEOUT_PREF = "heads_up_timeout";
 
     private static final String SYS_GAMES_SPOOF = "persist.sys.pixelprops.games";
     private static final String SYS_PHOTOS_SPOOF = "persist.sys.pixelprops.gphotos";
@@ -75,7 +74,6 @@ public class Misc extends SettingsPreferenceFragment implements
     private Preference mPocketJudge;
     private Preference mShowCutoutForce;
     private Preference mSmartPixels;
-    private CustomSeekBarPreference mHeadsUpTimeOut;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -113,10 +111,6 @@ public class Misc extends SettingsPreferenceFragment implements
         if (!mSmartPixelsSupported)
             prefScreen.removePreference(mSmartPixels);
 
-        mHeadsUpTimeOut = (CustomSeekBarPreference)
-                            prefScreen.findPreference(HEADS_UP_TIMEOUT_PREF);
-        mHeadsUpTimeOut.setDefaultValue(getDefaultDecay(mContext));
-
         mPocketJudge = (Preference) prefScreen.findPreference(POCKET_JUDGE);
         boolean mPocketJudgeSupported = res.getBoolean(
                 com.android.internal.R.bool.config_pocketModeSupported);
@@ -124,40 +118,12 @@ public class Misc extends SettingsPreferenceFragment implements
             prefScreen.removePreference(mPocketJudge);
     }
 
-    private static int getDefaultDecay(Context context) {
-        int defaultHeadsUpTimeOut = 5;
-        Resources systemUiResources;
-        try {
-            systemUiResources = context.getPackageManager().getResourcesForApplication("com.android.systemui");
-            defaultHeadsUpTimeOut = systemUiResources.getInteger(systemUiResources.getIdentifier(
-                    "com.android.systemui:integer/heads_up_notification_decay", null, null)) / 1000;
-        } catch (Exception e) {
-        }
-        return defaultHeadsUpTimeOut;
-    }
-
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
         SystemProperties.set(SYS_GAMES_SPOOF, "false");
         SystemProperties.set(SYS_PHOTOS_SPOOF, "true");
         SystemProperties.set(SYS_NETFLIX_SPOOF, "false");
-        Settings.System.putIntForUser(resolver,
-                Settings.System.NOTIFICATION_GUTS_KILL_APP_BUTTON, 0, UserHandle.USER_CURRENT);
         SmartPixels.reset(mContext);
-        Settings.Global.putInt(resolver,
-                Settings.Global.HEADS_UP_NOTIFICATIONS_ENABLED, 1);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.LESS_BORING_HEADS_UP, 0, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.NOTIFICATION_SOUND_VIB_SCREEN_ON, 1, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.HEADS_UP_TIMEOUT, getDefaultDecay(mContext), UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.RETICKER_STATUS, 0, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.RETICKER_COLORED, 0, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.NOTIFICATION_MATERIAL_DISMISS, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.CHARGING_ANIMATION, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,

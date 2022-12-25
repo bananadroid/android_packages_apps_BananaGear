@@ -36,65 +36,6 @@
         android:fragment="com.banana.settings.fragments.ui.SmartPixels" />
 
     <PreferenceCategory
-        android:title="@string/notification_category_title" >
-
-        <!-- Notification guts kill app button -->
-        <com.banana.support.preferences.SystemSettingSwitchPreference
-            android:key="notification_guts_kill_app_button"
-            android:title="@string/notification_guts_kill_app_button_title"
-            android:summary="@string/notification_guts_kill_app_button_summary" />
-
-        <com.banana.support.preferences.SystemSettingSwitchPreference
-            android:key="notification_sound_vib_screen_on"
-            android:title="@string/notification_sound_vib_screen_on_title"
-            android:summary="@string/notification_sound_vib_screen_on_summary"
-            android:defaultValue="true" />
-
-        <com.banana.support.preferences.GlobalSettingSwitchPreference
-            android:key="heads_up_notifications_enabled"
-            android:title="@string/notification_heads_up_title"
-            android:summary="@string/notification_heads_up_summary"
-            android:defaultValue="true" />
-
-        <com.banana.support.preferences.SystemSettingSwitchPreference
-            android:key="less_boring_heads_up"
-            android:title="@string/less_boring_heads_up_title"
-            android:summary="@string/less_boring_heads_up_summary"
-            android:defaultValue="false"
-            android:dependency="heads_up_notifications_enabled" />
-
-        <com.banana.support.preferences.SystemSettingSwitchPreference
-            android:key="reticker_status"
-            android:title="@string/reticker_title"
-            android:summary="@string/reticker_summary"
-            android:defaultValue="false" />
-
-        <com.banana.support.preferences.SystemSettingSwitchPreference
-            android:key="reticker_colored"
-            android:title="@string/reticker_colored_title"
-            android:summary="@string/reticker_colored_summary"
-            android:dependency="reticker_status"
-            android:defaultValue="false" />
-
-        <com.banana.support.preferences.SystemSettingSeekBarPreference
-            android:key="heads_up_timeout"
-            android:title="@string/notification_heads_up_timeout_title"
-            android:summary="@string/notification_heads_up_timeout_summary"
-            settings:units="@string/unit_seconds"
-            android:defaultValue="5"
-            settings:min="1"
-            android:max="10"
-            android:dependency="heads_up_notifications_enabled" />
-
-        <com.banana.support.preferences.SystemSettingSwitchPreference
-            android:key="notification_material_dismiss"
-            android:title="@string/notification_material_dismiss_title"
-            android:summary="@string/notification_material_dismiss_summary"
-            android:defaultValue="false" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
         android:title="@string/other_category_title" >
 
         <com.banana.support.preferences.GlobalSettingSwitchPreference
