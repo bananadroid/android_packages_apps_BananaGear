@@ -50,6 +50,14 @@
             android:fragment="com.banana.settings.fragments.Buttons"
             android:icon="@drawable/ic_settings_buttons"/>
 
+        <!-- Notifications -->
+        <Preference
+            android:key="notif_category"
+            android:title="@string/notif_title"
+            android:summary="@string/notif_title_summary" 
+            android:fragment="com.banana.settings.fragments.Notifications"
+            android:icon="@drawable/ic_bananagear_notifications"/>
+
         <!-- Lock Screen -->
         <Preference
             android:key="lockscreen_category"
