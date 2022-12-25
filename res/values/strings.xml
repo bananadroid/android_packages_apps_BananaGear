@@ -18,7 +18,7 @@
     <string name="bananagear_title">Banana Gear</string>
 
     <!-- Categories -->
-    <string name="lockscreen_title">Lock screen</string>
+    <string name="lockscreen_title">Lockscreen</string>
     <string name="lockscreen_title_summary">Lockscreen style customization</string>
     <string name="misc_title">Miscellaneous</string>
     <string name="misc_title_summary">Other options</string>
