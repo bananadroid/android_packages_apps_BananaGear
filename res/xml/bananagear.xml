@@ -23,7 +23,7 @@
             android:title="@string/statusbar_title"
             android:summary="@string/statusbar_title_summary"
             android:fragment="com.banana.settings.fragments.StatusBar" 
-            android:icon="@drawable/ic_settings_statusbar"/>
+            android:icon="@drawable/ic_bananagear_statusbar"/>
 
         <!-- Quick Settings panel -->
         <Preference
@@ -31,14 +31,14 @@
             android:title="@string/quicksettings_title"
             android:summary="@string/quicksettings_title_summary"
             android:fragment="com.banana.settings.fragments.QuickSettings"
-            android:icon="@drawable/ic_settings_quicksettings"/>
+            android:icon="@drawable/ic_bananagear_quicksettings"/>
 
         <!-- Gestures -->
         <Preference
             android:key="gesture_settings"
             android:title="@string/gesture_preference_title"
             android:summary="@string/gesture_preference_title_summary"
-            android:icon="@drawable/ic_settings_gestures"
+            android:icon="@drawable/ic_bananagear_gestures"
             android:fragment="com.android.settings.gestures.GestureSettings"
             settings:controller="com.android.settings.gestures.GesturesSettingPreferenceController"/>
 
@@ -48,7 +48,7 @@
             android:title="@string/buttons_title"
             android:summary="@string/buttons_title_summary" 
             android:fragment="com.banana.settings.fragments.Buttons"
-            android:icon="@drawable/ic_settings_buttons"/>
+            android:icon="@drawable/ic_bananagear_buttons"/>
 
         <!-- Notifications -->
         <Preference
@@ -64,7 +64,7 @@
             android:title="@string/lockscreen_title"
             android:summary="@string/lockscreen_title_summary" 
             android:fragment="com.banana.settings.fragments.Lockscreen"
-            android:icon="@drawable/ic_settings_lockscreens"/>
+            android:icon="@drawable/ic_bananagear_lockscreens"/>
 
         <!-- Ambient Display -->
         <Preference
@@ -72,7 +72,7 @@
             android:title="@string/doze_display_title"
             android:summary="@string/doze_display_summary" 
             android:fragment="com.banana.settings.fragments.DozeSettings"
-            android:icon="@drawable/ic_settings_ambient"/>
+            android:icon="@drawable/ic_bananagear_ambient"/>
 
         <!-- Themes -->
         <Preference
@@ -80,7 +80,7 @@
             android:title="@string/themes_title"
             android:summary="@string/themes_summary"
             android:fragment="com.banana.settings.fragments.Themes" 
-            android:icon="@drawable/ic_settings_themes" />
+            android:icon="@drawable/ic_bananagear_themes" />
 
         <!-- Misc -->
         <Preference
@@ -88,6 +88,6 @@
             android:title="@string/misc_title"
             android:summary="@string/misc_title_summary"
             android:fragment="com.banana.settings.fragments.Misc"
-            android:icon="@drawable/ic_settings_miscs"/>
+            android:icon="@drawable/ic_bananagear_miscs"/>
 
 </PreferenceScreen>
