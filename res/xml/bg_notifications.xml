@@ -75,6 +75,32 @@
             android:max="10"
             android:dependency="heads_up_notifications_enabled" />
 
+        <PreferenceCategory
+            android:title="@string/heads_up_stoplist_title"
+            android:key="stoplist_applications"
+            android:dependency="heads_up_notifications_enabled">
+
+            <com.banana.support.preferences.AppListPreference
+                android:key="add_stoplist_packages"
+                android:icon="@drawable/ic_menu_add_activated_tint"
+                android:title="@string/add_heads_up_package"
+                android:summary="@string/add_heads_up_stoplist_summary" />
+
+        </PreferenceCategory>
+
+        <PreferenceCategory
+            android:title="@string/heads_up_blocklist_title"
+            android:key="blacklist_applications"
+            android:dependency="heads_up_notifications_enabled">
+
+            <com.banana.support.preferences.AppListPreference
+                android:key="add_blacklist_packages"
+                android:icon="@drawable/ic_menu_add_activated_tint"
+                android:title="@string/add_heads_up_package"
+                android:summary="@string/add_heads_up_blocklist_summary" />
+
+        </PreferenceCategory>
+
         <com.banana.support.preferences.SystemSettingSwitchPreference
             android:key="reticker_status"
             android:title="@string/reticker_title"

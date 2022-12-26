@@ -506,11 +506,19 @@
     <string name="screen_off_animation_crt">CRT</string>
     <string name="screen_off_animation_scale">Scale</string>
 
-    <!-- Heads up timeout -->
+    <!-- Heads up -->
     <string name="notification_heads_up_title">Heads up</string>
     <string name="notification_heads_up_summary">Allow pop up notifications</string>
     <string name="notification_heads_up_timeout_title">Time out</string>
     <string name="notification_heads_up_timeout_summary">Time to display heads up notifications</string>
+    <string name="add_heads_up_package">Add app</string>
+    <string name="add_heads_up_stoplist_summary">Disable heads up notifications in these applications</string>
+    <string name="add_heads_up_blocklist_summary">Disable heads up from these applications</string>
+    <string name="heads_up_stoplist_title">Stoplist</string>
+    <string name="heads_up_blocklist_title">Blocklist</string>
+    <string name="profile_choose_app">Choose app</string>
+    <string name="dialog_delete_title">Delete</string>
+    <string name="dialog_delete_message">Remove selected item?</string>
 
     <!-- Less boring heads up -->
     <string name="less_boring_heads_up_title">Less boring</string>
