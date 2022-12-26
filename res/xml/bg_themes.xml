@@ -40,6 +40,13 @@
         android:summary="@string/monet_engine_summary"
         android:fragment="com.banana.settings.fragments.MonetEngine"/>
 
+    <!-- UI style -->
+    <Preference
+        android:key="android.theme.customization.style"
+        android:title="@string/theme_customization_ui_style_title"
+        android:summary="@string/theme_customization_ui_style_summary"
+        android:fragment="com.banana.settings.fragments.ui.UIStyles"/>
+
     <!-- Font style -->
     <Preference
         android:key="android.theme.customization.fonts"
