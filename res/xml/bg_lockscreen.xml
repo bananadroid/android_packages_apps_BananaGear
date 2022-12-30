@@ -103,6 +103,14 @@
             android:dependency="lockscreen_media_metadata"
             android:defaultValue="0" />
 
+        <com.banana.support.preferences.SystemSettingSeekBarPreference
+            android:key="ls_media_filter_blur_radius"
+            android:title="@string/lockscreen_albumart_filter_blur_radius_title"
+            android:dependency="lockscreen_media_metadata"
+            android:defaultValue="25"
+            android:max="25"
+            settings:min="2" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>

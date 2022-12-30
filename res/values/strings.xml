@@ -695,4 +695,10 @@
     <!-- Lockscreen Clock -->
     <string name="kg_custom_clock_color_enabled_title">Custom lockscreen clock color</string>
     <string name="kg_custom_clock_color_title">Clock color</string>
+
+    <!-- Media artwork -->
+    <string name="media_artwork_title">Media artwork</string>
+    <string name="artwork_media_background_enable_blur_title">Blur media media notification artwork background</string>
+    <string name="artwork_media_background_blur_radius_title">Blur amount for media notification artwork</string>
+    <string name="lockscreen_albumart_filter_blur_radius_title">Blur amount for lockscreen media artwork</string>
 </resources>
