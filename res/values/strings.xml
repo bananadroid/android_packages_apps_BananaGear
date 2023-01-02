@@ -701,4 +701,8 @@
     <string name="artwork_media_background_enable_blur_title">Blur media media notification artwork background</string>
     <string name="artwork_media_background_blur_radius_title">Blur amount for media notification artwork</string>
     <string name="lockscreen_albumart_filter_blur_radius_title">Blur amount for lockscreen media artwork</string>
+
+    <!-- Fonts -->
+    <string name="theme_customization_lock_clock_title">LS clock font style</string>
+    <string name="theme_customization_lock_clock_summary">Set lockscreen clock font style</string>
 </resources>

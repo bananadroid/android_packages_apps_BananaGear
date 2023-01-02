@@ -632,4 +632,7 @@
     <string name="artwork_media_background_enable_blur_title">Blur latar belakang notifikasi media</string>
     <string name="artwork_media_background_blur_radius_title">Jumlah blur untuk notifikasi media</string>
     <string name="lockscreen_albumart_filter_blur_radius_title">Jumlah blur untuk media layar kunci</string>
+    <!-- Fonts -->
+    <string name="theme_customization_lock_clock_title">Huruf jam layar kunci</string>
+    <string name="theme_customization_lock_clock_summary">Atur tampilan huruf jam di layar kunci</string>
 </resources>
