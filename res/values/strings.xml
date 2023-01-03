@@ -705,4 +705,8 @@
 
     <!-- Notification light -->
     <string name="notification_light_settings">Notification light</string>
+
+    <!-- Lockscreen Clock -->
+    <string name="kg_custom_clock_color_enabled_title">Custom lockscreen clock color</string>
+    <string name="kg_custom_clock_color_title">Clock color</string>
 </resources>
