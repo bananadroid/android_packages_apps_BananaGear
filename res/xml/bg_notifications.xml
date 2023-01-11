@@ -8,6 +8,16 @@
     android:title="@string/notif_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <com.banana.support.preferences.SystemSettingSeekBarPreference
+        android:key="max_visible_notification_icons"
+        android:title="@string/max_visible_notification_icons_title"
+        android:summary="@string/max_visible_notification_icons_summary"
+        android:defaultValue="5"
+        settings:defaultValueText="5"
+        android:max="10"
+        settings:min="0"
+        settings:units="" />
+
     <Preference
         android:key="island_notification"
         android:title="@string/island_notification_title"
