@@ -30,6 +30,22 @@
         android:summary="@string/lockscreen_hide_status_bar_summary"
         android:defaultValue="false" />
 
+    <ListPreference
+        android:key="lockscreen_shortcut_start"
+        android:title="@string/lockscreen_shortcut_start_title"
+        android:summary="%s"
+        android:entries="@array/lockscreen_shortcut_entries"
+        android:entryValues="@array/lockscreen_shortcut_values"
+        android:defaultValue="none" />
+
+    <ListPreference
+        android:key="lockscreen_shortcut_end"
+        android:title="@string/lockscreen_shortcut_end_title"
+        android:summary="%s"
+        android:entries="@array/lockscreen_shortcut_entries"
+        android:entryValues="@array/lockscreen_shortcut_values"
+        android:defaultValue="none" />
+
     <PreferenceCategory
         android:title="@string/qs_clock_title">
 
