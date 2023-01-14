@@ -51,12 +51,21 @@ public class Lockscreen extends DashboardFragment implements
     private static final String KEY_FP_ERROR_VIBRATE = "fp_error_vibrate";
     private static final String KEY_UDFPS_SETTINGS = "udfps_settings";
     private static final String KG_CUSTOM_CLOCK_COLOR_ENABLED = "kg_custom_clock_color_enabled";
+    private static final String KEY_SHORTCUT_START_KEY = "lockscreen_shortcut_start";
+    private static final String KEY_SHORTCUT_END_KEY = "lockscreen_shortcut_end";
+    private static final String KEY_SHORTCUT_ENFORCE_KEY = "lockscreen_shortcut_enforce";
+
+    private static final String[] DEFAULT_START_SHORTCUT = new String[] { "home", "flashlight", "do_not_disturb" };
+    private static final String[] DEFAULT_END_SHORTCUT = new String[] { "wallet", "qr_code_scanner", "camera" };
 
     private Preference mRippleEffect;
     private Preference mFingerprintVib;
     private Preference mFingerprintVibErr;
     private Preference mUdfpsSettings;
     private SwitchPreference mKGCustomClockColor;
+    private ListPreference mStartShortcut;
+    private ListPreference mEndShortcut;
+    private SwitchPreference mEnforceShortcut;
 
     @Override
     protected int getPreferenceScreenResId() {
@@ -96,6 +105,14 @@ mKGCustomClockColor = (SwitchPreference) findPreference(KG_CUSTOM_CLOCK_COLOR_EN
                 Settings.Secure.KG_CUSTOM_CLOCK_COLOR_ENABLED, 0, UserHandle.USER_CURRENT) != 0;
         mKGCustomClockColor.setChecked(mKGCustomClockColorEnabled);
         mKGCustomClockColor.setOnPreferenceChangeListener(this);
+
+        mStartShortcut = findPreference(KEY_SHORTCUT_START_KEY);
+        mEndShortcut = findPreference(KEY_SHORTCUT_END_KEY);
+        mEnforceShortcut = findPreference(KEY_SHORTCUT_ENFORCE_KEY);
+        updateShortcutSelection();
+        mStartShortcut.setOnPreferenceChangeListener(this);
+        mEndShortcut.setOnPreferenceChangeListener(this);
+        mEnforceShortcut.setOnPreferenceChangeListener(this);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -104,6 +121,17 @@ mKGCustomClockColor = (SwitchPreference) findPreference(KG_CUSTOM_CLOCK_COLOR_EN
             boolean val = (Boolean) newValue;
             Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.KG_CUSTOM_CLOCK_COLOR_ENABLED, val ? 1 : 0, UserHandle.USER_CURRENT);
+            return true;
+        } else if (preference == mStartShortcut) {
+            setShortcutSelection((String) newValue, true);
+            return true;
+        } else if (preference == mEndShortcut) {
+            setShortcutSelection((String) newValue, false);
+            return true;
+        } else if (preference == mEnforceShortcut) {
+            final boolean value = (Boolean) newValue;
+            setShortcutSelection(mStartShortcut.getValue(), true, value);
+            setShortcutSelection(mEndShortcut.getValue(), false, value);
             return true;
         }
         return false;
@@ -118,6 +146,66 @@ mKGCustomClockColor = (SwitchPreference) findPreference(KG_CUSTOM_CLOCK_COLOR_EN
         Settings.System.putIntForUser(resolver,
                 Settings.System.FP_SUCCESS_VIBRATE, 1, UserHandle.USER_CURRENT);
         UdfpsSettings.reset(mContext);
+    }
+
+    private String getSettingsShortcutValue() {
+        String value = Settings.System.getString(getActivity().getContentResolver(),
+                Settings.System.KEYGUARD_QUICK_TOGGLES_NEW);
+        if (value == null || value.isEmpty()) {
+            StringBuilder sb = new StringBuilder(DEFAULT_START_SHORTCUT[0]);
+            for (int i = 1; i < DEFAULT_START_SHORTCUT.length; i++) {
+                sb.append(",").append(DEFAULT_START_SHORTCUT[i]);
+            }
+            sb.append(";" + DEFAULT_END_SHORTCUT[0]);
+            for (int i = 1; i < DEFAULT_END_SHORTCUT.length; i++) {
+                sb.append(",").append(DEFAULT_END_SHORTCUT[i]);
+            }
+            value = sb.toString();
+        }
+        return value;
+    }
+
+    private void updateShortcutSelection() {
+        final String value = getSettingsShortcutValue();
+        final String[] split = value.split(";");
+        final String[] start = split[0].split(",");
+        final String[] end = split[1].split(",");
+        mStartShortcut.setValue(start[0]);
+        mStartShortcut.setSummary(mStartShortcut.getEntry());
+        mEndShortcut.setValue(end[0]);
+        mEndShortcut.setSummary(mEndShortcut.getEntry());
+        mEnforceShortcut.setChecked(start.length == 1 && end.length == 1);
+    }
+
+    private void setShortcutSelection(String value, boolean start) {
+        setShortcutSelection(value, start, mEnforceShortcut.isChecked());
+    }
+
+    private void setShortcutSelection(String value, boolean start, boolean single) {
+        final String oldValue = getSettingsShortcutValue();
+        final int splitIndex = start ? 0 : 1;
+        String[] split = oldValue.split(";");
+        if (value.equals("none") || single) {
+            split[splitIndex] = value;
+        } else {
+            StringBuilder sb = new StringBuilder(value);
+            final String[] def = start ? DEFAULT_START_SHORTCUT : DEFAULT_END_SHORTCUT;
+            for (String str : def) {
+                if (str.equals(value)) continue;
+                sb.append(",").append(str);
+            }
+            split[splitIndex] = sb.toString();
+        }
+        Settings.System.putString(getActivity().getContentResolver(),
+                Settings.System.KEYGUARD_QUICK_TOGGLES_NEW, split[0] + ";" + split[1]);
+
+        if (start) {
+            mStartShortcut.setValue(value);
+            mStartShortcut.setSummary(mStartShortcut.getEntry());
+        } else {
+            mEndShortcut.setValue(value);
+            mEndShortcut.setSummary(mEndShortcut.getEntry());
+        }
     }
 
     @Override
