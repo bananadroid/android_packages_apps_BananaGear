@@ -714,4 +714,15 @@
     <!-- Ignore window secure -->
     <string name="ignore_window_secure_title">Ignore window secure flags</string>
     <string name="ignore_window_secure_summary">This removes the screenshots and screenrecords limits for all applications. Normally, special applications are replaced with black areas in records. This can be convenient in some cases but may lead to privacy leaks. After changing this toggle, you may need to restart applications for the change to take effect.</string>
+
+    <!-- Lockscreen bottom shortcuts -->
+    <string name="lockscreen_shortcut_category">Bottom shortcuts</string>
+    <string name="lockscreen_shortcut_start_title">Left shortcut</string>
+    <string name="lockscreen_shortcut_end_title">Right shortcut</string>
+    <string name="lockscreen_shortcut_home">Home controls</string>
+    <string name="lockscreen_shortcut_wallet">Wallet</string>
+    <string name="lockscreen_shortcut_flashlight">Flashlight</string>
+    <string name="lockscreen_shortcut_qr">QR code scanner</string>
+    <string name="lockscreen_shortcut_camera">Camera</string>
+    <string name="lockscreen_shortcut_none">None</string>
 </resources>
