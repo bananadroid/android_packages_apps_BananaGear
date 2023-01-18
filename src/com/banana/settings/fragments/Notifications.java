@@ -38,6 +38,7 @@ import androidx.preference.*;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 
 import com.android.internal.logging.nano.MetricsProto;
+import com.android.internal.util.banana.BananaUtils;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
@@ -61,6 +62,8 @@ public class Notifications extends SettingsPreferenceFragment implements
     private static final String HEADS_UP_TIMEOUT_PREF = "heads_up_timeout";
     private static final int DIALOG_STOPLIST_APPS = 0;
     private static final int DIALOG_BLACKLIST_APPS = 1;
+    private static final String FLASHLIGHT_CATEGORY = "flashlight_category";
+    private static final String FLASHLIGHT_CALL_PREF = "flashlight_on_call";
 
     private CustomSeekBarPreference mHeadsUpTimeOut;
     private PackageListAdapter mPackageAdapter;
@@ -113,6 +116,12 @@ public class Notifications extends SettingsPreferenceFragment implements
         } catch (Exception e) {
             return;
         }
+
+        if (!BananaUtils.deviceHasFlashlight(mContext)) {
+            final PreferenceCategory flashlightCategory =
+                    (PreferenceCategory) prefScreen.findPreference(FLASHLIGHT_CATEGORY);
+            prefScreen.removePreference(flashlightCategory);
+        }
     }
 
     private static int getDefaultDecay(Context context) {
@@ -145,6 +154,8 @@ public class Notifications extends SettingsPreferenceFragment implements
                 Settings.System.RETICKER_COLORED, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.NOTIFICATION_MATERIAL_DISMISS, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.FLASHLIGHT_ON_CALL, 0, UserHandle.USER_CURRENT);
     }
 
     @Override
@@ -414,5 +425,18 @@ public class Notifications extends SettingsPreferenceFragment implements
      */
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.bg_notifications);
+            new BaseSearchIndexProvider(R.xml.bg_notifications) {
+
+                @Override
+                public List<String> getNonIndexableKeys(Context context) {
+                    List<String> keys = super.getNonIndexableKeys(context);
+                    final Resources res = context.getResources();
+
+                    if (!BananaUtils.deviceHasFlashlight(context)) {
+                        keys.add(FLASHLIGHT_CALL_PREF);
+                    }
+
+                    return keys;
+                }
+            };
 }
