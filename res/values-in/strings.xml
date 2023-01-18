@@ -642,4 +642,24 @@
     <!-- Ignore window secure -->
     <string name="ignore_window_secure_title">Abaikan window secure flags</string>
     <string name="ignore_window_secure_summary">Menghilangkan batas tangkapan layar dan rekaman layar pada semua aplikasi. Secara normal, beberapa aplikasi akan menjadi layar hitam pada rekaman. Ini dapat menimbulkan kenyamanan pada beberapa kasus, tapi dapat menyebabkan kebocoran privasi. Setelah mengganti opsi ini, mulai ulang aplikasi agar efek berfungsi.</string>
+    <!-- Lockscreen bottom shortcuts -->
+    <string name="lockscreen_shortcut_category">Akses pintas bawah</string>
+    <string name="lockscreen_shortcut_start_title">Akses pintas kiri</string>
+    <string name="lockscreen_shortcut_end_title">Akses pintas kanan</string>
+    <string name="lockscreen_shortcut_home">Kontrol home</string>
+    <string name="lockscreen_shortcut_wallet">Dompet</string>
+    <string name="lockscreen_shortcut_flashlight">Senter</string>
+    <string name="lockscreen_shortcut_qr">Pemindai kode QR</string>
+    <string name="lockscreen_shortcut_camera">Kamera</string>
+    <string name="lockscreen_shortcut_none">Tidak ada</string>
+    <!-- Blink flashlight for incoming calls -->
+    <string name="flashlight_on_call_title">Senter berkedip ketika panggilan masuk</string>
+    <string name="flashlight_on_call_disabled">Nonaktif</string>
+    <string name="flashlight_on_call_ringer">Ketika berdering</string>
+    <string name="flashlight_on_call_no_ringer">Ketika disetel mode diam</string>
+    <string name="flashlight_on_call_silent">Ketika diam sepenuhnya (tidak berdering maupun bergetar)</string>
+    <string name="flashlight_on_call_always">Selalu</string>
+    <string name="flashlight_on_call_ignore_dnd_title">Abaikan DND</string>
+    <string name="flashlight_on_call_ignore_dnd_summary">Apakah senter menyala ketika mode DND aktif</string>
+    <string name="flashlight_on_call_rate_title">Rasio kedipan</string>
 </resources>
