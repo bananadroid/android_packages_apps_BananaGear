@@ -18,18 +18,19 @@
     <string name="bananagear_title">Banana Gear</string>
 
     <!-- About BananaDroid -->
-    <string name="banana_about_title">Banana Team</string>
-    <string name="banana_about_summary">Information about BananaDroid</string>
+    <string name="banana_about_title">About us</string>
+    <string name="banana_about_summary">Why so serious?</string>
+    <string name="banana_about_link">Visit and join</string>
     <string name="banana_website_title">Website</string>
     <string name="banana_website_summary">Feel free to visit our website</string>
     <string name="banana_telegram_title" translatable="false">Telegram</string>
-    <string name="banana_telegram_summary">Visit our community chat</string>
+    <string name="banana_telegram_summary">Join our community chat</string>
     <string name="banana_github_title" translatable="false">GitHub</string>
     <string name="banana_github_summary">Check out our GitHub</string>
-    <string name="banana_about_info_summary">BananaDroid is an ordinary Android Custom ROM and absolutely not better than others. We try to do what we like and maybe good experience for users. Please don\'t be hesitate to report any issue on your phone to our telegram group. We can\'t promise to solve your issue but we will try to figure it out.</string>
+    <string name="banana_about_info_summary">BananaDroid is an ordinary Android Custom ROM and absolutely not better than others. We try to do what we like and may give good experience for users. Please don\'t be hesitate to report any issue on your phone to our telegram group. We can\'t promise to solve your issue but we will try to figure it out.</string>
     <string name="banana_about_team">Contributors</string>
-    <string name="banana_about_travarilo" translatable="false">Rizky Benggolo</string>
-    <string name="banana_about_travarilo_summary" translatable="false">Founder/Lead Developer</string>
+    <string name="banana_about_travarilo" translatable="false">travarilo</string>
+    <string name="banana_about_travarilo_summary" translatable="false">Lead Developer | A52 maintainer</string>
  
     <!-- Categories -->
     <string name="lockscreen_title">Lockscreen</string>
