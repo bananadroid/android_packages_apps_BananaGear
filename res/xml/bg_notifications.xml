@@ -21,6 +21,15 @@
     <PreferenceCategory
         android:title="@string/general_category_title" >
 
+       <com.banana.support.preferences.SystemSettingSeekBarPreference
+            android:key="max_visible_notification_icons"
+            android:title="@string/max_visible_notification_icons_title"
+            android:summary="@string/max_visible_notification_icons_summary"
+            android:defaultValue="5"
+            android:max="10"
+            settings:min="0"
+            settings:units="" />
+
         <!-- Notification guts kill app button -->
         <com.banana.support.preferences.SystemSettingSwitchPreference
             android:key="notification_guts_kill_app_button"

@@ -724,4 +724,7 @@
     <!-- Android P animation style -->
     <string name="pie_animation_style_title">Gaya animasi Android P</string>
     <string name="pie_animation_style_summary">Aktifkan animasi \"Bawaan\" Android P</string>
+    <!-- Max visible notification icons -->
+    <string name="max_visible_notification_icons_title">Ikon notifikasi</string>
+    <string name="max_visible_notification_icons_summary">Mak. ikon notifikasi pada bilah status</string>
 </resources>

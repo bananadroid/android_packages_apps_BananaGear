@@ -933,4 +933,8 @@
     <!-- Android P animation style -->
     <string name="pie_animation_style_title">Android P animation style</string>
     <string name="pie_animation_style_summary">Enable Android P \"Default\" animations</string>
+
+    <!-- Max visible notification icons -->
+    <string name="max_visible_notification_icons_title">Notification icons</string>
+    <string name="max_visible_notification_icons_summary">Max. notification icons visible on statusbar</string>
 </resources>
