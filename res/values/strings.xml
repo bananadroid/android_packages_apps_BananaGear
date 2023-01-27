@@ -43,12 +43,16 @@
     <string name="banana_about_ChiHuan_summary" translatable="false">olives maintainer</string>
     <string name="banana_about_Curse" translatable="false">Curse</string>
     <string name="banana_about_Curse_summary" translatable="false">joyeuse maintainer</string>
+    <string name="banana_about_Djampt" translatable="false">Djampt</string>
+    <string name="banana_about_Djampt_summary" translatable="false">sweet maintainer</string>
     <string name="banana_about_elizabethangelalorenza" translatable="false">elizabethangelalorenza</string>
     <string name="banana_about_elizabethangelalorenza_summary" translatable="false">vayu maintainer</string>
     <string name="banana_about_FPSensor" translatable="false">FPSensor</string>
     <string name="banana_about_FPSensor_summary" translatable="false">lavender maintainer</string>
     <string name="banana_about_FrEeRuNnEr4EvEr" translatable="false">FrEeRuNnEr4EvEr</string>
     <string name="banana_about_FrEeRuNnEr4EvEr_summary" translatable="false">s10 | note 10 maintainer</string>
+    <string name="banana_about_MOCHA" translatable="false">MOCHA</string>
+    <string name="banana_about_MOCHA_summary" translatable="false">tulip maintainer</string>
     <string name="banana_about_MweTwo" translatable="false">MweTwo</string>
     <string name="banana_about_MweTwo_summary" translatable="false">surya maintainer</string>
     <string name="banana_about_kibria5" translatable="false">kibria5</string>
@@ -61,6 +65,8 @@
     <string name="banana_about_REX_summary" translatable="false">ginkgo maintainer</string>
     <string name="banana_about_Romeo_Delta_Whiskey" translatable="false">Romeo_Delta_Whiskey</string>
     <string name="banana_about_Romeo_Delta_Whiskey_summary" translatable="false">X00TD maintainer</string>
+    <string name="banana_about_SHINIGAMI" translatable="false">SHINIGAMI</string>
+    <string name="banana_about_SHINIGAMI_summary" translatable="false">whyred maintainer</string>
     <string name="banana_about_zkyzzz" translatable="false">zkyzzz</string>
     <string name="banana_about_zkyzzz_summary" translatable="false">beryllium maintainer</string>
  
