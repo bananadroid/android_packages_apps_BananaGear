@@ -30,12 +30,16 @@ import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.text.format.DateFormat;
+import androidx.fragment.app.Fragment;
 import androidx.preference.*;
 
 import com.android.internal.logging.nano.MetricsProto;
+import com.android.settings.display.EmulateDisplayCutoutPreferenceController;
 import com.android.settings.R;
 import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settingslib.core.AbstractPreferenceController;
+import com.android.settingslib.core.lifecycle.Lifecycle;
 import com.android.settingslib.development.SystemPropPoker;
 import com.android.settingslib.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
@@ -185,6 +189,18 @@ public class Misc extends DashboardFragment implements
             return true;
         }
         return false;
+    }
+
+    @Override
+    protected List<AbstractPreferenceController> createPreferenceControllers(Context context) {
+        return buildPreferenceControllers(context, getSettingsLifecycle(), this);
+    }
+
+    private static List<AbstractPreferenceController> buildPreferenceControllers(
+            Context context, Lifecycle lifecycle, Fragment fragment) {
+        final List<AbstractPreferenceController> controllers = new ArrayList<>();
+        controllers.add(new EmulateDisplayCutoutPreferenceController(context));
+        return controllers;
     }
 
     @Override
