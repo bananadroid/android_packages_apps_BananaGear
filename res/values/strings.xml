@@ -29,8 +29,40 @@
     <string name="banana_github_summary">Check out our GitHub</string>
     <string name="banana_about_info_summary">BananaDroid is an ordinary Android Custom ROM and absolutely not better than others. We try to do what we like and may give good experience for users. Please don\'t be hesitate to report any issue on your phone to our telegram group. We can\'t promise to solve your issue but we will try to figure it out.</string>
     <string name="banana_about_team">Contributors</string>
-    <string name="banana_about_travarilo" translatable="false">travarilo</string>
+    <string name="banana_about_travarilo" translatable="false">Rizky Benggolo</string>
     <string name="banana_about_travarilo_summary" translatable="false">Lead Developer | A52 maintainer</string>
+    <string name="banana_about_AbrarNoob" translatable="false">AbrarNoob</string>
+    <string name="banana_about_AbrarNoob_summary" translatable="false">alioth maintainer</string>
+    <string name="banana_about_Andreock" translatable="false">Andreock</string>
+    <string name="banana_about_Andreock_summary" translatable="false">bitra maintainer</string>
+    <string name="banana_about_aepranata" translatable="false">Aditya Eka Pranata</string>
+    <string name="banana_about_aepranata_summary" translatable="false">rosy maintainer</string>
+    <string name="banana_about_AradheaRizky" translatable="false">Aradhea Rizky</string>
+    <string name="banana_about_AradheaRizky_summary" translatable="false">raphael maintainer</string>
+    <string name="banana_about_ChiHuan" translatable="false">Chi Huan</string>
+    <string name="banana_about_ChiHuan_summary" translatable="false">olives maintainer</string>
+    <string name="banana_about_Curse" translatable="false">Curse</string>
+    <string name="banana_about_Curse_summary" translatable="false">joyeuse maintainer</string>
+    <string name="banana_about_elizabethangelalorenza" translatable="false">elizabethangelalorenza</string>
+    <string name="banana_about_elizabethangelalorenza_summary" translatable="false">vayu maintainer</string>
+    <string name="banana_about_FPSensor" translatable="false">FPSensor</string>
+    <string name="banana_about_FPSensor_summary" translatable="false">lavender maintainer</string>
+    <string name="banana_about_FrEeRuNnEr4EvEr" translatable="false">FrEeRuNnEr4EvEr</string>
+    <string name="banana_about_FrEeRuNnEr4EvEr_summary" translatable="false">s10 | note 10 maintainer</string>
+    <string name="banana_about_MweTwo" translatable="false">MweTwo</string>
+    <string name="banana_about_MweTwo_summary" translatable="false">surya maintainer</string>
+    <string name="banana_about_kibria5" translatable="false">kibria5</string>
+    <string name="banana_about_kibria5_summary" translatable="false">violet maintainer</string>
+    <string name="banana_about_Perses" translatable="false">Perses</string>
+    <string name="banana_about_Perses_summary" translatable="false">x3 maintainer</string>
+    <string name="banana_about_RAYAN" translatable="false">RAYAN</string>
+    <string name="banana_about_RAYAN_summary" translatable="false">laurel_sprout maintainer</string>
+    <string name="banana_about_REX" translatable="false">REX</string>
+    <string name="banana_about_REX_summary" translatable="false">ginkgo maintainer</string>
+    <string name="banana_about_Romeo_Delta_Whiskey" translatable="false">Romeo_Delta_Whiskey</string>
+    <string name="banana_about_Romeo_Delta_Whiskey_summary" translatable="false">X00TD maintainer</string>
+    <string name="banana_about_zkyzzz" translatable="false">zkyzzz</string>
+    <string name="banana_about_zkyzzz_summary" translatable="false">beryllium maintainer</string>
  
     <!-- Categories -->
     <string name="lockscreen_title">Lockscreen</string>
