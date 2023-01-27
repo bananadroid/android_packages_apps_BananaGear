@@ -31,13 +31,15 @@ import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.dashboard.DashboardFragment;
 
 import com.banana.support.colorpicker.ColorPickerPreference;
 import com.banana.support.preferences.CustomSeekBarPreference;
 
-public class BatteryBar extends SettingsPreferenceFragment
+public class BatteryBar extends DashboardFragment
             implements Preference.OnPreferenceChangeListener  {
+
+    public static final String TAG = "BatteryBar";
 
     private static final String PREF_BATT_BAR = "statusbar_battery_bar";
 
@@ -47,10 +49,13 @@ public class BatteryBar extends SettingsPreferenceFragment
     private Handler mHandler;
 
     @Override
+    protected int getPreferenceScreenResId() {
+        return R.xml.battery_bar;
+    }
+
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        addPreferencesFromResource(R.xml.battery_bar);
 
         PreferenceScreen prefSet = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
@@ -115,6 +120,11 @@ public class BatteryBar extends SettingsPreferenceFragment
                 Settings.System.STATUSBAR_BATTERY_BAR_BLEND_COLOR, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.STATUSBAR_BATTERY_BAR_BLEND_COLOR_REVERSE, 0, UserHandle.USER_CURRENT);
+    }
+
+    @Override
+    protected String getLogTag() {
+        return TAG;
     }
 
     @Override

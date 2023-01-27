@@ -40,7 +40,7 @@ import androidx.preference.Preference.OnPreferenceChangeListener;
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.util.banana.BananaUtils;
 import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
@@ -56,8 +56,10 @@ import java.util.List;
 import java.util.Map;
 
 @SearchIndexable
-public class Notifications extends SettingsPreferenceFragment implements
+public class Notifications extends DashboardFragment implements
         Preference.OnPreferenceClickListener, Preference.OnPreferenceChangeListener {
+
+    public static final String TAG = "Notifications";
 
     private static final String HEADS_UP_TIMEOUT_PREF = "heads_up_timeout";
     private static final int DIALOG_STOPLIST_APPS = 0;
@@ -84,9 +86,13 @@ public class Notifications extends SettingsPreferenceFragment implements
     private Map<String, Package> mBlacklistPackages;
 
     @Override
+    protected int getPreferenceScreenResId() {
+        return R.xml.bg_notifications;
+    }
+
+    @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.bg_notifications);
 
         final PreferenceScreen prefScreen = getPreferenceScreen();
         final Context mContext = getActivity().getApplicationContext();
@@ -448,6 +454,11 @@ public class Notifications extends SettingsPreferenceFragment implements
     @Override
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.BANANADROID;
+    }
+
+    @Override
+    protected String getLogTag() {
+        return TAG;
     }
 
     /**

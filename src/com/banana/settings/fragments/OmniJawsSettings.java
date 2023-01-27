@@ -36,7 +36,7 @@ import android.util.Log;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 
 import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.Utils;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.Indexable;
@@ -44,8 +44,9 @@ import com.android.settingslib.search.Indexable;
 import java.util.List;
 import java.util.ArrayList;
 
-public class OmniJawsSettings extends SettingsPreferenceFragment implements
+public class OmniJawsSettings extends DashboardFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
+
     private static final String TAG = "OmniJawsSettings";
     private static final String CATEGORY_WEATHER = "weather_category";
     private static final String WEATHER_ICON_PACK = "weather_icon_pack";
@@ -63,9 +64,13 @@ public class OmniJawsSettings extends SettingsPreferenceFragment implements
     }
 
     @Override
+    protected int getPreferenceScreenResId() {
+        return R.xml.omnijaws_settings;
+    }
+
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.omnijaws_settings);
         final PreferenceScreen prefScreen = getPreferenceScreen();
 
         mWeatherCategory = (PreferenceCategory) prefScreen.findPreference(CATEGORY_WEATHER);
@@ -163,6 +168,11 @@ public class OmniJawsSettings extends SettingsPreferenceFragment implements
             }
         }
         return true;
+    }
+
+    @Override
+    protected String getLogTag() {
+        return TAG;
     }
 
     public static final Indexable.SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =

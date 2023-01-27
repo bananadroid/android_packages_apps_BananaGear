@@ -29,7 +29,7 @@ import androidx.preference.*;
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.util.banana.BananaUtils;
 import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
@@ -40,8 +40,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 @SearchIndexable
-public class Lockscreen extends SettingsPreferenceFragment implements
+public class Lockscreen extends DashboardFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
+
+    public static final String TAG = "Lockscreen";
 
     private static final String LOCKSCREEN_GESTURES_CATEGORY = "lockscreen_gestures_category";
     private static final String KEY_RIPPLE_EFFECT = "enable_ripple_effect";
@@ -64,9 +66,13 @@ public class Lockscreen extends SettingsPreferenceFragment implements
     private ListPreference mEndShortcut;
 
     @Override
+    protected int getPreferenceScreenResId() {
+        return R.xml.bg_lockscreen;
+    }
+
+    @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.bg_lockscreen);
         ContentResolver resolver = getActivity().getContentResolver();
 
         PreferenceCategory gestCategory = (PreferenceCategory) findPreference(LOCKSCREEN_GESTURES_CATEGORY);
@@ -184,6 +190,11 @@ mKGCustomClockColor = (SwitchPreference) findPreference(KG_CUSTOM_CLOCK_COLOR_EN
     @Override
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.BANANADROID;
+    }
+
+    @Override
+    protected String getLogTag() {
+        return TAG;
     }
 
     public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =

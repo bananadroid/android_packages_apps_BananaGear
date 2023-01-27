@@ -50,7 +50,7 @@ import androidx.preference.PreferenceScreen;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.Utils;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
@@ -65,7 +65,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 @SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
-public class MonetEngine extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
+public class MonetEngine extends DashboardFragment implements OnPreferenceChangeListener {
+
+    public static final String TAG = "MonetEngine";
 
     private String MONET_ENGINE_COLOR_OVERRIDE = "monet_engine_color_override";
 
@@ -73,10 +75,13 @@ public class MonetEngine extends SettingsPreferenceFragment implements OnPrefere
     private Context mContext;
 
     @Override
+    protected int getPreferenceScreenResId() {
+        return R.xml.monet_engine;
+    }
+
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        addPreferencesFromResource(R.xml.monet_engine);
 
         mContext = getActivity();
 
@@ -114,6 +119,11 @@ public class MonetEngine extends SettingsPreferenceFragment implements OnPrefere
             return true;
         }
         return false;
+    }
+
+    @Override
+    protected String getLogTag() {
+        return TAG;
     }
 
     /**

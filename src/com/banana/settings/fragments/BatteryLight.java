@@ -29,7 +29,7 @@ import androidx.preference.PreferenceScreen;
 import com.android.internal.logging.nano.MetricsProto;
 
 import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
@@ -37,8 +37,10 @@ import com.banana.support.colorpicker.ColorPickerPreference;
 import com.banana.support.preferences.SystemSettingSwitchPreference;
 
 @SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
-public class BatteryLight extends SettingsPreferenceFragment implements
+public class BatteryLight extends DashboardFragment implements
         Preference.OnPreferenceChangeListener {
+
+    public static final String TAG = "BatteryLight";
 
     private ColorPickerPreference mLowColor;
     private ColorPickerPreference mMediumColor;
@@ -49,9 +51,13 @@ public class BatteryLight extends SettingsPreferenceFragment implements
     private PreferenceCategory mColorCategory;
 
     @Override
+    protected int getPreferenceScreenResId() {
+        return R.xml.bananagear_battery_light;
+    }
+
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.bananagear_battery_light);
 
         PreferenceScreen prefSet = getPreferenceScreen();
         mColorCategory = (PreferenceCategory) findPreference("battery_light_cat");
@@ -142,6 +148,11 @@ public class BatteryLight extends SettingsPreferenceFragment implements
             return true;
         }
         return false;
+    }
+
+    @Override
+    protected String getLogTag() {
+        return TAG;
     }
 
     /**

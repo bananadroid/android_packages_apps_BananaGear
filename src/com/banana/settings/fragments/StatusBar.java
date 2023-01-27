@@ -38,7 +38,7 @@ import androidx.preference.*;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.development.SystemPropPoker;
 import com.android.settingslib.search.Indexable;
@@ -56,8 +56,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 @SearchIndexable
-public class StatusBar extends SettingsPreferenceFragment implements
+public class StatusBar extends DashboardFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
+
+    public static final String TAG = "StatusBar";
 
     private static final String KEY_STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
     private static final String KEY_STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
@@ -89,9 +91,13 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private ListPreference mQuickPulldown;
 
     @Override
+    protected int getPreferenceScreenResId() {
+        return R.xml.bg_statusbar;
+    }
+
+    @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.bg_statusbar);
         PreferenceScreen prefSet = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
         Context mContext = getActivity().getApplicationContext();
@@ -259,6 +265,11 @@ public class StatusBar extends SettingsPreferenceFragment implements
     @Override
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.BANANADROID;
+    }
+
+    @Override
+    protected String getLogTag() {
+        return TAG;
     }
 
     public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =

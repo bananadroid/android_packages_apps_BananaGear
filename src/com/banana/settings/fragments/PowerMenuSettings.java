@@ -33,20 +33,25 @@ import com.android.settings.R;
 import androidx.annotation.NonNull;
 
 import com.android.internal.logging.nano.MetricsProto;
-import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.dashboard.DashboardFragment;
 
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PowerMenuSettings extends SettingsPreferenceFragment
+public class PowerMenuSettings extends DashboardFragment
                 implements Preference.OnPreferenceChangeListener {
+
+    public static final String TAG = "PowerMenuSettings";
+
+    @Override
+    protected int getPreferenceScreenResId() {
+        return R.xml.powermenu_settings;
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        addPreferencesFromResource(R.xml.powermenu_settings);
 
         final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
@@ -55,6 +60,11 @@ public class PowerMenuSettings extends SettingsPreferenceFragment
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         return false;
+    }
+
+    @Override
+    protected String getLogTag() {
+        return TAG;
     }
 
     @Override

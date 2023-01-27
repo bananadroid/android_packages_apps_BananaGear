@@ -34,7 +34,7 @@ import androidx.preference.*;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.development.SystemPropPoker;
 import com.android.settingslib.search.Indexable;
@@ -53,8 +53,10 @@ import java.util.HashSet;
 import java.util.List;
 
 @SearchIndexable
-public class Misc extends SettingsPreferenceFragment implements
+public class Misc extends DashboardFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
+
+    public static final String TAG = "Misc";
 
     private static final String KEY_GAMES_SPOOF = "use_games_spoof";
     private static final String KEY_PHOTOS_SPOOF = "use_photos_spoof";
@@ -84,10 +86,14 @@ public class Misc extends SettingsPreferenceFragment implements
     private PreferenceCategory mLedCategory;
 
     @Override
+    protected int getPreferenceScreenResId() {
+        return R.xml.bg_misc;
+    }
+
+    @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         ContentResolver resolver = getActivity().getContentResolver();
-        addPreferencesFromResource(R.xml.bg_misc);
 
         final PreferenceScreen prefScreen = getPreferenceScreen();
         final Context mContext = getActivity().getApplicationContext();
@@ -194,6 +200,11 @@ public class Misc extends SettingsPreferenceFragment implements
     @Override
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.BANANADROID;
+    }
+
+    @Override
+    protected String getLogTag() {
+        return TAG;
     }
 
     public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =

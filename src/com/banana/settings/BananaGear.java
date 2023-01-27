@@ -26,20 +26,30 @@ import android.view.Surface;
 import android.preference.Preference;
 import com.android.settings.R;
 
-import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.dashboard.DashboardFragment;
 
-public class BananaGear extends SettingsPreferenceFragment {
+public class BananaGear extends DashboardFragment {
+
+    public static final String TAG = "BananaGear";
+
+    @Override
+    protected int getPreferenceScreenResId() {
+        return R.xml.bananagear;
+    }
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-
-        addPreferencesFromResource(R.xml.bananagear);
     }
 
     @Override
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.BANANADROID;
+    }
+
+    @Override
+    protected String getLogTag() {
+        return TAG;
     }
 
     public static void lockCurrentOrientation(Activity activity) {

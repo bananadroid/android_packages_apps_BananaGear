@@ -33,11 +33,11 @@ import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.dashboard.DashboardFragment;
 
 import com.banana.support.colorpicker.ColorPickerPreference;
 
-public class PulseSettings extends SettingsPreferenceFragment implements
+public class PulseSettings extends DashboardFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String TAG = PulseSettings.class.getSimpleName();
@@ -75,10 +75,13 @@ public class PulseSettings extends SettingsPreferenceFragment implements
     private PreferenceCategory mSolidBarsCat;
 
     @Override
+    protected int getPreferenceScreenResId() {
+        return R.xml.pulse_settings;
+    }
+
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        addPreferencesFromResource(R.xml.pulse_settings);
 
         ContentResolver resolver = getContext().getContentResolver();
 
@@ -250,6 +253,11 @@ public class PulseSettings extends SettingsPreferenceFragment implements
                 Settings.Secure.PULSE_SOLID_FUDGE_FACTOR, 4, UserHandle.USER_CURRENT);
         Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.PULSE_SOLID_UNITS_ROUNDED, 0, UserHandle.USER_CURRENT);
+    }
+
+    @Override
+    protected String getLogTag() {
+        return TAG;
     }
 
     @Override
