@@ -123,6 +123,16 @@
         </Preference>
 
         <Preference
+            android:title="@string/banana_about_Djampt"
+            android:summary="@string/banana_about_Djampt_summary"
+            android:icon="@drawable/Djampt"
+            settings:layout="@layout/banana_about">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://t.me/Djampt" />
+        </Preference>
+
+        <Preference
             android:title="@string/banana_about_elizabethangelalorenza"
             android:summary="@string/banana_about_elizabethangelalorenza_summary"
             android:icon="@drawable/elizabethangelalorenza"
@@ -162,6 +172,7 @@
                 android:data="https://t.me/kibria5" />
         </Preference>
 
+
         <Preference
             android:title="@string/banana_about_MweTwo"
             android:summary="@string/banana_about_MweTwo_summary"
@@ -182,6 +193,8 @@
                 android:data="https://t.me/bntxperses" />
         </Preference>
 
+
+
         <Preference
             android:title="@string/banana_about_RAYAN"
             android:summary="@string/banana_about_RAYAN_summary"
@@ -199,7 +212,17 @@
             settings:layout="@layout/banana_about">
             <intent
                 android:action="android.intent.action.VIEW"
-                android:data="https://t.me/rexdevz" />
+                android:data="https://t.me/rexdevzz" />
+        </Preference>
+
+        <Preference
+            android:title="@string/banana_about_MOCHA"
+            android:summary="@string/banana_about_MOCHA_summary"
+            android:icon="@drawable/MOCHA"
+            settings:layout="@layout/banana_about">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://t.me/official_mocha" />
         </Preference>
 
         <Preference
@@ -210,6 +233,16 @@
             <intent
                 android:action="android.intent.action.VIEW"
                 android:data="https://t.me/Romeo_Delta_Whiskey" />
+        </Preference>
+
+        <Preference
+            android:title="@string/banana_about_SHINIGAMI"
+            android:summary="@string/banana_about_SHINIGAMI_summary"
+            android:icon="@drawable/SHINIGAMI"
+            settings:layout="@layout/banana_about">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://t.me/zacky_ma" />
         </Preference>
 
         <Preference
