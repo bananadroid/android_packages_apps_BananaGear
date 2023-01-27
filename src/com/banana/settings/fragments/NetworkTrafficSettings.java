@@ -29,12 +29,12 @@ import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.SwitchPreference;
 
 import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.dashboard.DashboardFragment;
 import com.android.internal.logging.nano.MetricsProto;
 
 import com.banana.support.preferences.CustomSeekBarPreference;
 
-public class NetworkTrafficSettings extends SettingsPreferenceFragment
+public class NetworkTrafficSettings extends DashboardFragment
         implements Preference.OnPreferenceChangeListener  {
 
     private static final String TAG = "NetworkTrafficSettings";
@@ -48,9 +48,13 @@ public class NetworkTrafficSettings extends SettingsPreferenceFragment
     private SwitchPreference mNetTrafficHideArrow;
 
     @Override
+    protected int getPreferenceScreenResId() {
+        return R.xml.network_traffic_settings;
+    }
+
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.network_traffic_settings);
         final ContentResolver resolver = getActivity().getContentResolver();
 
         mNetTrafficAutohideThreshold = (CustomSeekBarPreference)
@@ -110,6 +114,11 @@ public class NetworkTrafficSettings extends SettingsPreferenceFragment
                 Settings.System.NETWORK_TRAFFIC_REFRESH_INTERVAL, 2, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.NETWORK_TRAFFIC_HIDEARROW, 0, UserHandle.USER_CURRENT);
+    }
+
+    @Override
+    protected String getLogTag() {
+        return TAG;
     }
 
     @Override

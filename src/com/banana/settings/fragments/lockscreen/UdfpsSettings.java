@@ -41,9 +41,11 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.util.banana.BananaUtils;
 
 import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.dashboard.DashboardFragment;
 
-public class UdfpsSettings extends SettingsPreferenceFragment {
+public class UdfpsSettings extends DashboardFragment {
+
+    public static final String TAG = "UdfpsSettings";
 
     private static final String UDFPS_ANIM_PREVIEW = "udfps_recognizing_animation_preview";
     private static final String SCREEN_OFF_UDFPS_ENABLED = "screen_off_udfps_enabled";
@@ -52,9 +54,13 @@ public class UdfpsSettings extends SettingsPreferenceFragment {
     private Preference mScreenOffUdfps;
 
     @Override
+    protected int getPreferenceScreenResId() {
+        return R.xml.udfps_settings;
+    }
+
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.udfps_settings);
 
         final PreferenceScreen prefSet = getPreferenceScreen();
         Resources resources = getResources();
@@ -83,6 +89,11 @@ public class UdfpsSettings extends SettingsPreferenceFragment {
                 Settings.System.UDFPS_ICON, 0, UserHandle.USER_CURRENT);
         Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.SCREEN_OFF_UDFPS_ENABLED, 0, UserHandle.USER_CURRENT);
+    }
+
+    @Override
+    protected String getLogTag() {
+        return TAG;
     }
 
     @Override

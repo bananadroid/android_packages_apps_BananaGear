@@ -50,7 +50,7 @@ import androidx.preference.SwitchPreference;
 import com.android.internal.lineage.hardware.LineageHardwareManager;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
@@ -64,7 +64,7 @@ import java.util.Set;
 import java.util.UUID;
 
 @SearchIndexable
-public class Buttons extends SettingsPreferenceFragment implements
+public class Buttons extends DashboardFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
     private static final String TAG = "Buttons";
@@ -152,12 +152,15 @@ public class Buttons extends SettingsPreferenceFragment implements
     private LineageHardwareManager mHardware;
 
     @Override
+    protected int getPreferenceScreenResId() {
+        return R.xml.bg_buttons;
+    }
+
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         mHardware = LineageHardwareManager.getInstance(getActivity());
-
-        addPreferencesFromResource(R.xml.bg_buttons);
 
         final Resources res = getResources();
         final ContentResolver resolver = getActivity().getContentResolver();
@@ -833,6 +836,11 @@ public class Buttons extends SettingsPreferenceFragment implements
                 Settings.Secure.RING_HOME_BUTTON_BEHAVIOR, (mHomeAnswerCall.isChecked()
                         ? Settings.Secure.RING_HOME_BUTTON_BEHAVIOR_ANSWER
                         : Settings.Secure.RING_HOME_BUTTON_BEHAVIOR_DO_NOTHING));
+    }
+
+    @Override
+    protected String getLogTag() {
+        return TAG;
     }
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =

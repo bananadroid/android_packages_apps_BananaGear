@@ -35,7 +35,7 @@ import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.Utils;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
@@ -44,13 +44,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 @SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
-public class StatusBarLogo extends SettingsPreferenceFragment implements
+public class StatusBarLogo extends DashboardFragment implements
         Preference.OnPreferenceChangeListener {
+
+    public static final String TAG = "StatusBarLogo";
+
+    @Override
+    protected int getPreferenceScreenResId() {
+        return R.xml.status_bar_logo;
+    }
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.status_bar_logo);
     }
 
     @Override
@@ -61,6 +67,11 @@ public class StatusBarLogo extends SettingsPreferenceFragment implements
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         return false;
+    }
+
+    @Override
+    protected String getLogTag() {
+        return TAG;
     }
 
     /**

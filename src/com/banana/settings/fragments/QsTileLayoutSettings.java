@@ -28,15 +28,17 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.util.banana.BananaUtils.QSLayoutUtils;
 
 import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.dashboard.DashboardFragment;
 
 import com.android.settingslib.widget.LayoutPreference;
 
 import com.banana.support.preferences.ProperSeekBarPreference;
 import com.banana.support.preferences.SystemSettingSwitchPreference;
 
-public class QsTileLayoutSettings extends SettingsPreferenceFragment
+public class QsTileLayoutSettings extends DashboardFragment
         implements Preference.OnPreferenceChangeListener {
+
+    public static final String TAG = "QsTileLayoutSettings";
 
     private static final String KEY_QS_HIDE_LABEL = "qs_tile_label_hide";
     private static final String KEY_QS_VERTICAL_LAYOUT = "qs_tile_vertical_layout";
@@ -59,9 +61,13 @@ public class QsTileLayoutSettings extends SettingsPreferenceFragment
     private int[] currentValue = new int[2];
 
     @Override
+    protected int getPreferenceScreenResId() {
+        return R.xml.qs_tile_layout;
+    }
+
+    @Override
     public void onCreate(Bundle savedInstance) {
         super.onCreate(savedInstance);
-        addPreferencesFromResource(R.xml.qs_tile_layout);
     }
 
     @Override
@@ -154,6 +160,11 @@ public class QsTileLayoutSettings extends SettingsPreferenceFragment
     @Override
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.BANANADROID;
+    }
+
+    @Override
+    protected String getLogTag() {
+        return TAG;
     }
 
     private void initPreference() {
