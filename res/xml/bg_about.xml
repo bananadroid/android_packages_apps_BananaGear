@@ -63,6 +63,30 @@
         </Preference>
 
         <Preference
+            android:title="@string/banana_about_genkzsz11"
+            android:summary="@string/banana_about_genkzsz11_summary"
+            android:icon="@drawable/genkzsz11"
+            settings:layout="@layout/banana_about">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://t.me/Genkzsz11" />
+        </Preference>
+
+        <Preference
+            android:title="@string/banana_about_atharv"
+            android:summary="@string/banana_about_atharv_summary"
+            android:icon="@drawable/atharv"
+            settings:layout="@layout/banana_about">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://t.me/ATANYTHING" />
+        </Preference>
+
+    <PreferenceCategory
+        android:key="maintainer_team"
+        android:title="@string/banana_maintainer_team" />
+
+        <Preference
             android:title="@string/banana_about_AbrarNoob"
             android:summary="@string/banana_about_AbrarNoob_summary"
             android:icon="@drawable/AbrarNoob"
