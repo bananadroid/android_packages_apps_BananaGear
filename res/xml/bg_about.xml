@@ -236,7 +236,7 @@
             settings:layout="@layout/banana_about">
             <intent
                 android:action="android.intent.action.VIEW"
-                android:data="https://t.me/rexdevzz" />
+                android:data="https://t.me/rexdevzzz" />
         </Preference>
 
         <Preference
