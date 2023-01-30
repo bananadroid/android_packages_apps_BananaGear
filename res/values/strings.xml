@@ -31,49 +31,51 @@
     <string name="banana_about_team">Contributors</string>
     <string name="banana_maintainer_team">Maintainers</string>
     <string name="banana_about_travarilo" translatable="false">Rizky Benggolo</string>
-    <string name="banana_about_travarilo_summary" translatable="false">Lead Developer | A52 maintainer</string>
+    <string name="banana_about_travarilo_summary" translatable="false">Lead Developer | Samsung A52 maintainer</string>
     <string name="banana_about_genkzsz11" translatable="false">Muhammad Fikri</string>
     <string name="banana_about_genkzsz11_summary" translatable="false">Contributor</string>
     <string name="banana_about_atharv" translatable="false">Atharv Sutar</string>
     <string name="banana_about_atharv_summary" translatable="false">Contributor</string>
     <string name="banana_about_AbrarNoob" translatable="false">AbrarNoob</string>
-    <string name="banana_about_AbrarNoob_summary" translatable="false">alioth</string>
+    <string name="banana_about_AbrarNoob_summary" translatable="false">POCO F3 / alioth</string>
     <string name="banana_about_Andreock" translatable="false">Andreock</string>
-    <string name="banana_about_Andreock_summary" translatable="false">bitra</string>
+    <string name="banana_about_Andreock_summary" translatable="false">Realme GT Neo 2 / bitra</string>
     <string name="banana_about_aepranata" translatable="false">Aditya Eka Pranata</string>
-    <string name="banana_about_aepranata_summary" translatable="false">rosy</string>
+    <string name="banana_about_aepranata_summary" translatable="false">Redmi 5 / rosy</string>
     <string name="banana_about_AradheaRizky" translatable="false">Aradhea Rizky</string>
-    <string name="banana_about_AradheaRizky_summary" translatable="false">raphael</string>
+    <string name="banana_about_AradheaRizky_summary" translatable="false">Redmi K20 Pro | Mi 9T Pro / raphael</string>
+    <string name="banana_about_Bratasij" translatable="false">Bratasij</string>
+    <string name="banana_about_Bratasij_summary" translatable="false">Redmi Note 11 / spes</string>
     <string name="banana_about_ChiHuan" translatable="false">Chi Huan</string>
-    <string name="banana_about_ChiHuan_summary" translatable="false">olives</string>
+    <string name="banana_about_ChiHuan_summary" translatable="false">Redmi 8|8A|8A Dual / olives</string>
     <string name="banana_about_Curse" translatable="false">Curse</string>
-    <string name="banana_about_Curse_summary" translatable="false">joyeuse</string>
+    <string name="banana_about_Curse_summary" translatable="false">Redmi Note 9 Pro Global / joyeuse</string>
     <string name="banana_about_Djampt" translatable="false">Djampt</string>
-    <string name="banana_about_Djampt_summary" translatable="false">sweet</string>
+    <string name="banana_about_Djampt_summary" translatable="false">Redmi Note 10 Pro / sweet</string>
     <string name="banana_about_elizabethangelalorenza" translatable="false">elizabethangelalorenza</string>
-    <string name="banana_about_elizabethangelalorenza_summary" translatable="false">vayu</string>
+    <string name="banana_about_elizabethangelalorenza_summary" translatable="false">POCO X3 Pro / vayu</string>
     <string name="banana_about_FPSensor" translatable="false">FPSensor</string>
-    <string name="banana_about_FPSensor_summary" translatable="false">lavender</string>
+    <string name="banana_about_FPSensor_summary" translatable="false">Redmi Note 7 / lavender</string>
     <string name="banana_about_FrEeRuNnEr4EvEr" translatable="false">FrEeRuNnEr4EvEr</string>
-    <string name="banana_about_FrEeRuNnEr4EvEr_summary" translatable="false">s10 | note 10</string>
+    <string name="banana_about_FrEeRuNnEr4EvEr_summary" translatable="false">Samsung S10 | Samsung Note 10</string>
     <string name="banana_about_MOCHA" translatable="false">MOCHA</string>
-    <string name="banana_about_MOCHA_summary" translatable="false">tulip</string>
+    <string name="banana_about_MOCHA_summary" translatable="false">Redmi Note 6 Pro / tulip</string>
     <string name="banana_about_MweTwo" translatable="false">MweTwo</string>
-    <string name="banana_about_MweTwo_summary" translatable="false">surya</string>
+    <string name="banana_about_MweTwo_summary" translatable="false">POCO X3 NFC / surya</string>
     <string name="banana_about_kibria5" translatable="false">kibria5</string>
-    <string name="banana_about_kibria5_summary" translatable="false">violet</string>
+    <string name="banana_about_kibria5_summary" translatable="false">Redmi Note 7 Pro / violet</string>
     <string name="banana_about_Perses" translatable="false">Perses</string>
-    <string name="banana_about_Perses_summary" translatable="false">x3</string>
+    <string name="banana_about_Perses_summary" translatable="false">Realme X3 / x3</string>
     <string name="banana_about_RAYAN" translatable="false">RAYAN</string>
-    <string name="banana_about_RAYAN_summary" translatable="false">laurel_sprout</string>
+    <string name="banana_about_RAYAN_summary" translatable="false">Mi A3 / laurel_sprout</string>
     <string name="banana_about_REX" translatable="false">REX</string>
-    <string name="banana_about_REX_summary" translatable="false">ginkgo</string>
+    <string name="banana_about_REX_summary" translatable="false">Redmi Note 8 / ginkgo</string>
     <string name="banana_about_Romeo_Delta_Whiskey" translatable="false">Romeo_Delta_Whiskey</string>
-    <string name="banana_about_Romeo_Delta_Whiskey_summary" translatable="false">X00TD</string>
+    <string name="banana_about_Romeo_Delta_Whiskey_summary" translatable="false">ZenFone Max Pro M1 / X00TD</string>
     <string name="banana_about_SHINIGAMI" translatable="false">SHINIGAMI</string>
-    <string name="banana_about_SHINIGAMI_summary" translatable="false">whyred</string>
+    <string name="banana_about_SHINIGAMI_summary" translatable="false">Redmi Note 5 Pro / whyred</string>
     <string name="banana_about_zkyzzz" translatable="false">zkyzzz</string>
-    <string name="banana_about_zkyzzz_summary" translatable="false">beryllium</string>
+    <string name="banana_about_zkyzzz_summary" translatable="false">POCO F1 / beryllium</string>
  
     <!-- Categories -->
     <string name="lockscreen_title">Lockscreen</string>
