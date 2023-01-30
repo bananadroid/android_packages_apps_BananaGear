@@ -52,7 +52,8 @@
         <Preference
             android:key="notification_light"
             android:fragment="com.android.settings.applications.manageapplications.ManageApplications"
-            android:title="@string/notification_light_settings">
+            android:title="@string/notification_light_settings"
+            android:summary="@string/app_notification_field_summary">
             <extra
                 android:name="classname"
                 android:value="com.android.settings.Settings$NotificationAppListActivity" />
