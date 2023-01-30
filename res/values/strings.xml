@@ -76,7 +76,9 @@
     <string name="banana_about_SHINIGAMI_summary" translatable="false">Redmi Note 5 Pro / whyred</string>
     <string name="banana_about_zkyzzz" translatable="false">zkyzzz</string>
     <string name="banana_about_zkyzzz_summary" translatable="false">POCO F1 / beryllium</string>
- 
+    <string name="banana_about_HonokaKousaka" translatable="false">HonokaKousaka</string>
+    <string name="banana_about_HonokaKousaka_summmary" translatable="false">Mi A1 / tissot</string>
+    
     <!-- Categories -->
     <string name="lockscreen_title">Lockscreen</string>
     <string name="lockscreen_title_summary">Lockscreen style customization</string>
