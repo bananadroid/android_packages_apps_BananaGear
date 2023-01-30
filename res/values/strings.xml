@@ -58,6 +58,8 @@
     <string name="banana_about_FPSensor_summary" translatable="false">Redmi Note 7 / lavender</string>
     <string name="banana_about_FrEeRuNnEr4EvEr" translatable="false">FrEeRuNnEr4EvEr</string>
     <string name="banana_about_FrEeRuNnEr4EvEr_summary" translatable="false">Samsung S10 | Samsung Note 10</string>
+    <string name="banana_about_HonokaKousaka" translatable="false">HonokaKousaka</string>
+    <string name="banana_about_HonokaKousaka_summary" translatable="false">Mi A1 / tissot</string>
     <string name="banana_about_MOCHA" translatable="false">MOCHA</string>
     <string name="banana_about_MOCHA_summary" translatable="false">Redmi Note 6 Pro / tulip</string>
     <string name="banana_about_MweTwo" translatable="false">MweTwo</string>
@@ -76,7 +78,7 @@
     <string name="banana_about_SHINIGAMI_summary" translatable="false">Redmi Note 5 Pro / whyred</string>
     <string name="banana_about_zkyzzz" translatable="false">zkyzzz</string>
     <string name="banana_about_zkyzzz_summary" translatable="false">POCO F1 / beryllium</string>
- 
+
     <!-- Categories -->
     <string name="lockscreen_title">Lockscreen</string>
     <string name="lockscreen_title_summary">Lockscreen style customization</string>
