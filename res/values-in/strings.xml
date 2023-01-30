@@ -476,8 +476,6 @@
     <!-- reTicker -->
     <string name="reticker_title">reTicker</string>
     <string name="reticker_summary">Ganti notifikasi mengambang dengan versi ticker yang didesain ulang yang ramping dan tidak terlalu invasif</string>
-    <string name="new_reticker_animation_title">Animasi reTicker alternatif</string>
-    <string name="new_reticker_animation_summary">Gunakan animasi alternatif untuk reTicker</string>
     <string name="reticker_colored_title">Gunakan latar belakang berwarna sesuai aplikasi</string>
     <string name="reticker_colored_summary">Ganti warna latar belakang reTicker menggunakan warna utama aplikasi notifikasi</string>
     <!-- Material dismiss all button for notifications -->

@@ -125,13 +125,6 @@
             android:dependency="reticker_status"
             android:defaultValue="false" />
 
-        <com.banana.support.preferences.SystemSettingSwitchPreference
-            android:key="new_reticker_animation"
-            android:dependency="reticker_status"
-            android:title="@string/new_reticker_animation_title"
-            android:summary="@string/new_reticker_animation_summary"
-            android:defaultValue="false" />
-
     </PreferenceCategory>
 
     <PreferenceCategory
