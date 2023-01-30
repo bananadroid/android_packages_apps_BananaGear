@@ -16,6 +16,22 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- App Title -->
     <string name="bananagear_title">Banana Gear</string>
+    <!-- About BananaDroid -->
+    <string name="banana_about_title">Tentang kami</string>
+    <string name="banana_about_summary">Rajin konsumsi pisang yuk!</string>
+    <string name="banana_about_link">Kunjungi dan gabung</string>
+    <string name="banana_website_title">Situs web</string>
+    <string name="banana_website_summary">Kunjungi yuk, gratis kok</string>
+    <string name="banana_telegram_title" translatable="false">Telegram</string>
+    <string name="banana_telegram_summary">Ayo gabung di obrolan Telegram</string>
+    <string name="banana_github_title" translatable="false">GitHub</string>
+    <string name="banana_github_summary">Silakan lihat GitHub kami</string>
+    <string name="banana_about_info_summary">BananaDroid adalah Custom ROM Android yang biasa-biasa aja dan jelas ngga lebih bagus dari yang lain. Kami hanya mencoba untuk melakukan apa yang kami suka dan semoga bisa kasih pengalaman yang baik kepada para penggunanya. Jangan ragu untuk lapor di grup telegram jika ada masalah di ponsel kamu. Kami ngga bisa janji bakal mengatasi masalahnya, tapi kami akan mencoba untuk mencari tahu solusinya.</string>
+    <string name="banana_about_team">Kontributor</string>
+    <string name="banana_maintainer_team">Pengelola</string>
+    <string name="banana_about_travarilo_summary">Pengembang utama | pengelola Samsung A52</string>
+    <string name="banana_about_genkzsz11_summary">Kontributor</string>
+    <string name="banana_about_atharv_summary">Kontributor</string>
     <!-- Categories -->
     <string name="lockscreen_title">Layar kunci</string>
     <string name="lockscreen_title_summary">Kustomisasi layar kunci</string>
@@ -406,15 +422,6 @@
     <!-- Ambient Ticker -->
     <string name="pulse_on_new_tracks_title">Penampil musik</string>
     <string name="pulse_on_new_tracks_summary">Tampilkan penampil musik di Tampilan Standby selama perubahan trek</string>
-    <!-- Ambient edge lighting -->
-    <string name="pulse_ambient_light_title">Pencahayaan pinggir layar</string>
-    <string name="pulse_ambient_light_summary">Nyalakan cahaya di sisi pinggir layar saat ada notifikasi</string>
-    <string name="pulse_ambient_light_color_title">Warna sisi pencahayaan</string>
-    <string name="pulse_ambient_light_duration_title">Durasi sisi pencahayaan</string>
-    <string name="pulse_ambient_light_duration_summary">Atur durasi animasi pencahayaan</string>
-    <string name="pulse_ambient_light_layout_title">Tampilan pencahayaan</string>
-    <string name="pulse_ambient_light_layout_solid">Padat</string>
-    <string name="pulse_ambient_light_layout_faded">Memudar</string>
     <!-- Notch: Full screen apps -->
     <string name="display_cutout_force_fullscreen_title">Aplikasi layar penuh</string>
     <string name="display_cutout_force_fullscreen_summary">Paksa aplikasi untuk mengabaikan ruang notch</string>
@@ -609,21 +616,6 @@
     <!-- UI styles -->
     <string name="theme_customization_ui_style_title">Tampilan UI</string>
     <string name="theme_customization_ui_style_summary">Setel gaya kustom untuk antarmuka Anda</string>
-    <!-- Battery light -->
-    <string name="light_settings_header">Setelan lampu</string>
-    <string name="battery_light_settings">Lampu baterai</string>
-    <string name="battery_light_summary">Mengaktifkan atau menonaktifkan lampu baterai saat menggunakan DND, baterai lemah</string>
-    <string name="battery_light_enable">Lampu baterai</string>
-    <string name="battery_full_light_enabled">Lampu baterai saat terisi penuh</string>
-    <string name="battery_light_allow_on_dnd_title">Lampu baterai dalam mode Jangan Diganggu</string>
-    <string name="battery_light_low_blinking_title">Berkedip saat baterai lemah</string>
-    <string name="battery_light_cat">Warna lampu baterai ketika melakukan pengisian daya</string>
-    <string name="battery_light_low_color">Baterai lemah</string>
-    <string name="battery_light_medium_color">Pengisian daya</string>
-    <string name="battery_light_full_color">Baterai hampir penuh</string>
-    <string name="battery_light_reallyfull_color">Terisi penuh</string>
-    <!-- Notification light -->
-    <string name="notification_light_settings">Lampu notifikasi</string>
     <!-- Lockscreen Clock -->
     <string name="kg_custom_clock_color_enabled_title">Pilih warna jam layar kunci</string>
     <string name="kg_custom_clock_color_title">Warna jam</string>
@@ -658,4 +650,61 @@
     <string name="flashlight_on_call_ignore_dnd_title">Abaikan DND</string>
     <string name="flashlight_on_call_ignore_dnd_summary">Apakah senter menyala ketika mode DND aktif</string>
     <string name="flashlight_on_call_rate_title">Rasio kedipan</string>
+    <!-- Quick settings styles -->
+    <string name="qs_styles_title">Gaya QS Panel</string>
+    <string name="qs_outline">Gaya QS Garis Luar</string>
+    <string name="qs_two_tone">Gaya QS Aksen 2 Tone Warna</string>
+    <string name="qs_color_pop">Gaya QS Warna Pop</string>
+    <!-- Battery light -->
+    <string name="light_settings_header">Setelan LED</string>
+    <string name="battery_light_settings">LED baterai</string>
+    <string name="battery_light_summary">Aktifkan atau nonaktifkan LED baterai ketika mode Jangan Diganggu, baterai lemah</string>
+    <string name="battery_light_enable">LED baterai</string>
+    <string name="battery_full_light_enabled">LED baterai ketika daya terisi penuh</string>
+    <string name="battery_light_allow_on_dnd_title">LED baterai pada mode Jangan Diganggu</string>
+    <string name="battery_light_low_blinking_title">Berdenyut ketika baterai lemah</string>
+    <string name="battery_light_cat">Warna LED baterai ketika pengisian daya</string>
+    <string name="battery_light_low_color">Baterai lemah</string>
+    <string name="battery_light_medium_color">Pengisian daya</string>
+    <string name="battery_light_full_color">Daya hampir penuh</string>
+    <string name="battery_light_reallyfull_color">Daya terisi penuh</string>
+    <!-- Notification light -->
+    <string name="notification_light_settings">LED notifikasi</string>
+    <!-- Ambient edge lighting -->
+    <string name="pulse_ambient_light_category">Pencayahaan tepi layar</string>
+    <string name="pulse_ambient_light_title">Pencahayaan tepi</string>
+    <string name="pulse_ambient_light_summary">Nyalakan cahaya di tepi layar saat ada notifikasi</string>
+    <string name="pulse_ambient_light_color_title">Warna kustom</string>
+    <string name="pulse_ambient_light_color_mode_title">Warna cahaya</string>
+    <string name="pulse_ambient_light_color_mode_notification">Otomatis (Berdasarkan notifikasi)</string>
+    <string name="pulse_ambient_light_color_mode_wall">Otomatis (Berdasarkan wallpaper)</string>
+    <string name="pulse_ambient_light_color_mode_accent">Aksen</string>
+    <string name="pulse_ambient_light_color_mode_custom">Kustom</string>
+    <string name="pulse_ambient_light_color_mode_random">Warna acak</string>
+    <string name="pulse_ambient_light_duration_title">Durasi cahaya</string>
+    <string name="pulse_ambient_light_repeat_count_title">Jumlah pengulangan cahaya</string>
+    <string name="pulse_ambient_light_show_always_title">Selalu ditampilkan</string>
+    <string name="pulse_ambient_light_show_always_summary">Tampilkan cahaya pada semua event doze, tidak hanya pada notifikasi</string>
+    <string name="pulse_ambient_light_repeat_direction_title">Mode pengulangan cahaya</string>
+    <string name="pulse_ambient_light_repeat_direction_restart">Mengulang</string>
+    <string name="pulse_ambient_light_repeat_direction_reverse">Tukar posisi</string>
+    <string name="pulse_ambient_light_layout_title">Tampilan cahaya</string>
+    <string name="pulse_ambient_light_layout_solid">Padat</string>
+    <string name="pulse_ambient_light_layout_faded">Memudar</string>
+    <string name="pulse_ambient_light_width_title">Lebar cahaya</string>
+    <string name="pulse_light_layout_style_title">Gaya tata letak cahaya</string>
+    <string name="pulse_light_both">Empat sisi</string>
+    <string name="pulse_light_top_bottom">Atas-bawah</string>
+    <string name="pulse_light_left_right">Kanan-kiri</string>
+    <string name="ambient_notification_light_enabled_title">Tampilkan pada AOD</string>
+    <string name="ambient_notification_light_enabled_summary">Tampilkan cahaya pada mode Layar Selalu Menyala</string>
+    <string name="ambient_notification_light_hide_aod_title">Sembunyikan konten AOD</string>
+    <string name="ambient_notification_light_hide_aod_summary">Sembunyikan konten AOD ketika cahaya sedang ditampilkan</string>
+    <string name="ambient_notification_light_timeout_title">Waktu habis</string>
+    <string name="ambient_notification_light_timeout_forever">Selamanya</string>
+    <string name="ambient_notification_light_timeout_half_minute">30 detik</string>
+    <string name="ambient_notification_light_timeout_minute">1 menit</string>
+    <string name="ambient_notification_light_timeout_three_minutes">3 menit</string>
+    <string name="ambient_notification_light_timeout_five_minutes">5 menit</string>
+    <string name="ambient_notification_light_timeout_ten_minutes">10 menit</string>
 </resources>
