@@ -822,6 +822,8 @@
     <string name="clock_use_single_line_title">Custom clock format</string>
     <string name="single_line">Single-line</string>
     <string name="double_line">Double-line</string>
+    <string name="theme_customization_date_font_title">Lockscreen date font style</string>
+    <string name="theme_customization_date_font_summary">Set lockscreen date font style</string>
 
     <!-- Media artwork -->
     <string name="media_artwork_title">Media artwork</string>
