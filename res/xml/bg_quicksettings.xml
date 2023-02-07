@@ -15,6 +15,13 @@
         android:dependency="secure_lockscreen_qs_disabled"
         android:defaultValue="true" />
 
+    <com.banana.support.preferences.SecureSettingSwitchPreference
+        android:key="secure_lockscreen_qs_disabled"
+        android:title="@string/disable_qs_title"
+        android:summary="@string/qstile_requires_unlocking_summary"
+        android:dependency="secure_lockscreen_qs_disabled"
+        android:defaultValue="true" />
+
     <!-- Battery styles -->
     <com.banana.support.preferences.SystemSettingListPreference
         android:key="qs_battery_style"
