@@ -62,6 +62,8 @@
     <string name="banana_about_HonokaKousaka_summary" translatable="false">Mi A1 / tissot</string>
     <string name="banana_about_MOCHA" translatable="false">MOCHA</string>
     <string name="banana_about_MOCHA_summary" translatable="false">Redmi Note 6 Pro / tulip</string>
+    <string name="banana_about_Mudit" translatable="false">Mudit</string>
+    <string name="banana_about_Mudit_summary" translatable="false">Poco F4 / munch</string>
     <string name="banana_about_MweTwo" translatable="false">MweTwo</string>
     <string name="banana_about_MweTwo_summary" translatable="false">POCO X3 NFC / surya</string>
     <string name="banana_about_kibria5" translatable="false">kibria5</string>
