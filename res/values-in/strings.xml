@@ -705,4 +705,7 @@
     <string name="ambient_notification_light_timeout_three_minutes">3 menit</string>
     <string name="ambient_notification_light_timeout_five_minutes">5 menit</string>
     <string name="ambient_notification_light_timeout_ten_minutes">10 menit</string>
+    <!-- WiFi Standard icon -->
+    <string name="wifi_standard_icon_title">Standar WiFi</string>
+    <string name="wifi_standard_icon_summary">Tampilkan standar WiFi di samping sinyal WiFi</string>
 </resources>

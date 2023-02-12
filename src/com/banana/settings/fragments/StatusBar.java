@@ -206,6 +206,8 @@ public class StatusBar extends DashboardFragment implements
                 Settings.Secure.ENABLE_LOCATION_PRIVACY_INDICATOR, 1, UserHandle.USER_CURRENT);
         Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.ENABLE_PROJECTION_PRIVACY_INDICATOR, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.SHOW_WIFI_STANDARD_ICON, 0, UserHandle.USER_CURRENT);
 
         BatteryBar.reset(mContext);
     }
