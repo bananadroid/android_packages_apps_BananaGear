@@ -216,6 +216,25 @@
                 android:data="https://t.me/kibria5" />
         </Preference>
 
+        <Preference
+            android:title="@string/banana_about_MOCHA"
+            android:summary="@string/banana_about_MOCHA_summary"
+            android:icon="@drawable/MOCHA"
+            settings:layout="@layout/banana_about">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://t.me/official_mocha" />
+        </Preference>
+        
+        <Preference
+            android:title="@string/banana_about_Mudit"
+            android:summary="@string/banana_about_Mudit_summary"
+            android:icon="@drawable/Mudit"
+            settings:layout="@layout/banana_about">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://t.me/Mudit1808" />
+        </Preference>
 
         <Preference
             android:title="@string/banana_about_MweTwo"
@@ -255,26 +274,6 @@
             <intent
                 android:action="android.intent.action.VIEW"
                 android:data="https://t.me/rexdevzzz" />
-        </Preference>
-
-        <Preference
-            android:title="@string/banana_about_MOCHA"
-            android:summary="@string/banana_about_MOCHA_summary"
-            android:icon="@drawable/MOCHA"
-            settings:layout="@layout/banana_about">
-            <intent
-                android:action="android.intent.action.VIEW"
-                android:data="https://t.me/official_mocha" />
-        </Preference>
-        
-        <Preference
-            android:title="@string/banana_about_Mudit"
-            android:summary="@string/banana_about_Mudit_summary"
-            android:icon="@drawable/Mudit"
-            settings:layout="@layout/banana_about">
-            <intent
-                android:action="android.intent.action.VIEW"
-                android:data="https://t.me/Mudit1808" />
         </Preference>
 
         <Preference
