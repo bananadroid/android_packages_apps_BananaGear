@@ -74,20 +74,12 @@ public class Misc extends DashboardFragment implements
     private static final String SYS_PHOTOS_SPOOF = "persist.sys.pixelprops.gphotos";
     private static final String SYS_NETFLIX_SPOOF = "persist.sys.pixelprops.netflix";
 
-    private static final String CHARGING_LIGHTS_PREF = "charging_light";
-    private static final String LED_CATEGORY = "led";
-    private static final String NOTIFICATION_LIGHTS_PREF = "notification_light";
-
     private SwitchPreference mGamesSpoof;
     private SwitchPreference mPhotosSpoof;
     private SwitchPreference mNetFlixSpoof;
     private Preference mPocketJudge;
     private Preference mShowCutoutForce;
     private Preference mSmartPixels;
-
-    private Preference mChargingLeds;
-    private Preference mNotLights;
-    private PreferenceCategory mLedCategory;
 
     @Override
     protected int getPreferenceScreenResId() {
@@ -134,26 +126,6 @@ public class Misc extends DashboardFragment implements
                 com.android.internal.R.bool.config_pocketModeSupported);
         if (!mPocketJudgeSupported)
             prefScreen.removePreference(mPocketJudge);
-
-        boolean hasLED = res.getBoolean(
-                com.android.internal.R.bool.config_hasNotificationLed);
-        if (hasLED) {
-            mNotLights = (Preference) findPreference(NOTIFICATION_LIGHTS_PREF);
-            boolean mNotLightsSupported = res.getBoolean(
-                    com.android.internal.R.bool.config_intrusiveNotificationLed);
-            if (!mNotLightsSupported) {
-                prefScreen.removePreference(mNotLights);
-            }
-            mChargingLeds = (Preference) findPreference(CHARGING_LIGHTS_PREF);
-            if (mChargingLeds != null
-                    && !getResources().getBoolean(
-                            com.android.internal.R.bool.config_intrusiveBatteryLed)) {
-                prefScreen.removePreference(mChargingLeds);
-            }
-        } else {
-            mLedCategory = findPreference(LED_CATEGORY);
-            mLedCategory.setVisible(false);
-        }
     }
 
     public static void reset(Context mContext) {

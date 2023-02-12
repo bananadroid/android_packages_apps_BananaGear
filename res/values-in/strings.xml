@@ -657,21 +657,6 @@
     <string name="qs_outline">Gaya QS Garis Luar</string>
     <string name="qs_two_tone">Gaya QS Aksen 2 Tone Warna</string>
     <string name="qs_color_pop">Gaya QS Warna Pop</string>
-    <!-- Battery light -->
-    <string name="light_settings_header">Setelan LED</string>
-    <string name="battery_light_settings">LED baterai</string>
-    <string name="battery_light_summary">Aktifkan atau nonaktifkan LED baterai ketika mode Jangan Diganggu, baterai lemah</string>
-    <string name="battery_light_enable">LED baterai</string>
-    <string name="battery_full_light_enabled">LED baterai ketika daya terisi penuh</string>
-    <string name="battery_light_allow_on_dnd_title">LED baterai pada mode Jangan Diganggu</string>
-    <string name="battery_light_low_blinking_title">Berdenyut ketika baterai lemah</string>
-    <string name="battery_light_cat">Warna LED baterai ketika pengisian daya</string>
-    <string name="battery_light_low_color">Baterai lemah</string>
-    <string name="battery_light_medium_color">Pengisian daya</string>
-    <string name="battery_light_full_color">Daya hampir penuh</string>
-    <string name="battery_light_reallyfull_color">Daya terisi penuh</string>
-    <!-- Notification light -->
-    <string name="notification_light_settings">LED notifikasi</string>
     <!-- Ambient edge lighting -->
     <string name="pulse_ambient_light_category">Pencayahaan tepi layar</string>
     <string name="pulse_ambient_light_title">Pencahayaan tepi</string>

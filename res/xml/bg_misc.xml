@@ -46,28 +46,6 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:key="led"
-        android:title="@string/light_settings_header">
-
-        <Preference
-            android:key="notification_light"
-            android:fragment="com.android.settings.applications.manageapplications.ManageApplications"
-            android:title="@string/notification_light_settings"
-            android:summary="@string/app_notification_field_summary">
-            <extra
-                android:name="classname"
-                android:value="com.android.settings.Settings$NotificationAppListActivity" />
-        </Preference>
-
-        <Preference
-            android:key="charging_light"
-            android:title="@string/battery_light_settings"
-            android:summary="@string/battery_light_summary"
-            android:fragment="com.banana.settings.fragments.BatteryLight" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
         android:title="@string/other_category_title" >
 
         <com.banana.support.preferences.SecureSettingSwitchPreference
