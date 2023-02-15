@@ -93,6 +93,8 @@ public class Buttons extends DashboardFragment implements
                 Settings.Secure.NAVBAR_INVERSE_LAYOUT, 0, UserHandle.USER_CURRENT);
         Settings.Secure.putStringForUser(resolver,
                 Settings.Secure.NAVBAR_LAYOUT_VIEWS, "default", UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.LOCKSCREEN_ENABLE_POWER_MENU, 1, UserHandle.USER_CURRENT);
     }
 
     @Override
