@@ -686,4 +686,8 @@
     <!-- Alert Slider Notifications (OnePlus devices) -->
     <string name="alert_slider_notifications_title">Alert slider notifications</string>
     <string name="alert_slider_notifications_summary">Display notification when changing alert slider position</string>
+
+    <!-- Alert Slider block -->
+    <string name="block_alert_title">Block Alert slider</string>
+    <string name="block_alert_summary">Pocket mode will block the Alert slider</string> 
 </resources>
