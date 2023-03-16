@@ -82,6 +82,7 @@ public class Buttons extends SettingsPreferenceFragment
     private static final String TAG = "Buttons";
 
     private static final String ALERT_SLIDER_CAT = "alert_slider_cat";
+    private static final String BLOCK_ALERT = "block_alert";
     private static final String KEY_BUTTON_BACKLIGHT = "button_backlight";
     private static final String KEY_BACK_WAKE_SCREEN = "back_wake_screen";
     private static final String KEY_CAMERA_LAUNCH = "camera_launch";
@@ -169,6 +170,7 @@ public class Buttons extends SettingsPreferenceFragment
     private SwitchPreference mSwapCapacitiveKeys;
     private SwitchPreference mNavBarInverse;
     private SwitchPreference mEnableTaskbar;
+    private SystemSettingSwitchPreference mAlertBlock;
 
     private PreferenceCategory mNavigationPreferencesCat;
 
@@ -568,6 +570,9 @@ public class Buttons extends SettingsPreferenceFragment
         (PreferenceCategory) findPreference(ALERT_SLIDER_CAT);
         boolean mAlertSliderAvailable = res.getBoolean(
             com.android.internal.R.bool.config_hasAlertSlider);
+        mAlertBlock = (SystemSettingSwitchPreference) findPreference(BLOCK_ALERT);
+        boolean isPocketEnabled = Settings.System.getInt(resolver, Settings.System.POCKET_JUDGE, 0) == 1;
+        mAlertBlock.setEnabled(isPocketEnabled);
         if (!mAlertSliderAvailable && alertSliderCat != null)
             prefScreen.removePreference(alertSliderCat);
     }
