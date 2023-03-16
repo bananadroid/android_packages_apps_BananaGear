@@ -108,6 +108,13 @@
             android:defaultValue="true" />
 
         <com.banana.support.preferences.SystemSettingSwitchPreference
+            android:key="alert_slider_pulse"
+            android:title="@string/alert_slider_pulse_title"
+            android:summary="@string/alert_slider_pulse_summary"
+            android:defaultValue="true"
+            android:dependency="alert_slider_notifications" />
+
+        <com.banana.support.preferences.SystemSettingSwitchPreference
             android:key="block_alert"
             android:title="@string/block_alert_title"
             android:summary="@string/block_alert_summary"
