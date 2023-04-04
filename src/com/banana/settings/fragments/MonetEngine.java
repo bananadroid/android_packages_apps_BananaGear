@@ -16,119 +16,64 @@
 
 package com.banana.settings.fragments;
 
-import static android.os.UserHandle.USER_SYSTEM;
-
-import android.app.ActivityManagerNative;
-import android.app.UiModeManager;
 import android.content.ContentResolver;
 import android.content.Context;
-import android.content.om.IOverlayManager;
-import android.content.om.OverlayInfo;
-import android.content.pm.PackageManager.NameNotFoundException;
-import android.content.pm.PackageManager;
-import android.content.res.Resources;
-import android.graphics.Color;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.RemoteException;
-import android.os.ServiceManager;
 import android.os.UserHandle;
+import android.os.UserManager;
 import android.provider.Settings;
-import android.text.TextUtils;
-import android.util.Log;
-import android.view.IWindowManager;
-import android.view.View;
-import android.view.WindowManagerGlobal;
-import android.widget.Toast;
 
-import androidx.annotation.VisibleForTesting;
-import androidx.preference.ListPreference;
-import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.Preference;
-import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
+import androidx.preference.SwitchPreference;
 
-import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
+import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
-import com.android.settings.dashboard.DashboardFragment;
-import com.android.settings.Utils;
-import com.android.settings.search.BaseSearchIndexProvider;
-import com.android.settingslib.search.SearchIndexable;
-
-import com.banana.support.colorpicker.ColorPickerPreference;
+import com.android.settings.SettingsPreferenceFragment;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
-import java.util.Locale;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
-@SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
-public class MonetEngine extends DashboardFragment implements OnPreferenceChangeListener {
+public class MonetEngine extends SettingsPreferenceFragment {
 
-    public static final String TAG = "MonetEngine";
+    final static String TAG = "MonetSettings";
 
-    private String MONET_ENGINE_COLOR_OVERRIDE = "monet_engine_color_override";
+    private static final String PREF_CHROMA_FACTOR ="monet_engine_chroma_factor";
+    private static final String PREF_LUMINANCE_FACTOR ="monet_engine_luminance_factor";
+    private static final String PREF_TINT_BACKGROUND ="monet_engine_tint_background";
+    private static final String PREF_CUSTOM_COLOR ="monet_engine_custom_color";
+    private static final String PREF_COLOR_OVERRIDE ="monet_engine_color_override";
+    private static final String PREF_CUSTOM_BGCOLOR ="monet_engine_custom_bgcolor";
+    private static final String PREF_BGCOLOR_OVERRIDE ="monet_engine_bgcolor_override";
 
-    private ColorPickerPreference mMonetColor;
-    private Context mContext;
-
-    @Override
-    protected int getPreferenceScreenResId() {
-        return R.xml.monet_engine;
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        mContext = getActivity();
+        addPreferencesFromResource(R.xml.monet_engine);
+    }
 
-        final ContentResolver resolver = getActivity().getContentResolver();
-        final PreferenceScreen screen = getPreferenceScreen();
-
-        mMonetColor = (ColorPickerPreference) screen.findPreference(MONET_ENGINE_COLOR_OVERRIDE);
-        int intColor = Settings.Secure.getInt(resolver, MONET_ENGINE_COLOR_OVERRIDE, Color.WHITE);
-        String hexColor = String.format("#%08x", (0xffffff & intColor));
-        mMonetColor.setNewPreviewColor(intColor);
-        mMonetColor.setSummary(hexColor);
-        mMonetColor.setOnPreferenceChangeListener(this);
+    public static void reset(Context mContext) {
+        ContentResolver resolver = mContext.getContentResolver();
+        Settings.Secure.putIntForUser(resolver,
+                PREF_CHROMA_FACTOR, 100, UserHandle.USER_CURRENT);
+        Settings.Secure.putIntForUser(resolver,
+                PREF_LUMINANCE_FACTOR, 100, UserHandle.USER_CURRENT);
+        Settings.Secure.putIntForUser(resolver,
+                PREF_TINT_BACKGROUND, 0, UserHandle.USER_CURRENT);
+        Settings.Secure.putIntForUser(resolver,
+                PREF_CUSTOM_COLOR, 0, UserHandle.USER_CURRENT);
+        Settings.Secure.putIntForUser(resolver,
+                PREF_COLOR_OVERRIDE, 0xFF1b6ef3, UserHandle.USER_CURRENT);
+        Settings.Secure.putIntForUser(resolver,
+                PREF_CUSTOM_BGCOLOR, 0, UserHandle.USER_CURRENT);
+        Settings.Secure.putIntForUser(resolver,
+                PREF_BGCOLOR_OVERRIDE, 0xFF1b6ef3, UserHandle.USER_CURRENT);
     }
 
     @Override
     public int getMetricsCategory() {
-        return MetricsEvent.BANANADROID;
+        return MetricsProto.MetricsEvent.BANANADROID;
     }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-    }
-
-    @Override
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
-        ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mMonetColor) {
-            String hex = ColorPickerPreference.convertToARGB(Integer
-                .parseInt(String.valueOf(newValue)));
-            preference.setSummary(hex);
-            int intHex = ColorPickerPreference.convertToColorInt(hex);
-            Settings.Secure.putInt(resolver,
-                MONET_ENGINE_COLOR_OVERRIDE, intHex);
-            return true;
-        }
-        return false;
-    }
-
-    @Override
-    protected String getLogTag() {
-        return TAG;
-    }
-
-    /**
-     * For Search.
-     */
-    public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.monet_engine);
 }
