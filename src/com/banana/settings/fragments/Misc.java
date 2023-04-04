@@ -40,7 +40,6 @@ import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.core.AbstractPreferenceController;
 import com.android.settingslib.core.lifecycle.Lifecycle;
-import com.android.settingslib.development.SystemPropPoker;
 import com.android.settingslib.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
 
@@ -64,7 +63,6 @@ public class Misc extends DashboardFragment implements
 
     private static final String KEY_GAMES_SPOOF = "use_games_spoof";
     private static final String KEY_PHOTOS_SPOOF = "use_photos_spoof";
-    private static final String KEY_NETFLIX_SPOOF = "use_netflix_spoof";
 
     private static final String KEY_FORCE_FULL_SCREEN = "display_cutout_force_fullscreen_settings";
     private static final String POCKET_JUDGE = "pocket_judge";
@@ -72,11 +70,9 @@ public class Misc extends DashboardFragment implements
 
     private static final String SYS_GAMES_SPOOF = "persist.sys.pixelprops.games";
     private static final String SYS_PHOTOS_SPOOF = "persist.sys.pixelprops.gphotos";
-    private static final String SYS_NETFLIX_SPOOF = "persist.sys.pixelprops.netflix";
 
     private SwitchPreference mGamesSpoof;
     private SwitchPreference mPhotosSpoof;
-    private SwitchPreference mNetFlixSpoof;
     private Preference mPocketJudge;
     private Preference mShowCutoutForce;
     private Preference mSmartPixels;
@@ -103,10 +99,6 @@ public class Misc extends DashboardFragment implements
         mPhotosSpoof.setChecked(SystemProperties.getBoolean(SYS_PHOTOS_SPOOF, true));
         mPhotosSpoof.setOnPreferenceChangeListener(this);
 
-        mNetFlixSpoof = (SwitchPreference) findPreference(KEY_NETFLIX_SPOOF);
-        mNetFlixSpoof.setChecked(SystemProperties.getBoolean(SYS_NETFLIX_SPOOF, false));
-        mNetFlixSpoof.setOnPreferenceChangeListener(this);
-
 	final String displayCutout =
             mContext.getResources().getString(com.android.internal.R.string.config_mainBuiltInDisplayCutout);
 
@@ -132,7 +124,6 @@ public class Misc extends DashboardFragment implements
         ContentResolver resolver = mContext.getContentResolver();
         SystemProperties.set(SYS_GAMES_SPOOF, "false");
         SystemProperties.set(SYS_PHOTOS_SPOOF, "true");
-        SystemProperties.set(SYS_NETFLIX_SPOOF, "false");
         SmartPixels.reset(mContext);
         Settings.System.putIntForUser(resolver,
                 Settings.System.CHARGING_ANIMATION, 1, UserHandle.USER_CURRENT);
@@ -147,17 +138,10 @@ public class Misc extends DashboardFragment implements
         if (preference == mGamesSpoof) {
             boolean value = (Boolean) newValue;
             SystemProperties.set(SYS_GAMES_SPOOF, value ? "true" : "false");
-            SystemPropPoker.getInstance().poke();
             return true;
         } else if (preference == mPhotosSpoof) {
             boolean value = (Boolean) newValue;
             SystemProperties.set(SYS_PHOTOS_SPOOF, value ? "true" : "false");
-            SystemPropPoker.getInstance().poke();
-            return true;
-        } else if (preference == mNetFlixSpoof) {
-            boolean value = (Boolean) newValue;
-            SystemProperties.set(SYS_NETFLIX_SPOOF, value ? "true" : "false");
-            SystemPropPoker.getInstance().poke();
             return true;
         }
         return false;
