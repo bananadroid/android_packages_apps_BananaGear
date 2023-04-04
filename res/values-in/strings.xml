@@ -619,9 +619,6 @@
     <string name="kg_custom_clock_color_title">Warna jam</string>
     <string name="kg_custom_clock_top_margin_title">Ruang bawah jam</string>
     <string name="kg_big_clock_text_size_title">Ukuran jam besar</string>
-    <string name="clock_use_single_line_title">Ubah format jam</string>
-    <string name="single_line">Satu baris</string>
-    <string name="double_line">Dua baris</string>
     <!-- Media artwork -->
     <string name="media_artwork_title">Media artwork</string>
     <string name="artwork_media_background_enable_blur_title">Blur latar belakang notifikasi media</string>
