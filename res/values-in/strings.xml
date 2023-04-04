@@ -727,8 +727,4 @@
     <!-- Max visible notification icons -->
     <string name="max_visible_notification_icons_title">Ikon notifikasi</string>
     <string name="max_visible_notification_icons_summary">Mak. ikon notifikasi pada bilah status</string>
-    <!-- Statusbar left_right padding -->
-    <string name="padding_category">Statusbar padding</string>
-    <string name="statusbar_left_padding">Padding kiri</string>
-    <string name="statusbar_right_padding">Padding kanan</string>
 </resources>

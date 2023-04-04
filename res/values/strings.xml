@@ -938,11 +938,6 @@
     <string name="max_visible_notification_icons_title">Notification icons</string>
     <string name="max_visible_notification_icons_summary">Max. notification icons visible on statusbar</string>
 
-    <!-- Statusbar left_right padding -->
-    <string name="padding_category">Statusbar padding</string>
-    <string name="statusbar_left_padding">Left padding</string>
-    <string name="statusbar_right_padding">Right padding</string>
-
     <!-- Alert Slider category (OnePlus devices) -->
     <string name="alert_slider_cat_title">Alert slider</string>
 
