@@ -428,8 +428,6 @@
 
     <!-- QS footer -->
     <string name="qs_footer_category">Footer</string>
-    <string name="qs_footer_warnings_title">Footer alerts</string>
-    <string name="qs_footer_warnings_summary">Display an alert at bottom of QS panel when network is monitored by external apps or VPN</string>
 
     <!-- Power Menu -->
     <string name="power_menu_title">Power menu</string>
