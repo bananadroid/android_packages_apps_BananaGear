@@ -283,10 +283,6 @@
     <string name="network_traffic_hidearrow">Hide arrows</string>
     <string name="network_traffic_hidearrow_summary">Hide the network traffic indicator arrows</string>
 
-    <!-- Brightness control -->
-    <string name="status_bar_toggle_brightness">Brightness control</string>
-    <string name="status_bar_toggle_brightness_summary">Adjust brightness by sliding across the status bar</string>
-
     <!-- Quick QS pulldown -->
     <string name="qs_quick_pulldown">Quick QS pulldown</string>
     <string name="quick_pulldown_none">Disabled</string>
