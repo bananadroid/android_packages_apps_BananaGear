@@ -28,8 +28,8 @@
             android:defaultValue="false"
             android:disableDependentsState="true" />
 
-        <com.banana.support.preferences.SecureSettingSwitchPreference
-            android:key="disable_secure_tiles_on_lockscreen"
+        <com.banana.support.preferences.SystemSettingSwitchPreference
+            android:key="use_tiles_on_secure_keyguard"
             android:title="@string/use_tiles_on_secure_keyguard_title"
             android:summary="@string/use_tiles_on_secure_keyguard_summary"
             android:dependency="secure_lockscreen_qs_disabled"
