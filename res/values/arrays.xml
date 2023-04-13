@@ -367,19 +367,6 @@
         <item>5</item>
     </string-array>
     
-   <!-- QS Weather positions -->
-    <string-array name="qsweather_position_entries" translatable="false">
-        <item>@string/qsweather_position_qqs</item>
-        <item>@string/qsweather_position_qsb</item>
-        <item>@string/qsweather_position_both</item>
-    </string-array>
-    
-    <string-array name="qsweather_position_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-    </string-array>
-
    <!-- KG/LAUNCHER Weather options -->
     <string-array name="kg_launcher_weather_entries" translatable="false">
         <item>@string/qs_weather_hidden</item>

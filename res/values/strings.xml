@@ -446,9 +446,7 @@
     <string name="lockscreen_battery_info_summary">Show charging current, voltage, wattage and battery temperature on lockscreen while charging</string>
 
     <!-- QS Weather Options -->
-    <string name="qs_weather_title">QS weather</string>
     <string name="qs_weather_summary">Configure system weather</string>
-    <string name="qsweather_dialog_title">QS weather location</string>
     <string name="qs_weather_hidden">Hide weather</string>
     <string name="qs_temperature_image_show_scale">Show temp with scale and image</string>
     <string name="qs_temperature_image_hide_scale">Show temp with image without scale</string>
@@ -456,9 +454,6 @@
     <string name="qs_temperature_hide_scale_hide_image">Show temp without scale</string>
     <string name="qs_show_image">Show image</string>
     <string name="weather_show_all_condition">Show temp with scale, image, and weather condition</string>
-    <string name="qsweather_position_qqs">Quick QS</string>
-    <string name="qsweather_position_qsb">Expanded QS</string>
-    <string name="qsweather_position_both">Both</string>
 
     <!-- Launcher Weather Options -->
     <string name="launcher_weather_title">Launcher weather</string>
