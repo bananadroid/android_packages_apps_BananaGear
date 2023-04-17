@@ -80,6 +80,8 @@
     <string name="banana_about_Namikaze_summary" translatable="false">Redmi Note 5 Pro / whyred</string>
     <string name="banana_about_zkyzzz" translatable="false">zkyzzz</string>
     <string name="banana_about_zkyzzz_summary" translatable="false">POCO F1 / beryllium</string>
+    <string name="banana_about_PawiX" translatable="false">PawiX</string>
+    <string name="banana_about_PawiX_summary" translatable="false">Xiaomi Mi 11 Lite 5G / renoir</string>
 
     <!-- Categories -->
     <string name="lockscreen_title">Lockscreen</string>
