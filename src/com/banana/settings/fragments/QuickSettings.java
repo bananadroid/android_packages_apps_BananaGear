@@ -53,7 +53,6 @@ import java.util.List;
 public class QuickSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
-    private static final String KEY_PREF_BATTERY_ESTIMATE = "qs_show_battery_estimate";
     private static final String KEY_PREF_TILE_ANIM_STYLE = "qs_tile_animation_style";
     private static final String KEY_PREF_TILE_ANIM_DURATION = "qs_tile_animation_duration";
     private static final String KEY_PREF_TILE_ANIM_INTERPOLATOR = "qs_tile_animation_interpolator";
@@ -63,7 +62,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private IOverlayManager mOverlayManager;
     private IOverlayManager mOverlayService;
     private SystemSettingListPreference mQsStyle;
-    private SwitchPreference mBatteryEstimate;
     private ListPreference mTileAnimationStyle;
     private CustomSeekBarPreference mTileAnimationDuration;
     private ListPreference mTileAnimationInterpolator;
@@ -79,13 +77,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements
 
         mQsStyle = (SystemSettingListPreference) findPreference(KEY_QS_PANEL_STYLE);
         mCustomSettingsObserver.observe();
-
-        final PreferenceScreen prefScreen = getPreferenceScreen();
-        boolean turboInstalled = BananaUtils.isPackageInstalled(getContext(),
-                "com.google.android.apps.turbo");
-        mBatteryEstimate = findPreference(KEY_PREF_BATTERY_ESTIMATE);
-        if (!turboInstalled)
-            prefScreen.removePreference(mBatteryEstimate);
 
         mTileAnimationStyle = (ListPreference) findPreference(KEY_PREF_TILE_ANIM_STYLE);
         mTileAnimationDuration = (CustomSeekBarPreference) findPreference(KEY_PREF_TILE_ANIM_DURATION);
@@ -141,10 +132,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements
 
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
-        Settings.System.putIntForUser(resolver,
-                Settings.System.SHOW_QS_CLOCK, 1, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.SHOW_QS_DATE, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.QS_FOOTER_DATA_USAGE, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
@@ -246,19 +233,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                     sir.xmlResId = R.xml.bg_quicksettings;
                     result.add(sir);
                     return result;
-                }
-
-                @Override
-                public List<String> getNonIndexableKeys(Context context) {
-                    List<String> keys = super.getNonIndexableKeys(context);
-
-                    boolean turboInstalled = BananaUtils.isPackageInstalled(context,
-                            "com.google.android.apps.turbo");
-
-                    if (!turboInstalled)
-                        keys.add(KEY_PREF_BATTERY_ESTIMATE);
-
-                    return keys;
                 }
             };
 }
