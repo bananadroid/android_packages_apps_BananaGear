@@ -25,6 +25,8 @@ import android.provider.Settings;
 import androidx.preference.*;
 
 import com.android.internal.logging.nano.MetricsProto;
+import com.android.internal.util.banana.ThemeUtils;
+
 import com.android.settings.R;
 import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
@@ -49,6 +51,7 @@ public class QuickSettings extends DashboardFragment implements
     private static final String KEY_PREF_TILE_ANIM_STYLE = "qs_tile_animation_style";
     private static final String KEY_PREF_TILE_ANIM_DURATION = "qs_tile_animation_duration";
     private static final String KEY_PREF_TILE_ANIM_INTERPOLATOR = "qs_tile_animation_interpolator";
+    private static final String KEY_QS_UI_STYLE  = "qs_tile_ui_style";
 
     private ListPreference mShowBrightnessSlider;
     private ListPreference mBrightnessSliderPosition;
@@ -57,6 +60,9 @@ public class QuickSettings extends DashboardFragment implements
     private ListPreference mTileAnimationStyle;
     private CustomSeekBarPreference mTileAnimationDuration;
     private ListPreference mTileAnimationInterpolator;
+    private ListPreference mQsUI;
+
+    private static ThemeUtils mThemeUtils;
 
     @Override
     protected int getPreferenceScreenResId() {
@@ -66,6 +72,8 @@ public class QuickSettings extends DashboardFragment implements
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
+
+        mThemeUtils = new ThemeUtils(getActivity());
 
         final Context mContext = getActivity().getApplicationContext();
         final ContentResolver resolver = mContext.getContentResolver();
@@ -100,9 +108,20 @@ public class QuickSettings extends DashboardFragment implements
         int tileAnimationStyle = Settings.System.getIntForUser(resolver,
                 Settings.System.QS_TILE_ANIMATION_STYLE, 0, UserHandle.USER_CURRENT);
         updateAnimTileStyle(tileAnimationStyle);
+
+        String isA11Style = Integer.toString(Settings.System.getIntForUser(resolver,
+                Settings.System.QS_TILE_UI_STYLE , 0, UserHandle.USER_CURRENT));
+
+        mQsUI = (ListPreference) findPreference(KEY_QS_UI_STYLE);
+        int index = mQsUI.findIndexOfValue(isA11Style);
+        mQsUI.setValue(isA11Style);
+        mQsUI.setSummary(mQsUI.getEntries()[index]);
+        mQsUI.setOnPreferenceChangeListener(this);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
+
         if (preference == mShowBrightnessSlider) {
             int value = Integer.parseInt((String) newValue);
             mBrightnessSliderPosition.setEnabled(value > 0);
@@ -113,6 +132,15 @@ public class QuickSettings extends DashboardFragment implements
         } else if (preference == mTileAnimationStyle) {
             int value = Integer.parseInt((String) newValue);
             updateAnimTileStyle(value);
+            return true;
+        } else if (preference == mQsUI) {
+            int value = Integer.parseInt((String) newValue);
+            int index = mQsUI.findIndexOfValue((String) newValue);
+            mQsUI.setValue((String) newValue);
+            mQsUI.setSummary(mQsUI.getEntries()[index]);
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.QS_TILE_UI_STYLE, value, UserHandle.USER_CURRENT);
+            updateQsStyle(getActivity());
             return true;
         }
         return false;
@@ -152,11 +180,36 @@ public class QuickSettings extends DashboardFragment implements
                 Settings.System.QS_TILE_LABEL_HIDE, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.QS_TILE_LABEL_SIZE, 14, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.QS_TILE_UI_STYLE, 0, UserHandle.USER_CURRENT);
+        updateQsStyle(mContext);
     }
 
     private void updateAnimTileStyle(int tileAnimationStyle) {
         mTileAnimationDuration.setEnabled(tileAnimationStyle != 0);
         mTileAnimationInterpolator.setEnabled(tileAnimationStyle != 0);
+    }
+
+    private static void updateQsStyle(Context context) {
+        ContentResolver resolver = context.getContentResolver();
+
+        boolean isA11Style = Settings.System.getIntForUser(resolver,
+                Settings.System.QS_TILE_UI_STYLE , 0, UserHandle.USER_CURRENT) != 0;
+
+	    String qsUIStyleCategory = "android.theme.customization.qs_ui";
+        String overlayThemeTarget  = "com.android.systemui";
+        String overlayThemePackage  = "com.android.system.qs.ui.A11";
+
+        if (mThemeUtils == null) {
+            mThemeUtils = new ThemeUtils(context);
+        }
+
+	    // reset all overlays before applying
+        mThemeUtils.setOverlayEnabled(qsUIStyleCategory, overlayThemeTarget, overlayThemeTarget);
+
+	    if (isA11Style) {
+            mThemeUtils.setOverlayEnabled(qsUIStyleCategory, overlayThemePackage, overlayThemeTarget);
+	    }
     }
 
     @Override
