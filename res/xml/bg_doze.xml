@@ -30,6 +30,12 @@
         android:defaultValue="false"
         android:summary="@string/doze_always_on_summary" />
 
+    <com.banana.support.preferences.SystemSettingSwitchPreference
+        android:key="doze_on_charge"
+        android:defaultValue="false"
+        android:title="@string/doze_on_charge_title"
+        android:summary="@string/doze_on_charge_summary" />
+
     <com.banana.support.preferences.RemotePreference
         android:key="doze_device_settings"
         android:title="@string/doze_additional_settings_title"

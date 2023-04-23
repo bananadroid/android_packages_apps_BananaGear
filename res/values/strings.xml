@@ -945,4 +945,8 @@
     <string name="qs_header_image_title">QS Header Image</string>
     <string name="qs_header_random_image_title">QS Header Random Image</string>
     <string name="qs_header_random_image_summary">Enable random QS header image</string>
+
+    <!-- Doze on charge -->
+    <string name="doze_on_charge_title">Always on when charging</string>
+    <string name="doze_on_charge_summary">Show doze screen all the time when charging</string>
 </resources>
