@@ -46,6 +46,39 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:title="@string/spoof_category_title" >
+
+        <!-- Unlock FPS for specific games -->
+        <com.banana.support.preferences.SystemPropertySwitchPreference
+            android:key="persist.sys.pixelprops.games"
+            android:title="@string/use_games_spoof_title"
+            android:summary="@string/use_games_spoof_summary"
+            android:defaultValue="false" />
+
+        <!-- Unlimited google photos storage -->
+        <com.banana.support.preferences.SystemPropertySwitchPreference
+            android:key="persist.sys.pixelprops.gphotos"
+            android:title="@string/use_photos_spoof_title"
+            android:summary="@string/use_photos_spoof_summary"
+            android:defaultValue="true" />
+
+        <!-- Netflix -->
+        <com.banana.support.preferences.SystemPropertySwitchPreference
+            android:key="persist.sys.pixelprops.netflix"
+            android:title="@string/netflix_spoof_title"
+            android:summary="@string/netflix_spoof_summary"
+            android:defaultValue="false" />
+
+        <!-- Spoof All Apps -->
+        <com.banana.support.preferences.SystemPropertySwitchPreference
+            android:key="persist.sys.pixelprops.spoofAll"
+            android:title="@string/spoof_all_title"
+            android:summary="@string/spoof_all_summary"
+            android:defaultValue="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:title="@string/other_category_title" >
 
         <com.banana.support.preferences.SecureSettingSwitchPreference
@@ -73,32 +106,11 @@
             android:summary="@string/charging_animation_summary"
             android:defaultValue="true" />
 
-        <!-- Unlock FPS for specific games -->
-        <SwitchPreference
-            android:key="use_games_spoof"
-            android:title="@string/use_games_spoof_title"
-            android:summary="@string/use_games_spoof_summary"
-            android:defaultValue="false" />
-
         <!-- Pocket Judge -->
         <com.banana.support.preferences.SystemSettingSwitchPreference
             android:key="pocket_judge"
             android:title="@string/pocket_judge_title"
             android:summary="@string/pocket_judge_summary"
-            android:defaultValue="false" />
-
-        <!-- Unlimited google photos storage -->
-        <SwitchPreference
-            android:key="use_photos_spoof"
-            android:title="@string/use_photos_spoof_title"
-            android:summary="@string/use_photos_spoof_summary"
-            android:defaultValue="true" />
-
-        <!-- Netflix -->
-        <SwitchPreference
-            android:key="use_netflix_spoof"
-            android:title="@string/netflix_spoof_title"
-            android:summary="@string/netflix_spoof_summary"
             android:defaultValue="false" />
 
     </PreferenceCategory>

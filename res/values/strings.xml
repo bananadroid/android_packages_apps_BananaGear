@@ -120,6 +120,7 @@
     <string name="default_string">Default</string>
     <string name="icons_category_title">Icons</string>
     <string name="privacy_category_title">Privacy</string>
+    <string name="spoof_category_title">Spoofing</string>
     <string name="gestures_title">Gestures</string>
     <string name="caution">Caution</string>
     <string name="enable">Enable</string>
@@ -174,6 +175,14 @@
     <!-- Unlock FPS for specific games -->
     <string name="use_games_spoof_title">Unlock higher FPS in games</string>
     <string name="use_games_spoof_summary">Spoof your device as different model for specific games to unlock higher FPS</string>
+
+    <!-- Netflix Spooft -->
+    <string name="netflix_spoof_title">Netflix spoof</string>
+    <string name="netflix_spoof_summary">Spoof your device as different model for Netflix</string>
+
+    <!-- Spoof all apps -->
+    <string name="spoof_all_title">Spoof All apps</string>
+    <string name="spoof_all_summary">Spoof all possible apps as Pixel XL for misc benefits (samsung accesories, cts pass etc)</string>
 
     <!-- Status bar - Clock -->
     <string name="status_bar_clock_title">Clock &amp; date</string>
@@ -747,10 +756,6 @@
     <string name="status_bar_logo_style_ubuntu">Ubuntu</string>
     <string name="status_bar_logo_style_windows">Windows</string>
     <string name="status_bar_logo_style_xbox">XBOX</string>
-
-    <!-- Netflix Spooft -->
-    <string name="netflix_spoof_title">Netflix spoof</string>
-    <string name="netflix_spoof_summary">Spoof your device as different model for Netflix</string>
 
     <!-- Monet Engine -->
     <string name="monet_engine_title">Monet engine</string>
