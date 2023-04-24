@@ -724,4 +724,5 @@
     <string name="padding_category">Statusbar padding</string>
     <string name="statusbar_left_padding">Padding kiri</string>
     <string name="statusbar_right_padding">Padding kanan</string>
+    <string name="statusbar_top_padding">Padding atas</string>
 </resources>

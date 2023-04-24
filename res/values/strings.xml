@@ -906,6 +906,7 @@
     <string name="padding_category">Statusbar padding</string>
     <string name="statusbar_left_padding">Left padding</string>
     <string name="statusbar_right_padding">Right padding</string>
+    <string name="statusbar_top_padding">Top padding</string>
 
     <!-- Alert Slider category (OnePlus devices) -->
     <string name="alert_slider_cat_title">Alert slider</string>

@@ -72,6 +72,7 @@ public class StatusBar extends DashboardFragment implements
     private static final String SYS_COMBINED_SIGNAL_ICONS = "persist.sys.enable.combined_signal_icons";
     private static final String STATUSBAR_LEFT_PADDING = "statusbar_left_padding";
     private static final String STATUSBAR_RIGHT_PADDING = "statusbar_right_padding";
+    private static final String STATUSBAR_TOP_PADDING = "statusbar_top_padding";
 
     private static final int BATTERY_STYLE_PORTRAIT = 0;
     private static final int BATTERY_STYLE_TEXT = 4;
@@ -87,6 +88,7 @@ public class StatusBar extends DashboardFragment implements
     private SystemSettingListPreference mBatteryStyle;
     private SystemSettingSeekBarPreference mSbLeftPadding;
     private SystemSettingSeekBarPreference mSbRightPadding;
+    private SystemSettingSeekBarPreference mSbTopPadding;
 
     private ListPreference mQuickPulldown;
 
@@ -170,6 +172,12 @@ public class StatusBar extends DashboardFragment implements
                 Settings.System.RIGHT_PADDING, ((int) (res.getIdentifier("com.android.systemui:dimen/status_bar_padding_end", null, null) / density)), UserHandle.USER_CURRENT);
         mSbRightPadding.setValue(sbRightPadding);
         mSbRightPadding.setOnPreferenceChangeListener(this);
+
+        mSbTopPadding = (SystemSettingSeekBarPreference) findPreference(STATUSBAR_TOP_PADDING);
+        int sbTopPadding = Settings.System.getIntForUser(ctx.getContentResolver(),
+               Settings.System.TOP_PADDING, ((int) (res.getIdentifier("com.android.systemui:dimen/status_bar_padding_top", null, null) / density)), UserHandle.USER_CURRENT);
+        mSbTopPadding.setValue(sbTopPadding);
+        mSbTopPadding.setOnPreferenceChangeListener(this);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -228,6 +236,12 @@ public class StatusBar extends DashboardFragment implements
             int sbRight = ((int) (rightValue / density));
             Settings.System.putIntForUser(getContext().getContentResolver(),
                     Settings.System.RIGHT_PADDING, sbRight, UserHandle.USER_CURRENT);
+            return true;
+        } else if (preference == mSbTopPadding) {
+            int topValue = (Integer) newValue;
+            int sbTop = ((int) (topValue / density));
+            Settings.System.putIntForUser(getContext().getContentResolver(),
+                    Settings.System.TOP_PADDING, sbTop, UserHandle.USER_CURRENT);
             return true;
         }
         return false;

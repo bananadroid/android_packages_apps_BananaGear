@@ -177,6 +177,14 @@
         android:title="@string/padding_category" >
 
         <com.banana.support.preferences.SystemSettingSeekBarPreference
+            android:key="statusbar_top_padding"
+            android:title="@string/statusbar_top_padding"
+            android:max="30"
+            android:min="0"
+            settings:units="dp"
+            android:defaultValue="8"/>
+
+        <com.banana.support.preferences.SystemSettingSeekBarPreference
             android:key="statusbar_left_padding"
             android:title="@string/statusbar_left_padding"
             android:max="30"
