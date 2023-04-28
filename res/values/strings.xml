@@ -82,6 +82,8 @@
     <string name="banana_about_zkyzzz_summary" translatable="false">POCO F1 / beryllium</string>
     <string name="banana_about_PawiX" translatable="false">PawiX</string>
     <string name="banana_about_PawiX_summary" translatable="false">Xiaomi Mi 11 Lite 5G / renoir</string>
+    <string name="banana_about_ThatMalayaliDeb" translatable="false">ThatMalayaliDeb</string>
+    <string name="banana_about_ThatMalayaliDeb_summary" translatable="false">Mi 11T Pro / vili</string>
 
     <!-- Categories -->
     <string name="lockscreen_title">Lockscreen</string>
