@@ -236,6 +236,16 @@
                 android:data="https://t.me/Mudit1808" />
         </Preference>
 
+         <Preference
+            android:title="@string/banana_about_Mrick343"
+            android:summary="@string/banana_about_Mrick343_summary"
+            android:icon="@drawable/Mrick343"
+            settings:layout="@layout/banana_about">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://t.me/Mrick343" />
+        </Preference>
+
         <Preference
             android:title="@string/banana_about_MweTwo"
             android:summary="@string/banana_about_MweTwo_summary"
