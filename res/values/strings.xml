@@ -86,6 +86,8 @@
     <string name="banana_about_PawiX_summary" translatable="false">Xiaomi Mi 11 Lite 5G / renoir</string>
     <string name="banana_about_ThatMalayaliDeb" translatable="false">ThatMalayaliDeb</string>
     <string name="banana_about_ThatMalayaliDeb_summary" translatable="false">Mi 11T Pro / vili</string>
+    <string name="banana_about_rabilrbl" translatable="false">rabilrbl</string>
+    <string name="banana_about_rabilrbl_summary" translatable="false">Redmi 5 Plus / vince</string>
 
     <!-- Categories -->
     <string name="lockscreen_title">Lockscreen</string>
