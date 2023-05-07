@@ -334,4 +334,13 @@
                 android:action="android.intent.action.VIEW"
                 android:data="https://t.me/thatmalayali" />
         </Preference>
+        <Preference
+                 android:title="@string/banana_about_rabilrbl"
+                 android:summary="@string/banana_about_rabilrbl_summary"
+                 android:icon="@drawable/rabilrbl"
+                 settings:layout="@layout/banana_about">
+                 <intent
+                     android:action="android.intent.action.VIEW"
+                     android:data="https://t.me/rabilrbl" />
+         </Preference>
 </PreferenceScreen>
