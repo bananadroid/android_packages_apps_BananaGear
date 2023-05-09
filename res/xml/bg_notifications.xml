@@ -62,14 +62,6 @@
             android:defaultValue="0"
             android:dependency="notification_material_dismiss" />
 
-        <com.banana.support.preferences.SystemSettingSeekBarPreference
-            android:key="notification_material_dismiss_bgstyle"
-            android:title="@string/notification_material_dismiss_bgstyle_title"
-            android:dependency="notification_material_dismiss"
-            android:defaultValue="0"
-            android:max="4"
-            settings:min="0" />
-
     </PreferenceCategory>
 
     <PreferenceCategory
