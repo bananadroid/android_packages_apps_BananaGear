@@ -605,33 +605,6 @@
         <item>space;space;left,back,home,recent,right</item>
     </string-array>
 
-    <!-- Notification material dismiss style -->
-    <string-array name="notification_material_dismiss_style_entries" translatable="false">
-        <item>@string/notification_material_dismiss_style_1</item>
-        <item>@string/notification_material_dismiss_style_2</item>
-        <item>@string/notification_material_dismiss_style_3</item>
-        <item>@string/notification_material_dismiss_style_4</item>
-        <item>@string/notification_material_dismiss_style_5</item>
-        <item>@string/notification_material_dismiss_style_6</item>
-        <item>@string/notification_material_dismiss_style_7</item>
-        <item>@string/notification_material_dismiss_style_8</item>
-        <item>@string/notification_material_dismiss_style_9</item>
-        <item>@string/notification_material_dismiss_style_10</item>
-    </string-array>
-
-    <string-array name="notification_material_dismiss_style_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
-        <item>8</item>
-        <item>9</item>
-    </string-array>
-
     <!-- Blink flashlight for incoming calls -->
     <string-array name="flashlight_on_call_entries">
         <item>@string/flashlight_on_call_disabled</item>
