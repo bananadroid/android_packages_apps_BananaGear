@@ -625,6 +625,8 @@
     <!-- Fonts -->
     <string name="theme_customization_lock_clock_title">Huruf jam layar kunci</string>
     <string name="theme_customization_lock_clock_summary">Atur tampilan huruf jam di layar kunci</string>
+    <string name="theme_customization_date_font_title">Gaya huruf tanggal</string>
+    <string name="theme_customization_date_font_summary">Atur gaya tampilan huruf tanggal di layar kunci</string>
     <!-- Ignore window secure -->
     <string name="ignore_window_secure_title">Abaikan window secure flags</string>
     <string name="ignore_window_secure_summary">Menghilangkan batas tangkapan layar dan rekaman layar pada semua aplikasi. Secara normal, beberapa aplikasi akan menjadi layar hitam pada rekaman. Ini dapat menimbulkan kenyamanan pada beberapa kasus, tapi dapat menyebabkan kebocoran privasi. Setelah mengganti opsi ini, mulai ulang aplikasi agar efek berfungsi.</string>

@@ -72,6 +72,12 @@
             android:summary="@string/theme_customization_lock_clock_summary"
             android:fragment="com.banana.settings.fragments.ui.LockClockFonts"/>
 
+        <Preference
+            android:key="android.theme.customization.date.fonts"
+            android:title="@string/theme_customization_date_font_title"
+            android:summary="@string/theme_customization_date_font_summary"
+            android:fragment="com.banana.settings.fragments.ui.DateFontsPicker"/>
+
         <com.banana.support.preferences.SecureSettingSwitchPreference
             android:key="kg_custom_clock_color_enabled"
             android:title="@string/kg_custom_clock_color_enabled_title"
