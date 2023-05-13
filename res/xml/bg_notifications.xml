@@ -48,12 +48,6 @@
             android:summary="@string/notification_sound_vib_screen_on_summary"
             android:defaultValue="true" />
 
-        <com.banana.support.preferences.SystemSettingSwitchPreference
-            android:key="notification_material_dismiss"
-            android:title="@string/notification_material_dismiss_title"
-            android:summary="@string/notification_material_dismiss_summary"
-            android:defaultValue="false" />
-
     </PreferenceCategory>
 
     <PreferenceCategory
