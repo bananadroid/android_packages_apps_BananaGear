@@ -127,6 +127,13 @@
             android:targetClass="io.chaldeaprjkt.gamespace.settings.SettingsActivity" />
     </Preference>
 
+    <!-- Google services -->
+    <Preference
+        android:key="gms_enabled_settings"
+        android:title="@string/gms_enabled_title"
+        android:summary="@string/gms_enabled_summary"
+        android:fragment="com.banana.settings.fragments.GmsSwitch"/>
+
     <!-- Pulse music visualizer -->
     <Preference
         android:key="pulse_settings"
