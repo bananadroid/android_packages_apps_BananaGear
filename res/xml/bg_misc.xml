@@ -134,6 +134,16 @@
         android:summary="@string/pulse_settings_summary"
         android:fragment="com.banana.settings.fragments.ui.PulseSettings" />
 
+    <!-- Parallel space -->
+    <Preference
+        android:key="parallel_space"
+        android:title="@string/laboratory_parallel_space_title"
+        android:summary="@string/laboratory_parallel_space_summary">
+        <intent
+            android:targetPackage="ink.kscope.parallelspace"
+            android:targetClass="ink.kscope.parallelspace.MainActivity" />
+    </Preference>
+
     <!-- Weather settings -->
     <Preference
         android:key="omnijaws_settings"
