@@ -72,70 +72,13 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="@string/qs_tile_styles">
+        android:title="@string/qs_panel_category">
 
         <Preference
             android:key="qs_tile_layout"
-            android:title="@string/qs_tile_layout_title"
-            android:summary="@string/qs_tile_layout_summary"
-            android:fragment="com.banana.settings.fragments.QsTileLayoutSettings" />
-
-        <com.banana.support.preferences.SystemSettingListPreference
-            android:key="qs_tile_animation_style"
-            android:title="@string/qs_tile_animation_style_title"
-            android:entries="@array/qs_tile_animation_style_entries"
-            android:entryValues="@array/qs_tile_animation_style_values"
-            android:defaultValue="0" />
-
-        <com.banana.support.preferences.SystemSettingSeekBarPreference
-            android:key="qs_tile_animation_duration"
-            android:title="@string/qs_tile_animation_duration_title"
-            android:defaultValue="1"
-            settings:interval="1"
-            settings:units="@string/unit_seconds"
-            android:max="5"
-            android:min="1" />
-
-        <com.banana.support.preferences.SystemSettingListPreference
-            android:key="qs_tile_animation_interpolator"
-            android:title="@string/qs_tile_animation_interpolator_title"
-            android:entries="@array/qs_tile_animation_interpolator_entries"
-            android:entryValues="@array/qs_tile_animation_interpolator_values"
-            android:defaultValue="0" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory 
-         android:title="@string/qs_footer_category">
-
-        <com.banana.support.preferences.SystemSettingSwitchPreference
-            android:key="qs_footer_data_usage"
-            android:title="@string/qs_footer_datausage_title"
-            android:summary="@string/qs_footer_datausage_summary"
-            android:defaultValue="true" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:title="@string/other_category_title">
-
-        <!-- QS UI -->
-        <com.banana.support.preferences.SystemSettingListPreference
-            android:key="qs_ui_style"
-            android:title="@string/qs_ui_title"
-            android:entries="@array/qs_ui_entries"
-            android:entryValues="@array/qs_ui_values"
-            android:summary="%s"
-            android:defaultValue="0" />
-
-        <!-- QS styles -->
-        <com.banana.support.preferences.SystemSettingListPreference
-            android:key="qs_panel_style"
-            android:title="@string/qs_styles_title"
-            android:entries="@array/qs_styles_entries"
-            android:entryValues="@array/qs_styles_values"
-            android:summary="%s"
-            android:defaultValue="0" />
+            android:title="@string/qs_style_settings"
+            android:summary="@string/qs_style_settings_summary"
+            android:fragment="com.banana.settings.fragments.QsStyleSettings" />
 
         <com.banana.support.preferences.SystemSettingSeekBarPreference
             android:key="qs_header_image"
@@ -154,6 +97,12 @@
             settings:units="%"
             android:max="100"
             android:min="1" />
+
+        <com.banana.support.preferences.SystemSettingSwitchPreference
+            android:key="qs_footer_data_usage"
+            android:title="@string/qs_footer_datausage_title"
+            android:summary="@string/qs_footer_datausage_summary"
+            android:defaultValue="true" />
 
     </PreferenceCategory>
 </PreferenceScreen>

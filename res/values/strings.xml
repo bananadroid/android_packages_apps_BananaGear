@@ -123,6 +123,7 @@
     <string name="icons_category_title">Icons</string>
     <string name="privacy_category_title">Privacy</string>
     <string name="spoof_category_title">Spoofing</string>
+    <string name="qs_panel_category">QS Panel</string>
     <string name="gestures_title">Gestures</string>
     <string name="caution">Caution</string>
     <string name="enable">Enable</string>
@@ -540,9 +541,10 @@
     <string name="qs_tile_animation_interpolator_anticipateOvershootInterpolator">Anticipate overshoot</string>
 
     <!-- QS tiles layout -->
+    <string name="qs_style_settings">QS panel styles</string>
+    <string name="qs_style_settings_summary">Customize panel style and animation</string>
     <string name="qs_tile_styles">QS tiles styles</string>
     <string name="qs_tile_layout_title">Tiles layout</string>
-    <string name="qs_tile_layout_summary">Customize tiles layout in QS panel</string>
     <string name="qs_tiles_layout_category">Tiles layout</string>
     <string name="qs_rows_portrait_title">Rows (Portrait)</string>
     <string name="qqs_rows_portrait_title">Rows (Quick QS portrait)</string>
@@ -842,8 +844,8 @@
     <string name="flashlight_on_call_rate_title">Blink rate</string>
 
     <!-- Quick settings styles -->
-    <string name="qs_styles_title">Quick Settings Styles</string>
-    <string name="qs_ui_title">Quick Settings UI</string>
+    <string name="qs_styles_title">Quick settings styles</string>
+    <string name="qs_ui_title">Quick settings UI</string>
     <string name="qs_outline">Outline</string>
     <string name="qs_two_tone">Two-Tone Accent</string>
     <string name="qs_two_tone_trans">Two-Tone Translucent</string>
@@ -963,9 +965,7 @@
     <string name="ls_media_artwork_fade_percent_title">Fade amount for lockscreen media artwork</string>
 
     <!-- QS Header -->
-    <string name="qs_header_image_title">QS Header Image</string>
-    <string name="qs_header_random_image_title">QS Header Random Image</string>
-    <string name="qs_header_random_image_summary">Enable random QS header image</string>
+    <string name="qs_header_image_title">QS header image</string>
 
     <!-- Doze on charge -->
     <string name="doze_on_charge_title">Always on when charging</string>

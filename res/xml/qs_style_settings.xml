@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/qs_style_settings">
+
+    <!-- QS UI -->
+    <com.banana.support.preferences.SystemSettingListPreference
+        android:key="qs_ui_style"
+        android:title="@string/qs_ui_title"
+        android:entries="@array/qs_ui_entries"
+        android:entryValues="@array/qs_ui_values"
+        android:summary="%s"
+        android:defaultValue="0" />
+
+    <!-- QS styles -->
+    <com.banana.support.preferences.SystemSettingListPreference
+        android:key="qs_panel_style"
+        android:title="@string/qs_styles_title"
+        android:entries="@array/qs_styles_entries"
+        android:entryValues="@array/qs_styles_values"
+        android:summary="%s"
+        android:defaultValue="0" />
+
+    <com.banana.support.preferences.SystemSettingSwitchPreference
+        android:key="qs_tile_label_hide"
+        android:title="@string/qs_tile_hide_label_title"
+        android:summary="@string/qs_tile_hide_label_summary"
+        android:defaultValue="false" />
+
+    <com.banana.support.preferences.SystemSettingSwitchPreference
+        android:key="qs_tile_vertical_layout"
+        android:title="@string/qs_tile_vertical_layout_title"
+        android:summary="@string/qs_tile_vertical_layout_summary"
+        android:defaultValue="false" />
+
+    <PreferenceCategory
+        android:key="tiles_layout"
+        android:title="@string/qs_tiles_layout_category">
+
+        <com.banana.support.preferences.ProperSeekBarPreference
+            android:key="qs_layout_columns"
+            android:title="@string/qs_columns_portrait_title"
+            android:defaultValue="2"
+            android:max="6"
+            settings:min="2" />
+
+        <com.banana.support.preferences.ProperSeekBarPreference
+            android:key="qs_layout_rows"
+            android:title="@string/qs_rows_portrait_title"
+            android:defaultValue="4"
+            android:max="6"
+            settings:min="2" />
+
+        <com.banana.support.preferences.ProperSeekBarPreference
+            android:key="qqs_layout_rows"
+            android:title="@string/qqs_rows_portrait_title"
+            android:defaultValue="2"
+            android:max="5"
+            settings:min="1" />
+
+        <com.android.settingslib.widget.LayoutPreference
+            android:key="apply_change_button"
+            android:layout="@layout/qs_tile_apply_change_button" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/qs_tile_animation_title">
+
+        <com.banana.support.preferences.SystemSettingListPreference
+            android:key="qs_tile_animation_style"
+            android:title="@string/qs_tile_animation_style_title"
+            android:entries="@array/qs_tile_animation_style_entries"
+            android:entryValues="@array/qs_tile_animation_style_values"
+            android:defaultValue="0" />
+
+        <com.banana.support.preferences.SystemSettingSeekBarPreference
+            android:key="qs_tile_animation_duration"
+            android:title="@string/qs_tile_animation_duration_title"
+            android:defaultValue="1"
+            settings:interval="1"
+            settings:units="@string/unit_seconds"
+            android:max="5"
+            android:min="1" />
+
+        <com.banana.support.preferences.SystemSettingListPreference
+            android:key="qs_tile_animation_interpolator"
+            android:title="@string/qs_tile_animation_interpolator_title"
+            android:entries="@array/qs_tile_animation_interpolator_entries"
+            android:entryValues="@array/qs_tile_animation_interpolator_values"
+            android:defaultValue="0" />
+
+    </PreferenceCategory>
+</PreferenceScreen>
