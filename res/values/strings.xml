@@ -977,6 +977,11 @@
     <string name="brightness_slider_style_filled">Filled</string>
     <string name="brightness_slider_style_thin">Thin</string>
 
+    <!-- Volume Styles -->
+    <string name="rui_style">Realme UI style</string>
+    <string name="rising_style">Rising style</string>
+    <string name="volume_style_title">Volume panel styles</string>
+
     <!-- Parallel space -->
     <string name="laboratory_parallel_space_title">Parallel space</string>
     <string name="laboratory_parallel_space_summary">Allow running multiple instances of the same application in parallel</string>
