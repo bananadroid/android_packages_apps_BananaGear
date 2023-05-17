@@ -38,7 +38,26 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:key="quick_settings_brighness_category"
+        android:title="@string/battery_category_title">
+
+        <com.banana.support.preferences.SystemSettingListPreference
+            android:key="qs_battery_style"
+            android:title="@string/status_bar_battery_style_title"
+            android:entries="@array/qs_battery_style_entries"
+            android:entryValues="@array/qs_battery_style_values"
+            android:defaultValue="-1" />
+
+        <com.banana.support.preferences.SystemSettingListPreference
+            android:key="qs_show_battery_percent"
+            android:title="@string/status_bar_battery_percent_title"
+            android:entries="@array/status_bar_battery_percent_entries"
+            android:entryValues="@array/status_bar_battery_percent_values"
+            android:defaultValue="1" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="quick_settings_brightness_category"
         android:title="@string/qs_show_brightness_slider_title">
 
         <!-- Brightness slider -->
