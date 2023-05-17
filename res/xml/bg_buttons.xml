@@ -95,6 +95,15 @@
             android:title="@string/volbtn_music_controls_title"
             android:summary="@string/volbtn_music_controls_summary"
             android:defaultValue="true" />
+
+        <!-- Volume Styles -->
+        <com.banana.support.preferences.SystemSettingListPreference
+            android:key="custom_volume_styles"
+            android:title="@string/volume_style_title"
+            android:entries="@array/volume_styles_entries"
+            android:entryValues="@array/volume_styles_values"
+            android:summary="%s"
+            android:defaultValue="0" />
     </PreferenceCategory>
 
     <PreferenceCategory
