@@ -85,7 +85,7 @@
             android:title="@string/qs_header_image_title"
             android:defaultValue="0"
             settings:interval="1"
-            android:max="74"
+            android:max="39"
             android:min="0" />
 
         <com.banana.support.preferences.SystemSettingSeekBarPreference
