@@ -352,5 +352,16 @@
                  <intent
                      android:action="android.intent.action.VIEW"
                      android:data="https://t.me/rabilrbl" />
+
+        <Preference
+            android:title="@string/banana_about_SharmagRit"
+            android:summary="@string/banana_about_SharmagRit_summary"
+            android:icon="@drawable/SharmagRit"
+            settings:layout="@layout/banana_about">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://t.me/veux_builds" />
+        </Preference>
+
          </Preference>
 </PreferenceScreen>
