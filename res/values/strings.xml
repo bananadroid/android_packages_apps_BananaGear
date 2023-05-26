@@ -842,7 +842,7 @@
     <string name="text_sample">AaBbCc</string>
     <string name="theme_customization_lock_clock_title">Clock font style</string>
     <string name="theme_customization_lock_clock_summary">Set lockscreen clock font style</string>
-    <string name="theme_customization_date_font_title">Lockscreen date font style</string>
+    <string name="theme_customization_date_font_title">Date font style</string>
     <string name="theme_customization_date_font_summary">Set lockscreen date font style</string>
 
     <!-- Ignore window secure -->
