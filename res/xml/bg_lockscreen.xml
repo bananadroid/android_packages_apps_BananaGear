@@ -107,11 +107,11 @@
             android:summary="@string/fp_error_vibrate_summary"
             android:defaultValue="true" />
 
-        <com.banana.support.preferences.SystemSettingSwitchPreference
+        <!--<com.banana.support.preferences.SystemSettingSwitchPreference
             android:key="enable_ripple_effect"
             android:title="@string/enable_fingerprint_ripple_effect_title"
             android:summary="@string/enable_fingerprint_ripple_effect_summary"
-            android:defaultValue="true" />
+            android:defaultValue="true" />-->
 
         <!-- Screen Off animation -->
         <com.banana.support.preferences.SystemSettingListPreference
