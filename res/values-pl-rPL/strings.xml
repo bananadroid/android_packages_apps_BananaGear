@@ -15,7 +15,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- App Title -->
-    <string name="bananagear_title">Banana Gear</string>
+    <string name="bananagear_title">Dodatki Banana</string>
     <!-- About BananaDroid -->
     <string name="banana_about_title">O nas</string>
     <string name="banana_about_summary">Dlaczego tak poważnie?</string>
@@ -46,7 +46,7 @@
     <string name="ambient_display_custom_title">Aktywny wyświetlacz</string>
     <string name="ambient_display_custom_summary">Zawsze włączone, znacznik muzyki, gesty</string>
     <string name="themes_title">Motywy</string>
-    <string name="themes_summary">Życie jest kolorowe i nie bądź znudzony</string>
+    <string name="themes_summary">Życie jest kolorowe, nie bądź znudzony</string>
     <!-- General -->
     <string name="network_icons_category_title">Ikony powiązane z siecią</string>
     <string name="battery_category_title">Bateria</string>
@@ -116,8 +116,8 @@
     <string name="netflix_spoof_title">Netflix spoof</string>
     <string name="netflix_spoof_summary">Podszycie się pod inny model urządzenia dla Netflixa</string>
     <!-- Spoof all apps -->
-    <string name="spoof_all_title">Spoof All apps</string>
-    <string name="spoof_all_summary">Spoof all possible apps as Pixel XL for misc benefits (samsung accesories, cts pass etc)</string>
+    <string name="spoof_all_title">Sfałszuj wszystkie aplikacje</string>
+    <string name="spoof_all_summary">Sfałszuj wszystkie możliwe aplikacje jako Pixel XL dla różnych korzyści (akcesoria samsung, certyfikat cts itp.)</string>
     <!-- Status bar - Clock -->
     <string name="status_bar_clock_title">Zegar &amp; data</string>
     <string name="status_bar_clock_summary">Dostosuj zegar &amp; ustawienia daty</string>
@@ -183,12 +183,12 @@
     <string name="status_bar_battery_style_icon_portrait">Ikona pionowo</string>
     <string name="status_bar_battery_style_icon_rlandscape">Ikona pozioma (z prawej)</string>
     <string name="status_bar_battery_style_icon_landscape">Ikona pozioma (z lewej)</string>
-    <string name="status_bar_battery_style_icon_rlandscape_style_a">Landscape R Style A</string>
-    <string name="status_bar_battery_style_icon_landscape_style_a">Landscape L Style A</string>
-    <string name="status_bar_battery_style_icon_rlandscape_style_b">Landscape R Style B</string>
-    <string name="status_bar_battery_style_icon_landscape_style_b">Landscape L Style B</string>
-    <string name="status_bar_battery_style_icon_landscape_pill">Portrait Mx</string>
-    <string name="status_bar_battery_style_icon_landscape_line">Landscape Lorn</string>
+    <string name="status_bar_battery_style_icon_rlandscape_style_a">Poziomo R Styl A</string>
+    <string name="status_bar_battery_style_icon_landscape_style_a">Poziomo L styl A</string>
+    <string name="status_bar_battery_style_icon_rlandscape_style_b">Poziomo R Styl B</string>
+    <string name="status_bar_battery_style_icon_landscape_style_b">Poziomo L Styl B</string>
+    <string name="status_bar_battery_style_icon_landscape_pill">Pionowo Mx</string>
+    <string name="status_bar_battery_style_icon_landscape_line">Poziomo Lorn</string>
     <string name="status_bar_battery_style_icon_landscape_musku">Pionowo IOS</string>
     <string name="status_bar_battery_style_icon_landscape_signal">Airoo Poziomo</string>
     <string name="status_bar_battery_style_icon_landscape_buddy">Kapsuła Poziomo</string>
@@ -254,7 +254,7 @@
     <string name="roaming_indicator_icon_title">Wskaźnik roamingu</string>
     <string name="roaming_indicator_icon_summary">Wyświetl wskaźnik roamingu w ikonie sygnału podczas trybu roamingu</string>
     <!-- 4G icon -->
-    <string name="show_fourg_icon_title">ikona 4G</string>
+    <string name="show_fourg_icon_title">Ikona 4G</string>
     <string name="show_fourg_icon_summary">Wyświetl ikonę 4G zamiast ikony LTE</string>
     <!-- Data disabled indicator -->
     <string name="data_disabled_icon_title">Wskaźnik wyłączonej transmisji danych</string>
@@ -399,7 +399,7 @@
     <string name="weather_icon_pack_title">Paczka ikon warunków pogodowych</string>
     <string name="weather_icon_pack_info_title">Nie jesteś ograniczony do wstępnie zainstalowanych pakietów ikon pogody. Przeszukaj Google PlayStore ze słowem kluczowym \"ikony chronus\" i znajdziesz wiele dodatkowych paczek ikon.</string>
     <string name="qsweather_settings_title">Pogoda Szybkich Ustawień</string>
-    <string name="qsweather_settings_summary">Setup quicksettings weather views</string>
+    <string name="qsweather_settings_summary">Konfiguracja szybkich ustawień widoku pogody</string>
     <!-- Privacy Indicator -->
     <string name="mic_camera_privacy_indicator_title">Wskaźnik prywatności mikrofonu i kamery</string>
     <string name="mic_camera_privacy_indicator_summary">Pokaż oddzielny wskaźnik, gdy jakakolwiek aplikacja używa mikrofonu lub kamery</string>
@@ -475,7 +475,7 @@
     <string name="udfps_recog_animation_effect_summary">Wybierz efekt animacji</string>
     <!-- Screen off UDFPS -->
     <string name="screen_off_udfps_title">Screen off UDFPS</string>
-    <string name="screen_off_udfps_summary">Keep UDFPS enabled when the screen is off</string>
+    <string name="screen_off_udfps_summary">Zachowaj UDFPS włączone gdy ekran jest wyłączony</string>
     <!-- Navbar Animation -->
     <string name="pixel_navbar_anim_title">Animacja Pixel</string>
     <string name="pixel_navbar_anim_summary">Włącz animację w stylu pikseli dla paska nawigacji 3-przyciskowej</string>
@@ -497,7 +497,7 @@
     <string name="pocket_summary">Pulsujące powiadomienia po wyciągnięciu z kieszeni</string>
     <string name="doze_vibrate">Wibracje</string>
     <string name="doze_vibrate_summary">Długość wibracji podczas pulsu powiadomienia</string>
-    <string name="sensor_warning_message">Settings based on sensors are subject to hardware compatibility. Enabling sensors for ambient display may increase power drain.</string>
+    <string name="sensor_warning_message">Ustawienia oparte na czujnikach są uzależnione od kompatybilności sprzętowej. Włączenie czujników dla ekranu otoczenia może zwiększyć zużycie energii.</string>
     <!-- Ambient Ticker -->
     <string name="pulse_on_new_tracks_title">Etykieta muzyki</string>
     <string name="pulse_on_new_tracks_summary">Pokaż etykietę muzyki na ekranie Ambient podczas zmiany utworu</string>
@@ -556,7 +556,7 @@
     <string name="reticker_title">reTicker</string>
     <string name="reticker_summary">Zastąp wyskakujące powiadomienia mniejszą i mniej inwazyjną wersją</string>
     <string name="reticker_colored_title">Użyj koloru aplikacji dla tła</string>
-    <string name="reticker_colored_summary">Replace reTicker background color using notification app main color</string>
+    <string name="reticker_colored_summary">Zastąp kolor tła wyskakujących powiadomień reTicker przy użyciu głównego koloru aplikacji</string>
     <!-- Material dismiss all button for notifications -->
     <string name="notification_material_dismiss_title">Przycisk Usuwania wszystkich powiadomień</string>
     <string name="notification_material_dismiss_summary">Zamień tekst usunięcia powiadomień na pływający przycisk</string>
@@ -568,10 +568,10 @@
     <string name="notification_material_dismiss_style_4">Pacman</string>
     <string name="notification_material_dismiss_style_5">Zabroniony</string>
     <string name="notification_material_dismiss_style_6">Krzyżyk</string>
-    <string name="notification_material_dismiss_style_7">Recycle</string>
-    <string name="notification_material_dismiss_style_8">Eraser</string>
+    <string name="notification_material_dismiss_style_7">Przetworzenie</string>
+    <string name="notification_material_dismiss_style_8">Wymazanie</string>
     <string name="notification_material_dismiss_style_9">Checklist</string>
-    <string name="notification_material_dismiss_style_10">Magnet</string>
+    <string name="notification_material_dismiss_style_10">Magnes</string>
     <!-- Pulse music visualizer -->
     <string name="pulse_help_policy_notice_title">O funkcji Pulse</string>
     <string name="pulse_help_policy_notice_summary">Pulse jest znakomitym korektorem graficznym dźwięku, gdy muzyka odtwarza się na urządzeniu</string>
@@ -605,7 +605,7 @@
     <string name="pulse_custom_dimen">Szerokość paska</string>
     <string name="pulse_custom_div">Odstęp paska</string>
     <string name="pulse_filled_block_size">Rozmiar bloku</string>
-    <string name="pulse_empty_block_size">Block spacing</string>
+    <string name="pulse_empty_block_size">Odstępy między blokami</string>
     <!-- Gaming mode -->
     <string name="gaming_mode_title">Przestrzeń gier</string>
     <string name="gaming_mode_summary">Dodatkowe funkcje dla pełnoekranowego doświadczenia w grach</string>
@@ -617,7 +617,7 @@
     <string name="status_bar_logo_left">Z lewej</string>
     <string name="status_bar_logo_right">Z prawej</string>
     <string name="status_bar_logo_style_bananadroid">BananowDroid</string>
-    <string name="status_bar_logo_style_bananagear">Banana Gear</string>
+    <string name="status_bar_logo_style_bananagear">Dodatki Banana</string>
     <string name="status_bar_logo_style_adidas">Adidas</string>
     <string name="status_bar_logo_style_airjordan">Air Jordan</string>
     <string name="status_bar_logo_style_apple">Apple</string>
@@ -747,16 +747,16 @@
     <string name="pulse_ambient_light_repeat_direction_reverse">Odwrócone</string>
     <string name="pulse_ambient_light_layout_title">Light view</string>
     <string name="pulse_ambient_light_layout_solid">Pełny</string>
-    <string name="pulse_ambient_light_layout_faded">Faded</string>
-    <string name="pulse_ambient_light_width_title">Light width</string>
-    <string name="pulse_light_layout_style_title">Light Layout Style</string>
+    <string name="pulse_ambient_light_layout_faded">Zanikanie</string>
+    <string name="pulse_ambient_light_width_title">Szerokość podświetlenia</string>
+    <string name="pulse_light_layout_style_title">Jasny styl układu</string>
     <string name="pulse_light_both">Wszystkie cztery strony</string>
     <string name="pulse_light_top_bottom">Tylko góra i dół</string>
     <string name="pulse_light_left_right">Tylko lewo-prawo</string>
     <string name="ambient_notification_light_enabled_title">Pokaż na AOD</string>
     <string name="ambient_notification_light_enabled_summary">Pokaż światła na Always On Display</string>
-    <string name="ambient_notification_light_hide_aod_title">Hide AOD content</string>
-    <string name="ambient_notification_light_hide_aod_summary">Hide AOD content when lights are showing</string>
+    <string name="ambient_notification_light_hide_aod_title">Ukryj zawartość AOD</string>
+    <string name="ambient_notification_light_hide_aod_summary">Ukryj zawartość AOD, gdy krawędzie są podświetlone</string>
     <string name="ambient_notification_light_timeout_title">Limit czasu</string>
     <string name="ambient_notification_light_timeout_forever">Zawsze</string>
     <string name="ambient_notification_light_timeout_half_minute">30 sekund</string>
@@ -783,20 +783,20 @@
     <string name="max_visible_notification_icons_title">Ikony powiadomień</string>
     <string name="max_visible_notification_icons_summary">Max. liczba ikon powiadomień widoczna na pasku stanu</string>
     <!-- Statusbar left_right padding -->
-    <string name="padding_category">Statusbar padding</string>
-    <string name="statusbar_left_padding">Left padding</string>
-    <string name="statusbar_right_padding">Right padding</string>
-    <string name="statusbar_top_padding">Top padding</string>
+    <string name="padding_category">Wypełnienie paska stanu</string>
+    <string name="statusbar_left_padding">Lewy wypełnienie</string>
+    <string name="statusbar_right_padding">Prawe wypełnienie</string>
+    <string name="statusbar_top_padding">Wypełnienie górne</string>
     <!-- Alert Slider category (OnePlus devices) -->
     <string name="alert_slider_cat_title">Przełącznik powiadomień</string>
     <!-- Alert Slider Notifications (OnePlus devices) -->
-    <string name="alert_slider_notifications_title">Alert slider notifications</string>
-    <string name="alert_slider_notifications_summary">Display notification when changing alert slider position</string>
+    <string name="alert_slider_notifications_title">Powiadomienia suwaka alarmu</string>
+    <string name="alert_slider_notifications_summary">Wyświetl powiadomienie podczas zmiany pozycji suwaka powiadomień</string>
     <!-- Alert Slider block -->
-    <string name="block_alert_title">Block Alert slider</string>
+    <string name="block_alert_title">Blokuj suwak powiadomień</string>
     <string name="block_alert_summary">Tryb kieszonkowy zablokuje suwak powiadomień</string>
     <!-- Alert Slider Pulse (OnePlus devices) -->
-    <string name="alert_slider_pulse_title">Alert slider pulse</string>
+    <string name="alert_slider_pulse_title">Puls suwaka powiadomień</string>
     <string name="alert_slider_pulse_summary">Pulsujący ekran podczas zmiany pozycji suwaka alarmu</string>
     <!-- Lockscreen bottom shortcuts -->
     <string name="lockscreen_shortcut_category">Skróty na dole ekranu</string>
