@@ -68,7 +68,7 @@
     <string name="caution">Ostrzeżenie</string>
     <string name="enable">Włączone</string>
     <string name="disable">Wyłączone</string>
-    <string name="none_string">None</string>
+    <string name="none_string">Brak</string>
     <string name="reset">Reset</string>
     <!-- Units -->
     <string name="unit_seconds">sekundy</string>
@@ -190,8 +190,8 @@
     <string name="status_bar_battery_style_icon_landscape_pill">Portrait Mx</string>
     <string name="status_bar_battery_style_icon_landscape_line">Landscape Lorn</string>
     <string name="status_bar_battery_style_icon_landscape_musku">Pionowo IOS</string>
-    <string name="status_bar_battery_style_icon_landscape_signal">Landscape Airoo</string>
-    <string name="status_bar_battery_style_icon_landscape_buddy">Landscape Capsule</string>
+    <string name="status_bar_battery_style_icon_landscape_signal">Airoo Poziomo</string>
+    <string name="status_bar_battery_style_icon_landscape_buddy">Kapsuła Poziomo</string>
     <string name="status_bar_battery_style_circle">Okrąg</string>
     <string name="status_bar_battery_style_dotted_circle">Kropkowany okrąg</string>
     <string name="status_bar_battery_style_filled_circle">Wypełniony okrąg</string>
@@ -218,10 +218,10 @@
     <string name="network_traffic_location_quick_statusbar">Panel Szybkich Ustawień</string>
     <string name="network_traffic_mode_title">Tryb wyświetlania</string>
     <string name="network_traffic_mode_up">Tylko wysyłanie</string>
-    <string name="network_traffic_mode_down">Download only</string>
-    <string name="network_traffic_mode_all">Upload and download</string>
-    <string name="network_traffic_autohide">Auto hide</string>
-    <string name="network_traffic_autohide_summary">Hide the traffic monitor when inactive</string>
+    <string name="network_traffic_mode_down">Tylko pobieranie</string>
+    <string name="network_traffic_mode_all">Wysyłanie i pobieranie</string>
+    <string name="network_traffic_autohide">Autoukrywanie</string>
+    <string name="network_traffic_autohide_summary">Ukryj monitor ruchu przy braku aktywności</string>
     <string name="network_traffic_autohide_kilobits">Kb/s</string>
     <string name="network_traffic_autohide_kilobytes">KB/s</string>
     <string name="network_traffic_autohide_threshold">Próg braku aktywności</string>
@@ -278,8 +278,8 @@
     <string name="battery_bar_blend_color_title">Mieszanie kolorów</string>
     <string name="battery_bar_blend_color_summary">Mieszaj pełne/puste kolory odpowiadające procentom baterii</string>
     <string name="battery_bar_blend_color_reverse_title">Odwróć kierunek kolorów</string>
-    <string name="battery_bar_blend_color_reverse_summary_off">Full &#8594; empty: red &#8592; green &#8592; blue &#8592; red</string>
-    <string name="battery_bar_blend_color_reverse_summary_on">Full &#8594; empty: red &#8594; green &#8594; blue &#8594; red</string>
+    <string name="battery_bar_blend_color_reverse_summary_off">Pełna &#8594; pusta: czerwony &#8592; zielony &#8592; niebieski &#8592; czerwony</string>
+    <string name="battery_bar_blend_color_reverse_summary_on">Pełna &#8594; pusta: czerwona &#8594; zielona &#8594; niebieska &#8594; czerwona</string>
     <!-- Buttons -->
     <string name="button_pref_title">Przyciski</string>
     <string name="hardware_keys_power_key_title">Przycisk zasilania</string>
@@ -327,7 +327,7 @@
     <string name="navigation_bar_app_switch_long_press_title">Akcja długiego naciśnięcia Ostatnio używanych</string>
     <string name="navigation_bar_edge_long_swipe_title">Akcja długiego przeciągnięcia krawędzi</string>
     <!-- Description of setting that controls gesture to open camera by double tapping the power button [CHAR LIMIT=NONE] -->
-    <string name="camera_double_tap_power_gesture_desc">Quickly open camera without unlocking your screen</string>
+    <string name="camera_double_tap_power_gesture_desc">Szybkie uruchamianie aparatu bez odblokowywania ekranu</string>
     <string name="torch_long_press_power_gesture_title">Przytrzymaj aby włączyć latarkę</string>
     <string name="torch_long_press_power_gesture_desc">Włączanie latarki przy wyłączonym ekranie przez przytrzymanie przycisku zasilania</string>
     <string name="torch_long_press_power_timeout_title">Automatycznie wyłącz latarkę</string>
@@ -387,7 +387,7 @@
     <string name="qs_show_image">Pokaż obraz</string>
     <string name="weather_show_all_condition">Pokaż temperaturę ze skalą, obrazem i warunkami pogodowymi</string>
     <!-- Launcher Weather Options -->
-    <string name="launcher_weather_title">Launcher weather</string>
+    <string name="launcher_weather_title">Pogoda Launchera</string>
     <!-- Launcher Weather Options -->
     <string name="kg_weather_title">Pogoda na blokadzie ekranu</string>
     <!-- Omni weather -->
@@ -437,7 +437,7 @@
     <string name="qs_tile_layout_title">Układ kafelków</string>
     <string name="qs_tiles_layout_category">Układ kafelków</string>
     <string name="qs_rows_portrait_title">Ilość kafelków (tryb pionowy)</string>
-    <string name="qqs_rows_portrait_title">Rows (Quick QS portrait)</string>
+    <string name="qqs_rows_portrait_title">Rzędy (pionowy układ włączników)</string>
     <string name="qs_columns_portrait_title">Kolumny (pionowo)</string>
     <string name="qs_apply_change_button_title">Zastosuj zmiany</string>
     <string name="qs_apply_change_failed">Nie udało się zastosować zmian</string>
@@ -488,7 +488,7 @@
     <string name="raise_to_wake_title">Wybudzanie</string>
     <string name="raise_to_wake_summary">Wybudzanie urządzenia zamiast pulsującego powiadomienia</string>
     <string name="tilt_title">Nachylenie</string>
-    <string name="tilt_summary">Pulse notifications on tilt</string>
+    <string name="tilt_summary">Pulsujące powiadomienia podczas podnoszenia</string>
     <string name="pickup_title">Podnieś</string>
     <string name="pickup_summary">Pulsujące powiadomienia podczas podnoszenia</string>
     <string name="handwave_title">Machnięcie ręką</string>
@@ -499,51 +499,51 @@
     <string name="doze_vibrate_summary">Długość wibracji podczas pulsu powiadomienia</string>
     <string name="sensor_warning_message">Settings based on sensors are subject to hardware compatibility. Enabling sensors for ambient display may increase power drain.</string>
     <!-- Ambient Ticker -->
-    <string name="pulse_on_new_tracks_title">Music ticker</string>
-    <string name="pulse_on_new_tracks_summary">Show music ticker on Ambient Display during track change</string>
+    <string name="pulse_on_new_tracks_title">Etykieta muzyki</string>
+    <string name="pulse_on_new_tracks_summary">Pokaż etykietę muzyki na ekranie Ambient podczas zmiany utworu</string>
     <!-- Notch: Full screen apps -->
-    <string name="display_cutout_force_fullscreen_title">Full screen apps</string>
-    <string name="display_cutout_force_fullscreen_summary">Force apps to ignore notch space</string>
-    <string name="display_cutout_force_fullscreen_no_apps">No apps</string>
+    <string name="display_cutout_force_fullscreen_title">Aplikacje pełnoekranowe</string>
+    <string name="display_cutout_force_fullscreen_summary">Wymuś na aplikacjach ignorowanie notch\'a</string>
+    <string name="display_cutout_force_fullscreen_no_apps">Brak aplikacji</string>
     <!-- Notification guts kill app button -->
-    <string name="notification_guts_kill_app_button_title">Force stop button</string>
-    <string name="notification_guts_kill_app_button_summary">Show force stop button in the notification\'s longpress menu</string>
+    <string name="notification_guts_kill_app_button_title">Przycisk wymuszenia zatrzymania</string>
+    <string name="notification_guts_kill_app_button_summary">Pokaż przycisk wyłączania aplikacji po długim przytrzymaniu w menu powiadomień</string>
     <!-- Smart Pixels -->
-    <string name="smart_pixels_warning_text">Smart pixels is a power saving feature. Depending on how many pixels you decide to turn off, you could see improvement in battery life. Note that in some cases it can result in unresponsive areas on touch screen</string>
-    <string name="smart_pixels_title">Smart Pixels</string>
-    <string name="smart_pixels_summary">Save battery by shutting off extra pixels</string>
-    <string name="smart_pixels_enable_title">Enable Smart Pixels</string>
-    <string name="smart_pixels_enable_summary">Shut off pixels to reduce power consumption</string>
-    <string name="smart_pixels_on_power_save_title">Auto-enable on battery saver</string>
-    <string name="smart_pixels_on_power_save_summary">Enable Smart Pixels when battery saver is enabled</string>
-    <string name="smart_pixels_percent">Percent of pixels to disable</string>
-    <string name="smart_pixels_shift_title">Burn-in protection</string>
-    <string name="smart_pixels_shift_summary">Prevents burn-in on OLED devices by shifting pixels every so often</string>
-    <string name="custom_timeout_summary_15secs">15 seconds</string>
-    <string name="custom_timeout_summary_30secs">30 seconds</string>
-    <string name="custom_timeout_summary_1min">1 minute</string>
-    <string name="custom_timeout_summary_2mins">2 minutes</string>
-    <string name="custom_timeout_summary_5mins">5 minutes</string>
-    <string name="custom_timeout_summary_10mins">10 minutes</string>
-    <string name="custom_timeout_summary_20mins">20 minutes</string>
-    <string name="custom_timeout_summary_30mins">30 minutes</string>
-    <string name="custom_timeout_summary_1hour">1 hour</string>
+    <string name="smart_pixels_warning_text">Inteligentne piksele pozwalają na oszczędzanie baterii. Większa ilość wyłączonych pikseli przekłada się na większą żywotność baterii</string>
+    <string name="smart_pixels_title">Inteligentne piksele</string>
+    <string name="smart_pixels_summary">Oszczędzaj baterię poprzez wyłączanie dodatkowych pikseli</string>
+    <string name="smart_pixels_enable_title">Włącz inteligentne piksele</string>
+    <string name="smart_pixels_enable_summary">Wyłącz piksele w celu redukcji zużycia energii</string>
+    <string name="smart_pixels_on_power_save_title">Włączaj zawsze przy oszczędzaniu baterii</string>
+    <string name="smart_pixels_on_power_save_summary">Włącz Smart Pixels gdy oszczędzanie baterii jest włączone</string>
+    <string name="smart_pixels_percent">Procent pikseli do wyłączenia</string>
+    <string name="smart_pixels_shift_title">Ochrona przed wypaleniem ekranu</string>
+    <string name="smart_pixels_shift_summary">Zapobiega wypalaniu na urządzeniach OLED przez częstsze przesuwanie pikseli</string>
+    <string name="custom_timeout_summary_15secs">15 sekund</string>
+    <string name="custom_timeout_summary_30secs">30 sekund</string>
+    <string name="custom_timeout_summary_1min">1 minuta</string>
+    <string name="custom_timeout_summary_2mins">2 minuty</string>
+    <string name="custom_timeout_summary_5mins">5 minut</string>
+    <string name="custom_timeout_summary_10mins">10 minut</string>
+    <string name="custom_timeout_summary_20mins">20 minut</string>
+    <string name="custom_timeout_summary_30mins">30 minut</string>
+    <string name="custom_timeout_summary_1hour">1 godzina</string>
     <!-- Screen Off animation -->
-    <string name="screen_off_animation_title">Screen off animation</string>
-    <string name="screen_off_animation_default">Default</string>
+    <string name="screen_off_animation_title">Animacja wyłączenia ekranu</string>
+    <string name="screen_off_animation_default">Domyślne</string>
     <string name="screen_off_animation_crt">CRT</string>
-    <string name="screen_off_animation_scale">Scale</string>
+    <string name="screen_off_animation_scale">Skala</string>
     <!-- Heads up -->
-    <string name="notification_heads_up_title">Heads up</string>
-    <string name="notification_heads_up_summary">Allow pop up notifications</string>
-    <string name="notification_heads_up_timeout_title">Time out</string>
-    <string name="notification_heads_up_timeout_summary">Time to display heads up notifications</string>
-    <string name="add_heads_up_package">Add app</string>
-    <string name="add_heads_up_stoplist_summary">Disable heads up notifications in these applications</string>
-    <string name="add_heads_up_blocklist_summary">Disable heads up from these applications</string>
-    <string name="heads_up_stoplist_title">Stoplist</string>
-    <string name="heads_up_blocklist_title">Blocklist</string>
-    <string name="profile_choose_app">Choose app</string>
+    <string name="notification_heads_up_title">Wyskakujące powiadomienia</string>
+    <string name="notification_heads_up_summary">Zezwalaj na wyskakujące powiadomienia</string>
+    <string name="notification_heads_up_timeout_title">Limit czasu</string>
+    <string name="notification_heads_up_timeout_summary">Czas wyświetlania wyskakujących powiadomień</string>
+    <string name="add_heads_up_package">Dodaj aplikację</string>
+    <string name="add_heads_up_stoplist_summary">Wyłącz wyskakujące powiadomienia dla tych aplikacji</string>
+    <string name="add_heads_up_blocklist_summary">Wyłącz wyskakujące powiadomienia dla tych aplikacji</string>
+    <string name="heads_up_stoplist_title">Lista wstrzymanych</string>
+    <string name="heads_up_blocklist_title">Lista blokowanych</string>
+    <string name="profile_choose_app">Wybierz aplikację</string>
     <string name="dialog_delete_title">Usuń</string>
     <string name="dialog_delete_message">Usunąć zaznaczony element?</string>
     <!-- Less boring heads up -->
@@ -607,8 +607,8 @@
     <string name="pulse_filled_block_size">Rozmiar bloku</string>
     <string name="pulse_empty_block_size">Block spacing</string>
     <!-- Gaming mode -->
-    <string name="gaming_mode_title">Game space</string>
-    <string name="gaming_mode_summary">Extra features for immersive gaming experience</string>
+    <string name="gaming_mode_title">Przestrzeń gier</string>
+    <string name="gaming_mode_summary">Dodatkowe funkcje dla pełnoekranowego doświadczenia w grach</string>
     <!-- Custom logo -->
     <string name="status_bar_logo_title">Logo</string>
     <string name="status_bar_logo_summary">Wyświetl niestandardowe logo po lewej lub prawej stronie paska stanu</string>
@@ -669,28 +669,28 @@
     <string name="navbar_layout_compact">Kompaktowy</string>
     <string name="navbar_layout_leftleaning">Left-leaning</string>
     <string name="navbar_layout_rightleaning">Right-leaning</string>
-    <string name="navbar_invert_layout_title">Invert layout</string>
-    <string name="navbar_invert_layout_summary">Inverts the layout of the navigation bar and other items, such as the IME switcher</string>
+    <string name="navbar_invert_layout_title">Odwróć układ</string>
+    <string name="navbar_invert_layout_summary">Odwraca układ paska nawigacji i innych elementów, takich jak przełącznik IME</string>
     <!-- Hide statusbar on lockscreen -->
-    <string name="lockscreen_hide_status_bar_title">Hide Statusbar</string>
-    <string name="lockscreen_hide_status_bar_summary">When enabled, statusbar will be hidden on lockscreen</string>
+    <string name="lockscreen_hide_status_bar_title">Ukryj Pasek Stanu</string>
+    <string name="lockscreen_hide_status_bar_summary">Gdy włączony, Pasek Stanu zostanie ukryty na ekranie blokady</string>
     <!-- Combined signal icons in status bar -->
-    <string name="combined_status_bar_signal_icons_title">Combined signal icons</string>
-    <string name="combined_status_bar_signal_icons_summary">Enable combined signal icons (SystemUI will automatically restart upon toggling)</string>
+    <string name="combined_status_bar_signal_icons_title">Połączone ikony sygnału</string>
+    <string name="combined_status_bar_signal_icons_summary">Włącz połączone ikony sygnału (SystemUI zostanie automatycznie uruchomiony po przełączeniu)</string>
     <!-- CustomUI -->
-    <string name="custom_ui_toggle_title">Settings dashboard style</string>
+    <string name="custom_ui_toggle_title">Ustawienia elementów panelu ustawień</string>
     <string name="custom_ui_toggle_summary">Enable card-style dashboard UI</string>
     <!-- About phone header -->
-    <string name="about_phone_header_title">About phone header</string>
-    <string name="about_phone_header_summary">Enable about phone header on Settings dashboard</string>
+    <string name="about_phone_header_title">O nagłówku telefonu</string>
+    <string name="about_phone_header_summary">Włącz nagłówek telefonu na panelu ustawień</string>
     <!-- Toast app icon -->
-    <string name="toast_icon_title">Toast app icon</string>
-    <string name="toast_icon_summary">Display the app\'s icon corresponding with the toast</string>
+    <string name="toast_icon_title">Ikona aplikacji w dymku powiadomień</string>
+    <string name="toast_icon_summary">Wyświetl ikonę aplikacji w powiadomieniu toast</string>
     <!-- UI styles -->
-    <string name="theme_customization_ui_style_title">UI Style</string>
-    <string name="theme_customization_ui_style_summary">Set custom style for your interface</string>
+    <string name="theme_customization_ui_style_title">Styl UI</string>
+    <string name="theme_customization_ui_style_summary">Ustaw niestandardowy styl swojego interfejsu</string>
     <!-- Lockscreen Clock -->
-    <string name="kg_custom_clock_color_enabled_title">Custom lockscreen clock color</string>
+    <string name="kg_custom_clock_color_enabled_title">Własny kolor zegara na ekranie blokady</string>
     <string name="kg_custom_clock_color_title">Wybierz kolor</string>
     <!-- Fonts -->
     <string name="clock_format">12\n26</string>
@@ -738,28 +738,28 @@
     <string name="pulse_ambient_light_color_mode_accent">Akcent</string>
     <string name="pulse_ambient_light_color_mode_custom">Własny</string>
     <string name="pulse_ambient_light_color_mode_random">Losowy kolor</string>
-    <string name="pulse_ambient_light_duration_title">Light duration</string>
+    <string name="pulse_ambient_light_duration_title">Czas oświetlenia</string>
     <string name="pulse_ambient_light_repeat_count_title">Liczba powtórzeń oświetlenia</string>
     <string name="pulse_ambient_light_show_always_title">Zawsze pokazuj</string>
     <string name="pulse_ambient_light_show_always_summary">Show lights for all doze events and not just notifications</string>
     <string name="pulse_ambient_light_repeat_direction_title">Tryb powtarzania podświetlenia</string>
     <string name="pulse_ambient_light_repeat_direction_restart">Uruchom ponownie</string>
-    <string name="pulse_ambient_light_repeat_direction_reverse">Reverse</string>
+    <string name="pulse_ambient_light_repeat_direction_reverse">Odwrócone</string>
     <string name="pulse_ambient_light_layout_title">Light view</string>
-    <string name="pulse_ambient_light_layout_solid">Solid</string>
+    <string name="pulse_ambient_light_layout_solid">Pełny</string>
     <string name="pulse_ambient_light_layout_faded">Faded</string>
     <string name="pulse_ambient_light_width_title">Light width</string>
     <string name="pulse_light_layout_style_title">Light Layout Style</string>
-    <string name="pulse_light_both">All Four Sides</string>
-    <string name="pulse_light_top_bottom">Only Top-Bottom</string>
-    <string name="pulse_light_left_right">Only Left-Right</string>
-    <string name="ambient_notification_light_enabled_title">Show on AOD</string>
-    <string name="ambient_notification_light_enabled_summary">Show lights on Always On Display</string>
+    <string name="pulse_light_both">Wszystkie cztery strony</string>
+    <string name="pulse_light_top_bottom">Tylko góra i dół</string>
+    <string name="pulse_light_left_right">Tylko lewo-prawo</string>
+    <string name="ambient_notification_light_enabled_title">Pokaż na AOD</string>
+    <string name="ambient_notification_light_enabled_summary">Pokaż światła na Always On Display</string>
     <string name="ambient_notification_light_hide_aod_title">Hide AOD content</string>
     <string name="ambient_notification_light_hide_aod_summary">Hide AOD content when lights are showing</string>
-    <string name="ambient_notification_light_timeout_title">Timeout</string>
-    <string name="ambient_notification_light_timeout_forever">Forever</string>
-    <string name="ambient_notification_light_timeout_half_minute">30 seconds</string>
+    <string name="ambient_notification_light_timeout_title">Limit czasu</string>
+    <string name="ambient_notification_light_timeout_forever">Zawsze</string>
+    <string name="ambient_notification_light_timeout_half_minute">30 sekund</string>
     <string name="ambient_notification_light_timeout_minute">1 minuta</string>
     <string name="ambient_notification_light_timeout_three_minutes">3 minuty</string>
     <string name="ambient_notification_light_timeout_five_minutes">5 minut</string>
