@@ -168,23 +168,23 @@
     <string name="solid_accent">Aksen warna padat</string>
     <string name="outline">Garis luar</string>
     <string name="solid_accent_gradient">Aksen warna padat bergradasi</string>
-    <string name="solid_gradient">Solid Gradient side</string>
-    <string name="solid_gradient_corner">Solid accent gradient sharp</string>
-    <string name="solid_gradient_void">Gradient Void</string>
-    <string name="solid_gradient_neumorph">Neumorph gradient</string>
-    <string name="solid_gradient_stroke">Sharp gradient stroke</string>
-    <string name="solid_accent_transperent">Accent transperent</string>
-    <string name="solid_gradient_light">Gradient light</string>
-    <string name="solid_gradient_shape">Sharp gradient corner</string>
-    <string name="solid_gradient_void_light">Gradient Void light</string>
+    <string name="solid_gradient">Gradien samping padat</string>
+    <string name="solid_gradient_corner">Gradien warna aksen padat dan tajam</string>
+    <string name="solid_gradient_void">Gradien ruang kosong</string>
+    <string name="solid_gradient_neumorph">Gradien neumorph</string>
+    <string name="solid_gradient_stroke">Gradien garis tajam</string>
+    <string name="solid_accent_transperent">Aksen transparan</string>
+    <string name="solid_gradient_light">Gradien terang</string>
+    <string name="solid_gradient_shape">Gradien pojok tajam</string>
+    <string name="solid_gradient_void_light">Gradien ruang kosong terang</string>
     <!-- Status bar - Battery -->
-    <string name="status_bar_battery_category_title">Battery customizations</string>
-    <string name="status_bar_battery_style_title">Battery style</string>
-    <string name="status_bar_battery_style_icon_portrait">Icon portrait</string>
-    <string name="status_bar_battery_style_icon_rlandscape">Icon landscape (Right)</string>
-    <string name="status_bar_battery_style_icon_landscape">Icon landscape (Left)</string>
-    <string name="status_bar_battery_style_icon_rlandscape_style_a">Landscape R Style A</string>
-    <string name="status_bar_battery_style_icon_landscape_style_a">Landscape L Style A</string>
+    <string name="status_bar_battery_category_title">Kustomisasi baterai</string>
+    <string name="status_bar_battery_style_title">Tampilan baterai</string>
+    <string name="status_bar_battery_style_icon_portrait">Ikon tegak</string>
+    <string name="status_bar_battery_style_icon_rlandscape">Ikon mendatar (Kanan)</string>
+    <string name="status_bar_battery_style_icon_landscape">Ikon mendatar (Kiri)</string>
+    <string name="status_bar_battery_style_icon_rlandscape_style_a">Mendatar kanan A</string>
+    <string name="status_bar_battery_style_icon_landscape_style_a">Mendatar kiri A</string>
     <string name="status_bar_battery_style_icon_rlandscape_style_b">Landscape R Style B</string>
     <string name="status_bar_battery_style_icon_landscape_style_b">Landscape L Style B</string>
     <string name="status_bar_battery_style_icon_landscape_pill">Portrait Mx</string>
@@ -239,23 +239,23 @@
     <!-- Quick QS pulldown -->
     <string name="qs_quick_pulldown">Quick QS pulldown</string>
     <string name="quick_pulldown_none">Disabled</string>
-    <string name="quick_pulldown_right">Pulldown statusbar from right side</string>
-    <string name="quick_pulldown_left">Pulldown statusbar from left side</string>
+    <string name="quick_pulldown_right">Menurunkan cepat dari sisi kanan bilah status</string>
+    <string name="quick_pulldown_left">Menurunkan cepat dari sisi kiri bilah status</string>
     <!-- Statusbar colored icons -->
-    <string name="statusbar_colored_icons_title">Colored icons</string>
-    <string name="statusbar_colored_icons_summary">Use proper app icons for notification icons in statusbar</string>
+    <string name="statusbar_colored_icons_title">Ikon berwarna</string>
+    <string name="statusbar_colored_icons_summary">Gunakan ikon aplikasi untuk ikon notifikasi di bilah status</string>
     <!-- Notification count -->
-    <string name="statusbar_notif_count_title">Show notification count</string>
-    <string name="statusbar_notif_count_summary">Display the number of pending notifications</string>
+    <string name="statusbar_notif_count_title">Tampilkan jumlah notifikasi</string>
+    <string name="statusbar_notif_count_summary">Tampilkan jumlah notifikasi yang tertunda</string>
     <!-- Old mobiletype icon style -->
-    <string name="old_mobiletype_title">Old style signal icon</string>
-    <string name="old_mobiletype_summary">Merge signal and signal type icons</string>
+    <string name="old_mobiletype_title">Ikon sinyal gaya lama</string>
+    <string name="old_mobiletype_summary">Gabungkan tipe ikon dan sinyal</string>
     <!-- Roaming indicator icon -->
-    <string name="roaming_indicator_icon_title">Roaming indicator</string>
-    <string name="roaming_indicator_icon_summary">Display roaming indicator in signal icon when in roaming mode</string>
+    <string name="roaming_indicator_icon_title">Indikator roaming</string>
+    <string name="roaming_indicator_icon_summary">Tampilkan indikator roaming di ikon sinyal saat dalam mode roaming</string>
     <!-- 4G icon -->
-    <string name="show_fourg_icon_title">4G icon</string>
-    <string name="show_fourg_icon_summary">Display 4G icon in signal icon instead LTE</string>
+    <string name="show_fourg_icon_title">Ikon 4G</string>
+    <string name="show_fourg_icon_summary">Menampilkan ikon 4G pada ikon sinyal sebagai ganti LTE</string>
     <!-- Data disabled indicator -->
     <string name="data_disabled_icon_title">Data disabled indicator</string>
     <string name="data_disabled_icon_summary">Display an indicator next to signal icon when data is disabled</string>
