@@ -84,53 +84,53 @@
     <!-- Lock screen cover art -->
     <string name="lockscreen_media_art_options_title">Copertina sulla schermata di blocco</string>
     <string name="lockscreen_media_art_title">Copertina dei media</string>
-    <string name="lockscreen_media_art_summary">Display media cover art when available</string>
+    <string name="lockscreen_media_art_summary">Mostra la copertina multimediale sulla schermata di blocco quando disponibile</string>
     <!-- Lock screen album art filter -->
-    <string name="lockscreen_albumart_filter_title">Media cover art filter</string>
-    <string name="lockscreen_albumart_filter_grayscale">Grayscale</string>
-    <string name="lockscreen_albumart_filter_tint">Accent tinted</string>
-    <string name="lockscreen_albumart_filter_blur">Blur</string>
-    <string name="lockscreen_albumart_filter_grayblur">Grayscale and blurred</string>
+    <string name="lockscreen_albumart_filter_title">Filtro copertina multimediale</string>
+    <string name="lockscreen_albumart_filter_grayscale">Scala di grigi</string>
+    <string name="lockscreen_albumart_filter_tint">Tinta in base all\'accento</string>
+    <string name="lockscreen_albumart_filter_blur">Sfocatura</string>
+    <string name="lockscreen_albumart_filter_grayblur">Scala di grigi e sfocatura</string>
     <!-- Power menu on lockscreen -->
-    <string name="lockscreen_power_menu_disabled_title">Disable power menu on lock screen</string>
-    <string name="lockscreen_power_menu_disabled_summary">This will only disable the power menu on secure lock screens</string>
+    <string name="lockscreen_power_menu_disabled_title">Disattiva il menu di alimentazione dalla schermata di blocco</string>
+    <string name="lockscreen_power_menu_disabled_summary">Questo disabiliterà il menu d\'alimentazione solo sulle schermate di blocco sicure</string>
     <!-- Quick Settings brightness slider -->
-    <string name="qs_show_brightness_slider_title">Brightness slider</string>
-    <string name="qs_show_brightness_slider_never">Never show</string>
-    <string name="qs_show_brightness_slider_expanded">Show when expanded</string>
-    <string name="qs_show_brightness_slider_always">Show always</string>
-    <string name="qs_show_brightness_slider_not_expanded">Show when not expanded</string>
-    <string name="qs_brightness_slider_position_title">Position</string>
-    <string name="qs_brightness_slider_position_top">Top</string>
-    <string name="qs_brightness_slider_position_bottom">Bottom</string>
+    <string name="qs_show_brightness_slider_title">Slider della luminosità</string>
+    <string name="qs_show_brightness_slider_never">Non mostrare mai</string>
+    <string name="qs_show_brightness_slider_expanded">Mostra con impostazioni rapide espanse</string>
+    <string name="qs_show_brightness_slider_always">Mostra sempre</string>
+    <string name="qs_show_brightness_slider_not_expanded">Mostra con impostazioni rapide non espanse</string>
+    <string name="qs_brightness_slider_position_title">Posizione</string>
+    <string name="qs_brightness_slider_position_top">In alto</string>
+    <string name="qs_brightness_slider_position_bottom">In basso</string>
     <!-- Quick Settings brightness icon -->
-    <string name="qs_show_auto_brightness_title">Auto brightness icon</string>
-    <string name="qs_show_auto_brightness_summary">Show toggle for adaptive brightness near the slider</string>
+    <string name="qs_show_auto_brightness_title">Icona luminosità automatica</string>
+    <string name="qs_show_auto_brightness_summary">Mostra il pulsante per la luminosità adattiva vicino lo slider</string>
     <!-- Unlimited google photos storage -->
-    <string name="use_photos_spoof_title">Unlimited Photos storage</string>
-    <string name="use_photos_spoof_summary">Spoof your device as Pixel XL for Google Photos app only to provide unlimited storage for backup</string>
+    <string name="use_photos_spoof_title">Spazio d\'archiviazione foto Google illimitato</string>
+    <string name="use_photos_spoof_summary">Effettua lo spoofing del tuo dispositivo rendendolo un Pixel XL per l\'app Google Foto così da fornire spazio d\'archiviazione illimitato per i tuoi backup</string>
     <!-- Unlock FPS for specific games -->
-    <string name="use_games_spoof_title">Unlock higher FPS in games</string>
-    <string name="use_games_spoof_summary">Spoof your device as different model for specific games to unlock higher FPS</string>
+    <string name="use_games_spoof_title">Sblocca FPS più alti nei giochi</string>
+    <string name="use_games_spoof_summary">Effettua lo spoofing del tuo dispositivo come modello diverso per i giochi specifici e sbloccare FPS più alti</string>
     <!-- Netflix Spooft -->
-    <string name="netflix_spoof_title">Netflix spoof</string>
-    <string name="netflix_spoof_summary">Spoof your device as different model for Netflix</string>
+    <string name="netflix_spoof_title">Spoofing Netflix</string>
+    <string name="netflix_spoof_summary">Effettua lo spoofing del dispositivo come un modello diverso per Netflix</string>
     <!-- Spoof all apps -->
-    <string name="spoof_all_title">Spoof All apps</string>
-    <string name="spoof_all_summary">Spoof all possible apps as Pixel XL for misc benefits (samsung accesories, cts pass etc)</string>
+    <string name="spoof_all_title">Spoofing di tutte le app</string>
+    <string name="spoof_all_summary">Effettua lo spoofing di tutte le applicazioni possibili rendendolo un Pixel XL per vari benefici (accessori Samsung, CTS pass ecc)</string>
     <!-- Status bar - Clock -->
-    <string name="status_bar_clock_title">Clock &amp; date</string>
-    <string name="status_bar_clock_summary">Customize clock &amp; date</string>
-    <string name="status_bar_clock_seconds_title">Clock seconds</string>
-    <string name="status_bar_clock_seconds_summary">Display seconds next to clock in status bar</string>
-    <string name="status_bar_clock_position_title">Clock style</string>
-    <string name="status_bar_clock_position_right">Right</string>
-    <string name="status_bar_clock_position_left">Left</string>
-    <string name="status_bar_clock_position_center">Center</string>
-    <string name="status_bar_clock_position_hidden">Hidden</string>
-    <string name="status_bar_clock_auto_hide_title">Auto hide</string>
-    <string name="status_bar_clock_auto_hide_launcher_summary">Hide clock if launcher is visible</string>
-    <string name="status_bar_clock_auto_hide_summary">Hide clock at regular interval</string>
+    <string name="status_bar_clock_title">Orologio &amp; data</string>
+    <string name="status_bar_clock_summary">Personalizza orologio &amp; data</string>
+    <string name="status_bar_clock_seconds_title">Secondi nell\'orologio</string>
+    <string name="status_bar_clock_seconds_summary">Mostra i secondi accanto all\'orologio nella barra di stato</string>
+    <string name="status_bar_clock_position_title">Stile orologio</string>
+    <string name="status_bar_clock_position_right">A destra</string>
+    <string name="status_bar_clock_position_left">A sinistra</string>
+    <string name="status_bar_clock_position_center">Al centro</string>
+    <string name="status_bar_clock_position_hidden">Nascosto</string>
+    <string name="status_bar_clock_auto_hide_title">Nascondi automaticamente</string>
+    <string name="status_bar_clock_auto_hide_launcher_summary">Nascondi l\'orologio se il launcher è visibile</string>
+    <string name="status_bar_clock_auto_hide_summary">Nascondi l\'orologio a intervalli regolari</string>
     <string name="status_bar_clock_auto_hide_hdur_title">Per quanto nascondere</string>
     <string name="status_bar_clock_auto_hide_hdur_summary">Numero di secondi per i quali nascondere l\'orologio</string>
     <string name="status_bar_clock_auto_hide_sdur_title">Per quanto mostrare</string>
@@ -185,40 +185,40 @@
     <string name="status_bar_battery_style_icon_landscape">Icona orizzontale (a sinistra)</string>
     <string name="status_bar_battery_style_icon_rlandscape_style_a">Orizzontale DX Stile A</string>
     <string name="status_bar_battery_style_icon_landscape_style_a">Orizzontale SX Stile A</string>
-    <string name="status_bar_battery_style_icon_rlandscape_style_b">Landscape R Style B</string>
-    <string name="status_bar_battery_style_icon_landscape_style_b">Landscape L Style B</string>
-    <string name="status_bar_battery_style_icon_landscape_pill">Portrait Mx</string>
-    <string name="status_bar_battery_style_icon_landscape_line">Landscape Lorn</string>
-    <string name="status_bar_battery_style_icon_landscape_musku">Portrait IOS</string>
-    <string name="status_bar_battery_style_icon_landscape_signal">Landscape Airoo</string>
-    <string name="status_bar_battery_style_icon_landscape_buddy">Landscape Capsule</string>
-    <string name="status_bar_battery_style_circle">Circle</string>
-    <string name="status_bar_battery_style_dotted_circle">Dotted circle</string>
-    <string name="status_bar_battery_style_filled_circle">Filled circle</string>
-    <string name="status_bar_battery_style_text">Text</string>
-    <string name="status_bar_battery_style_hidden">Hidden</string>
-    <string name="status_bar_battery_percent_title">Battery percent</string>
-    <string name="status_bar_battery_percent_hidden">Hidden</string>
-    <string name="status_bar_battery_percent_text_inside">Inside the icon</string>
-    <string name="status_bar_battery_percent_text_next_right">Next to the icon (right)</string>
-    <string name="status_bar_battery_percent_text_next_left">Next to the icon (left)</string>
-    <string name="status_bar_battery_text_charging_title">Battery percentage when charging</string>
-    <string name="status_bar_battery_text_charging_summary">Always display battery percentage when charging</string>
+    <string name="status_bar_battery_style_icon_rlandscape_style_b">Orizzontale DX Stile B</string>
+    <string name="status_bar_battery_style_icon_landscape_style_b">Orizzontale SX Stile B</string>
+    <string name="status_bar_battery_style_icon_landscape_pill">Verticale Mx</string>
+    <string name="status_bar_battery_style_icon_landscape_line">Orizzontale Lorn</string>
+    <string name="status_bar_battery_style_icon_landscape_musku">Verticale iOS</string>
+    <string name="status_bar_battery_style_icon_landscape_signal">Orizzontale Airoo</string>
+    <string name="status_bar_battery_style_icon_landscape_buddy">Orizzontale Capsula</string>
+    <string name="status_bar_battery_style_circle">Cerchio</string>
+    <string name="status_bar_battery_style_dotted_circle">Cerchio tratteggiato</string>
+    <string name="status_bar_battery_style_filled_circle">Cerchio riempito</string>
+    <string name="status_bar_battery_style_text">Testo</string>
+    <string name="status_bar_battery_style_hidden">Nascosta</string>
+    <string name="status_bar_battery_percent_title">Percentuale batteria</string>
+    <string name="status_bar_battery_percent_hidden">Nascosta</string>
+    <string name="status_bar_battery_percent_text_inside">Dentro l\'icona</string>
+    <string name="status_bar_battery_percent_text_next_right">Accanto all\'icona (destra)</string>
+    <string name="status_bar_battery_percent_text_next_left">Accanto all\'icona (sinistra)</string>
+    <string name="status_bar_battery_text_charging_title">Percentuale batteria in carica</string>
+    <string name="status_bar_battery_text_charging_summary">Mostra sempre la percentuale della batteria durante la carica</string>
     <!-- QS battery -->
-    <string name="qs_use_status_bar_battery_style">Follow status bar style</string>
+    <string name="qs_use_status_bar_battery_style">Segui lo stile della barra di stato</string>
     <!-- Battery estimate -->
-    <string name="battery_estimate_title">Battery estimate</string>
-    <string name="battery_estimate_summary">Display estimated remaining battery life when available</string>
+    <string name="battery_estimate_title">Stima della batteria</string>
+    <string name="battery_estimate_summary">Mostra la durata stimata della batteria quando disponibile</string>
     <!-- Network traffic -->
-    <string name="network_traffic_settings_title">Network traffic monitor</string>
-    <string name="network_traffic_settings_summary">Display and customize current network traffic levels</string>
-    <string name="network_traffic_location_title">Location</string>
-    <string name="network_traffic_location_disable">Disabled</string>
-    <string name="network_traffic_location_statusbar">Statusbar</string>
-    <string name="network_traffic_location_quick_statusbar">Quick Statusbar</string>
-    <string name="network_traffic_mode_title">Display mode</string>
-    <string name="network_traffic_mode_up">Upload only</string>
-    <string name="network_traffic_mode_down">Download only</string>
+    <string name="network_traffic_settings_title">Monitoraggio del traffico di rete</string>
+    <string name="network_traffic_settings_summary">Mostra e personalizza i livelli di traffico di rete attuali</string>
+    <string name="network_traffic_location_title">Posizione</string>
+    <string name="network_traffic_location_disable">Disattivata</string>
+    <string name="network_traffic_location_statusbar">Barra di stato</string>
+    <string name="network_traffic_location_quick_statusbar">Barra di stato rapida</string>
+    <string name="network_traffic_mode_title">Modalità display</string>
+    <string name="network_traffic_mode_up">Solo upload</string>
+    <string name="network_traffic_mode_down">Solo download</string>
     <string name="network_traffic_mode_all">Upload and download</string>
     <string name="network_traffic_autohide">Auto hide</string>
     <string name="network_traffic_autohide_summary">Hide the traffic monitor when inactive</string>
@@ -331,28 +331,28 @@
     <string name="torch_long_press_power_gesture_title">Long press for torch</string>
     <string name="torch_long_press_power_gesture_desc">Activate the torch by long pressing the power button while the display is off</string>
     <string name="torch_long_press_power_timeout_title">Automatically turn torch off</string>
-    <string name="torch_long_press_power_timeout_never">Never</string>
-    <string name="torch_long_press_power_timeout_1min">1 minute</string>
-    <string name="torch_long_press_power_timeout_2min">2 minutes</string>
-    <string name="torch_long_press_power_timeout_5min">5 minutes</string>
-    <string name="torch_long_press_power_timeout_10min">10 minutes</string>
+    <string name="torch_long_press_power_timeout_never">Mai</string>
+    <string name="torch_long_press_power_timeout_1min">1 minuto</string>
+    <string name="torch_long_press_power_timeout_2min">2 minuti</string>
+    <string name="torch_long_press_power_timeout_5min">5 minuti</string>
+    <string name="torch_long_press_power_timeout_10min">10 minuti</string>
     <!-- Key backlight -->
-    <string name="button_backlight_title">Backlight</string>
-    <string name="button_backlight_enabled">Illuminate buttons</string>
-    <string name="button_backlight_only_when_pressed_title">Illuminate buttons only when pressed</string>
-    <string name="keyboard_backlight_enabled">Illuminate keyboard</string>
-    <string name="button_backlight_seekbar_title">Button brightness</string>
-    <string name="keyboard_backlight_seekbar_title">Keyboard brightness</string>
-    <string name="backlight_timeout_title">Illumination timeout</string>
-    <string name="backlight_timeout_unlimited">Don\'t turn off</string>
-    <string name="backlight_summary_disabled">Disabled</string>
-    <string name="backlight_summary_enabled_with_timeout">Enabled for <xliff:g id="timeout">%s</xliff:g></string>
-    <string name="backlight_summary_enabled">Enabled</string>
+    <string name="button_backlight_title">Retroilluminazione</string>
+    <string name="button_backlight_enabled">Illumina i pulsanti</string>
+    <string name="button_backlight_only_when_pressed_title">Illumina i pulsanti solo se premuti</string>
+    <string name="keyboard_backlight_enabled">Illumina la tastiera</string>
+    <string name="button_backlight_seekbar_title">Pulsante luminosità</string>
+    <string name="keyboard_backlight_seekbar_title">Luminosità della tastiera</string>
+    <string name="backlight_timeout_title">Durata retroilluminazione</string>
+    <string name="backlight_timeout_unlimited">Non spegnere</string>
+    <string name="backlight_summary_disabled">Disattivata</string>
+    <string name="backlight_summary_enabled_with_timeout">Attiva per <xliff:g id="timeout">%s</xliff:g></string>
+    <string name="backlight_summary_enabled">Attivata</string>
     <!-- Buttons - Enable navbar -->
-    <string name="disable_navkeys_title">Enable on-screen nav bar</string>
-    <string name="disable_navkeys_summary">Enable on-screen navigation bar and disable hardware buttons</string>
+    <string name="disable_navkeys_title">Abilita la barra di navigazione su schermo</string>
+    <string name="disable_navkeys_summary">Attiva la barra di navigazione su schermo e disattiva i pulsanti fisici</string>
     <!-- Buttons - Swap capacitive keys -->
-    <string name="swap_capacitive_keys_title">Swap capacitive buttons</string>
+    <string name="swap_capacitive_keys_title">Inverti pulsanti capacitivi</string>
     <string name="swap_capacitive_keys_summary">Inverti la posizione dei tasti indietro e recenti</string>
     <!-- Others settings -->
     <string name="others_settings_title">Altre impostazioni</string>
@@ -360,8 +360,8 @@
     <!-- QS footer -->
     <string name="qs_footer_category">Piè di pagina</string>
     <!-- Power Menu -->
-    <string name="power_menu_title">Menu di accensione</string>
-    <string name="power_menu_title_summary">Visualizza o modifica le voci del menù di accensione</string>
+    <string name="power_menu_title">Menù di alimentazione</string>
+    <string name="power_menu_title_summary">Visualizza o modifica le voci del menù alimentazione</string>
     <string name="powermenu_screenshot">Screenshot</string>
     <string name="powermenu_power">Accensione/Spegnimento</string>
     <string name="powermenu_advanced">Riavvio avanzato</string>
@@ -825,10 +825,10 @@
     <string name="doze_on_charge_title">Always on when charging</string>
     <string name="doze_on_charge_summary">Show doze screen all the time when charging</string>
     <!-- Brightness slider styles -->
-    <string name="brightness_slider_style_title">Brightness slider style</string>
-    <string name="brightness_slider_style_default">Default</string>
-    <string name="brightness_slider_style_filled">Filled</string>
-    <string name="brightness_slider_style_thin">Thin</string>
+    <string name="brightness_slider_style_title">Stile slider luminosità</string>
+    <string name="brightness_slider_style_default">Predefinito</string>
+    <string name="brightness_slider_style_filled">Riempito</string>
+    <string name="brightness_slider_style_thin">Sottile</string>
     <!-- Parallel space -->
     <string name="laboratory_parallel_space_title">Parallel space</string>
     <string name="laboratory_parallel_space_summary">Allow running multiple instances of the same application in parallel</string>
