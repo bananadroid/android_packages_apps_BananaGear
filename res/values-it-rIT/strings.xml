@@ -68,22 +68,22 @@
     <string name="caution">Attenzione</string>
     <string name="enable">Attiva</string>
     <string name="disable">Disattiva</string>
-    <string name="none_string">None</string>
+    <string name="none_string">Nessuno</string>
     <string name="reset">Reset</string>
     <!-- Units -->
-    <string name="unit_seconds">seconds</string>
-    <string name="unit_milliseconds">milliseconds</string>
+    <string name="unit_seconds">secondi</string>
+    <string name="unit_milliseconds">millisecondi</string>
     <string name="unit_pixels">dp</string>
     <string name="unit_hz">hz</string>
     <!-- Statusbar tuner -->
-    <string name="statusbar_tuner_title">Statusbar icons</string>
-    <string name="statusbar_tuner_title_summary">Enable or disable many statusbar icons</string>
+    <string name="statusbar_tuner_title">Icona della barra di stato</string>
+    <string name="statusbar_tuner_title_summary">Attiva o disattiva le icone di sistema della barra di stato</string>
     <!-- Wakeup options -->
-    <string name="wakeup_when_plugged_unplugged_title">Wake up on charge</string>
-    <string name="wakeup_when_plugged_unplugged_summary">Wake up device if charger is plugged/unplugged</string>
+    <string name="wakeup_when_plugged_unplugged_title">Risveglia al collegamento</string>
+    <string name="wakeup_when_plugged_unplugged_summary">Risveglia il dispositivo quando il caricabatteria viene collegato/scollegato</string>
     <!-- Lock screen cover art -->
-    <string name="lockscreen_media_art_options_title">Lock screen media art</string>
-    <string name="lockscreen_media_art_title">Media cover art</string>
+    <string name="lockscreen_media_art_options_title">Copertina sulla schermata di blocco</string>
+    <string name="lockscreen_media_art_title">Copertina dei media</string>
     <string name="lockscreen_media_art_summary">Display media cover art when available</string>
     <!-- Lock screen album art filter -->
     <string name="lockscreen_albumart_filter_title">Media cover art filter</string>
@@ -295,9 +295,9 @@
     <string name="hardware_keys_double_tap_title">Azione a doppio tocco</string>
     <string name="hardware_keys_action_nothing">Nessuna azione</string>
     <string name="hardware_keys_action_menu">Apri/chiudi menù</string>
-    <string name="hardware_keys_action_app_switch">Recent apps switcher</string>
-    <string name="hardware_keys_action_search">Search assistant</string>
-    <string name="hardware_keys_action_voice_search">Voice search</string>
+    <string name="hardware_keys_action_app_switch">Selettore app recenti</string>
+    <string name="hardware_keys_action_search">Assistente di ricerca</string>
+    <string name="hardware_keys_action_voice_search">Ricerca vocale</string>
     <string name="hardware_keys_action_in_app_search">In-app search</string>
     <string name="hardware_keys_action_launch_camera">Launch camera</string>
     <string name="hardware_keys_action_sleep">Turn screen off</string>
@@ -353,73 +353,73 @@
     <string name="disable_navkeys_summary">Enable on-screen navigation bar and disable hardware buttons</string>
     <!-- Buttons - Swap capacitive keys -->
     <string name="swap_capacitive_keys_title">Swap capacitive buttons</string>
-    <string name="swap_capacitive_keys_summary">Swap the order of recents and back buttons</string>
+    <string name="swap_capacitive_keys_summary">Inverti la posizione dei tasti indietro e recenti</string>
     <!-- Others settings -->
-    <string name="others_settings_title">Others settings</string>
-    <string name="additional_buttons_title">Additional buttons</string>
+    <string name="others_settings_title">Altre impostazioni</string>
+    <string name="additional_buttons_title">Tasti aggiuntivi</string>
     <!-- QS footer -->
-    <string name="qs_footer_category">Footer</string>
+    <string name="qs_footer_category">Piè di pagina</string>
     <!-- Power Menu -->
-    <string name="power_menu_title">Power menu</string>
-    <string name="power_menu_title_summary">View or change power menu entries</string>
+    <string name="power_menu_title">Menu di accensione</string>
+    <string name="power_menu_title_summary">Visualizza o modifica le voci del menù di accensione</string>
     <string name="powermenu_screenshot">Screenshot</string>
-    <string name="powermenu_power">Power</string>
-    <string name="powermenu_advanced">Advanced reboot options</string>
-    <string name="powermenu_restart">Restart</string>
-    <string name="powermenu_airplane">Airplane</string>
-    <string name="powermenu_settings">Settings</string>
-    <string name="powermenu_lockdown">Lock Down</string>
-    <string name="powermenu_torch">Flashlight</string>
-    <string name="powermenu_soundpanel">Sound Panel</string>
-    <string name="powermenu_users">Users</string>
-    <string name="powermenu_logout">Logout</string>
-    <string name="powermenu_emergency">Emergency</string>
+    <string name="powermenu_power">Accensione/Spegnimento</string>
+    <string name="powermenu_advanced">Riavvio avanzato</string>
+    <string name="powermenu_restart">Riavvia</string>
+    <string name="powermenu_airplane">Modalità aereo</string>
+    <string name="powermenu_settings">Impostazioni</string>
+    <string name="powermenu_lockdown">Blocco</string>
+    <string name="powermenu_torch">Torcia</string>
+    <string name="powermenu_soundpanel">Pannello Audio</string>
+    <string name="powermenu_users">Utenti</string>
+    <string name="powermenu_logout">Esci</string>
+    <string name="powermenu_emergency">Emergenza</string>
     <!-- Lockscreen battery info indicator  -->
-    <string name="lockscreen_battery_info_title">Lockscreen charging info</string>
-    <string name="lockscreen_battery_info_summary">Show charging current, voltage, wattage and battery temperature on lockscreen while charging</string>
+    <string name="lockscreen_battery_info_title">Informazioni di ricarica nella schermata di blocco</string>
+    <string name="lockscreen_battery_info_summary">Mostra la corrente di carica, la tensione, la potenza e la temperatura della batteria nella schermata di blocco durante la ricarica</string>
     <!-- QS Weather Options -->
-    <string name="qs_weather_summary">Configure system weather</string>
-    <string name="qs_weather_hidden">Hide weather</string>
-    <string name="qs_temperature_image_show_scale">Show temp with scale and image</string>
-    <string name="qs_temperature_image_hide_scale">Show temp with image without scale</string>
-    <string name="qs_temperature_show_scale_hide_image">Show temp with scale</string>
-    <string name="qs_temperature_hide_scale_hide_image">Show temp without scale</string>
-    <string name="qs_show_image">Show image</string>
-    <string name="weather_show_all_condition">Show temp with scale, image, and weather condition</string>
+    <string name="qs_weather_summary">Configura il meteo di sistema</string>
+    <string name="qs_weather_hidden">Nascondi il meteo</string>
+    <string name="qs_temperature_image_show_scale">Mostra la temperatura con la scala e l\'icona</string>
+    <string name="qs_temperature_image_hide_scale">Mostra la temperatura con l\'icona senza la scala</string>
+    <string name="qs_temperature_show_scale_hide_image">Mostra la temperatura con la scala</string>
+    <string name="qs_temperature_hide_scale_hide_image">Mostra la temperatura senza la scala</string>
+    <string name="qs_show_image">Mostra l\'icona</string>
+    <string name="weather_show_all_condition">Mostra la temperatura con scala, icona e condizioni meteorologiche</string>
     <!-- Launcher Weather Options -->
-    <string name="launcher_weather_title">Launcher weather</string>
+    <string name="launcher_weather_title">Meteo sul Launcher</string>
     <!-- Launcher Weather Options -->
-    <string name="kg_weather_title">Lockscreen weather</string>
+    <string name="kg_weather_title">Meteo in schermata di blocco</string>
     <!-- Omni weather -->
-    <string name="qs_weather_settings_title">Weather Settings</string>
-    <string name="qs_weather_settings_summary">Setup icon pack and weather service</string>
-    <string name="weather_title">Weather Settings</string>
-    <string name="weather_config_title">Weather service</string>
-    <string name="weather_config_summary">System service settings</string>
-    <string name="weather_icon_pack_title">Condition icon pack</string>
-    <string name="weather_icon_pack_info_title">You are not limited to the pre-installed weather icon packages. Search the Google PlayStore with the keyword \"chronus icons\" and you will find a lot of additional packages.</string>
-    <string name="qsweather_settings_title">QuickSettings Weather</string>
-    <string name="qsweather_settings_summary">Setup quicksettings weather views</string>
+    <string name="qs_weather_settings_title">Impostazioni del meteo</string>
+    <string name="qs_weather_settings_summary">Configura pacchetto icone e servizio meteo</string>
+    <string name="weather_title">Impostazioni del meteo</string>
+    <string name="weather_config_title">Servizio del meteo</string>
+    <string name="weather_config_summary">Impostazioni del servizio meteo</string>
+    <string name="weather_icon_pack_title">Pacchetto icone condizioni del meteo</string>
+    <string name="weather_icon_pack_info_title">Non sei limitato ai pacchetti di icone preinstallati. Cerca sul Google Play Store \"chronus icons\" e troverai molti pacchetti aggiuntivi.</string>
+    <string name="qsweather_settings_title">Meteo nelle impostazioni rapide</string>
+    <string name="qsweather_settings_summary">Configura il meteo nelle impostazioni rapide</string>
     <!-- Privacy Indicator -->
-    <string name="mic_camera_privacy_indicator_title">Mic and camera privacy indicator</string>
-    <string name="mic_camera_privacy_indicator_summary">Show indicator when any app uses mic or camera</string>
-    <string name="location_privacy_indicator_title">Location privacy indicator</string>
-    <string name="location_privacy_indicator_summary">Show indicator when any app uses location</string>
-    <string name="projection_privacy_indicator_title">Media projection privacy indicator</string>
-    <string name="projection_privacy_indicator_summary">Show indicator when device screen is projected</string>
+    <string name="mic_camera_privacy_indicator_title">Indicatore di privacy di microfono e fotocamera</string>
+    <string name="mic_camera_privacy_indicator_summary">Mostra un indicatore separato quando qualsiasi app utilizza il microfono o la fotocamera</string>
+    <string name="location_privacy_indicator_title">Indicatore di privacy della posizione</string>
+    <string name="location_privacy_indicator_summary">Mostra un indicatore separato quando qualsiasi app utilizza la posizione</string>
+    <string name="projection_privacy_indicator_title">Indicatore di privacy della proiezione media</string>
+    <string name="projection_privacy_indicator_summary">Mostra un indicatore quando lo schermo del dispositivo è proiettato</string>
     <!-- Data usage info in QS footer -->
-    <string name="qs_footer_datausage_title">Data usage</string>
-    <string name="qs_footer_datausage_summary">Display data usage summary in quick settings footer</string>
+    <string name="qs_footer_datausage_title">Utilizzo dati</string>
+    <string name="qs_footer_datausage_summary">Mostra il sommario dell\'uso dei dati nel piè di pagina delle impostazioni rapide</string>
     <!-- QS Transparency -->
-    <string name="qs_transparency_title">Background transparency</string>
-    <string name="qs_transparency_summary">Set transparency level for QS background</string>
+    <string name="qs_transparency_title">Trasparenza dello sfondo</string>
+    <string name="qs_transparency_summary">Configura il livello di trasparenza per lo sfondo delle impostazioni rapide</string>
     <!-- QS Tiles animation  -->
-    <string name="qs_tile_animation_title">Tiles animation</string>
-    <string name="qs_tile_animation_style_title">Animation style</string>
-    <string name="qs_tile_animation_duration_title">Animation duration</string>
-    <string name="qs_tile_animation_interpolator_title">Animation interpolator</string>
-    <string name="qs_tile_animation_style_off">No animation</string>
-    <string name="qs_tile_animation_style_rotate">Rotate</string>
+    <string name="qs_tile_animation_title">Animazione tiles</string>
+    <string name="qs_tile_animation_style_title">Stile dell\'animazione</string>
+    <string name="qs_tile_animation_duration_title">Durata dell\'animazione</string>
+    <string name="qs_tile_animation_interpolator_title">Effetto dell\'animazione</string>
+    <string name="qs_tile_animation_style_off">Nessuna animazione</string>
+    <string name="qs_tile_animation_style_rotate">Ruota</string>
     <string name="qs_tile_animation_style_flipx">Flip X</string>
     <string name="qs_tile_animation_style_flipy">Flip Y</string>
     <string name="qs_tile_animation_interpolator_linearInterpolator">Linear</string>
@@ -477,62 +477,62 @@
     <string name="screen_off_udfps_title">Screen off UDFPS</string>
     <string name="screen_off_udfps_summary">Keep UDFPS enabled when the screen is off</string>
     <!-- Navbar Animation -->
-    <string name="pixel_navbar_anim_title">Pixel animation</string>
-    <string name="pixel_navbar_anim_summary">Enable pixel style animation for 3-button navigation bar</string>
+    <string name="pixel_navbar_anim_title">Animazione Pixel</string>
+    <string name="pixel_navbar_anim_summary">Abilita l\'animazione in stile Pixel per la barra di navigazione a 2/3 pulsanti</string>
     <!-- Doze settings -->
     <string name="doze_display_title">Ambient display</string>
-    <string name="doze_display_summary">Configure settings for ambient display</string>
-    <string name="doze_additional_settings_title">Additional settings</string>
-    <string name="doze_additional_settings_summary">Customize device specific ambient display settings</string>
-    <string name="doze_sensor_title">Sensor based</string>
-    <string name="raise_to_wake_title">Wake up</string>
-    <string name="raise_to_wake_summary">Wake up the device instead of pulsing notifications</string>
-    <string name="tilt_title">Tilt</string>
-    <string name="tilt_summary">Pulse notifications on tilt</string>
-    <string name="pickup_title">Pick up</string>
-    <string name="pickup_summary">Pulse notifications on pick up</string>
-    <string name="handwave_title">Hand wave</string>
-    <string name="handwave_summary">Pulse notifications on hand wave</string>
-    <string name="pocket_title">Pocket</string>
-    <string name="pocket_summary">Pulse notifications on removal from pocket</string>
-    <string name="doze_vibrate">Vibrate</string>
-    <string name="doze_vibrate_summary">Duration to vibrate when pulsing notifications</string>
-    <string name="sensor_warning_message">Settings based on sensors are subject to hardware compatibility. Enabling sensors for ambient display may increase power drain.</string>
+    <string name="doze_display_summary">Configura le impostazioni per l\'Ambient display</string>
+    <string name="doze_additional_settings_title">Impostazioni aggiuntive</string>
+    <string name="doze_additional_settings_summary">Personalizza le impostazioni dell\'Ambient display specifiche del dispositivo</string>
+    <string name="doze_sensor_title">Basato sul sensore</string>
+    <string name="raise_to_wake_title">Risveglio</string>
+    <string name="raise_to_wake_summary">Risveglia il dispositivo invece di mostrare le notifiche</string>
+    <string name="tilt_title">Inclinazione</string>
+    <string name="tilt_summary">Notifiche pulsanti durante l\'inclinazione</string>
+    <string name="pickup_title">Sollevamento</string>
+    <string name="pickup_summary">Notifiche pulsanti al sollevamento</string>
+    <string name="handwave_title">Movimento della mano</string>
+    <string name="handwave_summary">Mostra notifiche al passaggio della mano</string>
+    <string name="pocket_title">Modalità Tasca</string>
+    <string name="pocket_summary">Mostra le notifiche quando estrai il dispositivo dalla tasca</string>
+    <string name="doze_vibrate">Vibrazione</string>
+    <string name="doze_vibrate_summary">Durata della vibrazione quando ci sono notifiche pulsanti</string>
+    <string name="sensor_warning_message">Le impostazioni basate sui sensori sono soggette a compatibilità hardware. L\'attivazione dei sensori per monitorare l\'Ambient display può aumentare il consumo di batteria.</string>
     <!-- Ambient Ticker -->
-    <string name="pulse_on_new_tracks_title">Music ticker</string>
-    <string name="pulse_on_new_tracks_summary">Show music ticker on Ambient Display during track change</string>
+    <string name="pulse_on_new_tracks_title">Ticker musicale</string>
+    <string name="pulse_on_new_tracks_summary">Mostra ticker musicale su Ambient display durante il cambio traccia</string>
     <!-- Notch: Full screen apps -->
-    <string name="display_cutout_force_fullscreen_title">Full screen apps</string>
-    <string name="display_cutout_force_fullscreen_summary">Force apps to ignore notch space</string>
-    <string name="display_cutout_force_fullscreen_no_apps">No apps</string>
+    <string name="display_cutout_force_fullscreen_title">App a schermo intero</string>
+    <string name="display_cutout_force_fullscreen_summary">Forza le app a ignorare lo spazio della notch</string>
+    <string name="display_cutout_force_fullscreen_no_apps">Nessuna app</string>
     <!-- Notification guts kill app button -->
-    <string name="notification_guts_kill_app_button_title">Force stop button</string>
-    <string name="notification_guts_kill_app_button_summary">Show force stop button in the notification\'s longpress menu</string>
+    <string name="notification_guts_kill_app_button_title">Pulsante di arresto forzato</string>
+    <string name="notification_guts_kill_app_button_summary">Mostra un pulsante per terminare l\'applicazione quando si preme a lungo sulla notifica</string>
     <!-- Smart Pixels -->
-    <string name="smart_pixels_warning_text">Smart pixels is a power saving feature. Depending on how many pixels you decide to turn off, you could see improvement in battery life. Note that in some cases it can result in unresponsive areas on touch screen</string>
+    <string name="smart_pixels_warning_text">Smart pixels è una funzionalità di risparmio energetico. A seconda di quanti pixel decidi di disattivare, potresti vedere un miglioramento nella durata della batteria. Nota bene che in alcuni casi potresti avere aree non reattive sul display.</string>
     <string name="smart_pixels_title">Smart Pixels</string>
-    <string name="smart_pixels_summary">Save battery by shutting off extra pixels</string>
-    <string name="smart_pixels_enable_title">Enable Smart Pixels</string>
-    <string name="smart_pixels_enable_summary">Shut off pixels to reduce power consumption</string>
-    <string name="smart_pixels_on_power_save_title">Auto-enable on battery saver</string>
-    <string name="smart_pixels_on_power_save_summary">Enable Smart Pixels when battery saver is enabled</string>
-    <string name="smart_pixels_percent">Percent of pixels to disable</string>
-    <string name="smart_pixels_shift_title">Burn-in protection</string>
-    <string name="smart_pixels_shift_summary">Prevents burn-in on OLED devices by shifting pixels every so often</string>
-    <string name="custom_timeout_summary_15secs">15 seconds</string>
-    <string name="custom_timeout_summary_30secs">30 seconds</string>
-    <string name="custom_timeout_summary_1min">1 minute</string>
-    <string name="custom_timeout_summary_2mins">2 minutes</string>
-    <string name="custom_timeout_summary_5mins">5 minutes</string>
-    <string name="custom_timeout_summary_10mins">10 minutes</string>
-    <string name="custom_timeout_summary_20mins">20 minutes</string>
-    <string name="custom_timeout_summary_30mins">30 minutes</string>
-    <string name="custom_timeout_summary_1hour">1 hour</string>
+    <string name="smart_pixels_summary">Risparmia batteria spegnendo i pixel extra</string>
+    <string name="smart_pixels_enable_title">Attiva Smart Pixels</string>
+    <string name="smart_pixels_enable_summary">Spegni i pixel per ridurre il consumo energetico</string>
+    <string name="smart_pixels_on_power_save_title">Attiva automaticamente con risparmio energetico</string>
+    <string name="smart_pixels_on_power_save_summary">Attiva Smart Pixels quando il risparmio energetico viene attivato</string>
+    <string name="smart_pixels_percent">Percentuale di pixel da disattivare</string>
+    <string name="smart_pixels_shift_title">Protezione burn-in</string>
+    <string name="smart_pixels_shift_summary">Previene il burn-in su dispositivi OLED spostando ogni tanto i pixel</string>
+    <string name="custom_timeout_summary_15secs">15 secondi</string>
+    <string name="custom_timeout_summary_30secs">30 secondi</string>
+    <string name="custom_timeout_summary_1min">1 minuto</string>
+    <string name="custom_timeout_summary_2mins">2 minuti</string>
+    <string name="custom_timeout_summary_5mins">5 minuti</string>
+    <string name="custom_timeout_summary_10mins">10 minuti</string>
+    <string name="custom_timeout_summary_20mins">20 minuti</string>
+    <string name="custom_timeout_summary_30mins">30 minuti</string>
+    <string name="custom_timeout_summary_1hour">1 ora</string>
     <!-- Screen Off animation -->
-    <string name="screen_off_animation_title">Screen off animation</string>
-    <string name="screen_off_animation_default">Default</string>
-    <string name="screen_off_animation_crt">CRT</string>
-    <string name="screen_off_animation_scale">Scale</string>
+    <string name="screen_off_animation_title">Animazione di spegnimento dello schermo</string>
+    <string name="screen_off_animation_default">Predefinito</string>
+    <string name="screen_off_animation_crt">Tubo Catodico</string>
+    <string name="screen_off_animation_scale">Scala</string>
     <!-- Heads up -->
     <string name="notification_heads_up_title">Heads up</string>
     <string name="notification_heads_up_summary">Allow pop up notifications</string>
