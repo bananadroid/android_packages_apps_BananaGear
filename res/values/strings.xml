@@ -90,6 +90,8 @@
     <string name="banana_about_ThatMalayaliDeb_summary" translatable="false">Mi 11T Pro / vili</string>
     <string name="banana_about_rabilrbl" translatable="false">rabilrbl</string>
     <string name="banana_about_rabilrbl_summary" translatable="false">Redmi 5 Plus / vince</string>
+    <string name="banana_about_Dann." translatable="false">Dann.</string>
+    <string name="banana_about_Dann._summary" translatable="false">Realme Trinket / realme_trinket</string>
 
     <!-- Categories -->
     <string name="lockscreen_title">Lockscreen</string>
