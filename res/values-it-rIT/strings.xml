@@ -826,6 +826,8 @@
     <string name="brightness_slider_style_default">Predefinito</string>
     <string name="brightness_slider_style_filled">Riempito</string>
     <string name="brightness_slider_style_thin">Sottile</string>
+    <string name="brightness_slider_style_bang">Bang</string>
+    <string name="brightness_slider_style_acun">Acun</string>
     <!-- Parallel space -->
     <string name="laboratory_parallel_space_title">Spazio parallelo</string>
     <string name="laboratory_parallel_space_summary">Consente l\'esecuzione d\'istanze multiple della stessa applicazione in parallelo</string>
