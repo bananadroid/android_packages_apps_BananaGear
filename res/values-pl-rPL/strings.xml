@@ -445,9 +445,6 @@
     <string name="qs_tile_hide_label_summary">Pokaż tylko ikony kafelków szybkich ustawień</string>
     <string name="qs_tile_vertical_layout_title">Układ pionowy</string>
     <string name="qs_tile_vertical_layout_summary">Włącz układ pionowy dla kafelków szybkich ustawień</string>
-    <!-- Fingerprint Ripple Effect -->
-    <string name="enable_fingerprint_ripple_effect_title">Efekt kropli</string>
-    <string name="enable_fingerprint_ripple_effect_summary">Pokaż efekt kropli podczas odblokowania</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fp_success_vibrate_title">Wibracja uwierzytelniania odcisku palca</string>
     <string name="fp_success_vibrate_summary">Wibruj po pomyślnym uwierzytelnianiu odciskiem palca</string>
