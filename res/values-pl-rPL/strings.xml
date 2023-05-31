@@ -826,6 +826,8 @@
     <string name="brightness_slider_style_default">Domyślny</string>
     <string name="brightness_slider_style_filled">Wypełniony</string>
     <string name="brightness_slider_style_thin">Cienki</string>
+    <string name="brightness_slider_style_bang">Bang</string>
+    <string name="brightness_slider_style_acun">Acun</string>
     <!-- Parallel space -->
     <string name="laboratory_parallel_space_title">Przestrzeń równoległa</string>
     <string name="laboratory_parallel_space_summary">Zezwól na uruchamianie wielu instancji tej samej aplikacji równolegle</string>
