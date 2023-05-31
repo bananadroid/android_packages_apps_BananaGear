@@ -451,22 +451,22 @@
     <string name="theme_customization_font_title">Stile del carattere</string>
     <string name="theme_customization_font_summary">Imposta lo stile del carattere di sistema</string>
     <string name="theme_customization_icon_pack_title">Pacchetto icone</string>
-    <string name="theme_customization_icon_pack_summary">Set custom icon pack style</string>
-    <string name="theme_customization_icon_shape_title">Icon shape</string>
-    <string name="theme_customization_icon_shape_summary">Set system icon shape style</string>
-    <string name="theme_customization_signal_icon_title">Signal icon style</string>
-    <string name="theme_customization_signal_icon_summary">Set custom signal icon style</string>
-    <string name="theme_customization_wifi_icon_title">WiFi icon style</string>
-    <string name="theme_customization_wifi_icon_summary">Set custom wifi icon style</string>
-    <string name="theme_customization_navbar_title">Navbar style</string>
-    <string name="theme_customization_navbar_summary">Set custom navigation bar style</string>
+    <string name="theme_customization_icon_pack_summary">Imposta un pacchetto di icone personalizzato</string>
+    <string name="theme_customization_icon_shape_title">Forma delle icone</string>
+    <string name="theme_customization_icon_shape_summary">Imposta la forma delle icone di sistema</string>
+    <string name="theme_customization_signal_icon_title">Stile icona del segnale</string>
+    <string name="theme_customization_signal_icon_summary">Imposta uno stile personalizzato dell\'icona del segnale</string>
+    <string name="theme_customization_wifi_icon_title">Stile icona WiFi</string>
+    <string name="theme_customization_wifi_icon_summary">Imposta un\'icona del WiFi personalizzata</string>
+    <string name="theme_customization_navbar_title">Stile barra di navigazione</string>
+    <string name="theme_customization_navbar_summary">Imposta uno stile personalizzato per la barra di navigazione</string>
     <!-- UDFPS settings -->
-    <string name="udfps_settings_title">UDFPS customization</string>
-    <string name="udfps_settings_summary">Customize under-display fingerprint scanner</string>
-    <string name="udfps_icon_picker_title">UDFPS icon picker</string>
-    <string name="udfps_icon_picker_summary">Choose your favorite fingerprint icon</string>
-    <string name="udfps_recog_animation_effect_title">UDFPS animation effect</string>
-    <string name="udfps_recog_animation_effect_summary">Choose animation effect</string>
+    <string name="udfps_settings_title">Personalizzazione UDFPS</string>
+    <string name="udfps_settings_summary">Personalizza lo scanner d\'impronte digitali sotto il display</string>
+    <string name="udfps_icon_picker_title">Scegli l\'icona UDFPS</string>
+    <string name="udfps_icon_picker_summary">Scegli la tua icona preferita per l\'impronta</string>
+    <string name="udfps_recog_animation_effect_title">Effetto animazione UDFPS</string>
+    <string name="udfps_recog_animation_effect_summary">Scegli l\'animazione</string>
     <!-- Screen off UDFPS -->
     <string name="screen_off_udfps_title">Screen off UDFPS</string>
     <string name="screen_off_udfps_summary">Keep UDFPS enabled when the screen is off</string>
