@@ -115,9 +115,6 @@
     <!-- Netflix Spooft -->
     <string name="netflix_spoof_title">Tipuan Netflix</string>
     <string name="netflix_spoof_summary">Palsukan perangkat Anda sebagai model lain untuk Netflix</string>
-    <!-- Spoof all apps -->
-    <string name="spoof_all_title">Palsukan semua aplikasi</string>
-    <string name="spoof_all_summary">Palsukan semua aplikasi yang mendukung sebagai Pixel XL untuk berbagai manfaat (aksesoris samsung, melewati cts, dll)</string>
     <!-- Status bar - Clock -->
     <string name="status_bar_clock_title">Jam &amp; tanggal</string>
     <string name="status_bar_clock_summary">Kustomisasi jam &amp; tanggal</string>
