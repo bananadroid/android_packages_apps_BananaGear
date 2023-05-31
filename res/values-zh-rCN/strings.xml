@@ -115,9 +115,6 @@
     <!-- Netflix Spooft -->
     <string name="netflix_spoof_title">Netflix spoof</string>
     <string name="netflix_spoof_summary">Spoof your device as different model for Netflix</string>
-    <!-- Spoof all apps -->
-    <string name="spoof_all_title">Spoof All apps</string>
-    <string name="spoof_all_summary">Spoof all possible apps as Pixel XL for misc benefits (samsung accesories, cts pass etc)</string>
     <!-- Status bar - Clock -->
     <string name="status_bar_clock_title">Clock &amp; date</string>
     <string name="status_bar_clock_summary">Customize clock &amp; date</string>
