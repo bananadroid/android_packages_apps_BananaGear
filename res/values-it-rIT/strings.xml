@@ -445,9 +445,6 @@
     <string name="qs_tile_hide_label_summary">Mostra solo l\'icona dei tiles nelle impostazioni rapide</string>
     <string name="qs_tile_vertical_layout_title">Disposizione verticale</string>
     <string name="qs_tile_vertical_layout_summary">Abilita la disposizione verticale per i tiles delle impostazioni rapide</string>
-    <!-- Fingerprint Ripple Effect -->
-    <string name="enable_fingerprint_ripple_effect_title">Effetto ondulazione</string>
-    <string name="enable_fingerprint_ripple_effect_summary">Mostra effetto ondulazione allo sblocco</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fp_success_vibrate_title">Vibrazione all\'autenticazione con l\'impronta digitale</string>
     <string name="fp_success_vibrate_summary">Vibra all\'avvenuta autenticazione tramite impronta digitale</string>
