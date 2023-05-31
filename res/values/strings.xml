@@ -560,10 +560,6 @@
     <string name="qs_tile_vertical_layout_title">Vertical layout</string>
     <string name="qs_tile_vertical_layout_summary">Enable vertical layout for QS tiles</string>
 
-    <!-- Fingerprint Ripple Effect -->
-    <string name="enable_fingerprint_ripple_effect_title">Ripple effect</string>
-    <string name="enable_fingerprint_ripple_effect_summary">Show ripple effect on unlock</string>
-
     <!-- Fingerprint authentication vibration -->
     <string name="fp_success_vibrate_title">Fingerprint authentication vibration</string>
     <string name="fp_success_vibrate_summary">Vibrate when fingerprint authentication is successful</string>

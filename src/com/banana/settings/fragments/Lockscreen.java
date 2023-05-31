@@ -46,7 +46,6 @@ public class Lockscreen extends DashboardFragment implements
     public static final String TAG = "Lockscreen";
 
     private static final String LOCKSCREEN_GESTURES_CATEGORY = "lockscreen_gestures_category";
-    private static final String KEY_RIPPLE_EFFECT = "enable_ripple_effect";
     private static final String KEY_FP_SUCCESS_VIBRATE = "fp_success_vibrate";
     private static final String KEY_FP_ERROR_VIBRATE = "fp_error_vibrate";
     private static final String KEY_UDFPS_SETTINGS = "udfps_settings";
@@ -58,7 +57,6 @@ public class Lockscreen extends DashboardFragment implements
     private static final String[] DEFAULT_START_SHORTCUT = new String[] { "home", "flashlight", "do_not_disturb" };
     private static final String[] DEFAULT_END_SHORTCUT = new String[] { "wallet", "qr_code_scanner", "camera" };
 
-    private Preference mRippleEffect;
     private Preference mFingerprintVib;
     private Preference mFingerprintVibErr;
     private Preference mUdfpsSettings;
@@ -81,13 +79,11 @@ public class Lockscreen extends DashboardFragment implements
 
         FingerprintManager mFingerprintManager = (FingerprintManager)
                 getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
-        mRippleEffect = (Preference) findPreference(KEY_RIPPLE_EFFECT);
         mFingerprintVib = (Preference) findPreference(KEY_FP_SUCCESS_VIBRATE);
         mFingerprintVibErr = (Preference) findPreference(KEY_FP_ERROR_VIBRATE);
         mUdfpsSettings = (Preference) findPreference(KEY_UDFPS_SETTINGS);
 
         if (mFingerprintManager == null || !mFingerprintManager.isHardwareDetected()) {
-            gestCategory.removePreference(mRippleEffect);
             gestCategory.removePreference(mFingerprintVib);
             gestCategory.removePreference(mFingerprintVibErr);
             gestCategory.removePreference(mUdfpsSettings);
@@ -139,8 +135,6 @@ mKGCustomClockColor = (SwitchPreference) findPreference(KG_CUSTOM_CLOCK_COLOR_EN
 
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
-        Settings.System.putIntForUser(resolver,
-                Settings.System.ENABLE_RIPPLE_EFFECT, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.FP_ERROR_VIBRATE, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
@@ -239,7 +233,6 @@ mKGCustomClockColor = (SwitchPreference) findPreference(KG_CUSTOM_CLOCK_COLOR_EN
                     FingerprintManager mFingerprintManager = (FingerprintManager)
                             context.getSystemService(Context.FINGERPRINT_SERVICE);
                     if (mFingerprintManager == null || !mFingerprintManager.isHardwareDetected()) {
-                        keys.add(KEY_RIPPLE_EFFECT);
                         keys.add(KEY_FP_SUCCESS_VIBRATE);
                         keys.add(KEY_FP_ERROR_VIBRATE);
                         keys.add(KEY_UDFPS_SETTINGS);
