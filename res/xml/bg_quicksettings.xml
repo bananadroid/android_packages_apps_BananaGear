@@ -26,6 +26,13 @@
             android:entryValues="@array/qs_brightness_slider_position_values"
             android:defaultValue="0" />
 
+        <!-- Brightness slider -->
+        <Preference
+            android:key="android.theme.customization.brightness_slider"
+            android:title="@string/theme_customization_brightness_slider_title"
+            android:summary="@string/theme_customization_brightness_slider_summary"
+            android:fragment="com.banana.settings.fragments.ui.BrightnessSlider"/>
+
         <com.banana.support.preferences.SecureSettingSwitchPreference
             android:key="qs_show_auto_brightness"
             android:title="@string/qs_show_auto_brightness_title"
