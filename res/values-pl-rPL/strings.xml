@@ -166,10 +166,10 @@
     <string name="outline">Obrys</string>
     <string name="solid_accent_gradient">Gradient litego koloru</string>
     <string name="solid_gradient">Solidna strona gradientu</string>
-    <string name="solid_gradient_corner">Solid accent gradient sharp</string>
+    <string name="solid_gradient_corner">Ostry solidny gradient akcentowy</string>
     <string name="solid_gradient_void">Gradient Void</string>
-    <string name="solid_gradient_neumorph">Neumorph gradient</string>
-    <string name="solid_gradient_stroke">Sharp gradient stroke</string>
+    <string name="solid_gradient_neumorph">Gradient Neumorfa</string>
+    <string name="solid_gradient_stroke">Ostry skok gradientu</string>
     <string name="solid_accent_transperent">Accent transperent</string>
     <string name="solid_gradient_light">Gradient light</string>
     <string name="solid_gradient_shape">Sharp gradient corner</string>
@@ -468,7 +468,7 @@
     <string name="udfps_recog_animation_effect_title">Efekt animacji UDFPS</string>
     <string name="udfps_recog_animation_effect_summary">Wybierz efekt animacji</string>
     <!-- Screen off UDFPS -->
-    <string name="screen_off_udfps_title">Screen off UDFPS</string>
+    <string name="screen_off_udfps_title">Wyłączony ekran UDFPS</string>
     <string name="screen_off_udfps_summary">Zachowaj UDFPS włączone gdy ekran jest wyłączony</string>
     <!-- Navbar Animation -->
     <string name="pixel_navbar_anim_title">Animacja Pixel</string>
@@ -564,7 +564,7 @@
     <string name="notification_material_dismiss_style_6">Krzyżyk</string>
     <string name="notification_material_dismiss_style_7">Przetworzenie</string>
     <string name="notification_material_dismiss_style_8">Wymazanie</string>
-    <string name="notification_material_dismiss_style_9">Checklist</string>
+    <string name="notification_material_dismiss_style_9">Lista kontrolna</string>
     <string name="notification_material_dismiss_style_10">Magnes</string>
     <!-- Pulse music visualizer -->
     <string name="pulse_help_policy_notice_title">O funkcji Pulse</string>
@@ -648,8 +648,8 @@
     <string name="monet_engine_luminance_factor_summary">Wyższe wartości tworzą jaśniejsze kolory</string>
     <string name="monet_engine_chroma_factor_title">Współczynnik chroma</string>
     <string name="monet_engine_chroma_factor_summary">Wyższe wartości tworzą mocniejsze kolory</string>
-    <string name="monet_engine_tint_background_title">Tint background</string>
-    <string name="monet_engine_tint_background_summary">Make luminance and chroma selection affect background colors as well</string>
+    <string name="monet_engine_tint_background_title">Odcień tła</string>
+    <string name="monet_engine_tint_background_summary">Spraw, aby jaskrawość i wybór barwy również wpływały na kolory tła</string>
     <!-- Charging animation -->
     <string name="charging_animation_title">Animacja ładowania</string>
     <string name="charging_animation_summary">Wyświetl animację podczas ładowania</string>
@@ -673,7 +673,7 @@
     <string name="combined_status_bar_signal_icons_summary">Włącz połączone ikony sygnału (SystemUI zostanie automatycznie uruchomiony po przełączeniu)</string>
     <!-- CustomUI -->
     <string name="custom_ui_toggle_title">Ustawienia elementów panelu ustawień</string>
-    <string name="custom_ui_toggle_summary">Enable card-style dashboard UI</string>
+    <string name="custom_ui_toggle_summary">Włącz pulpit nawigacyjny w stylu kart</string>
     <!-- About phone header -->
     <string name="about_phone_header_title">O nagłówku telefonu</string>
     <string name="about_phone_header_summary">Włącz nagłówek telefonu na panelu ustawień</string>
@@ -735,7 +735,7 @@
     <string name="pulse_ambient_light_duration_title">Czas oświetlenia</string>
     <string name="pulse_ambient_light_repeat_count_title">Liczba powtórzeń oświetlenia</string>
     <string name="pulse_ambient_light_show_always_title">Zawsze pokazuj</string>
-    <string name="pulse_ambient_light_show_always_summary">Show lights for all doze events and not just notifications</string>
+    <string name="pulse_ambient_light_show_always_summary">Pokaż diodę dla wszystkich wydarzeń drzemki, a nie tylko powiadomień</string>
     <string name="pulse_ambient_light_repeat_direction_title">Tryb powtarzania podświetlenia</string>
     <string name="pulse_ambient_light_repeat_direction_restart">Uruchom ponownie</string>
     <string name="pulse_ambient_light_repeat_direction_reverse">Odwrócone</string>
