@@ -181,6 +181,12 @@
     <PreferenceCategory
         android:title="@string/other_category_title">
 
+        <com.banana.support.preferences.SystemSettingSwitchPreference
+            android:key="qs_dual_tone"
+            android:title="@string/qs_dual_tone_title"
+            android:summary="@string/qs_dual_tone_summary"
+            android:defaultValue="true" />
+
         <com.banana.support.preferences.SystemSettingSeekBarPreference
             android:key="qs_transparency"
             android:title="@string/qs_transparency_title"
