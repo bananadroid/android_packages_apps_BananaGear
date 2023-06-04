@@ -21,8 +21,8 @@
     <string name="banana_about_summary">Por que estas tan serio?</string>
     <string name="banana_about_link">Visita y únete</string>
     <string name="banana_website_title">Sitio Web</string>
-    <string name="banana_website_summary">Haz clic para visitar nuestro sitio web</string>
-    <string name="banana_telegram_summary">Únete a nuestra comunidad.</string>
+    <string name="banana_website_summary">Haga clic aquí para visitar nuestra página web</string>
+    <string name="banana_telegram_summary">¡Únete a nuestra comunidad!</string>
     <string name="banana_github_summary">¡Pulsa aquí para abrir nuestro Github!</string>
     <string name="banana_about_info_summary">BananaDroid es una ROM personalizada de Android ordinaria y no es en absoluto mejor que otros. Intentamos hacer lo que nos guste y podemos dar una buena experiencia a los usuarios. Por favor, no dudes en informar de cualquier problema en tu teléfono a nuestro grupo de telegramas. No podemos prometer resolver su problema, pero intentaremos averiguarlo.</string>
     <string name="banana_about_team">Contribuidores</string>
@@ -652,63 +652,63 @@
     <string name="monet_engine_tint_background_summary">Hacer que la selección de luminosidad y cromatismo afecte a colores de fondo</string>
     <!-- Charging animation -->
     <string name="charging_animation_title">Animación de carga</string>
-    <string name="charging_animation_summary">Display an animation when the device is plugged in</string>
+    <string name="charging_animation_summary">Mostrar una animación cuando se conecte el cargador</string>
     <!-- Pocket judge -->
-    <string name="pocket_judge_title">Pocket detection</string>
-    <string name="pocket_judge_summary">Block screen and button inputs when device is in pocket</string>
+    <string name="pocket_judge_title">Detección de bolsillo</string>
+    <string name="pocket_judge_summary">Bloquear la pantalla y botones cuando el dispositivo esta en el bolsillo</string>
     <!-- Navbar Layout -->
-    <string name="navbar_layout_category_title">Layout</string>
-    <string name="navbar_layout_title">Layout</string>
+    <string name="navbar_layout_category_title">Estilo</string>
+    <string name="navbar_layout_title">Estilo</string>
     <string name="navbar_layout_normal">Normal</string>
-    <string name="navbar_layout_compact">Compact</string>
-    <string name="navbar_layout_leftleaning">Left-leaning</string>
-    <string name="navbar_layout_rightleaning">Right-leaning</string>
-    <string name="navbar_invert_layout_title">Invert layout</string>
-    <string name="navbar_invert_layout_summary">Inverts the layout of the navigation bar and other items, such as the IME switcher</string>
+    <string name="navbar_layout_compact">Compacto</string>
+    <string name="navbar_layout_leftleaning">Para zurdos</string>
+    <string name="navbar_layout_rightleaning">Para diestros</string>
+    <string name="navbar_invert_layout_title">Invertir barra de navegación</string>
+    <string name="navbar_invert_layout_summary">Invierte el diseño de la barra de navegación y otros elementos, como el conmutador EME</string>
     <!-- Hide statusbar on lockscreen -->
-    <string name="lockscreen_hide_status_bar_title">Hide Statusbar</string>
-    <string name="lockscreen_hide_status_bar_summary">When enabled, statusbar will be hidden on lockscreen</string>
+    <string name="lockscreen_hide_status_bar_title">Ocultar barra de estado</string>
+    <string name="lockscreen_hide_status_bar_summary">Cuando está activado, se ocultará la barra de estado en la pantalla de bloqueo</string>
     <!-- Combined signal icons in status bar -->
-    <string name="combined_status_bar_signal_icons_title">Combined signal icons</string>
-    <string name="combined_status_bar_signal_icons_summary">Enable combined signal icons (SystemUI will automatically restart upon toggling)</string>
+    <string name="combined_status_bar_signal_icons_title">Iconos de señal combinados</string>
+    <string name="combined_status_bar_signal_icons_summary">Activar iconos de señal combinados (Se reiniciará la interfaz de usuario)</string>
     <!-- CustomUI -->
-    <string name="custom_ui_toggle_title">Settings dashboard style</string>
-    <string name="custom_ui_toggle_summary">Enable card-style dashboard UI</string>
+    <string name="custom_ui_toggle_title">Elementos del panel de ajustes</string>
+    <string name="custom_ui_toggle_summary">Activar interfaz de usuario estilo tarjeta</string>
     <!-- About phone header -->
-    <string name="about_phone_header_title">About phone header</string>
-    <string name="about_phone_header_summary">Enable about phone header on Settings dashboard</string>
+    <string name="about_phone_header_title">Estilo de Acerca del Teléfono</string>
+    <string name="about_phone_header_summary">Activar el encabezado del teléfono en el panel de ajustes</string>
     <!-- Toast app icon -->
-    <string name="toast_icon_title">Toast app icon</string>
-    <string name="toast_icon_summary">Display the app\'s icon corresponding with the toast</string>
+    <string name="toast_icon_title">Icono de la aplicación de Toast</string>
+    <string name="toast_icon_summary">Muestra el icono de la aplicación que ha emitido una notificación Toast</string>
     <!-- UI styles -->
-    <string name="theme_customization_ui_style_title">UI Style</string>
-    <string name="theme_customization_ui_style_summary">Set custom style for your interface</string>
+    <string name="theme_customization_ui_style_title">Estilo de la Interfaz</string>
+    <string name="theme_customization_ui_style_summary">Establece un estilo personalizado para tu interfaz</string>
     <!-- Lockscreen Clock -->
-    <string name="kg_custom_clock_color_enabled_title">Custom lockscreen clock color</string>
-    <string name="kg_custom_clock_color_title">Select color</string>
+    <string name="kg_custom_clock_color_enabled_title">Fuente del reloj de la pantalla de bloqueo</string>
+    <string name="kg_custom_clock_color_title">Seleccionar color</string>
     <!-- Fonts -->
     <string name="clock_format">12\n26</string>
     <string name="text_sample">AaBbCc</string>
-    <string name="theme_customization_lock_clock_title">Clock font style</string>
-    <string name="theme_customization_lock_clock_summary">Set lockscreen clock font style</string>
-    <string name="theme_customization_date_font_title">Date font style</string>
-    <string name="theme_customization_date_font_summary">Set lockscreen date font style</string>
+    <string name="theme_customization_lock_clock_title">Estilo de fuente del reloj</string>
+    <string name="theme_customization_lock_clock_summary">Establecer el estilo de fuente del reloj de la pantalla de bloqueo</string>
+    <string name="theme_customization_date_font_title">Estilo de fuente de la fecha</string>
+    <string name="theme_customization_date_font_summary">Elige el tipo de letra para la fecha en pantalla de bloqueo</string>
     <!-- Ignore window secure -->
-    <string name="ignore_window_secure_title">Ignore window secure flags</string>
+    <string name="ignore_window_secure_title">Ignorar limitaciones de ventanas seguras</string>
     <string name="ignore_window_secure_summary">This removes the screenshots and screenrecords limits for all applications. Normally, special applications are replaced with black areas in records. This can be convenient in some cases but may lead to privacy leaks. After changing this toggle, you may need to restart applications for the change to take effect.</string>
     <!-- Blink flashlight for incoming calls -->
-    <string name="flashlight_category_title">Flashlight</string>
-    <string name="flashlight_on_call_title">Blink flashlight for incoming call</string>
-    <string name="flashlight_on_call_disabled">Disabled</string>
-    <string name="flashlight_on_call_ringer">When ringing</string>
-    <string name="flashlight_on_call_no_ringer">When ringer is silent</string>
-    <string name="flashlight_on_call_silent">When entirely silent (no ringer or vibrator)</string>
-    <string name="flashlight_on_call_always">Always</string>
-    <string name="flashlight_on_call_ignore_dnd_title">Ignore DND</string>
-    <string name="flashlight_on_call_ignore_dnd_summary">Whether to flash when Do Not Disturb mode is active</string>
-    <string name="flashlight_on_call_rate_title">Blink rate</string>
+    <string name="flashlight_category_title">Linterna</string>
+    <string name="flashlight_on_call_title">Parpadeo de linterna en llamada</string>
+    <string name="flashlight_on_call_disabled">Deshabilitado</string>
+    <string name="flashlight_on_call_ringer">Mientras está sonando</string>
+    <string name="flashlight_on_call_no_ringer">Cuando el timbre está silenciado</string>
+    <string name="flashlight_on_call_silent">Cuando está completamente silenciado (sin timbre ni vibración)</string>
+    <string name="flashlight_on_call_always">Siempre</string>
+    <string name="flashlight_on_call_ignore_dnd_title">Ignorar modo no molestar</string>
+    <string name="flashlight_on_call_ignore_dnd_summary">Parpadear cuando el modo no molestar está activo</string>
+    <string name="flashlight_on_call_rate_title">Intervalo de parpadeo</string>
     <!-- Quick settings styles -->
-    <string name="qs_styles_title">Quick settings styles</string>
+    <string name="qs_styles_title">Estilo de configuración rápida</string>
     <string name="qs_ui_title">Interfaz de ajustes rápidos</string>
     <string name="qs_outline">Outline</string>
     <string name="qs_two_tone">Acento doble tono</string>
@@ -827,13 +827,13 @@
     <string name="brightness_slider_style_acun">Acun</string>
     <!-- Parallel space -->
     <string name="laboratory_parallel_space_title">Espacio Paralelo</string>
-    <string name="laboratory_parallel_space_summary">Allow running multiple instances of the same application in parallel</string>
+    <string name="laboratory_parallel_space_summary">Permite ejecutar múltiples instancias de la misma aplicación en paralelo</string>
     <!-- Google services -->
     <string name="gms_enabled_title">Servicios de Google</string>
     <string name="gms_enabled_summary">Controla los servicios de Google y las aplicaciones integradas</string>
-    <string name="gms_enabled_footer">Before disabling Google services and core apps, you should disable \"Find My Device\" and 2-step verification on your Google account. It is strongly recommended to keep this setting enabled else apps dependent on Google components will be affected. If you run into any issues after changing this setting, perform a factory reset.</string>
+    <string name="gms_enabled_footer">Antes de desactivar los servicios de Google y las aplicaciones integradas, debería desactivar la verificación \"Encontrar mi dispositivo\" y la verificación en dos pasos en su cuenta de Google. Se recomienda encarecidamente mantener esta configuración activada, de lo contrario las aplicaciones dependientes de los componentes de Google se verán afectadas. Si tiene algún problema después de cambiar esta configuración, realice un restablecimiento de fábrica.</string>
     <!-- Volume Styles -->
     <string name="rui_style">Estilo Realme</string>
-    <string name="rising_style">Rising style</string>
+    <string name="rising_style">Estrella emergente</string>
     <string name="volume_style_title">Estilo del panel de volumen</string>
 </resources>
