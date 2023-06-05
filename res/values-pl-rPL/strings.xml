@@ -160,20 +160,20 @@
     <string name="qs_date_title">Data</string>
     <string name="qs_date_summary">Wyświetla datę w nagłówku paska stanu</string>
     <!-- Statusbar Clock background chip -->
-    <string name="statusbar_clock_chip_title">Background chip</string>
-    <string name="statusbar_clock_chip_summary">Display accented chip behind clock</string>
+    <string name="statusbar_clock_chip_title">Pudełko tła</string>
+    <string name="statusbar_clock_chip_summary">Wyświetl akcentowane pole za zegarem</string>
     <string name="solid_accent">Stały kolor akcentu</string>
     <string name="outline">Obrys</string>
     <string name="solid_accent_gradient">Gradient litego koloru</string>
     <string name="solid_gradient">Solidna strona gradientu</string>
     <string name="solid_gradient_corner">Ostry solidny gradient akcentowy</string>
-    <string name="solid_gradient_void">Gradient Void</string>
+    <string name="solid_gradient_void">Gradientowa pustka</string>
     <string name="solid_gradient_neumorph">Gradient Neumorfa</string>
     <string name="solid_gradient_stroke">Ostry skok gradientu</string>
-    <string name="solid_accent_transperent">Accent transperent</string>
-    <string name="solid_gradient_light">Gradient light</string>
-    <string name="solid_gradient_shape">Sharp gradient corner</string>
-    <string name="solid_gradient_void_light">Gradient Void light</string>
+    <string name="solid_accent_transperent">Transparentny akcent</string>
+    <string name="solid_gradient_light">Lekki gradient</string>
+    <string name="solid_gradient_shape">Ostry gradient rogu</string>
+    <string name="solid_gradient_void_light">Gradientowa pustka światło</string>
     <!-- Status bar - Battery -->
     <string name="status_bar_battery_category_title">Dostosowania baterii</string>
     <string name="status_bar_battery_style_title">Styl baterii</string>
@@ -661,8 +661,8 @@
     <string name="navbar_layout_title">Wygląd</string>
     <string name="navbar_layout_normal">Normalny</string>
     <string name="navbar_layout_compact">Kompaktowy</string>
-    <string name="navbar_layout_leftleaning">Left-leaning</string>
-    <string name="navbar_layout_rightleaning">Right-leaning</string>
+    <string name="navbar_layout_leftleaning">Pochylony w lewo</string>
+    <string name="navbar_layout_rightleaning">Pochylając się w prawo</string>
     <string name="navbar_invert_layout_title">Odwróć układ</string>
     <string name="navbar_invert_layout_summary">Odwraca układ paska nawigacji i innych elementów, takich jak przełącznik IME</string>
     <!-- Hide statusbar on lockscreen -->
@@ -739,7 +739,7 @@
     <string name="pulse_ambient_light_repeat_direction_title">Tryb powtarzania podświetlenia</string>
     <string name="pulse_ambient_light_repeat_direction_restart">Uruchom ponownie</string>
     <string name="pulse_ambient_light_repeat_direction_reverse">Odwrócone</string>
-    <string name="pulse_ambient_light_layout_title">Light view</string>
+    <string name="pulse_ambient_light_layout_title">Lekki widok</string>
     <string name="pulse_ambient_light_layout_solid">Pełny</string>
     <string name="pulse_ambient_light_layout_faded">Zanikanie</string>
     <string name="pulse_ambient_light_width_title">Szerokość podświetlenia</string>
