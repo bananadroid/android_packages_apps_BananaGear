@@ -116,8 +116,8 @@
     <string name="netflix_spoof_title">Netflix 伪装</string>
     <string name="netflix_spoof_summary">将您的设备伪装为其他机型以获得 Netflix 认证</string>
     <!-- Spoof all apps -->
-    <string name="spoof_all_title">Spoof All apps</string>
-    <string name="spoof_all_summary">Spoof all possible apps as Pixel XL for misc benefits (samsung accesories, cts pass etc)</string>
+    <string name="spoof_all_title">欺骗所有应用程序</string>
+    <string name="spoof_all_summary">将所有可能的应用程序欺骗成 Pixel XL，以获得其他好处（三星配件、cts pass 等)</string>
     <!-- Status bar - Clock -->
     <string name="status_bar_clock_title">时钟 &amp; 日期</string>
     <string name="status_bar_clock_summary">自定义时钟 &amp; 日期</string>
