@@ -834,7 +834,7 @@
     <!-- Google services -->
     <string name="gms_enabled_title">Servis Google</string>
     <string name="gms_enabled_summary">Mengatur servis google dan aplikasi inti</string>
-    <string name="gms_enabled_footer">Sebelum menonaktifkan servis google dan aplikasi inti, Anda harus menonaktifkan \"Find My Device\" dan verifikasi 2 langkah pada akun Google Anda. Ini sangat direkomendasikan untuk menjaga pengaturan ini tetap aktif atau aplikasi yang berhubungan dengan komponen Google akan berdampak. Jika ada kendala ketika merubah pengaturan ini, lakukan reset pabrik.</string>
+    <string name="gms_enabled_footer">Sebelum menonaktifkan servis google dan aplikasi inti, Anda harus menonaktifkan \"Temukan Perangkat Saya\" dan verifikasi 2 langkah pada akun Google Anda. Ini sangat direkomendasikan untuk menjaga pengaturan ini tetap aktif atau aplikasi yang berhubungan dengan komponen Google akan berdampak. Jika ada kendala ketika merubah pengaturan ini, lakukan reset pabrik.</string>
     <!-- Volume Styles -->
     <string name="rui_style">Gaya Realme UI</string>
     <string name="rising_style">Gaya rising</string>
