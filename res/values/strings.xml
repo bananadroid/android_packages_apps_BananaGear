@@ -94,6 +94,8 @@
     <string name="banana_about_Dann._summary" translatable="false">Realme Trinket / realme_trinket</string>
     <string name="banana_about_Fl0w" translatable="false">Fl0w</string>
     <string name="banana_about_Fl0w_summary" translatable="false">Redmi note 9 / merlinx</string>
+    <string name="banana_about_Noviceyash" translatable="false">Noviceyash</string>
+    <string name="banana_about_Noviceyash_summary" translatable="false">Redmi 7/Y3 / Onclite/onc</string>
 
     <!-- Categories -->
     <string name="lockscreen_title">Lockscreen</string>

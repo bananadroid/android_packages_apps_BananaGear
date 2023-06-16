@@ -371,4 +371,13 @@
                 android:action="android.intent.action.VIEW"
                 android:data="https://t.me/fl00ww" />
         </Preference>
+	<Preference
+            android:title="@string/banana_about_Noviceyash"
+            android:summary="@string/banana_about_Noviceyash_summary"
+            android:icon="@drawable/Noviceyash"
+            settings:layout="@layout/banana_about">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://t.me/Noviceyash" />
+        </Preference>
 </PreferenceScreen>
