@@ -389,4 +389,13 @@
                 android:action="android.intent.action.VIEW"
                 android:data="https://t.me/franlop77" />
         </Preference>
+        <Preference
+            android:title="@string/banana_about_asriadirahim"
+            android:summary="@string/banana_about_asriadirahim_summary"
+            android:icon="@drawable/asriadirahim"
+            settings:layout="@layout/banana_about">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://t.me/asriadirahim" />
+        </Preference>
 </PreferenceScreen>
