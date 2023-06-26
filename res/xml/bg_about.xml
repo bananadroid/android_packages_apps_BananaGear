@@ -95,7 +95,7 @@
                 android:action="android.intent.action.VIEW"
                 android:data="https://t.me/AbrarNoob" />
         </Preference>
-
+		
         <Preference
             android:title="@string/banana_about_aepranata"
             android:summary="@string/banana_about_aepranata_summary"
@@ -105,6 +105,16 @@
                 android:action="android.intent.action.VIEW"
                 android:data="https://t.me/aepranata" />
         </Preference>
+
+	<Preference
+	    android:title="@string/banana_about_BlackCat"
+	    android:summary="@string/banana_about_BlackCat_summary"
+	    android:icon="@drawable/BlackCat"
+	    settings:layout="@layout/banana_about">
+	    <intent
+	        android:action="android.intent.action.VIEW"
+	        android:data="https://t.me/OpenSourceBlackCat" />
+	</Preference>
 
         <Preference
             android:title="@string/banana_about_Andreock"
