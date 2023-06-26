@@ -98,6 +98,8 @@
     <string name="banana_about_Noviceyash_summary" translatable="false">Redmi 7/Y3 / Onclite/onc</string>
     <string name="banana_about_franlop77" translatable="false">franlop77</string>
     <string name="banana_about_franlop77_summary" translatable="false">Poco X5 Pro / Redwood</string>
+    <string name="banana_about_asriadirahim" translatable="false">Asriadi Rahim</string>
+    <string name="banana_about_asriadirahim_summary" translatable="false">Google Pixel 2 | Google Pixel 2XL</string>
 
     <!-- Categories -->
     <string name="lockscreen_title">Lockscreen</string>
