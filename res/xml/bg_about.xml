@@ -104,7 +104,7 @@
 	    <intent
 	        android:action="android.intent.action.VIEW"
 	        android:data="https://t.me/OpenSourceBlackCat" />
-	</Prefernce>
+	</Preference>
 		
         <Preference
             android:title="@string/banana_about_aepranata"
