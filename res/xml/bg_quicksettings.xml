@@ -62,6 +62,12 @@
             android:summary="@string/theme_customization_brightness_slider_summary"
             android:fragment="com.banana.settings.fragments.ui.BrightnessSlider"/>
 
+        <com.banana.support.preferences.SystemSettingSwitchPreference
+            android:key="qs_brightness_slider_haptic"
+            android:title="@string/qs_brightness_slider_haptic_title"
+            android:summary="@string/qs_brightness_slider_haptic_summary"
+            android:defaultValue="false" />
+
         <com.banana.support.preferences.SecureSettingSwitchPreference
             android:key="qs_show_auto_brightness"
             android:title="@string/qs_show_auto_brightness_title"
