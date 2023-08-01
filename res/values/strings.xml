@@ -836,4 +836,10 @@
     <string name="qs_panel_style_two_tone_trans">Two-Tone Translucent</string>
     <string name="qs_ui_title">QS tiles style</string>
     <string name="android_eleven">Android 11</string>
+
+    <!-- QS tile shape -->
+    <string name="qs_tile_shape">A11 QS tile shape</string>
+    <string name="qs_tile_round">Circle tiles</string>
+    <string name="qs_tile_rect">Square tiles</string>
+    <string name="qs_tile_mix">Circle &amp; Square tiles</string>
 </resources>
