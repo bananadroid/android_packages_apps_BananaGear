@@ -181,19 +181,18 @@
     <PreferenceCategory
         android:title="@string/other_category_title">
 
+        <!-- QS Header image -->
+        <Preference
+            android:key="qs_header_image"
+            android:title="@string/qs_header_image_title"
+            android:summary="@string/qs_header_image_summary"
+            android:fragment="com.banana.settings.fragments.qs.QsHeaderImageSettings" />
+
         <com.banana.support.preferences.SystemSettingSwitchPreference
             android:key="qs_dual_tone"
             android:title="@string/qs_dual_tone_title"
             android:summary="@string/qs_dual_tone_summary"
             android:defaultValue="true" />
-
-        <com.banana.support.preferences.SystemSettingSeekBarPreference
-            android:key="qs_header_image"
-            android:title="@string/qs_header_image_title"
-            android:defaultValue="0"
-            settings:interval="1"
-            android:max="39"
-            android:min="0" />
 
         <com.banana.support.preferences.SystemSettingSeekBarPreference
             android:key="qs_transparency"
