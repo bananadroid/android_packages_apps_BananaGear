@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2022 FlamingoOS Project
+ * Copyright (C) 2023 Havoc-OS
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,65 +17,106 @@
 
 package com.banana.settings.fragments.doze;
 
-import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.ContentResolver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.DialogInterface;
-import android.content.SharedPreferences;
-import android.graphics.Color;
-import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.os.UserHandle;
-import android.provider.Settings;
-
-import androidx.preference.ListPreference;
 import androidx.preference.Preference;
-import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
-import androidx.preference.Preference.OnPreferenceChangeListener;
-import androidx.preference.SwitchPreference;
+import android.provider.Settings;
+import android.util.TypedValue;
 
 import com.android.internal.logging.nano.MetricsProto;
+import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settingslib.search.SearchIndexable;
 
-import java.util.List;
-import java.util.ArrayList;
+import com.banana.support.colorpicker.ColorPickerPreference;
+import com.banana.support.preferences.SystemSettingListPreference;
 
 public class EdgeLightSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
+    private static final String TAG = "EdgeLightSettings";
+    private static final String KEY_COLOR_MODE = "edge_light_color_mode";
+    private static final String KEY_COLOR = "edge_light_custom_color";
+
+    private SystemSettingListPreference mColorModePref;
+    private ColorPickerPreference mColorPref;
+
+    @Override
+    protected int getPreferenceScreenResId() {
+        return R.xml.edge_light_settings;
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.edge_light_settings);
-    }
 
-    @Override
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
-        return false;
-    }
+        final ContentResolver resolver = getContentResolver();
+        final int accentColor = getAccentColor();
 
-    public static void reset(Context mContext) {
-        ContentResolver resolver = mContext.getContentResolver();
-        Settings.System.putIntForUser(resolver,
-                Settings.System.EDGE_LIGHT_ENABLED, 0, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.EDGE_LIGHT_ALWAYS_TRIGGER_ON_PULSE, 0, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.EDGE_LIGHT_REPEAT_ANIMATION, 0, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.EDGE_LIGHT_COLOR_MODE, 0, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.EDGE_LIGHT_CUSTOM_COLOR, Color.WHITE, UserHandle.USER_CURRENT);
+        mColorPref = (ColorPickerPreference) findPreference(KEY_COLOR);
+        int value = Settings.System.getIntForUser(resolver,
+                KEY_COLOR, accentColor, UserHandle.USER_CURRENT);
+        mColorPref.setDefaultValue(accentColor);
+        String colorHex = String.format("#%08x", (0xFFFFFFFF & value));
+        if (value == accentColor) {
+            mColorPref.setSummary(R.string.default_string);
+        } else {
+            mColorPref.setSummary(colorHex);
+        }
+        mColorPref.setNewPreviewColor(value);
+        mColorPref.setOnPreferenceChangeListener(this);
+
+        mColorModePref = (SystemSettingListPreference) findPreference(KEY_COLOR_MODE);
+        value = Settings.System.getIntForUser(resolver,
+                KEY_COLOR_MODE, 0, UserHandle.USER_CURRENT);
+        mColorModePref.setValue(Integer.toString(value));
+        mColorModePref.setSummary(mColorModePref.getEntry());
+        mColorModePref.setOnPreferenceChangeListener(this);
+        mColorPref.setVisible(value == 2);
     }
 
     @Override
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.BANANADROID;
     }
+
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        final ContentResolver resolver = getContentResolver();
+        if (preference == mColorModePref) {
+            int value = Integer.valueOf((String) newValue);
+            int index = mColorModePref.findIndexOfValue((String) newValue);
+            mColorModePref.setSummary(mColorModePref.getEntries()[index]);
+            Settings.System.putIntForUser(resolver,
+                    KEY_COLOR_MODE, value, UserHandle.USER_CURRENT);
+            mColorPref.setVisible(value == 2);
+            return true;
+        } else if (preference == mColorPref) {
+            int accentColor = getAccentColor();
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            if (hex.equals(String.format("#%08x", (0xFFFFFFFF & accentColor)))) {
+                preference.setSummary(R.string.default_string);
+            } else {
+                preference.setSummary(hex);
+            }
+            int color = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putIntForUser(resolver,
+                    KEY_COLOR, color, UserHandle.USER_CURRENT);
+            return true;
+        }
+        return false;
+    }
+
+private int getAccentColor() {
+    final TypedValue value = new TypedValue();
+    getContext().getTheme().resolveAttribute(android.R.attr.colorAccent, value, true);
+    return value.data;
+}
+
+    public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+            new BaseSearchIndexProvider(R.xml.edge_light_settings);
 }

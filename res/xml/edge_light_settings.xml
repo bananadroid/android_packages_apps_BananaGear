@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2022 FlamingoOS Project
+<!--
+     Copyright (C) 2022 FlamingoOS Project
+     Copyright (C) 2023 Havoc-OS
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -17,9 +19,13 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/edge_light_title">
 
-    <com.banana.support.preferences.SystemSettingSwitchPreference
+    <com.android.settingslib.widget.TopIntroPreference
+        android:key="edge_light_intro"
+        android:title="@string/edge_light_summary" />
+
+    <com.banana.support.preferences.SystemSettingMainSwitchPreference
         android:key="edge_light_enabled"
-        android:title="@string/enable"
+        android:title="@string/edge_light_switch_title"
         android:defaultValue="false" />
 
     <com.banana.support.preferences.SystemSettingSwitchPreference
@@ -46,10 +52,9 @@
         android:defaultValue="0"
         android:dependency="edge_light_enabled" />
 
-    <com.banana.support.colorpicker.SystemSettingColorPickerPreference
+    <com.banana.support.colorpicker.ColorPickerPreference
         android:key="edge_light_custom_color"
         android:title="@string/custom_color"
-        android:defaultValue="#FFFFFF"
+        android:defaultValue="0xFFFFFFFF"
         android:dependency="edge_light_enabled" />
-
 </PreferenceScreen>
