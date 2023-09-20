@@ -50,6 +50,14 @@
         android:defaultValue="false"
         android:summary="@string/pulse_on_new_tracks_summary" />
 
+    <Preference
+        android:key="ambient_edge_light"
+        android:title="@string/ambient_edge_light_title"
+        android:summary="@string/ambient_edge_light_summary"
+        android:fragment="com.banana.settings.fragments.doze.AmbientEdgeLightSettings"
+        settings:controller="com.banana.settings.fragments.doze.AmbientEdgeLightPreferenceController"
+        settings:requiresConfig="@bool/config_show_ambient_edge_light" />
+
     <PreferenceCategory
         android:key="doze_sensor"
         android:title="@string/doze_sensor_title" >
