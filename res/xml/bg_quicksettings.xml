@@ -8,6 +8,22 @@
     android:title="@string/quicksettings_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <!-- Battery styles -->
+    <com.banana.support.preferences.SystemSettingListPreference
+        android:key="qs_battery_style"
+        android:title="@string/status_bar_battery_style_title"
+        android:entries="@array/qs_battery_style_entries"
+        android:entryValues="@array/qs_battery_style_values"
+        android:defaultValue="-1" />
+
+    <!-- Battery location -->
+    <com.banana.support.preferences.SystemSettingListPreference
+        android:key="qs_show_battery_percent"
+        android:title="@string/status_bar_battery_percent_title"
+        android:entries="@array/status_bar_battery_percent_entries"
+        android:entryValues="@array/status_bar_battery_percent_values"
+        android:defaultValue="2" />
+
     <PreferenceCategory
         android:title="@string/qs_show_brightness_slider_title">
 
