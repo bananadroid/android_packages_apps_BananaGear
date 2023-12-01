@@ -18,6 +18,7 @@ package com.banana.settings.fragments;
 
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.provider.SearchIndexableResource;
@@ -34,7 +35,9 @@ import com.android.settingslib.search.SearchIndexable;
 import com.banana.settings.fragments.BatteryBar;
 import com.banana.settings.fragments.NetworkTrafficSettings;
 import com.banana.settings.utils.TelephonyUtils;
+import com.banana.settings.utils.ResourceUtils;
 
+import com.banana.support.preferences.CustomSeekBarPreference;
 import com.banana.support.preferences.SystemSettingListPreference;
 
 import java.util.ArrayList;
@@ -52,6 +55,9 @@ public class StatusBar extends DashboardFragment implements
     private static final String KEY_SHOW_ROAMING = "roaming_indicator_icon";
     private static final String KEY_SHOW_FOURG = "show_fourg_icon";
     private static final String KEY_SHOW_DATA_DISABLED = "data_disabled_icon";
+    private static final String KEY_STATUSBAR_TOP_PADDING = "statusbar_top_padding";
+    private static final String KEY_STATUSBAR_LEFT_PADDING = "statusbar_left_padding";
+    private static final String KEY_STATUSBAR_RIGHT_PADDING = "statusbar_right_padding";
 
     private static final int BATTERY_STYLE_PORTRAIT = 0;
     private static final int BATTERY_STYLE_TEXT = 4;
@@ -77,6 +83,7 @@ public class StatusBar extends DashboardFragment implements
 
         ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
+        final Resources res = getResources();
 
         int batterystyle = Settings.System.getIntForUser(getContentResolver(),
                 Settings.System.STATUS_BAR_BATTERY_STYLE, BATTERY_STYLE_PORTRAIT, UserHandle.USER_CURRENT);
@@ -111,6 +118,21 @@ public class StatusBar extends DashboardFragment implements
             prefScreen.removePreference(mShowFourg);
             prefScreen.removePreference(mDataDisabled);
         }
+
+        final int defaultLeftPadding = ResourceUtils.getIntDimensionDp(res,
+                com.android.internal.R.dimen.status_bar_padding_start);
+        CustomSeekBarPreference seekBar = findPreference(KEY_STATUSBAR_LEFT_PADDING);
+        seekBar.setDefaultValue(defaultLeftPadding, true);
+
+        final int defaultRightPadding = ResourceUtils.getIntDimensionDp(res,
+                com.android.internal.R.dimen.status_bar_padding_end);
+        seekBar = findPreference(KEY_STATUSBAR_RIGHT_PADDING);
+        seekBar.setDefaultValue(defaultRightPadding, true);
+
+        final int defaultTopPadding = ResourceUtils.getIntDimensionDp(res,
+                com.android.internal.R.dimen.status_bar_padding_top);
+        seekBar = findPreference(KEY_STATUSBAR_TOP_PADDING);
+        seekBar.setDefaultValue(defaultTopPadding, true);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -147,6 +169,15 @@ public class StatusBar extends DashboardFragment implements
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
         NetworkTrafficSettings.reset(mContext);
+        final Resources res = mContext.getResources();
+
+        final int defaultLeftPadding = ResourceUtils.getIntDimensionDp(res,
+                com.android.internal.R.dimen.status_bar_padding_start);
+        final int defaultRightPadding = ResourceUtils.getIntDimensionDp(res,
+                com.android.internal.R.dimen.status_bar_padding_end);
+        final int defaultTopPadding = ResourceUtils.getIntDimensionDp(res,
+                com.android.internal.R.dimen.status_bar_padding_top);
+
         Settings.System.putIntForUser(resolver,
                 Settings.System.STATUSBAR_COLORED_ICONS, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
@@ -167,6 +198,12 @@ public class StatusBar extends DashboardFragment implements
                 Settings.Secure.ENABLE_PROJECTION_PRIVACY_INDICATOR, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.WIFI_STANDARD_ICON, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.STATUSBAR_LEFT_PADDING, defaultLeftPadding, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.STATUSBAR_RIGHT_PADDING, defaultRightPadding, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.STATUSBAR_TOP_PADDING, defaultTopPadding, UserHandle.USER_CURRENT);
         BatteryBar.reset(mContext);
     }
 
