@@ -141,6 +141,10 @@ public class QuickSettings extends DashboardFragment implements
         Settings.System.putIntForUser(resolver,
                 Settings.System.QS_LAYOUT_COLUMNS_LANDSCAPE, 2, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
+                Settings.System.QQS_LAYOUT_ROWS, 2, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.QQS_LAYOUT_ROWS_LANDSCAPE, 2, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
                 Settings.System.QS_LAYOUT_COLUMNS, 2, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.QS_TILE_VERTICAL_LAYOUT, 0, UserHandle.USER_CURRENT);
