@@ -39,6 +39,7 @@ import com.android.settingslib.widget.LayoutPreference;
 
 import com.banana.support.preferences.ProperSeekBarPreference;
 import com.banana.support.preferences.SystemSettingListPreference;
+import com.banana.support.preferences.SystemSettingSeekBarPreference;
 import com.banana.support.preferences.SystemSettingSwitchPreference;
 
 public class QsTileLayoutSettings extends SettingsPreferenceFragment
@@ -53,6 +54,8 @@ public class QsTileLayoutSettings extends SettingsPreferenceFragment
     private static final String KEY_QS_PANEL_STYLE  = "qs_panel_style";
     private static final String KEY_QS_UI_STYLE  = "qs_ui_style";
     private static final String overlayThemeTarget  = "com.android.systemui";
+    private static final String KEY_QS_LABEL_SIZE = "qs_tile_label_size";
+    private static final String KEY_QS_SECONDARY_LABEL_SIZE = "qs_tile_secondary_label_size";
 
     private Context mContext;
 
@@ -71,6 +74,9 @@ public class QsTileLayoutSettings extends SettingsPreferenceFragment
     private ThemeUtils mThemeUtils;
     private SystemSettingListPreference mQsStyle;
     private SystemSettingListPreference mQsUI;
+
+    private SystemSettingSeekBarPreference mSize;
+    private SystemSettingSeekBarPreference mSizeSec;
 
     @Override
     public void onCreate(Bundle savedInstance) {
@@ -137,6 +143,12 @@ public class QsTileLayoutSettings extends SettingsPreferenceFragment
 
         mVertical = (SystemSettingSwitchPreference) findPreference(KEY_QS_VERTICAL_LAYOUT);
         mVertical.setEnabled(!hideLabel);
+
+        mSize = (SystemSettingSeekBarPreference) findPreference(KEY_QS_LABEL_SIZE);
+        mSize.setEnabled(!hideLabel);
+
+        mSizeSec = (SystemSettingSeekBarPreference) findPreference(KEY_QS_SECONDARY_LABEL_SIZE);
+        mSizeSec.setEnabled(!hideLabel);
     }
 
     @Override
@@ -144,6 +156,8 @@ public class QsTileLayoutSettings extends SettingsPreferenceFragment
         if (preference == mHide) {
             boolean hideLabel = (Boolean) newValue;
             mVertical.setEnabled(!hideLabel);
+            mSize.setEnabled(!hideLabel);
+            mSizeSec.setEnabled(!hideLabel);
         } else if (preference == mQsColumns) {
             int qs_columns = Integer.parseInt(newValue.toString());
             mApplyChange.setEnabled(
