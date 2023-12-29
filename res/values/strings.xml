@@ -559,4 +559,8 @@
     <!-- Material dismiss all button for notifications -->
     <string name="notification_material_dismiss_title">Clear all notification button</string>
     <string name="notification_material_dismiss_summary">Replace clear all notification text with material style floating button</string>
+
+    <!-- WiFi Standard icon -->
+    <string name="wifi_standard_icon_title">WiFi standard</string>
+    <string name="wifi_standard_icon_summary">Display WiFi standard next to WiFi signal</string>
 </resources>
