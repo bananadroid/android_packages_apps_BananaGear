@@ -92,6 +92,12 @@
             android:summary="@string/data_disabled_icon_summary"
             android:defaultValue="true"/>
 
+        <com.banana.support.preferences.SystemSettingSwitchPreference
+            android:key="wifi_standard_icon"
+            android:title="@string/wifi_standard_icon_title"
+            android:summary="@string/wifi_standard_icon_summary"
+            android:defaultValue="false"/>
+
     </PreferenceCategory>
 
     <PreferenceCategory
