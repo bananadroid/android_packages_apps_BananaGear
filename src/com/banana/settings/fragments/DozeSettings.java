@@ -43,6 +43,7 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.banana.settings.fragments.doze.EdgeLightSettings;
 import com.banana.settings.fragments.doze.Utils;
 import com.banana.support.preferences.SecureSettingSeekBarPreference;
 
@@ -268,6 +269,7 @@ public class DozeSettings extends SettingsPreferenceFragment implements
                 Settings.Secure.PULSE_ON_NEW_TRACKS, 0, UserHandle.USER_CURRENT);
         Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.DOZE_ON_CHARGE, 0, UserHandle.USER_CURRENT);
+        EdgeLightSettings.reset(mContext);
     }
 
     @Override
