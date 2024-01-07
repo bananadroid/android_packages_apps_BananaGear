@@ -6,7 +6,8 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/lockscreen_title"
-    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <com.banana.support.preferences.SystemSettingSwitchPreference
         android:key="charging_animation"
@@ -86,6 +87,13 @@
             android:title="@string/theme_customization_lock_clock_title"
             android:summary="@string/theme_customization_lock_clock_summary"
             android:fragment="com.banana.settings.fragments.ui.LockClockFonts"/>
+
+        <com.banana.support.preferences.SystemSettingListPreference
+            android:entries="@array/clock_style_entries"
+            android:title="@string/clock_style_title"
+            android:key="clock_style"
+            android:defaultValue="0"
+            android:entryValues="@array/clock_style_values" />
 
         <com.banana.support.preferences.SecureSettingSwitchPreference
             android:key="lockscreen_media_metadata"
