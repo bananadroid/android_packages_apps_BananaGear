@@ -32,6 +32,13 @@
             android:summary="@string/games_spoof_summary"
             android:defaultValue="false" />
 
+        <!-- Netflix -->
+        <com.banana.support.preferences.SystemPropertySwitchPreference
+            android:key="persist.sys.pixelprops.netflix"
+            android:title="@string/netflix_spoof_title"
+            android:summary="@string/netflix_spoof_summary"
+            android:defaultValue="false" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
