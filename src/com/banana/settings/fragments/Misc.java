@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 BananaDroid
+ * Copyright (C) 2021-2023 BananaDroid
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,44 +16,20 @@
 
 package com.banana.settings.fragments;
 
-import android.app.Activity;
-import android.app.Dialog;
-import android.app.DialogFragment;
-import android.content.ContentResolver;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.res.Resources;
 import android.os.Bundle;
-import android.os.UserHandle;
-import android.os.SystemProperties;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
-import android.text.TextUtils;
-import android.text.format.DateFormat;
-import androidx.fragment.app.Fragment;
 import androidx.preference.*;
 
 import com.android.internal.logging.nano.MetricsProto;
-import com.android.settings.display.EmulateDisplayCutoutPreferenceController;
 import com.android.settings.R;
 import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
-import com.android.settingslib.core.AbstractPreferenceController;
-import com.android.settingslib.core.lifecycle.Lifecycle;
-import com.android.settingslib.development.SystemPropPoker;
 import com.android.settingslib.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
 
-import com.banana.settings.fragments.ui.PulseSettings;
-import com.banana.settings.fragments.ui.SmartPixels;
-import com.banana.support.preferences.CustomSeekBarPreference;
-
-import java.time.format.DateTimeFormatter;
-import java.time.LocalTime;
-import java.util.Arrays;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashSet;
 import java.util.List;
 
 @SearchIndexable
@@ -61,14 +37,6 @@ public class Misc extends DashboardFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
     public static final String TAG = "Misc";
-
-    private static final String KEY_FORCE_FULL_SCREEN = "display_cutout_force_fullscreen_settings";
-    private static final String POCKET_JUDGE = "pocket_judge";
-    private static final String SMART_PIXELS = "smart_pixels";
-
-    private Preference mPocketJudge;
-    private Preference mShowCutoutForce;
-    private Preference mSmartPixels;
 
     @Override
     protected int getPreferenceScreenResId() {
@@ -78,69 +46,10 @@ public class Misc extends DashboardFragment implements
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        ContentResolver resolver = getActivity().getContentResolver();
-
-        final PreferenceScreen prefScreen = getPreferenceScreen();
-        final Context mContext = getActivity().getApplicationContext();
-        final Resources res = getResources();
-
-	final String displayCutout =
-            mContext.getResources().getString(com.android.internal.R.string.config_mainBuiltInDisplayCutout);
-
-        if (TextUtils.isEmpty(displayCutout)) {
-            mShowCutoutForce = (Preference) findPreference(KEY_FORCE_FULL_SCREEN);
-            prefScreen.removePreference(mShowCutoutForce);
-        }
-
-        mSmartPixels = (Preference) prefScreen.findPreference(SMART_PIXELS);
-        boolean mSmartPixelsSupported = getResources().getBoolean(
-                com.android.internal.R.bool.config_supportSmartPixels);
-        if (!mSmartPixelsSupported)
-            prefScreen.removePreference(mSmartPixels);
-
-        mPocketJudge = (Preference) prefScreen.findPreference(POCKET_JUDGE);
-        boolean mPocketJudgeSupported = res.getBoolean(
-                com.android.internal.R.bool.config_pocketModeSupported);
-        if (!mPocketJudgeSupported)
-            prefScreen.removePreference(mPocketJudge);
     }
 
-    public static void reset(Context mContext) {
-        ContentResolver resolver = mContext.getContentResolver();
-        SmartPixels.reset(mContext);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.CHARGING_ANIMATION, 1, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.POCKET_JUDGE, 0, UserHandle.USER_CURRENT);
-        PulseSettings.reset(mContext);
-    }
-
-    @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        ContentResolver resolver = getActivity().getContentResolver();
         return false;
-    }
-
-    @Override
-    protected List<AbstractPreferenceController> createPreferenceControllers(Context context) {
-        return buildPreferenceControllers(context, getSettingsLifecycle(), this);
-    }
-
-    private static List<AbstractPreferenceController> buildPreferenceControllers(
-            Context context, Lifecycle lifecycle, Fragment fragment) {
-        final List<AbstractPreferenceController> controllers = new ArrayList<>();
-        controllers.add(new EmulateDisplayCutoutPreferenceController(context));
-        return controllers;
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
     }
 
     @Override
@@ -170,22 +79,6 @@ public class Misc extends DashboardFragment implements
                 @Override
                 public List<String> getNonIndexableKeys(Context context) {
                     List<String> keys = super.getNonIndexableKeys(context);
-                    final Resources res = context.getResources();
-                    final String displayCutout =
-                        context.getResources().getString(com.android.internal.R.string.config_mainBuiltInDisplayCutout);
-
-                    if (TextUtils.isEmpty(displayCutout)) {
-                        keys.add(KEY_FORCE_FULL_SCREEN);
-                    }
-                    boolean mSmartPixelsSupported = context.getResources().getBoolean(
-                            com.android.internal.R.bool.config_supportSmartPixels);
-                    if (!mSmartPixelsSupported)
-                        keys.add(SMART_PIXELS);
-
-                    boolean mPocketJudgeSupported = res.getBoolean(
-                            com.android.internal.R.bool.config_pocketModeSupported);
-                    if (!mPocketJudgeSupported)
-                        keys.add(POCKET_JUDGE);
 
                     return keys;
                 }

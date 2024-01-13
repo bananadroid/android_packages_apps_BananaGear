@@ -1,92 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2021 BananaDroid
-
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
-
-          http://www.apache.org/licenses/LICENSE-2.0
-
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
+<!--
+     Copyright (C) 2021-2023 BananaDroid
+     SPDX-License-Identifier: Apache-2.0
 -->
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/themes_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
-
-    <SwitchPreference
-        android:key="enable_blurs_on_windows"
-        android:title="@string/window_blurs"/>
-
-    <SwitchPreference
-        android:key="custom_ui_toggle"
-        android:title="@string/custom_ui_toggle_title"
-        android:summary="@string/custom_ui_toggle_summary"
-        android:defaultValue="false" />
-
-    <SwitchPreference
-        android:key="about_phone_header"
-        android:title="@string/about_phone_header_title"
-        android:summary="@string/about_phone_header_summary"
-        android:defaultValue="false" />
-
-    <Preference
-        android:key="monet_engine"
-        android:title="@string/monet_engine_title"
-        android:summary="@string/monet_engine_summary"
-        android:fragment="com.banana.settings.fragments.MonetEngine"/>
-
-    <!-- UI style -->
-    <Preference
-        android:key="android.theme.customization.style"
-        android:title="@string/theme_customization_ui_style_title"
-        android:summary="@string/theme_customization_ui_style_summary"
-        android:fragment="com.banana.settings.fragments.ui.UIStyles"/>
-
-    <!-- Font style -->
-    <Preference
-        android:key="android.theme.customization.fonts"
-        android:title="@string/theme_customization_font_title"
-        android:summary="@string/theme_customization_font_summary"
-        android:fragment="com.banana.settings.fragments.ui.FontsPicker"/>
-
-    <!-- Icon pack -->
-    <Preference
-        android:key="android.theme.customization.icon_pack"
-        android:title="@string/theme_customization_icon_pack_title"
-        android:summary="@string/theme_customization_icon_pack_summary"
-        android:fragment="com.banana.settings.fragments.ui.StatusbarIcons"/>
-
-    <!-- Signal icon style -->
-    <Preference
-        android:key="android.theme.customization.signal_icon"
-        android:title="@string/theme_customization_signal_icon_title"
-        android:summary="@string/theme_customization_signal_icon_summary"
-        android:fragment="com.banana.settings.fragments.ui.SignalIcons"/>
-
-    <!-- Wifi icon style -->
-    <Preference
-        android:key="android.theme.customization.wifi_icon"
-        android:title="@string/theme_customization_wifi_icon_title"
-        android:summary="@string/theme_customization_wifi_icon_summary"
-        android:fragment="com.banana.settings.fragments.ui.WifiIcons"/>
-
-    <!-- Adaptive icon pack -->
-    <Preference
-        android:key="android.theme.customization.adaptive_icon_shape"
-        android:title="@string/theme_customization_icon_shape_title"
-        android:summary="@string/theme_customization_icon_shape_summary"
-        android:fragment="com.banana.settings.fragments.ui.IconShapes"/>
-
-    <!-- Navbar Style -->
-    <Preference
-        android:key="android.theme.customization.navbar"
-        android:title="@string/theme_customization_navbar_title"
-        android:summary="@string/theme_customization_navbar_summary"
-        android:fragment="com.banana.settings.fragments.ui.NavbarStyles"/>
 
 </PreferenceScreen>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2021-2023 BananaDroid
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="banana_about_title">About us</string>
+    <string name="banana_about_summary">Why so serious?</string>
+    <string name="banana_about_link">Visit and join</string>
+    <string name="banana_website_title">Website</string>
+    <string name="banana_website_summary">Feel free to visit our website</string>
+    <string name="banana_telegram_title" translatable="false">Telegram</string>
+    <string name="banana_telegram_summary">Join our community chat</string>
+    <string name="banana_github_title" translatable="false">GitHub</string>
+    <string name="banana_github_summary">Check out our GitHub</string>
+    <string name="banana_about_info_summary">BananaDroid is an ordinary Android Custom ROM and absolutely not better than others. We try to do what we like and may give good experience for users. Please don\'t be hesitate to report any issue on your phone to our telegram group. We can\'t promise to solve your issue but we will try to figure it out.</string>
+    <string name="banana_about_team">Contributors</string>
+    <string name="banana_maintainer_team">Maintainers</string>
+    <string name="banana_about_travarilo" translatable="false">Rizky Benggolo</string>
+    <string name="banana_about_travarilo_summary">Lead Developer | Mi 11 Lite maintainer</string>
+    <string name="banana_about_genkzsz11" translatable="false">Muhammad Fikri</string>
+    <string name="banana_about_genkzsz11_summary">Contributor</string>
+    <string name="banana_about_atharv" translatable="false">Atharv Sutar</string>
+    <string name="banana_about_atharv_summary">Contributor</string>
+    <string name="banana_about_AbrarNoob" translatable="false">AbrarNoob</string>
+    <string name="banana_about_AbrarNoob_summary" translatable="false">POCO F3 / alioth</string>
+    <string name="banana_about_BlackCat" translatable="false">AmeyaGurjar(BlackCat)</string>
+    <string name="banana_about_BlackCat_summary" translatable="false">Redmi Note 11 Pro 5G | Poco X4 Pro 5G / veux | peux</string>
+    <string name="banana_about_Andreock" translatable="false">Andreock</string>
+    <string name="banana_about_Andreock_summary" translatable="false">Realme GT Neo 2 / bitra</string>
+    <string name="banana_about_aepranata" translatable="false">Aditya Eka Pranata</string>
+    <string name="banana_about_aepranata_summary" translatable="false">Redmi 5 / rosy</string>
+    <string name="banana_about_AradheaRizky" translatable="false">Aradhea Rizky</string>
+    <string name="banana_about_AradheaRizky_summary" translatable="false">Redmi K20 Pro | Mi 9T Pro / raphael</string>
+    <string name="banana_about_Bratasij" translatable="false">Bratasij</string>
+    <string name="banana_about_Bratasij_summary" translatable="false">Redmi Note 11 / spes</string>
+    <string name="banana_about_ChiHuan" translatable="false">Chi Huan</string>
+    <string name="banana_about_ChiHuan_summary" translatable="false">Redmi 8|8A|8A Dual / olives</string>
+    <string name="banana_about_Curse" translatable="false">Curse</string>
+    <string name="banana_about_Curse_summary" translatable="false">Redmi Note 9 Pro Global / joyeuse</string>
+    <string name="banana_about_Djampt" translatable="false">Djampt</string>
+    <string name="banana_about_Djampt_summary" translatable="false">Redmi Note 10 Pro / sweet</string>
+    <string name="banana_about_elizabethangelalorenza" translatable="false">elizabethangelalorenza</string>
+    <string name="banana_about_elizabethangelalorenza_summary" translatable="false">POCO X3 Pro / vayu</string>
+    <string name="banana_about_FPSensor" translatable="false">FPSensor</string>
+    <string name="banana_about_FPSensor_summary" translatable="false">Redmi Note 7 / lavender</string>
+    <string name="banana_about_FrEeRuNnEr4EvEr" translatable="false">FrEeRuNnEr4EvEr</string>
+    <string name="banana_about_FrEeRuNnEr4EvEr_summary" translatable="false">Samsung S10 | Samsung Note 10</string>
+    <string name="banana_about_HonokaKousaka" translatable="false">HonokaKousaka</string>
+    <string name="banana_about_HonokaKousaka_summary" translatable="false">Mi A1 / tissot</string>
+    <string name="banana_about_MOCHA" translatable="false">MOCHA</string>
+    <string name="banana_about_MOCHA_summary" translatable="false">Redmi Note 6 Pro / tulip</string>
+    <string name="banana_about_Mudit" translatable="false">Mudit</string>
+    <string name="banana_about_Mudit_summary" translatable="false">Poco F4 / munch</string>
+    <string name="banana_about_Mrick343" translatable="false">Mrick343</string>
+    <string name="banana_about_Mrick343_summary" translatable="false">OnePlus 9RT / martini</string>
+    <string name="banana_about_MweTwo" translatable="false">MweTwo</string>
+    <string name="banana_about_MweTwo_summary" translatable="false">POCO X3 NFC / surya</string>
+    <string name="banana_about_kibria5" translatable="false">kibria5</string>
+    <string name="banana_about_kibria5_summary" translatable="false">Redmi Note 7 Pro / violet</string>
+    <string name="banana_about_Perses" translatable="false">Perses</string>
+    <string name="banana_about_Perses_summary" translatable="false">Realme X3 / x3</string>
+    <string name="banana_about_ashwani212" translatable="false">ashwani212</string>
+    <string name="banana_about_ashwani212_summary" translatable="false">Realme 3pro / RMX1851</string>
+    <string name="banana_about_RAYAN" translatable="false">RAYAN</string>
+    <string name="banana_about_RAYAN_summary" translatable="false">Mi A3 / laurel_sprout</string>
+    <string name="banana_about_REX" translatable="false">REX</string>
+    <string name="banana_about_REX_summary" translatable="false">Redmi Note 8 / ginkgo</string>
+    <string name="banana_about_Romeo_Delta_Whiskey" translatable="false">Romeo_Delta_Whiskey</string>
+    <string name="banana_about_Romeo_Delta_Whiskey_summary" translatable="false">ZenFone Max Pro M1 / X00TD</string>
+    <string name="banana_about_Namikaze" translatable="false">Namikaze</string>
+    <string name="banana_about_Namikaze_summary" translatable="false">Redmi Note 5 Pro / whyred</string>
+    <string name="banana_about_zkyzzz" translatable="false">zkyzzz</string>
+    <string name="banana_about_zkyzzz_summary" translatable="false">POCO F1 / beryllium</string>
+    <string name="banana_about_PawiX" translatable="false">PawiX</string>
+    <string name="banana_about_PawiX_summary" translatable="false">Xiaomi Mi 11 Lite 5G / renoir</string>
+    <string name="banana_about_ThatMalayaliDeb" translatable="false">ThatMalayaliDeb</string>
+    <string name="banana_about_ThatMalayaliDeb_summary" translatable="false">Mi 11T Pro / vili</string>
+    <string name="banana_about_rabilrbl" translatable="false">rabilrbl</string>
+    <string name="banana_about_rabilrbl_summary" translatable="false">Redmi 5 Plus / vince</string>
+    <string name="banana_about_Dann." translatable="false">Dann.</string>
+    <string name="banana_about_Dann._summary" translatable="false">Realme Trinket / realme_trinket</string>
+    <string name="banana_about_Fl0w" translatable="false">Fl0w</string>
+    <string name="banana_about_Fl0w_summary" translatable="false">Redmi note 9 / merlinx</string>
+    <string name="banana_about_Noviceyash" translatable="false">Noviceyash</string>
+    <string name="banana_about_Noviceyash_summary" translatable="false">Redmi 7/Y3 / Onclite/onc</string>
+    <string name="banana_about_franlop77" translatable="false">franlop77</string>
+    <string name="banana_about_franlop77_summary" translatable="false">Poco X5 Pro / Redwood</string>
+    <string name="banana_about_asriadirahim" translatable="false">Asriadi Rahim</string>
+    <string name="banana_about_asriadirahim_summary" translatable="false">Google Pixel 2 | Google Pixel 2XL</string>
+</resources>

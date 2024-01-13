@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 BananaDroid
+ * Copyright (C) 2021-2023 BananaDroid
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,41 +16,36 @@
 
 package com.banana.settings.fragments;
 
-
-import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.Bundle;
+import android.provider.SearchIndexableResource;
 import android.provider.Settings;
-
-import androidx.fragment.app.Fragment;
 import androidx.preference.*;
-import androidx.preference.Preference.OnPreferenceChangeListener;
 
-import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
-
+import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 import com.android.settings.dashboard.DashboardFragment;
-import com.android.settings.display.EnableBlursPreferenceController;
 import com.android.settings.search.BaseSearchIndexProvider;
-import com.android.settingslib.core.AbstractPreferenceController;
-import com.android.settingslib.core.lifecycle.Lifecycle;
+import com.android.settingslib.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
-
-import com.banana.settings.preferences.AboutHeaderPreferenceController;
-import com.banana.settings.preferences.CustomUIPreferenceController;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
-public class Themes extends DashboardFragment implements OnPreferenceChangeListener {
+@SearchIndexable
+public class Themes extends DashboardFragment implements
+        Preference.OnPreferenceChangeListener, Indexable {
 
     public static final String TAG = "Themes";
 
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    @Override
+    protected int getPreferenceScreenResId() {
+        return R.xml.bg_themes;
+    }
+
+    @Override
+    public void onCreate(Bundle icicle) {
+        super.onCreate(icicle);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -59,7 +54,7 @@ public class Themes extends DashboardFragment implements OnPreferenceChangeListe
 
     @Override
     public int getMetricsCategory() {
-        return MetricsEvent.BANANADROID;
+        return MetricsProto.MetricsEvent.BANANADROID;
     }
 
     @Override
@@ -67,29 +62,25 @@ public class Themes extends DashboardFragment implements OnPreferenceChangeListe
         return TAG;
     }
 
-    @Override
-    protected int getPreferenceScreenResId() {
-        return R.xml.bg_themes;
-    }
+    public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+            new BaseSearchIndexProvider() {
+                @Override
+                public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
+                                                                            boolean enabled) {
+                    ArrayList<SearchIndexableResource> result =
+                            new ArrayList<SearchIndexableResource>();
 
-    @Override
-    protected List<AbstractPreferenceController> createPreferenceControllers(Context context) {
-        return buildPreferenceControllers(context, getSettingsLifecycle(), this);
-    }
+                    SearchIndexableResource sir = new SearchIndexableResource(context);
+                    sir.xmlResId = R.xml.bg_themes;
+                    result.add(sir);
+                    return result;
+                }
 
-    private static List<AbstractPreferenceController> buildPreferenceControllers(
-            Context context, Lifecycle lifecycle, Fragment fragment) {
-        final List<AbstractPreferenceController> controllers = new ArrayList<>();
-        controllers.add(new EnableBlursPreferenceController(context));
-        controllers.add(new CustomUIPreferenceController(context));
-        controllers.add(new AboutHeaderPreferenceController(context));
-        return controllers;
-    }
+                @Override
+                public List<String> getNonIndexableKeys(Context context) {
+                    List<String> keys = super.getNonIndexableKeys(context);
 
-    /**
-     * For Search.
-     */
-
-    public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.bg_themes);
+                    return keys;
+                }
+            };
 }
