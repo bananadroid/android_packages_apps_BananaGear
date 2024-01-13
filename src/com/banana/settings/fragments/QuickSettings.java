@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 BananaDroid
+ * Copyright (C) 2021-2023 BananaDroid
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,53 +16,38 @@
 
 package com.banana.settings.fragments;
 
-import static android.os.UserHandle.USER_CURRENT;
-import static android.os.UserHandle.USER_SYSTEM;
-
-import android.content.ContentResolver;
 import android.content.Context;
-import android.content.om.IOverlayManager;
-import android.database.ContentObserver;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.UserHandle;
-import android.os.Handler;
-import android.os.RemoteException;
-import android.os.ServiceManager;
-import android.provider.Settings;
 import android.provider.SearchIndexableResource;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
+import android.provider.Settings;
 import androidx.preference.*;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
-
-import com.banana.support.preferences.CustomSeekBarPreference;
-import com.banana.support.preferences.SystemSettingListPreference;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @SearchIndexable
-public class QuickSettings extends SettingsPreferenceFragment implements
+public class QuickSettings extends DashboardFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
+
+    public static final String TAG = "QuickSettings";
+
+    @Override
+    protected int getPreferenceScreenResId() {
+        return R.xml.bg_quicksettings;
+    }
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.bg_quicksettings);
     }
 
-    @Override
-    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-    }
-
-    @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         return false;
     }
@@ -70,6 +55,11 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     @Override
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.BANANADROID;
+    }
+
+    @Override
+    protected String getLogTag() {
+        return TAG;
     }
 
     public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
@@ -84,6 +74,13 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                     sir.xmlResId = R.xml.bg_quicksettings;
                     result.add(sir);
                     return result;
+                }
+
+                @Override
+                public List<String> getNonIndexableKeys(Context context) {
+                    List<String> keys = super.getNonIndexableKeys(context);
+
+                    return keys;
                 }
             };
 }
