@@ -260,6 +260,9 @@ public class QuickSettings extends DashboardFragment implements
             case 9:
               overlayThemePackage = "com.android.system.qs.thin";
               break;
+            case 10:
+              overlayThemePackage = "com.android.system.qs.twotoneaccenttrans";
+              break;
             default:
               break;
         }
