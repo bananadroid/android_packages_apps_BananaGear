@@ -109,7 +109,7 @@
     <string name="statusbar_title_summary">Customize status bar look and style</string>
     <string name="themes_title">Themes</string>
     <string name="themes_summary">Life is colorful, don\'t be bored</string>
-    <string name="doze_display_title">Ambient display</string>
+    <string name="doze_display_title">Ambient Display</string>
     <string name="doze_display_summary">Configure settings for ambient display</string>
 
     <!-- General -->
