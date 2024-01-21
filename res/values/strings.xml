@@ -101,15 +101,15 @@
     <string name="misc_title_summary">Other options</string>
     <string name="notif_title">Notifications</string>
     <string name="notif_title_summary">Advanced notification options</string>
-    <string name="buttons_title">Buttons &amp; Navigations</string>
-    <string name="buttons_title_summary">Buttons &amp; Navigations options</string>
+    <string name="buttons_title">Buttons &amp; Navigation</string>
+    <string name="buttons_title_summary">Buttons &amp; Navigation options</string>
     <string name="quicksettings_title">Quick Settings</string>
-    <string name="quicksettings_title_summary">Quicksettings customization</string>
+    <string name="quicksettings_title_summary">Quick settings customization</string>
     <string name="statusbar_title">Status Bar</string>
     <string name="statusbar_title_summary">Customize status bar look and style</string>
     <string name="themes_title">Themes</string>
     <string name="themes_summary">Life is colorful, don\'t be bored</string>
-    <string name="doze_display_title">Ambient display</string>
+    <string name="doze_display_title">Ambient Display</string>
     <string name="doze_display_summary">Configure settings for ambient display</string>
 
     <!-- General -->
@@ -135,8 +135,8 @@
     <string name="unit_hz">hz</string>
 
     <!-- Statusbar tuner -->
-    <string name="statusbar_tuner_title">Statusbar icons</string>
-    <string name="statusbar_tuner_title_summary">Enable or disable many statusbar icons</string>
+    <string name="statusbar_tuner_title">Status bar icons</string>
+    <string name="statusbar_tuner_title_summary">Enable or disable many status bar icons</string>
 
     <!-- Font style / Icon pack -->
     <string name="theme_customization_font_title">Font style</string>
@@ -147,8 +147,8 @@
     <string name="theme_customization_icon_shape_summary">Set system icon shape style</string>
     <string name="theme_customization_signal_icon_title">Signal icon style</string>
     <string name="theme_customization_signal_icon_summary">Set custom signal icon style</string>
-    <string name="theme_customization_wifi_icon_title">WiFi icon style</string>
-    <string name="theme_customization_wifi_icon_summary">Set custom wifi icon style</string>
+    <string name="theme_customization_wifi_icon_title">Wi-Fi icon style</string>
+    <string name="theme_customization_wifi_icon_summary">Set custom Wi-Fi icon style</string>
     <string name="theme_customization_navbar_title">Navbar style</string>
     <string name="theme_customization_navbar_summary">Set custom navigation bar style</string>
 
@@ -184,7 +184,7 @@
     <string name="network_traffic_settings_summary">Display and customize current network traffic levels</string>
     <string name="network_traffic_location_title">Location</string>
     <string name="network_traffic_location_disable">Disabled</string>
-    <string name="network_traffic_location_statusbar">Statusbar</string>
+    <string name="network_traffic_location_statusbar">Status bar</string>
     <string name="network_traffic_mode_title">Display mode</string>
     <string name="network_traffic_mode_up">Upload only</string>
     <string name="network_traffic_mode_down">Download only</string>
@@ -541,7 +541,7 @@
 
     <!-- 4G icon -->
     <string name="show_fourg_icon_title">4G icon</string>
-    <string name="show_fourg_icon_summary">Display 4G icon in signal icon instead LTE</string>
+    <string name="show_fourg_icon_summary">Display 4G icon in signal icon instead of LTE</string>
 
     <!-- Data disabled indicator -->
     <string name="data_disabled_icon_title">Data disabled indicator</string>
@@ -662,8 +662,8 @@
     <string name="lockscreen_albumart_filter_grayblur">Grayscale and blurred</string>
 
     <!-- WiFi Standard icon -->
-    <string name="wifi_standard_icon_title">WiFi standard</string>
-    <string name="wifi_standard_icon_summary">Display WiFi standard next to WiFi signal</string>
+    <string name="wifi_standard_icon_title">Wi-Fi standard</string>
+    <string name="wifi_standard_icon_summary">Display Wi-Fi standard next to Wi-Fi signal</string>
 
     <!-- QS Header -->
     <string name="qs_header_image_title">QS Header image</string>
