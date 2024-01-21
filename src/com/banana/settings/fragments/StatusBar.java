@@ -58,6 +58,11 @@ public class StatusBar extends DashboardFragment implements
     private static final String KEY_STATUSBAR_TOP_PADDING = "statusbar_top_padding";
     private static final String KEY_STATUSBAR_LEFT_PADDING = "statusbar_left_padding";
     private static final String KEY_STATUSBAR_RIGHT_PADDING = "statusbar_right_padding";
+    private static final String VOLTE_ICON_STYLE = "volte_icon_style";
+    private static final String VOWIFI_ICON_STYLE = "vowifi_icon_style";
+
+    private SystemSettingListPreference mVolteIconStyle;
+    private SystemSettingListPreference mVowifiIconStyle;
 
     private static final int BATTERY_STYLE_PORTRAIT = 0;
     private static final int BATTERY_STYLE_TEXT = 4;
@@ -133,6 +138,20 @@ public class StatusBar extends DashboardFragment implements
                 com.android.internal.R.dimen.status_bar_padding_top);
         seekBar = findPreference(KEY_STATUSBAR_TOP_PADDING);
         seekBar.setDefaultValue(defaultTopPadding, true);
+
+        PreferenceScreen prefSet = getPreferenceScreen();
+        mVowifiIconStyle = (SystemSettingListPreference) findPreference(VOWIFI_ICON_STYLE);
+        mVolteIconStyle = (SystemSettingListPreference) findPreference(VOLTE_ICON_STYLE);
+
+        int vowifiIconStyle = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.VOWIFI_ICON_STYLE, 1);
+        mVowifiIconStyle.setValue(String.valueOf(vowifiIconStyle));
+        mVowifiIconStyle.setOnPreferenceChangeListener(this);
+        if (vowifiIconStyle == 0) {
+            mVolteIconStyle.setEnabled(true);
+        } else {
+            mVolteIconStyle.setEnabled(false);
+        }
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -161,6 +180,17 @@ public class StatusBar extends DashboardFragment implements
             int index = mQuickPulldown.findIndexOfValue((String) newValue);
             mQuickPulldown.setSummary(
                     mQuickPulldown.getEntries()[index]);
+            return true;
+        } else if (preference == mVowifiIconStyle) {
+            int vowifiIconStyle = Integer.parseInt(((String) newValue).toString());
+            Settings.System.putInt(resolver,
+                  Settings.System.VOWIFI_ICON_STYLE, vowifiIconStyle);
+            mVowifiIconStyle.setValue(String.valueOf(vowifiIconStyle));
+            if (vowifiIconStyle == 0) {
+                mVolteIconStyle.setEnabled(true);
+            } else {
+                mVolteIconStyle.setEnabled(false);
+            }
             return true;
         }
         return false;
