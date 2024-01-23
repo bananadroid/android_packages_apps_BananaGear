@@ -21,6 +21,12 @@
         android:defaultValue="true" />
 
     <com.banana.support.preferences.SystemSettingSwitchPreference
+        android:key="lockscreen_hide_status_bar"
+        android:title="@string/lockscreen_hide_status_bar_title"
+        android:summary="@string/lockscreen_hide_status_bar_summary"
+        android:defaultValue="false" />
+
+    <com.banana.support.preferences.SystemSettingSwitchPreference
         android:key="sysui_keyguard_show_battery_bar"
         android:title="@string/keyguard_show_battery_title"
         android:summary="@string/keyguard_show_battery_summary"

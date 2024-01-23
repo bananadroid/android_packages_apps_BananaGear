@@ -743,4 +743,8 @@
     <!-- About phone header -->
     <string name="about_phone_header_title">About phone header</string>
     <string name="about_phone_header_summary">Enable about phone header on Settings dashboard</string>
+
+    <!-- Hide statusbar on lockscreen -->
+    <string name="lockscreen_hide_status_bar_title">Hide Statusbar</string>
+    <string name="lockscreen_hide_status_bar_summary">When enabled, statusbar will be hidden on lockscreen</string>
 </resources>
