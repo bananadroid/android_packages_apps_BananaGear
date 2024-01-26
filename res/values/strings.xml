@@ -19,6 +19,8 @@
     <string name="buttons_title_summary">Buttons &amp; Navigations options</string>
     <string name="quicksettings_title">Quick Settings</string>
     <string name="quicksettings_title_summary">Quicksettings customization</string>
+    <string name="qs_tiles_customization">QS tiles customization</string>
+    <string name="qs_tiles_customization_summary">Tiles style, layout, animation</string>
     <string name="statusbar_title">Status Bar</string>
     <string name="statusbar_title_summary">Customize status bar look and style</string>
     <string name="themes_title">Themes</string>
