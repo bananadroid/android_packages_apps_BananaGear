@@ -21,7 +21,14 @@ public class ClockStyle extends RelativeLayout {
             R.id.keyguard_clock_style_custom,
             R.id.keyguard_clock_style_custom1,
             R.id.keyguard_clock_style_custom2,
-            R.id.keyguard_clock_style_custom3
+            R.id.keyguard_clock_style_custom3,
+            R.id.keyguard_clock_style_miui,
+            R.id.keyguard_clock_style_ide,
+            R.id.keyguard_clock_style_lottie,
+            R.id.keyguard_clock_style_lottie2,
+            R.id.keyguard_clock_style_fluid,
+            R.id.keyguard_clock_style_hyper,
+            R.id.keyguard_clock_style_dual
     };
 
     private static final int DEFAULT_STYLE = 0; //Disabled

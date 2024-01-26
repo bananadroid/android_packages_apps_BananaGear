@@ -60,4 +60,53 @@
         android:layout_height="320dp">
         <include layout="@layout/keyguard_clock_custom_3"/>
     </LinearLayout>
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:id="@+id/keyguard_clock_style_miui"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <include layout="@layout/keyguard_clock_miui"/>
+    </LinearLayout>
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:id="@+id/keyguard_clock_style_ide"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <include layout="@layout/keyguard_clock_ide"/>
+    </LinearLayout>
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:id="@+id/keyguard_clock_style_lottie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <include layout="@layout/keyguard_clock_lottie"/>
+    </LinearLayout>
+    <LinearLayout
+        android:gravity="center"
+        android:id="@+id/keyguard_clock_style_lottie2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <include layout="@layout/keyguard_clock_lottie2" />
+    </LinearLayout>
+    <LinearLayout
+        android:gravity="center"
+        android:id="@+id/keyguard_clock_style_fluid"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <include layout="@layout/keyguard_clock_fluid" />
+    </LinearLayout>
+    <LinearLayout
+        android:gravity="center"
+        android:id="@+id/keyguard_clock_style_hyper"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <include layout="@layout/keyguard_clock_hyper" />
+    </LinearLayout>
+    <LinearLayout
+        android:gravity="center"
+        android:id="@+id/keyguard_clock_style_dual"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <include layout="@layout/keyguard_clock_dual" />
+    </LinearLayout>
 </com.banana.settings.preferences.ClockStyle>
