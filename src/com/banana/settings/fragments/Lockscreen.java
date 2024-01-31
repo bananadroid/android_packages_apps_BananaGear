@@ -32,6 +32,7 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.android.internal.util.banana.BananaUtils;
 import com.android.internal.util.banana.OmniJawsClient;
 
 import java.util.ArrayList;
@@ -48,11 +49,13 @@ public class Lockscreen extends DashboardFragment implements
     private static final String KEY_FP_SUCCESS_VIBRATE = "fp_success_vibrate";
     private static final String KEY_FP_ERROR_VIBRATE = "fp_error_vibrate";
     private static final String KEY_WEATHER = "lockscreen_weather_enabled";
+    private static final String KEY_UDFPS_ANIMATIONS = "udfps_recognizing_animation_preview";
 
     private Preference mRippleEffect;
     private Preference mFingerprintVib;
     private Preference mFingerprintVibErr;
     private Preference mWeather;
+    private Preference mUdfpsAnimations;
 
     private OmniJawsClient mWeatherClient;
 
@@ -72,13 +75,18 @@ public class Lockscreen extends DashboardFragment implements
         mRippleEffect = (Preference) findPreference(KEY_RIPPLE_EFFECT);
         mFingerprintVib = (Preference) findPreference(KEY_FP_SUCCESS_VIBRATE);
         mFingerprintVibErr = (Preference) findPreference(KEY_FP_ERROR_VIBRATE);
+        mUdfpsAnimations = (Preference) findPreference(KEY_UDFPS_ANIMATIONS);
 
         if (mFingerprintManager == null || !mFingerprintManager.isHardwareDetected()) {
             gestCategory.removePreference(mRippleEffect);
             gestCategory.removePreference(mFingerprintVib);
             gestCategory.removePreference(mFingerprintVibErr);
+            gestCategory.removePreference(mUdfpsAnimations);
+        } else {
+            if (!BananaUtils.isPackageInstalled(getContext(), "com.banana.udfps.animations")) {
+                gestCategory.removePreference(mUdfpsAnimations);
+            }
         }
-
         mWeather = (Preference) findPreference(KEY_WEATHER);
         mWeatherClient = new OmniJawsClient(getContext());
         updateWeatherSettings();
@@ -153,6 +161,11 @@ public class Lockscreen extends DashboardFragment implements
                         keys.add(KEY_RIPPLE_EFFECT);
                         keys.add(KEY_FP_SUCCESS_VIBRATE);
                         keys.add(KEY_FP_ERROR_VIBRATE);
+                        keys.add(KEY_UDFPS_ANIMATIONS);
+                    } else {
+                        if (!BananaUtils.isPackageInstalled(context, "com.banana.udfps.animations")) {
+                            keys.add(KEY_UDFPS_ANIMATIONS);
+                        }
                     }
                     return keys;
                 }
