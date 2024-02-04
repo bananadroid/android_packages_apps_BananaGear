@@ -35,6 +35,8 @@ import com.android.settingslib.search.SearchIndexable;
 import com.android.internal.util.banana.BananaUtils;
 import com.android.internal.util.banana.OmniJawsClient;
 
+import com.banana.settings.fragments.UdfpsAnimation;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -110,6 +112,7 @@ public class Lockscreen extends DashboardFragment implements
                 Settings.System.LOCKSCREEN_WEATHER_LOCATION, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.LOCKSCREEN_WEATHER_TEXT, 1, UserHandle.USER_CURRENT);
+        UdfpsAnimation.reset(mContext);
     }
 
     private void updateWeatherSettings() {
