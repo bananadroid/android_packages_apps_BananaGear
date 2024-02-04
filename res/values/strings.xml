@@ -757,5 +757,5 @@
     <string name="udfps_recog_animation_effect_summary">Choose animation effect</string>
 
     <!-- Custom clock style -->
-    <strin name="clock_style_title">Custom clock style</string>
+    <string name="clock_style_title">Custom clock style</string>
 </resources>
