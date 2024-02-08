@@ -408,4 +408,13 @@
                 android:action="android.intent.action.VIEW"
                 android:data="https://t.me/asriadirahim" />
         </Preference>
+        <Preference
+            android:title="@string/banana_about_OnFire_Nasir"
+            android:summary="@string/banana_about_OnFire_Nasir_summary"
+            android:icon="@drawable/OnFire_Nasir"
+            settings:layout="@layout/banana_about">                                     
+            <intent                                                                         
+                android:action="android.intent.action.VIEW"                                 
+                android:data="https://t.me/OnFire_Nasir" />                         
+        </Preference>
 </PreferenceScreen>
