@@ -44,6 +44,12 @@
     <PreferenceCategory
         android:title="@string/other_category_title" >
 
+        <com.banana.support.preferences.GlobalSettingSwitchPreference
+            android:key="pm_downgrade_allowed"
+            android:title="@string/app_downgrade_title"
+            android:summary="@string/app_downgrade_summary"
+            android:defaultValue="false"/>
+
         <!-- Pocket Judge -->
         <com.banana.support.preferences.SystemSettingSwitchPreference
             android:key="pocket_judge"
