@@ -303,10 +303,6 @@
     <string name="fp_error_vibrate_title">Fingerprint error vibration</string>
     <string name="fp_error_vibrate_summary">Vibrate when fingerprint authentication fails</string>
 
-    <!-- Disable QS -->
-    <string name="disable_qs_title">Hide QS in secure lockscreen</string>
-    <string name="disable_qs_summary">Hides QS if device is locked. Does not disable notification shade</string>
-
     <!-- Fonts -->
     <string name="clock_format">12\n26</string>
     <string name="text_sample">AaBbCc</string>

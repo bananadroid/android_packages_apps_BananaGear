@@ -8,12 +8,6 @@
     android:title="@string/quicksettings_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <com.banana.support.preferences.SecureSettingSwitchPreference
-        android:key="secure_lockscreen_qs_disabled"
-        android:title="@string/disable_qs_title"
-        android:summary="@string/qstile_requires_unlocking_summary"
-        android:defaultValue="true" />
-
     <!-- Battery styles -->
     <com.banana.support.preferences.SystemSettingListPreference
         android:key="qs_battery_style"
