@@ -307,10 +307,6 @@
     <string name="disable_qs_title">Hide QS in secure lockscreen</string>
     <string name="disable_qs_summary">Hides QS if device is locked. Does not disable notification shade</string>
 
-    <!-- QSTile requires unlocking before being accessible -->
-    <string name="qstile_requires_unlocking_title">Require unlocking to use sensitive tiles</string>
-    <string name="qstile_requires_unlocking_summary">Ask to unlock lockscreen when using sensitive tiles</string>
-
     <!-- Fonts -->
     <string name="clock_format">12\n26</string>
     <string name="text_sample">AaBbCc</string>
