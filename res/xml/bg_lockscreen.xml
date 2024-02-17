@@ -129,12 +129,14 @@
         <com.banana.support.preferences.SystemSettingSwitchPreference
             android:key="lockscreen_weather_enabled"
             android:title="@string/lockscreen_weather_title"
-            android:summary="@string/lockscreen_weather_summary" />
+            android:summary="@string/lockscreen_weather_summary"
+            android:defaultValue="true" />
 
         <com.banana.support.preferences.SystemSettingSwitchPreference
             android:key="lockscreen_weather_location"
             android:title="@string/lockscreen_weather_location_title"
             android:summary="@string/lockscreen_weather_location_summary"
+            android:defaultValue="false"
             android:dependency="lockscreen_weather_enabled" />
 
         <com.banana.support.preferences.SystemSettingSwitchPreference
