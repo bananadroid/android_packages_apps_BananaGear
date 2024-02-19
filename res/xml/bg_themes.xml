@@ -37,13 +37,6 @@
         android:summary="@string/theme_customization_ui_style_summary"
         android:fragment="com.banana.settings.fragments.ui.UIStyles"/>
 
-    <!-- Font style -->
-    <Preference
-        android:key="android.theme.customization.fonts"
-        android:title="@string/theme_customization_font_title"
-        android:summary="@string/theme_customization_font_summary"
-        android:fragment="com.banana.settings.fragments.ui.FontsPicker"/>
-
     <!-- Icon pack -->
     <Preference
         android:key="android.theme.customization.icon_pack"
