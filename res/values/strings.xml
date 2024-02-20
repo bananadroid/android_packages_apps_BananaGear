@@ -582,11 +582,6 @@
     <string name="wifi_standard_icon_title">WiFi standard</string>
     <string name="wifi_standard_icon_summary">Display WiFi standard next to WiFi signal</string>
 
-    <!-- QS Header -->
-    <string name="qs_header_image_title">QS Header Image</string>
-    <string name="qs_header_random_image_title">QS Header Random Image</string>
-    <string name="qs_header_random_image_summary">Enable random QS header image</string>
-
     <!-- Buttons -->
     <string name="button_pref_title">Buttons</string>
     <string name="hardware_keys_power_key_title">Power button</string>
