@@ -47,7 +47,7 @@
     <string name="banana_about_FrEeRuNnEr4EvEr" translatable="false">FrEeRuNnEr4EvEr</string>
     <string name="banana_about_FrEeRuNnEr4EvEr_summary" translatable="false">Samsung S10 | Samsung Note 10</string>
     <string name="banana_about_HonokaKousaka" translatable="false">HonokaKousaka</string>
-    <string name="banana_about_HonokaKousaka_summary" translatable="false">Mi A1 / tissot</string>
+    <string name="banana_about_HonokaKousaka_summary" translatable="false">Poco F1 / beryllium</string>
     <string name="banana_about_MOCHA" translatable="false">MOCHA</string>
     <string name="banana_about_MOCHA_summary" translatable="false">Redmi Note 6 Pro / tulip</string>
     <string name="banana_about_Mudit" translatable="false">Mudit</string>
@@ -90,4 +90,12 @@
     <string name="banana_about_asriadirahim_summary" translatable="false">Google Pixel 2 | Google Pixel 2XL</string>
     <string name="banana_about_OnFire_Nasir" translatable="false">OnFire-Nasir</string>
     <string name="banana_about_OnFire_Nasir_summary" translatable="false">Xiaomi 11 Lite NE 5G | Mi 11 LE / lisa</string>
+    <string name="banana_about_Noobbeast" translatable="false">Noobbeast</string>
+    <string name="banana_about_Noobbeast_summary" translatable="false">Redmi Note 8 Pro / begonia</string>
+    <string name="banana_about_kssrao" translatable="false">Samba Siva Rao K</string>
+    <string name="banana_about_kssrao_summary" translatable="false">Poco F5 | Redmi Note 12 Turbo / marble</string>
+    <string name="banana_about_tribual" translatable="false">Tribual</string>
+    <string name="banana_about_tribual_summary" translatable="false">Xiaomi Mi 9 / cepheus</string>
+    <string name="banana_about_reache" translatable="false">R E A C H E</string>
+    <string name="banana_about_banana_about_reache_summary" translatable="false">Poco X5 5G | Redmi Note 12 5G / stone</string>
 </resources>
