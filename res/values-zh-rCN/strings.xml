@@ -48,9 +48,12 @@
     <!-- Statusbar tuner -->
     <string name="statusbar_tuner_title">Statusbar icons</string>
     <string name="statusbar_tuner_title_summary">Enable or disable many statusbar icons</string>
-    <!-- Font style / Icon pack -->
-    <string name="theme_customization_font_title">Font style</string>
-    <string name="theme_customization_font_summary">Set system font style</string>
+    <!-- Font styles -->
+    <string name="font_styles_title">Font Styles</string>
+    <string name="font_styles_summary">Change system font style</string>
+    <string name="font_preview_text">The quick brown\nfox jumps over the\nlazy dog\n\nABCDEFGHIJKLM\nNOPQRSTUVWXYZ\nabcdefghijkl\nmnopqrstuvwxyz\n1234567890</string>
+    <string name="apply_button_text">Apply</string>
+    <!-- Icon pack -->
     <string name="theme_customization_icon_pack_title">Icon pack</string>
     <string name="theme_customization_icon_pack_summary">Set custom icon pack style</string>
     <string name="theme_customization_icon_shape_title">Icon shape</string>
@@ -484,19 +487,6 @@
     <!-- Doze on charge -->
     <string name="doze_on_charge_title">Always on when charging</string>
     <string name="doze_on_charge_summary">Show doze screen all the time when charging</string>
-    <!-- Edge light -->
-    <string name="edge_light_title">Edge Light</string>
-    <string name="edge_light_summary">Light up the edges of the screen when a notification is received</string>
-    <string name="edge_light_switch_title">Enable Edge Light</string>
-    <string name="edge_light_always_trigger_on_pulse_title">Always trigger on pulse</string>
-    <string name="edge_light_always_trigger_on_pulse_summary">Show edge light whenever ambient display is shown and not just for notifications</string>
-    <string name="edge_light_repeat_animation_title">Repeat animation</string>
-    <string name="edge_light_repeat_animation_summary_on">Repeat until timeout</string>
-    <string name="edge_light_repeat_animation_summary_off">Show only once</string>
-    <string name="edge_light_color_mode_title">Color mode</string>
-    <string name="theme_color">Theme color (Default)</string>
-    <string name="notification_color">Notification color</string>
-    <string name="custom_color">Custom color</string>
     <!-- Screen Off animation -->
     <string name="screen_off_animation_title">Screen off animation</string>
     <string name="screen_off_animation_default">Default</string>
@@ -515,27 +505,6 @@
     <!-- WiFi Standard icon -->
     <string name="wifi_standard_icon_title">WiFi standard</string>
     <string name="wifi_standard_icon_summary">Display WiFi standard next to WiFi signal</string>
-    <!-- QS Header -->
-    <string name="qs_header_image_title">QS Header image</string>
-    <string name="qs_header_image_summary">Select QS background header image</string>
-    <string name="qs_header_image_enabled_title">QS header image customization</string>
-    <string name="qs_header_image_enabled_summary">Enable QS header image customization</string>
-    <string name="qs_header_image_landscape_enabled_title">Show on landscape</string>
-    <string name="qs_header_image_landscape_enabled_summary">Display QS header image in landscape mode</string>
-    <string name="qs_header_image_tint_title">Tint</string>
-    <string name="qs_header_image_tint_none">No tint</string>
-    <string name="qs_header_image_tint_accent">Accent color</string>
-    <string name="qs_header_image_tint_primary">Primary color</string>
-    <string name="qs_header_image_tint_primary_inverse">Primary color inverse</string>
-    <string name="qs_header_image_tint_custom">Custom color</string>
-    <string name="qs_header_image_tint_custom_title">Custom tint color</string>
-    <string name="qs_header_image_height_portrait_title">Height (portrait)</string>
-    <string name="qs_header_image_height_landscape_title">Height (landscape)</string>
-    <string name="qs_header_image_alpha_title">Opacity</string>
-    <string name="qs_header_image_padding_side_title">Side padding</string>
-    <string name="qs_header_image_padding_top_title">Top padding</string>
-    <string name="file_header_select_title">Select local image</string>
-    <string name="file_header_select_summary">Select image from storage</string>
     <!-- Buttons -->
     <string name="button_pref_title">Buttons</string>
     <string name="hardware_keys_power_key_title">Power button</string>
@@ -688,4 +657,90 @@
     <string name="statusbar_top_padding">Top padding</string>
     <string name="statusbar_left_padding">Left padding</string>
     <string name="statusbar_right_padding">Right padding</string>
+    <!-- QSTile requires unlocking before being accessible -->
+    <string name="qstile_requires_unlocking_title">Secure QS tiles require unlocking</string>
+    <string name="qstile_requires_unlocking_summary">The following QS tiles require unlocking before you can acccess them from lock screen:\nAirplane, Cellular, NFC, Hotspot, USB tethering and Location</string>
+    <!-- QS Header -->
+    <string name="qs_header_image_title">QS header image</string>
+    <string name="qs_header_image_summary">Select QS background header image</string>
+    <string name="qs_header_random_image_title">QS Header Random Image</string>
+    <string name="qs_header_random_image_summary">Enable random QS header image</string>
+    <string name="qs_header_image_blur_level_title">QS header image blur effect level</string>
+    <string name="qs_header_image_blur_level_summary">Strength of the blur effect applied to the QS header image</string>
+    <string name="qs_header_image_fade_level_level_title">QS header image fade level</string>
+    <string name="qs_header_image_fade_level_level_summary">Fade level of the QS header image</string>
+    <string name="qs_header_image_opacity_level_title">QS header image opacity level</string>
+    <string name="qs_header_image_opacity_level_summary">Opacity level of the QS header image</string>
+    <string name="qs_header_image_filter_color_title">QS header image filter color</string>
+    <string name="qs_header_image_height_title">QS header image height</string>
+    <string name="qs_header_custom_image_uri_enabled_title">Custom QS header image</string>
+    <string name="qs_header_custom_image_uri_enabled_summary">Apply custom QS image header</string>
+    <string name="file_header_select_title">Select local image</string>
+    <string name="file_header_select_summary">Select image from storage</string>
+    <!-- Volume Styles -->
+    <string name="revamped_aosp_style">Revamped AOSP UI style</string>
+    <string name="rui_style">Realme UI style</string>
+    <string name="stock_style">Stock UI style</string>
+    <string name="double_layer_style">Double Layer style</string>
+    <string name="gradient_style">Gradient style</string>
+    <string name="neumorph_style">Neumorph style</string>
+    <string name="neumorph_outline_style">Neumorph Outline style</string>
+    <string name="outline_style">Outline style</string>
+    <string name="shaded_layer_style">Shaded Layer style</string>
+    <string name="volume_style_title">Volume panel styles</string>
+    <!-- Show VoLTE icon on statusbar -->
+    <string name="volte_icon_style_title">Select VoLTE/HD Icon</string>
+    <string name="volte_icon_off">Off</string>
+    <string name="volte_icon_dynamic">Dynamic VOLTE Icons</string>
+    <string name="volte_icon_vo">Vo Only Icon</string>
+    <string name="volte_icon_volte">VoLTE Icon</string>
+    <string name="volte_icon_oos">VoLTE OOS Icon</string>
+    <string name="volte_icon_hd">HD Icon</string>
+    <string name="volte_icon_miui">MIUI 11 Icon</string>
+    <string name="volte_icon_emui">EMUI Icon</string>
+    <string name="volte_icon_margaritov">HD Filled Icon</string>
+    <string name="volte_icon_margaritov2">Margaritov VoLTE Icon</string>
+    <string name="volte_icon_vivo">Vivo Icon</string>
+    <string name="volte_icon_aris">Aris Icon</string>
+    <string name="volte_icon_beast">Aww Icon</string>
+    <string name="volte_icon_ios">Ios Icon</string>
+    <string name="volte_icon_lr">Livenge Icon</string>
+    <string name="volte_icon_realme">Realme Icon</string>
+    <string name="volte_icon_typeA">Mild Icon</string>
+    <string name="volte_icon_typeB">Filth Icon</string>
+    <string name="volte_icon_typeC">Mue Icon</string>
+    <string name="volte_icon_typeD">Sus Icon</string>
+    <string name="volte_icon_typeE">Acherus Icon</string>
+    <string name="volte_icon_vcircle">Circle Icon</string>
+    <string name="volte_icon_vimeo">Vimeo Icon</string>
+    <string name="volte_icon_volit">Volit Icon</string>
+    <string name="volte_icon_zirco">Ziroc Icon</string>
+    <!-- VoWiFi icon -->
+    <string name="vowifi_icon_title">VoWiFi Icon</string>
+    <string name="vowifi_icon_summary">Display VoWiFi icon when available</string>
+    <string name="vowifi_icon_off">Off</string>
+    <string name="vowifi_icon_dynamic">Dynamic VoWiFi Icon</string>
+    <string name="vowifi_icon_asus">Asus VoWiFi Icon</string>
+    <string name="vowifi_icon_oneplus">OnePlus VoWiFi Icon</string>
+    <string name="vowifi_icon_moto">Moto VoWiFi Icons</string>
+    <string name="vowifi_icon_emui">EMUI Icons</string>
+    <!-- Ignore window secure -->
+    <string name="ignore_window_secure_title">Ignore secure window flag</string>
+    <string name="ignore_window_secure_summary">Remove screenshot and screenrecord limits for all apps. This can be convenient in some cases but may lead to privacy leaks.</string>
+    <!-- Ambient edge lighting -->
+    <string name="ambient_edge_light_action_title">Ambient edge lighting</string>
+    <string name="ambient_edge_light_title">Edge lighting</string>
+    <string name="ambient_edge_light_enable_title">Enable edge lighting</string>
+    <string name="ambient_edge_light_summary">Light up the side edges of the screen on notification pulse</string>
+    <string name="ambient_edge_light_color_mode_category_title">Color</string>
+    <string name="ambient_edge_light_color_mode_auto">Auto</string>
+    <string name="ambient_edge_light_color_mode_app">App color</string>
+    <string name="ambient_edge_light_color_mode_manual">Manual</string>
+    <string name="ambient_edge_light_color_mode_auto_summary">Set edge light color to the system color</string>
+    <string name="ambient_edge_light_color_mode_app_summary">Set edge light color to the app color</string>
+    <string name="ambient_edge_light_color_mode_manual_summary">Pick a color manualy</string>
+    <string name="ambient_edge_light_advanced_category_title">Advanced</string>
+    <string name="ambient_edge_light_duration_title">Light duration</string>
+    <string name="ambient_edge_light_repeat_count_title">Repeat count</string>
+    <string name="ambient_edge_light_width_title">Light width</string>
 </resources>
