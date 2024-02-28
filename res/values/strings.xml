@@ -834,4 +834,6 @@
     <string name="qs_surround">Surround</string>
     <string name="qs_thin">ThinLine</string>
     <string name="qs_panel_style_two_tone_trans">Two-Tone Translucent</string>
+    <string name="qs_ui_title">QS tiles style</string>
+    <string name="android_eleven">Android 11</string>
 </resources>

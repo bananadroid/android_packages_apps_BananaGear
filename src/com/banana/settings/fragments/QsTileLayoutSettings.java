@@ -14,8 +14,10 @@
 
 package com.banana.settings.fragments;
 
+import android.content.ContentResolver;
 import android.content.Context;
 import android.database.ContentObserver;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.UserHandle;
@@ -49,6 +51,8 @@ public class QsTileLayoutSettings extends SettingsPreferenceFragment
     private static final String KEY_QQS_ROW_PORTRAIT = "qqs_layout_rows";
     private static final String KEY_APPLY_CHANGE_BUTTON = "apply_change_button";
     private static final String KEY_QS_PANEL_STYLE  = "qs_panel_style";
+    private static final String KEY_QS_UI_STYLE  = "qs_ui_style";
+    private static final String overlayThemeTarget  = "com.android.systemui";
 
     private Context mContext;
 
@@ -66,6 +70,7 @@ public class QsTileLayoutSettings extends SettingsPreferenceFragment
     private Handler mHandler;
     private ThemeUtils mThemeUtils;
     private SystemSettingListPreference mQsStyle;
+    private SystemSettingListPreference mQsUI;
 
     @Override
     public void onCreate(Bundle savedInstance) {
@@ -74,6 +79,7 @@ public class QsTileLayoutSettings extends SettingsPreferenceFragment
 
         mThemeUtils = new ThemeUtils(getActivity());
         mQsStyle = (SystemSettingListPreference) findPreference(KEY_QS_PANEL_STYLE);
+        mQsUI = (SystemSettingListPreference) findPreference(KEY_QS_UI_STYLE);
         mCustomSettingsObserver.observe();
     }
 
@@ -163,6 +169,8 @@ public class QsTileLayoutSettings extends SettingsPreferenceFragment
         } else if (preference == mQsStyle) {
             mCustomSettingsObserver.observe();
             return true;
+        } else if (preference == mQsUI) {
+            mCustomSettingsObserver.observe();
         }
         return true;
     }
@@ -180,11 +188,14 @@ public class QsTileLayoutSettings extends SettingsPreferenceFragment
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.QS_PANEL_STYLE),
                     false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.QS_UI_STYLE),
+                    false, this, UserHandle.USER_ALL);
         }
 
         @Override
         public void onChange(boolean selfChange, Uri uri) {
-            if (uri.equals(Settings.System.getUriFor(Settings.System.QS_PANEL_STYLE))) {
+            if (uri.equals(Settings.System.getUriFor(Settings.System.QS_PANEL_STYLE)) || uri.equals(Settings.System.getUriFor(Settings.System.QS_UI_STYLE))) {
                 updateQsStyle();
             }
         }
@@ -193,49 +204,65 @@ public class QsTileLayoutSettings extends SettingsPreferenceFragment
     private void updateQsStyle() {
         ContentResolver resolver = getActivity().getContentResolver();
 
+        boolean isA11Style = Settings.System.getIntForUser(getActivity().getContentResolver(),
+                Settings.System.QS_UI_STYLE , 1, UserHandle.USER_CURRENT) == 1;
+
         int qsPanelStyle = Settings.System.getIntForUser(getContext().getContentResolver(),
                 Settings.System.QS_PANEL_STYLE , 0, UserHandle.USER_CURRENT);
 
+	String qsUIStyleCategory = "android.theme.customization.qs_ui";
+	String qsPanelStyleCategory = "android.theme.customization.qs_panel";
+
+	/// reset all overlays before applying
+	resetQsOverlays(qsPanelStyleCategory);
+	resetQsOverlays(qsUIStyleCategory);
+
+	if (isA11Style) {
+	    setQsStyle("com.android.system.qs.ui.A11", qsUIStyleCategory);
+	}
+
+	if (qsPanelStyle == 0) return;
+
         switch (qsPanelStyle) {
-            case 0:
-              setQsStyle("com.android.systemui");
-              break;
             case 1:
-              setQsStyle("com.android.system.qs.outline");
+              setQsStyle("com.android.system.qs.outline", qsPanelStyleCategory);
               break;
             case 2:
             case 3:
-              setQsStyle("com.android.system.qs.twotoneaccent");
+              setQsStyle("com.android.system.qs.twotoneaccent", qsPanelStyleCategory);
               break;
             case 4:
-              setQsStyle("com.android.system.qs.shaded");
+              setQsStyle("com.android.system.qs.shaded", qsPanelStyleCategory);
               break;
             case 5:
-              setQsStyle("com.android.system.qs.cyberpunk");
+              setQsStyle("com.android.system.qs.cyberpunk", qsPanelStyleCategory);
               break;
             case 6:
-              setQsStyle("com.android.system.qs.neumorph");
+              setQsStyle("com.android.system.qs.neumorph", qsPanelStyleCategory);
               break;
             case 7:
-              setQsStyle("com.android.system.qs.reflected");
+              setQsStyle("com.android.system.qs.reflected", qsPanelStyleCategory);
               break;
             case 8:
-              setQsStyle("com.android.system.qs.surround");
+              setQsStyle("com.android.system.qs.surround", qsPanelStyleCategory);
               break;
             case 9:
-              setQsStyle("com.android.system.qs.thin");
+              setQsStyle("com.android.system.qs.thin", qsPanelStyleCategory);
               break;
             case 10:
-              setQsStyle("com.android.system.qs.twotoneaccenttrans");
+              setQsStyle("com.android.system.qs.twotoneaccenttrans", qsPanelStyleCategory);
               break;
             default:
               break;
         }
     }
 
-    public void setQsStyle(String overlayName) {
-        mThemeUtils.setOverlayEnabled("android.theme.customization.qs_panel", overlayName, "com.android.systemui");
+    public void resetQsOverlays(String category) {
+        mThemeUtils.setOverlayEnabled(category, overlayThemeTarget, overlayThemeTarget);
+    }
 
+    public void setQsStyle(String overlayName, String category) {
+        mThemeUtils.setOverlayEnabled(category, overlayName, overlayThemeTarget);
     }
 
     @Override

@@ -14,6 +14,15 @@
         android:summary="%s"
         android:defaultValue="0" />
 
+    <!-- QS UI -->
+    <com.banana.support.preferences.SystemSettingListPreference
+       	android:key="qs_ui_style"
+       	android:title="@string/qs_ui_title"
+       	android:entries="@array/qs_ui_entries"
+       	android:entryValues="@array/qs_ui_values"
+       	android:summary="%s"
+       	android:defaultValue="0" />
+
     <com.banana.support.preferences.SystemSettingSwitchPreference
         android:key="qs_tile_label_hide"
         android:title="@string/qs_tile_hide_label_title"
