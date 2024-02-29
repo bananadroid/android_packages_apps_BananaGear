@@ -3,7 +3,7 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-    android:title="@string/qs_tile_layout_title">
+    android:title="@string/qs_tiles_customization">
 
     <!-- QS styles -->
     <com.banana.support.preferences.SystemSettingListPreference
@@ -89,5 +89,33 @@
         settings:interval="1"
         settings:units="sp"
         android:defaultValue="13" />
+
+    <PreferenceCategory
+        android:title="@string/qs_tile_animation_title">
+
+        <com.banana.support.preferences.SystemSettingListPreference
+            android:key="qs_tile_animation_style"
+            android:title="@string/qs_tile_animation_style_title"
+            android:entries="@array/qs_tile_animation_style_entries"
+            android:entryValues="@array/qs_tile_animation_style_values"
+            android:defaultValue="0" />
+
+        <com.banana.support.preferences.SystemSettingSeekBarPreference
+            android:key="qs_tile_animation_duration"
+            android:title="@string/qs_tile_animation_duration_title"
+            android:defaultValue="1"
+            settings:interval="1"
+            settings:units="@string/unit_seconds"
+            android:max="5"
+            android:min="1" />
+
+        <com.banana.support.preferences.SystemSettingListPreference
+            android:key="qs_tile_animation_interpolator"
+            android:title="@string/qs_tile_animation_interpolator_title"
+            android:entries="@array/qs_tile_animation_interpolator_entries"
+            android:entryValues="@array/qs_tile_animation_interpolator_values"
+            android:defaultValue="0" />
+
+    </PreferenceCategory>
 
 </PreferenceScreen>

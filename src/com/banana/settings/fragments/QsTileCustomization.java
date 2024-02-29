@@ -26,7 +26,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import androidx.preference.Preference;
+import androidx.preference.*;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.util.banana.ThemeUtils;
@@ -37,12 +37,13 @@ import com.android.settings.SettingsPreferenceFragment;
 
 import com.android.settingslib.widget.LayoutPreference;
 
+import com.banana.support.preferences.CustomSeekBarPreference;
 import com.banana.support.preferences.ProperSeekBarPreference;
 import com.banana.support.preferences.SystemSettingListPreference;
 import com.banana.support.preferences.SystemSettingSeekBarPreference;
 import com.banana.support.preferences.SystemSettingSwitchPreference;
 
-public class QsTileLayoutSettings extends SettingsPreferenceFragment
+public class QsTileCustomization extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
     private static final String KEY_QS_HIDE_LABEL = "qs_tile_label_hide";
@@ -56,6 +57,9 @@ public class QsTileLayoutSettings extends SettingsPreferenceFragment
     private static final String overlayThemeTarget  = "com.android.systemui";
     private static final String KEY_QS_LABEL_SIZE = "qs_tile_label_size";
     private static final String KEY_QS_SECONDARY_LABEL_SIZE = "qs_tile_secondary_label_size";
+    private static final String KEY_PREF_TILE_ANIM_STYLE = "qs_tile_animation_style";
+    private static final String KEY_PREF_TILE_ANIM_DURATION = "qs_tile_animation_duration";
+    private static final String KEY_PREF_TILE_ANIM_INTERPOLATOR = "qs_tile_animation_interpolator";
 
     private Context mContext;
 
@@ -78,15 +82,32 @@ public class QsTileLayoutSettings extends SettingsPreferenceFragment
     private SystemSettingSeekBarPreference mSize;
     private SystemSettingSeekBarPreference mSizeSec;
 
+    private ListPreference mTileAnimationStyle;
+    private CustomSeekBarPreference mTileAnimationDuration;
+    private ListPreference mTileAnimationInterpolator;
+
     @Override
     public void onCreate(Bundle savedInstance) {
         super.onCreate(savedInstance);
-        addPreferencesFromResource(R.xml.qs_tile_layout);
+        addPreferencesFromResource(R.xml.qs_tile_customization);
+
+        final Context mContext = getActivity().getApplicationContext();
+        final ContentResolver resolver = mContext.getContentResolver();
 
         mThemeUtils = new ThemeUtils(getActivity());
         mQsStyle = (SystemSettingListPreference) findPreference(KEY_QS_PANEL_STYLE);
         mQsUI = (SystemSettingListPreference) findPreference(KEY_QS_UI_STYLE);
         mCustomSettingsObserver.observe();
+
+        mTileAnimationStyle = (ListPreference) findPreference(KEY_PREF_TILE_ANIM_STYLE);
+        mTileAnimationDuration = (CustomSeekBarPreference) findPreference(KEY_PREF_TILE_ANIM_DURATION);
+        mTileAnimationInterpolator = (ListPreference) findPreference(KEY_PREF_TILE_ANIM_INTERPOLATOR);
+
+        mTileAnimationStyle.setOnPreferenceChangeListener(this);
+
+        int tileAnimationStyle = Settings.System.getIntForUser(resolver,
+                Settings.System.QS_TILE_ANIMATION_STYLE, 0, UserHandle.USER_CURRENT);
+        updateAnimTileStyle(tileAnimationStyle);
     }
 
     @Override
@@ -185,6 +206,10 @@ public class QsTileLayoutSettings extends SettingsPreferenceFragment
             return true;
         } else if (preference == mQsUI) {
             mCustomSettingsObserver.observe();
+        } else if (preference == mTileAnimationStyle) {
+            int value = Integer.parseInt((String) newValue);
+            updateAnimTileStyle(value);
+            return true;
         }
         return true;
     }
@@ -277,6 +302,11 @@ public class QsTileLayoutSettings extends SettingsPreferenceFragment
 
     public void setQsStyle(String overlayName, String category) {
         mThemeUtils.setOverlayEnabled(category, overlayName, overlayThemeTarget);
+    }
+
+    private void updateAnimTileStyle(int tileAnimationStyle) {
+        mTileAnimationDuration.setEnabled(tileAnimationStyle != 0);
+        mTileAnimationInterpolator.setEnabled(tileAnimationStyle != 0);
     }
 
     @Override

@@ -70,13 +70,7 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="@string/qs_tile_styles">
-
-        <Preference
-            android:key="qs_tile_layout"
-            android:title="@string/qs_tile_layout_title"
-            android:summary="@string/qs_tile_layout_summary"
-            android:fragment="com.banana.settings.fragments.QsTileLayoutSettings" />
+        android:title="@string/interface_title">
 
         <!-- QS Header image -->
         <Preference
@@ -85,33 +79,11 @@
             android:summary="@string/qs_header_image_summary"
             android:fragment="com.banana.settings.fragments.qs.QsHeaderImageSettings" />
 
-        <com.banana.support.preferences.SystemSettingListPreference
-            android:key="qs_tile_animation_style"
-            android:title="@string/qs_tile_animation_style_title"
-            android:entries="@array/qs_tile_animation_style_entries"
-            android:entryValues="@array/qs_tile_animation_style_values"
-            android:defaultValue="0" />
-
-        <com.banana.support.preferences.SystemSettingSeekBarPreference
-            android:key="qs_tile_animation_duration"
-            android:title="@string/qs_tile_animation_duration_title"
-            android:defaultValue="1"
-            settings:interval="1"
-            settings:units="@string/unit_seconds"
-            android:max="5"
-            android:min="1" />
-
-        <com.banana.support.preferences.SystemSettingListPreference
-            android:key="qs_tile_animation_interpolator"
-            android:title="@string/qs_tile_animation_interpolator_title"
-            android:entries="@array/qs_tile_animation_interpolator_entries"
-            android:entryValues="@array/qs_tile_animation_interpolator_values"
-            android:defaultValue="0" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:title="@string/other_category_title">
+        <Preference
+            android:key="qs_tile_customization"
+            android:title="@string/qs_tiles_customization"
+            android:summary="@string/qs_tiles_customization_summary"
+            android:fragment="com.banana.settings.fragments.QsTileCustomization" />
 
         <com.banana.support.preferences.SystemSettingSwitchPreference
             android:key="qs_dual_tone"
@@ -128,6 +100,11 @@
             settings:units="%"
             android:max="100"
             android:min="1" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/other_category_title">
 
         <com.banana.support.preferences.SystemSettingSwitchPreference
             android:key="qs_footer_data_usage"
