@@ -716,7 +716,7 @@
     <!-- QS tiles layout -->
     <string name="qs_tiles_customization">QS tiles customization</string>
     <string name="qs_tiles_customization_summary">Style, layout, animation</string>
-    <string name="qs_tile_layout_title">Tiles layout</string>
+    <string name="qs_tiles_layout_category">Tiles layout</string>
     <string name="qs_rows_portrait_title">Rows (Portrait)</string>
     <string name="qqs_rows_portrait_title">Rows (Quick QS portrait)</string>
     <string name="qs_columns_portrait_title">Columns (Portrait)</string>
