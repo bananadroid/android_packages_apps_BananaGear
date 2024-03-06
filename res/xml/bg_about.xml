@@ -409,6 +409,15 @@
                 android:data="https://t.me/tribual" />
         </Preference>
 
+        <Preference
+            android:title="@string/banana_about_ThatMalayaliDeb"
+            android:summary="@string/banana_about_ThatMalayaliDeb_summary"
+            android:icon="@drawable/ThatMalayaliDeb"
+            settings:layout="@layout/banana_about">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://t.me/thatmalayali" />
+        </Preference>
 <!--
         <Preference
             android:title="@string/banana_about_Namikaze"
@@ -438,15 +447,6 @@
             <intent
                 android:action="android.intent.action.VIEW"
                 android:data="https://t.me/pawix25" />
-        </Preference>
-                <Preference
-            android:title="@string/banana_about_ThatMalayaliDeb"
-            android:summary="@string/banana_about_ThatMalayaliDeb_summary"
-            android:icon="@drawable/ThatMalayaliDeb"
-            settings:layout="@layout/banana_about">
-            <intent
-                android:action="android.intent.action.VIEW"
-                android:data="https://t.me/thatmalayali" />
         </Preference>
         <Preference
                  android:title="@string/banana_about_rabilrbl"
