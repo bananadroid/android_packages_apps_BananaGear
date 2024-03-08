@@ -36,6 +36,7 @@ import com.android.internal.util.banana.BananaUtils;
 import com.android.internal.util.banana.OmniJawsClient;
 
 import com.banana.settings.fragments.UdfpsAnimation;
+import com.banana.settings.fragments.UdfpsIconPicker;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,12 +52,14 @@ public class Lockscreen extends DashboardFragment implements
     private static final String KEY_FP_SUCCESS_VIBRATE = "fp_success_vibrate";
     private static final String KEY_FP_ERROR_VIBRATE = "fp_error_vibrate";
     private static final String KEY_WEATHER = "lockscreen_weather_enabled";
+    private static final String KEY_UDFPS_ICONS = "udfps_icon_picker";
     private static final String KEY_UDFPS_ANIMATIONS = "udfps_recognizing_animation_preview";
 
     private Preference mRippleEffect;
     private Preference mFingerprintVib;
     private Preference mFingerprintVibErr;
     private Preference mWeather;
+    private Preference mUdfpsIcons;
     private Preference mUdfpsAnimations;
 
     private OmniJawsClient mWeatherClient;
@@ -77,14 +80,19 @@ public class Lockscreen extends DashboardFragment implements
         mRippleEffect = (Preference) findPreference(KEY_RIPPLE_EFFECT);
         mFingerprintVib = (Preference) findPreference(KEY_FP_SUCCESS_VIBRATE);
         mFingerprintVibErr = (Preference) findPreference(KEY_FP_ERROR_VIBRATE);
+        mUdfpsIcons = (Preference) findPreference(KEY_UDFPS_ICONS);
         mUdfpsAnimations = (Preference) findPreference(KEY_UDFPS_ANIMATIONS);
 
         if (mFingerprintManager == null || !mFingerprintManager.isHardwareDetected()) {
             gestCategory.removePreference(mRippleEffect);
             gestCategory.removePreference(mFingerprintVib);
             gestCategory.removePreference(mFingerprintVibErr);
+            gestCategory.removePreference(mUdfpsIcons);
             gestCategory.removePreference(mUdfpsAnimations);
         } else {
+            if (!BananaUtils.isPackageInstalled(getContext(), "com.banana.udfps.icons")) {
+                gestCategory.removePreference(mUdfpsIcons);
+            }
             if (!BananaUtils.isPackageInstalled(getContext(), "com.banana.udfps.animations")) {
                 gestCategory.removePreference(mUdfpsAnimations);
             }
@@ -112,6 +120,7 @@ public class Lockscreen extends DashboardFragment implements
                 Settings.System.LOCKSCREEN_WEATHER_LOCATION, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.LOCKSCREEN_WEATHER_TEXT, 1, UserHandle.USER_CURRENT);
+        UdfpsIconPicker.reset(mContext);
         UdfpsAnimation.reset(mContext);
     }
 
@@ -164,8 +173,12 @@ public class Lockscreen extends DashboardFragment implements
                         keys.add(KEY_RIPPLE_EFFECT);
                         keys.add(KEY_FP_SUCCESS_VIBRATE);
                         keys.add(KEY_FP_ERROR_VIBRATE);
+                        keys.add(KEY_UDFPS_ICONS);
                         keys.add(KEY_UDFPS_ANIMATIONS);
                     } else {
+                        if (!BananaUtils.isPackageInstalled(context, "com.banana.udfps.icons")) {
+                            keys.add(KEY_UDFPS_ICONS);
+                        }
                         if (!BananaUtils.isPackageInstalled(context, "com.banana.udfps.animations")) {
                             keys.add(KEY_UDFPS_ANIMATIONS);
                         }
