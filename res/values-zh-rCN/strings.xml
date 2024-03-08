@@ -651,6 +651,9 @@
     <!-- UDFPS animation -->
     <string name="udfps_recog_animation_effect_title">UDFPS custom animation</string>
     <string name="udfps_recog_animation_effect_summary">Choose animation effect</string>
+    <!-- UDFPS icons -->
+    <string name="udfps_icon_picker_title">UDFPS icon picker</string>
+    <string name="udfps_icon_picker_summary">Choose your favorite fingerprint icon</string>
     <!-- Custom clock style -->
     <string name="clock_style_title">Custom clock style</string>
     <!-- Application downgrade -->
