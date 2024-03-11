@@ -670,23 +670,6 @@
     <!-- QSTile requires unlocking before being accessible -->
     <string name="qstile_requires_unlocking_title">Secure QS tiles require unlocking</string>
     <string name="qstile_requires_unlocking_summary">Ask to unlock lockscreen when using sensitive tiles</string>
-    <!-- QS Header -->
-    <string name="qs_header_image_title">QS header image</string>
-    <string name="qs_header_image_summary">Select QS background header image</string>
-    <string name="qs_header_random_image_title">QS Header Random Image</string>
-    <string name="qs_header_random_image_summary">Enable random QS header image</string>
-    <string name="qs_header_image_blur_level_title">QS header image blur effect level</string>
-    <string name="qs_header_image_blur_level_summary">Strength of the blur effect applied to the QS header image</string>
-    <string name="qs_header_image_fade_level_level_title">QS header image fade level</string>
-    <string name="qs_header_image_fade_level_level_summary">Fade level of the QS header image</string>
-    <string name="qs_header_image_opacity_level_title">QS header image opacity level</string>
-    <string name="qs_header_image_opacity_level_summary">Opacity level of the QS header image</string>
-    <string name="qs_header_image_filter_color_title">QS header image filter color</string>
-    <string name="qs_header_image_height_title">QS header image height</string>
-    <string name="qs_header_custom_image_uri_enabled_title">Custom QS header image</string>
-    <string name="qs_header_custom_image_uri_enabled_summary">Apply custom QS image header</string>
-    <string name="file_header_select_title">Select local image</string>
-    <string name="file_header_select_summary">Select image from storage</string>
     <!-- Volume Styles -->
     <string name="revamped_aosp_style">Revamped AOSP UI style</string>
     <string name="rui_style">Realme UI style</string>
@@ -787,4 +770,23 @@
     <string name="qs_tile_round">Circle tiles</string>
     <string name="qs_tile_rect">Square tiles</string>
     <string name="qs_tile_mix">Circle &amp; Square tiles</string>
+    <!-- QS Header -->
+    <string name="qs_header_image_title">QS header image</string>
+    <string name="qs_header_image_summary">Select QS background header image</string>
+    <string name="qs_header_daylight_pack_title">Header image collection</string>
+    <string name="qs_header_shadow_title">Header image shadow</string>
+    <string name="qs_header_shadow_summary">For better visibility on bright images</string>
+    <string name="qs_header_static_provider_title">Static image</string>
+    <string name="qs_header_daylight_provider_title">Image collection</string>
+    <string name="qs_header_file_provider_title">Custom image</string>
+    <string name="qs_header_provider_title">Header provider</string>
+    <string name="qs_header_browse_title">Browse installed headers</string>
+    <string name="qs_header_browse_summary">Browse all available header collections</string>
+    <string name="qs_header_pick_title">Select header image</string>
+    <string name="qs_header_pick_summary">Select an image to use for static mode</string>
+    <string name="qs_header_file_select_title">Select image</string>
+    <string name="qs_header_file_select_summary">Select custom image</string>
+    <string name="qs_header_needs_gallery">You must install a gallery app!</string>
+    <string name="qs_header_offset_title">Header image offset</string>
+    <string name="qs_header_offset_summary">Adjust the image header size</string>
 </resources>
